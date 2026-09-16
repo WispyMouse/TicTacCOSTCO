@@ -105,6 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53d6fd08d80d42d4491fc3c8601f3c33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
+  SpriteRenderer: {fileID: 1310608240475805603}
 --- !u!61 &4714259253102222170
 BoxCollider2D:
   m_ObjectHideFlags: 0

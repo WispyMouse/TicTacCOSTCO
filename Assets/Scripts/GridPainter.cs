@@ -21,12 +21,10 @@ public class GridPainter : MonoBehaviour
 
     private List<Cell> instantiatedCells { get; set; } = new List<Cell>();
 
-    public void Start()
+    public void Awake()
     {
         this.WidthSlider.SetValueWithoutNotify(this.InitialWidth);
         this.HeightSlider.SetValueWithoutNotify(this.InitialHeight);
-
-        this.Paint();
     }
 
     public void Paint(float _)

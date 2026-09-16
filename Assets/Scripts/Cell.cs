@@ -2,15 +2,7 @@ using UnityEngine;
 
 public class Cell : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public SpriteRenderer SpriteRenderer;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public bool AlreadyPlaced { get; set; } = false;
 }
