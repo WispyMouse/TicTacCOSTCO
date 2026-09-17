@@ -183,7 +183,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
 --- !u!114 &2686147493415156260
 MonoBehaviour:
@@ -199,8 +199,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   CellSpriteRenderer: {fileID: 1310608240475805603}
   IconSpriteRenderer: {fileID: 2549129384262704986}
-  DefaultBorder: {fileID: 6750033715232265413, guid: 19f58debb3090464faff2ea80030512f, type: 3}
-  RecentBorder: {fileID: -1262766522711972580, guid: f117cbfbe41855c4985a028559bab314, type: 3}
+  DefaultBorder: {fileID: 21300000, guid: 19f58debb3090464faff2ea80030512f, type: 3}
+  RecentBorder: {fileID: 21300000, guid: f117cbfbe41855c4985a028559bab314, type: 3}
 --- !u!61 &4714259253102222170
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,12 +19,17 @@ public class TurnOrderHolder : MonoBehaviour
     public Image CurrentTurnIconHolder;
 
     private HashSet<int> SideIndexesStillInGame = new HashSet<int>();
+    private HashSet<int> SidesThatAreAI = new HashSet<int>();
 
     public Slider PlayerCountSlider;
+    public TMP_Text PlayerCountSliderValueLabel;
+    public ConfigurationPlayersPanel CurrentConfigurationPanel;
 
     public void ResetGame()
     {
         this.PlayerCount = (int)this.PlayerCountSlider.value;
+        this.PlayerCountSliderValueLabel.text = this.PlayerCount.ToString();
+
         this.SideIndexesStillInGame.Clear();
 
         for (int ii = 0; ii < this.PlayerCount; ii++)
@@ -32,6 +38,7 @@ public class TurnOrderHolder : MonoBehaviour
         }
 
         this.SetTurnIndex(0);
+        this.CurrentConfigurationPanel.PlayerCountUpdated();
     }
 
     public void SetTurnIndex(int index)
@@ -55,5 +62,23 @@ public class TurnOrderHolder : MonoBehaviour
             break;
         }
 
+    }
+
+    public void ToggleHumanity(int index)
+    {
+        if (this.SidesThatAreAI.Contains(index))
+        {
+            this.SidesThatAreAI.Remove(index);
+        }
+        else
+        {
+            this.SidesThatAreAI.Add(index);
+        }
+        this.ResetGame();
+    }
+
+    public bool PlayerIsHuman(int index)
+    {
+        return !this.SidesThatAreAI.Contains(index);
     }
 }

@@ -45,7 +45,6 @@ public class GameConductor : MonoBehaviour
         this.PositionsToCells = this.GridPainter.Paint();
 
         this.CurrentTurnWheel.ResetGame();
-        this.TurnOrderHolder.SetTurnIndex(0);
     }
 
     public void Update()

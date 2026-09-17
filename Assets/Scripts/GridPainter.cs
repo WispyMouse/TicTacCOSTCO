@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,7 +18,9 @@ public class GridPainter : MonoBehaviour
     public float OrthographicSizeScalar;
 
     public Slider WidthSlider;
+    public TMP_Text WidthSliderValueLabel;
     public Slider HeightSlider;
+    public TMP_Text HeightSliderValueLabel;
 
     public float WidthOrthographicViewMultiplier = 1.5f;
 
@@ -40,6 +43,9 @@ public class GridPainter : MonoBehaviour
 
     public Dictionary<Vector2Int, Cell> Paint()
     {
+        this.WidthSliderValueLabel.text = this.WidthSlider.value.ToString();
+        this.HeightSliderValueLabel.text = this.HeightSlider.value.ToString();
+
         Dictionary<Vector2Int, Cell> cells = new Dictionary<Vector2Int, Cell>();
 
         for (int ii = this.instantiatedCells.Count - 1; ii >= 0; ii--)
