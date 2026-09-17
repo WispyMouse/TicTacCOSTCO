@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 public class GameConductor : MonoBehaviour
@@ -74,6 +75,10 @@ public class GameConductor : MonoBehaviour
     void HandleLeftClick()
     {
         if (!Mouse.current.leftButton.wasPressedThisFrame)
+        {
+            return;
+        }
+        if (EventSystem.current.IsPointerOverGameObject())
         {
             return;
         }
