@@ -15,6 +15,8 @@ public class GameState
 
     public readonly Dictionary<Vector2Int, int?> SpotToSideOwnership = new Dictionary<Vector2Int, int?>();
 
+    public int LastCascade { get; set; } = 0;
+
     public GameState(int width, int height)
     {
         for (int xx = 0; xx < width; xx++)

@@ -105,18 +105,38 @@ public class GameConductor : MonoBehaviour
             this.DrawLineBetween(solution.Root, solution.Tail);
         }
 
-        if (solutions.Any())
+        int solutionsCount = solutions.Count;
+
+        if (this.CurrentGameState.CurrentGameState == GameState.GameStateEnum.Cascade && this.CurrentGameState.LastCascade > solutionsCount)
+        {
+            // If there were no new solutions, or not enough solutions for previous cascade, and we're in cascade state,
+            // the current player should be knocked out
+            this.KnockoutPlayer(this.TurnOrderHolder.CurrentPlayerIndex);
+        }
+        else if (solutionsCount > 0)
         {
             this.CurrentGameState.CurrentGameState = GameState.GameStateEnum.Cascade;
             this.CascadeText.transform.parent.gameObject.SetActive(true);
-        }
-        else
-        {
-            // If there were no new solutions, and we're in cascade state,
-            // the current player should be knocked out
-            if (this.CurrentGameState.CurrentGameState == GameState.GameStateEnum.Cascade)
+            this.CurrentGameState.LastCascade = solutionsCount;
+
+            switch (solutionsCount)
             {
-                this.KnockoutPlayer(this.TurnOrderHolder.CurrentPlayerIndex);
+                case 1:
+                    this.CascadeText.TextString = "CASCADE";
+                    break;
+                case 2:
+                    this.CascadeText.TextString = "DOUBLE CASCADE";
+                    break;
+                case 3:
+                    this.CascadeText.TextString = "TRIPLE CASCADE";
+                    break;
+                case 4:
+                    this.CascadeText.TextString = "QUADRUPLE CASCADE";
+                    break;
+                default:
+                    // There should only be four possible
+                    this.CascadeText.TextString = "CASCADE???";
+                    break;
             }
         }
 
