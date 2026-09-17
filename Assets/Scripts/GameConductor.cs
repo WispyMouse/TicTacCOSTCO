@@ -202,6 +202,41 @@ public class GameConductor : MonoBehaviour
             }
         }
 
+        // Check if any new solutions should be banded together; 4-in-a-row is the same value as a 3-in-a-row
+        // Any solutions that have the same directionality *must* be bandable
+        bool anyDiscarded = false;
+
+        do
+        {
+            anyDiscarded = false;
+            for (int leftSolutionIndex = solutions.Count - 2; leftSolutionIndex >= 0; leftSolutionIndex--)
+            {
+                bool discardLeftSolution = false;
+                CellsSolution leftCellsSolution = solutions[leftSolutionIndex];
+                for (int rightSolutionIndex = solutions.Count - 1; rightSolutionIndex > leftSolutionIndex; rightSolutionIndex--)
+                {
+                    CellsSolution rightCellsSolution = solutions[rightSolutionIndex];
+
+                    if (leftCellsSolution.Directionality == rightCellsSolution.Directionality)
+                    {
+                        // Add a new composite solution to the end of the list, which won't be evaluated again
+                        CellsSolution compositeSolution = new CellsSolution(leftCellsSolution.Cells.Union(rightCellsSolution.Cells).ToList(), leftCellsSolution.Directionality);
+                        solutions.Add(compositeSolution);
+                        discardLeftSolution = true;
+                        anyDiscarded = true;
+
+                        // We can immediatley discard this rightSolution
+                        solutions.RemoveAt(rightSolutionIndex);
+                    }
+                }
+
+                if (discardLeftSolution)
+                {
+                    solutions.RemoveAt(leftSolutionIndex);
+                }
+            }
+        } while (anyDiscarded);
+        
         return solutions;
     }
 
