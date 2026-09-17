@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class TurnOrderHolder : MonoBehaviour
 {
     public List<Sprite> SpritesForTurns = new List<Sprite>();
+    public List<Color> KnockoutColorsForTurns = new List<Color>();
 
     [Range(2, 5)]
     public int PlayerCount = 2;

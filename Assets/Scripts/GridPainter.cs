@@ -20,6 +20,7 @@ public class GridPainter : MonoBehaviour
     public Slider HeightSlider;
 
     private List<Cell> instantiatedCells { get; set; } = new List<Cell>();
+    public GameConductor GameConductor;
 
     public void Awake()
     {
@@ -27,13 +28,18 @@ public class GridPainter : MonoBehaviour
         this.HeightSlider.SetValueWithoutNotify(this.InitialHeight);
     }
 
+    /// <summary>
+    /// If this is called, we need to reconstruct the game.
+    /// </summary>
     public void Paint(float _)
     {
-        this.Paint();
+        this.GameConductor.ResetGame();
     }
 
-    public void Paint()
+    public Dictionary<Vector2Int, Cell> Paint()
     {
+        Dictionary<Vector2Int, Cell> cells = new Dictionary<Vector2Int, Cell>();
+
         for (int ii = this.instantiatedCells.Count - 1; ii >= 0; ii--)
         {
             Destroy(this.instantiatedCells[ii].gameObject);
@@ -50,12 +56,17 @@ public class GridPainter : MonoBehaviour
         {
             for (int yy = 0; yy < height; yy++)
             {
+                Vector2Int position = new Vector2Int(xx, yy);
                 Cell newCell = Instantiate(CellPF, this.transform);
+                newCell.Position = position;
                 newCell.transform.position = new Vector2(xx - xOffset, yy - yOffset);
                 instantiatedCells.Add(newCell);
+                cells.Add(position, newCell);
             }
         }
 
         GridCamera.orthographicSize = OrthographicSizeBase + Mathf.Max(width, height) * OrthographicSizeScalar;
+
+        return cells;
     }
 }
