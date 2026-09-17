@@ -19,6 +19,8 @@ public class GridPainter : MonoBehaviour
     public Slider WidthSlider;
     public Slider HeightSlider;
 
+    public float WidthOrthographicViewMultiplier = 1.5f;
+
     private List<Cell> instantiatedCells { get; set; } = new List<Cell>();
     public GameConductor GameConductor;
 
@@ -46,26 +48,25 @@ public class GridPainter : MonoBehaviour
         }
         this.instantiatedCells.Clear();
 
-        int width = Mathf.RoundToInt(this.WidthSlider.value);
-        int height = Mathf.RoundToInt(this.HeightSlider.value);
+        float xOffset = this.GameConductor.Width / 2f;
+        float yOffset = this.GameConductor.Height / 2f;
 
-        float xOffset = width / 2f;
-        float yOffset = height / 2f;
-
-        for (int xx = 0; xx < width; xx++)
+        for (int xx = 0; xx < this.GameConductor.Width; xx++)
         {
-            for (int yy = 0; yy < height; yy++)
+            for (int yy = 0; yy < this.GameConductor.Height; yy++)
             {
                 Vector2Int position = new Vector2Int(xx, yy);
                 Cell newCell = Instantiate(CellPF, this.transform);
                 newCell.Position = position;
-                newCell.transform.position = new Vector2(xx - xOffset, yy - yOffset);
+                newCell.transform.localPosition = new Vector2(xx - xOffset, yy - yOffset);
                 instantiatedCells.Add(newCell);
                 cells.Add(position, newCell);
             }
         }
 
-        GridCamera.orthographicSize = OrthographicSizeBase + Mathf.Max(width, height) * OrthographicSizeScalar;
+        GridCamera.orthographicSize = OrthographicSizeBase 
+            + Mathf.Max(this.GameConductor.Width * WidthOrthographicViewMultiplier, this.GameConductor.Height) 
+            * OrthographicSizeScalar;
 
         return cells;
     }

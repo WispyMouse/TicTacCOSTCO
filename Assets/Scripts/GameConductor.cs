@@ -10,6 +10,7 @@ public class GameConductor : MonoBehaviour
 
     public TurnOrderHolder TurnOrderHolder;
     public GridPainter GridPainter;
+    public CurrentTurnWheel CurrentTurnWheel;
 
     [Range(2, 5)]
     public int InARowToSolve = 3;
@@ -19,6 +20,9 @@ public class GameConductor : MonoBehaviour
 
     public LineRenderer LineRendererPF;
     private List<LineRenderer> SolutionLineRenderers { get; set; } = new List<LineRenderer>();
+
+    public int Height { get; set; }
+    public int Width { get; set; }
 
     public void Start()
     {
@@ -32,9 +36,15 @@ public class GameConductor : MonoBehaviour
             Destroy(this.SolutionLineRenderers[ii].gameObject);
         }
         this.SolutionLineRenderers.Clear();
-
         this.AcceptedSolutions.Clear();
+
+        this.Width = Mathf.RoundToInt(this.GridPainter.WidthSlider.value);
+        this.Height = Mathf.RoundToInt(this.GridPainter.HeightSlider.value);
+        this.TurnOrderHolder.ResetGame();
+
         this.PositionsToCells = this.GridPainter.Paint();
+
+        this.CurrentTurnWheel.ResetGame();
         this.TurnOrderHolder.SetTurnIndex(0);
     }
 
@@ -47,26 +57,28 @@ public class GameConductor : MonoBehaviour
     {
         toChoose.SetSide(TurnOrderHolder.CurrentTurnIconHolder.sprite, TurnOrderHolder.PlayerCountIndex);
 
+        foreach (Cell curCell in PositionsToCells.Values)
+        {
+            curCell.SetHighlightStatus(false);
+        }
+
         List<CellsSolution> solutions = GetUntrackedSolutions();
 
-        if (solutions.Count != 0)
+        foreach (CellsSolution solution in solutions)
         {
-            foreach (CellsSolution solution in solutions)
+            foreach (Cell curCell in solution.Cells)
             {
-                foreach (Cell curCell in solution.Cells)
+                if (!this.AcceptedSolutions.TryGetValue(curCell.Position, out List<CellsSolution> cellSolutionsForHere))
                 {
-                    if (!this.AcceptedSolutions.TryGetValue(curCell.Position, out List<CellsSolution> cellSolutionsForHere))
-                    {
-                        cellSolutionsForHere = new List<CellsSolution>();
-                        this.AcceptedSolutions.Add(curCell.Position, cellSolutionsForHere);
-                    }
-
-                    cellSolutionsForHere.Add(solution);
-                    curCell.HighlightForVictory();
+                    cellSolutionsForHere = new List<CellsSolution>();
+                    this.AcceptedSolutions.Add(curCell.Position, cellSolutionsForHere);
                 }
 
-                this.DrawLineBetween(solution.Root, solution.Tail);
+                cellSolutionsForHere.Add(solution);
+                curCell.SetHighlightStatus(true);
             }
+
+            this.DrawLineBetween(solution.Root, solution.Tail);
         }
 
         TurnOrderHolder.NextPlayerIcon();
@@ -108,12 +120,9 @@ public class GameConductor : MonoBehaviour
     {
         List<CellsSolution> solutions = new List<CellsSolution>();
 
-        int width = Mathf.RoundToInt(this.GridPainter.WidthSlider.value);
-        int height = Mathf.RoundToInt(this.GridPainter.HeightSlider.value);
-
-        for (int xx = 0; xx < width; xx++)
+        for (int xx = 0; xx < this.Width; xx++)
         {
-            for (int yy = 0; yy < height; yy++)
+            for (int yy = 0; yy < this.Height; yy++)
             {
                 Vector2Int position = new Vector2Int(xx, yy);
                 this.PositionsToCells.TryGetValue(position, out Cell currentCell);
@@ -195,11 +204,8 @@ public class GameConductor : MonoBehaviour
 
     bool TryGetAllSolutionsFromCellAlongDirection(Cell cell, Vector2Int offset, out CellsSolution solution)
     {
-        int width = Mathf.RoundToInt(this.GridPainter.WidthSlider.value);
-        int height = Mathf.RoundToInt(this.GridPainter.HeightSlider.value);
-
         // If we're too close to the end direction this offset is going in, don't consider this at all
-        if (cell.Position.x + offset.x * InARowToSolve > width)
+        if (cell.Position.x + offset.x * InARowToSolve > this.Width)
         {
             solution = null;
             return false;
@@ -211,7 +217,7 @@ public class GameConductor : MonoBehaviour
             return false;
         }
 
-        if (cell.Position.y + offset.y * InARowToSolve > height)
+        if (cell.Position.y + offset.y * InARowToSolve > this.Height)
         {
             solution = null;
             return false;
@@ -274,8 +280,8 @@ public class GameConductor : MonoBehaviour
     public void DrawLineBetween(Cell cellA, Cell cellB)
     {
         LineRenderer newRenderer = Instantiate(this.LineRendererPF);
-        newRenderer.SetPosition(0, cellA.transform.position + Vector3.forward * 5f);
-        newRenderer.SetPosition(1, cellB.transform.position + Vector3.forward * 5f);
+        newRenderer.SetPosition(0, cellA.transform.position + Vector3.back * 5f);
+        newRenderer.SetPosition(1, cellB.transform.position + Vector3.back * 5f);
         newRenderer.startColor = this.TurnOrderHolder.KnockoutColorsForTurns[this.TurnOrderHolder.PlayerCountIndex];
         newRenderer.endColor = this.TurnOrderHolder.KnockoutColorsForTurns[this.TurnOrderHolder.PlayerCountIndex];
         this.SolutionLineRenderers.Add(newRenderer);

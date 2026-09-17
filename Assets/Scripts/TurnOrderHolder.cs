@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class TurnOrderHolder : MonoBehaviour
 {
+    public delegate void TurnStarted(int sideIndex);
+    public TurnStarted OnTurnStarted;
+
     public List<Sprite> SpritesForTurns = new List<Sprite>();
     public List<Color> KnockoutColorsForTurns = new List<Color>();
 
@@ -14,15 +17,43 @@ public class TurnOrderHolder : MonoBehaviour
 
     public Image CurrentTurnIconHolder;
 
+    private HashSet<int> SideIndexesStillInGame = new HashSet<int>();
+
+    public Slider PlayerCountSlider;
+
+    public void ResetGame()
+    {
+        this.PlayerCount = (int)this.PlayerCountSlider.value;
+        this.SideIndexesStillInGame.Clear();
+
+        for (int ii = 0; ii < this.PlayerCount; ii++)
+        {
+            this.SideIndexesStillInGame.Add(ii);
+        }
+
+        this.SetTurnIndex(0);
+    }
+
     public void SetTurnIndex(int index)
     {
         this.PlayerCountIndex = index;
         this.CurrentTurnIconHolder.sprite = this.SpritesForTurns[this.PlayerCountIndex];
+        OnTurnStarted?.Invoke(index);
     }
 
     public void NextPlayerIcon()
     {
-        this.PlayerCountIndex = (this.PlayerCountIndex + 1) % this.PlayerCount;
-        this.CurrentTurnIconHolder.sprite = this.SpritesForTurns[this.PlayerCountIndex];
+        for (int ii = 1; ii < this.PlayerCount; ii ++)
+        {
+            int nextProspectivePlayer = (this.PlayerCountIndex + ii) % this.PlayerCount;
+            if (!this.SideIndexesStillInGame.Contains(nextProspectivePlayer))
+            {
+                continue;
+            }
+
+            this.SetTurnIndex(nextProspectivePlayer);
+            break;
+        }
+
     }
 }
