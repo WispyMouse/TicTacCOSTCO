@@ -145,16 +145,26 @@ public class GameConductor : MonoBehaviour
 
     void HandleLeftClick()
     {
-        if (!Mouse.current.leftButton.wasPressedThisFrame)
+        Vector2 raycastPoint;
+        if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
         {
-            return;
+            if (EventSystem.current.IsPointerOverGameObject())
+            {
+                return;
+            }
+
+            raycastPoint = Mouse.current.position.value;
         }
-        if (EventSystem.current.IsPointerOverGameObject())
+        else if (Touchscreen.current != null && Touchscreen.current.primaryTouch.press.isPressed && Touchscreen.current.primaryTouch.press.wasPressedThisFrame)
+        {
+            raycastPoint = Touchscreen.current.primaryTouch.position.value;
+        }
+        else
         {
             return;
         }
 
-        RaycastHit2D raycast = Physics2D.Raycast(this.ClickCamera.ScreenToWorldPoint(Mouse.current.position.value), Vector2.zero);
+        RaycastHit2D raycast = Physics2D.Raycast(this.ClickCamera.ScreenToWorldPoint(raycastPoint), Vector2.zero);
         if (raycast.collider == null)
         {
             return;
@@ -225,7 +235,7 @@ public class GameConductor : MonoBehaviour
                         discardLeftSolution = true;
                         anyDiscarded = true;
 
-                        // We can immediatley discard this rightSolution
+                        // We can immediately discard this rightSolution
                         solutions.RemoveAt(rightSolutionIndex);
                     }
                 }
