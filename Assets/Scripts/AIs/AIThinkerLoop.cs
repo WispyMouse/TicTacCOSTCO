@@ -14,6 +14,7 @@ public class AIThinkerLoop : MonoBehaviour
 
     public float TimeForAIToThinkBase = .1f;
     public AnimationCurve TimeForAIToThinkAdditionalSeconds;
+    public AnimationCurve AdditionalTimeDuringCascade;
 
     private void Awake()
     {
@@ -22,13 +23,13 @@ public class AIThinkerLoop : MonoBehaviour
 
     private void OnTurnStarted(int turn)
     {
-        if (this.GameConductor.CurrentGameState == null)
+        if (this.GameConductor.CurrentGameState == null || this.GameConductor.CurrentGameState.CurrentGameState == GameState.GameStateEnum.End)
         {
             return;
         }
 
         // If the current player is human, do nothing
-        if (this.TurnOrderHolder.PlayerIsHuman(this.TurnOrderHolder.PlayerCountIndex))
+        if (this.TurnOrderHolder.PlayerIsHuman(this.TurnOrderHolder.CurrentPlayerIndex))
         {
             return;
         }
@@ -45,6 +46,12 @@ public class AIThinkerLoop : MonoBehaviour
     IEnumerator AIThinksAndTakesTurn()
     {
         float randomWait = TimeForAIToThinkAdditionalSeconds.Evaluate(Random.Range(0, 1f));
+
+        if (this.GameConductor.CurrentGameState.CurrentGameState == GameState.GameStateEnum.Cascade)
+        {
+            randomWait += AdditionalTimeDuringCascade.Evaluate(Random.Range(0, 1f));
+        }
+
         yield return new WaitForSeconds(this.TimeForAIToThinkBase + randomWait);
 
         Vector2Int move = this.BasicAICore.DetermineMove(this.GameConductor.CurrentGameState);

@@ -14,12 +14,12 @@ public class TurnOrderHolder : MonoBehaviour
 
     [Range(2, 5)]
     public int PlayerCount = 2;
-    public int PlayerCountIndex { get; set; } = 0;
+    public int CurrentPlayerIndex { get; set; } = 0;
 
     public Image CurrentTurnIconHolder;
 
-    private HashSet<int> SideIndexesStillInGame = new HashSet<int>();
-    private HashSet<int> SidesThatAreAI = new HashSet<int>();
+    public HashSet<int> SideIndexesStillInGame = new HashSet<int>();
+    public HashSet<int> SidesThatAreAI = new HashSet<int>();
 
     public Slider PlayerCountSlider;
     public TMP_Text PlayerCountSliderValueLabel;
@@ -43,8 +43,8 @@ public class TurnOrderHolder : MonoBehaviour
 
     public void SetTurnIndex(int index)
     {
-        this.PlayerCountIndex = index;
-        this.CurrentTurnIconHolder.sprite = this.SpritesForTurns[this.PlayerCountIndex];
+        this.CurrentPlayerIndex = index;
+        this.CurrentTurnIconHolder.sprite = this.SpritesForTurns[this.CurrentPlayerIndex];
         OnTurnStarted?.Invoke(index);
     }
 
@@ -52,7 +52,7 @@ public class TurnOrderHolder : MonoBehaviour
     {
         for (int ii = 1; ii < this.PlayerCount; ii ++)
         {
-            int nextProspectivePlayer = (this.PlayerCountIndex + ii) % this.PlayerCount;
+            int nextProspectivePlayer = (this.CurrentPlayerIndex + ii) % this.PlayerCount;
             if (!this.SideIndexesStillInGame.Contains(nextProspectivePlayer))
             {
                 continue;
@@ -80,5 +80,15 @@ public class TurnOrderHolder : MonoBehaviour
     public bool PlayerIsHuman(int index)
     {
         return !this.SidesThatAreAI.Contains(index);
+    }
+
+    public void KnockOutPlayer(int index)
+    {
+        this.SideIndexesStillInGame.Remove(index);
+
+        if (this.CurrentPlayerIndex == index)
+        {
+            this.NextPlayerIcon();
+        }
     }
 }

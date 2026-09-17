@@ -3,6 +3,16 @@ using UnityEngine;
 
 public class GameState
 {
+    public enum GameStateEnum
+    {
+        NotStarted = 0,
+        Playing = 1,
+        Cascade = 2,
+        End = 3
+    }
+
+    public GameStateEnum CurrentGameState = GameStateEnum.NotStarted;
+
     public readonly Dictionary<Vector2Int, int?> SpotToSideOwnership = new Dictionary<Vector2Int, int?>();
 
     public GameState(int width, int height)

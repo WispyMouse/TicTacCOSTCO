@@ -1,8 +1,11 @@
 using System.Collections.Generic;
+using System.Linq;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class GameConductor : MonoBehaviour
 {
@@ -11,6 +14,9 @@ public class GameConductor : MonoBehaviour
     public TurnOrderHolder TurnOrderHolder;
     public GridPainter GridPainter;
     public CurrentTurnWheel CurrentTurnWheel;
+    public CascadeText CascadeText;
+    public TMP_Text WinnerPanel;
+    public Image WinnerIcon;
 
     [Range(2, 5)]
     public int InARowToSolve = 3;
@@ -39,6 +45,8 @@ public class GameConductor : MonoBehaviour
         }
         this.SolutionLineRenderers.Clear();
         this.AcceptedSolutions.Clear();
+        this.WinnerPanel.transform.parent.gameObject.SetActive(false);
+        this.CascadeText.transform.parent.gameObject.SetActive(false);
 
         this.Width = Mathf.RoundToInt(this.GridPainter.WidthSlider.value);
         this.Height = Mathf.RoundToInt(this.GridPainter.HeightSlider.value);
@@ -52,7 +60,12 @@ public class GameConductor : MonoBehaviour
 
     public void Update()
     {
-        if (this.TurnOrderHolder.PlayerIsHuman(this.TurnOrderHolder.PlayerCountIndex))
+        if (this.CurrentGameState.CurrentGameState == GameState.GameStateEnum.End)
+        {
+            return;
+        }
+
+        if (this.TurnOrderHolder.PlayerIsHuman(this.TurnOrderHolder.CurrentPlayerIndex))
         {
             this.HandleLeftClick();
         }
@@ -65,8 +78,8 @@ public class GameConductor : MonoBehaviour
 
     public void ChooseCell(Cell toChoose)
     {
-        toChoose.SetSide(TurnOrderHolder.CurrentTurnIconHolder.sprite, TurnOrderHolder.PlayerCountIndex);
-        this.CurrentGameState.SpotToSideOwnership[toChoose.Position] = TurnOrderHolder.PlayerCountIndex;
+        toChoose.SetSide(TurnOrderHolder.CurrentTurnIconHolder.sprite, TurnOrderHolder.CurrentPlayerIndex);
+        this.CurrentGameState.SpotToSideOwnership[toChoose.Position] = TurnOrderHolder.CurrentPlayerIndex;
 
         foreach (Cell curCell in PositionsToCells.Values)
         {
@@ -90,6 +103,21 @@ public class GameConductor : MonoBehaviour
             }
 
             this.DrawLineBetween(solution.Root, solution.Tail);
+        }
+
+        if (solutions.Any())
+        {
+            this.CurrentGameState.CurrentGameState = GameState.GameStateEnum.Cascade;
+            this.CascadeText.transform.parent.gameObject.SetActive(true);
+        }
+        else
+        {
+            // If there were no new solutions, and we're in cascade state,
+            // the current player should be knocked out
+            if (this.CurrentGameState.CurrentGameState == GameState.GameStateEnum.Cascade)
+            {
+                this.KnockoutPlayer(this.TurnOrderHolder.CurrentPlayerIndex);
+            }
         }
 
         TurnOrderHolder.NextPlayerIcon();
@@ -144,7 +172,7 @@ public class GameConductor : MonoBehaviour
                     continue;
                 }
 
-                if (currentCell.SideIndex != this.TurnOrderHolder.PlayerCountIndex)
+                if (currentCell.SideIndex != this.TurnOrderHolder.CurrentPlayerIndex)
                 {
                     // This cell isn't ours
                     continue;
@@ -263,7 +291,7 @@ public class GameConductor : MonoBehaviour
             }
 
             // This cell isn't ours
-            if (currentCell.SideIndex != this.TurnOrderHolder.PlayerCountIndex)
+            if (currentCell.SideIndex != this.TurnOrderHolder.CurrentPlayerIndex)
             {
                 valid = false;
                 break;
@@ -293,8 +321,22 @@ public class GameConductor : MonoBehaviour
         LineRenderer newRenderer = Instantiate(this.LineRendererPF);
         newRenderer.SetPosition(0, cellA.transform.position + Vector3.back * 5f);
         newRenderer.SetPosition(1, cellB.transform.position + Vector3.back * 5f);
-        newRenderer.startColor = this.TurnOrderHolder.KnockoutColorsForTurns[this.TurnOrderHolder.PlayerCountIndex];
-        newRenderer.endColor = this.TurnOrderHolder.KnockoutColorsForTurns[this.TurnOrderHolder.PlayerCountIndex];
+        newRenderer.startColor = this.TurnOrderHolder.KnockoutColorsForTurns[this.TurnOrderHolder.CurrentPlayerIndex];
+        newRenderer.endColor = this.TurnOrderHolder.KnockoutColorsForTurns[this.TurnOrderHolder.CurrentPlayerIndex];
         this.SolutionLineRenderers.Add(newRenderer);
+    }
+
+    public void KnockoutPlayer(int index)
+    {
+        this.TurnOrderHolder.KnockOutPlayer(index);
+        this.CurrentTurnWheel.KnockOutPlayer(index);
+
+        if (this.TurnOrderHolder.SideIndexesStillInGame.Count == 1)
+        {
+            this.CascadeText.transform.parent.gameObject.SetActive(false);
+            this.CurrentGameState.CurrentGameState = GameState.GameStateEnum.End;
+            this.WinnerPanel.transform.parent.gameObject.SetActive(true);
+            this.WinnerIcon.sprite = this.TurnOrderHolder.SpritesForTurns[this.TurnOrderHolder.CurrentPlayerIndex];
+        }
     }
 }

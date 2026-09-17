@@ -44,7 +44,7 @@ public class CurrentTurnWheel : MonoBehaviour
             newSpoke.SpokeImage.sprite = this.TurnOrderHolder.SpritesForTurns[playerIndex];
         }
 
-        this.UpdateToNewTurn(0);
+        this.UpdateToNewTurn(this.TurnOrderHolder.CurrentPlayerIndex);
     }
 
     public void UpdateToNewTurn(int newTurn)
@@ -73,5 +73,10 @@ public class CurrentTurnWheel : MonoBehaviour
         } while (distanceRemaining > 0);
 
         this.RotationPivot.transform.localRotation = Quaternion.Euler(0, 0, targetRotation);
+    }
+
+    public void KnockOutPlayer(int index)
+    {
+        ResetGame();
     }
 }
