@@ -85,10 +85,5 @@ public class TurnOrderHolder : MonoBehaviour
     public void KnockOutPlayer(int index)
     {
         this.SideIndexesStillInGame.Remove(index);
-
-        if (this.CurrentPlayerIndex == index)
-        {
-            this.NextPlayerIcon();
-        }
     }
 }

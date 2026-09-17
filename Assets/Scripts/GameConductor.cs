@@ -353,6 +353,7 @@ public class GameConductor : MonoBehaviour
 
         if (this.TurnOrderHolder.SideIndexesStillInGame.Count == 1)
         {
+            this.TurnOrderHolder.NextPlayerIcon();
             this.CascadeText.transform.parent.gameObject.SetActive(false);
             this.CurrentGameState.CurrentGameState = GameState.GameStateEnum.End;
             this.WinnerPanel.transform.parent.gameObject.SetActive(true);

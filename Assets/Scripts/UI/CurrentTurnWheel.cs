@@ -36,7 +36,7 @@ public class CurrentTurnWheel : MonoBehaviour
             CurrentTurnWheelSpoke newSpoke = Instantiate(this.SpokePF, this.RotationPivot);
             this.Spokes.Add(newSpoke);
 
-            float rotation = ((float)playerIndex / this.TurnOrderHolder.PlayerCount) * 360f;
+            float rotation = ((float)playerIndex / this.TurnOrderHolder.PlayerCount) * -360f;
             float rotationWithBase = rotation + baseRotation;
             newSpoke.transform.localRotation = Quaternion.Euler(0, 0, rotation);
             newSpoke.transform.localPosition = new Vector3(Mathf.Cos(rotationWithBase * Mathf.Deg2Rad), Mathf.Sin(rotationWithBase * Mathf.Deg2Rad)) * SpokeOffset;
