@@ -24,6 +24,8 @@ public class GameConductor : MonoBehaviour
     public int Height { get; set; }
     public int Width { get; set; }
 
+    public GameState CurrentGameState { get; set; }
+
     public void Start()
     {
         this.ResetGame();
@@ -40,21 +42,31 @@ public class GameConductor : MonoBehaviour
 
         this.Width = Mathf.RoundToInt(this.GridPainter.WidthSlider.value);
         this.Height = Mathf.RoundToInt(this.GridPainter.HeightSlider.value);
-        this.TurnOrderHolder.ResetGame();
+        this.CurrentGameState = new GameState(this.Width, this.Height);
 
         this.PositionsToCells = this.GridPainter.Paint();
 
+        this.TurnOrderHolder.ResetGame();
         this.CurrentTurnWheel.ResetGame();
     }
 
     public void Update()
     {
-        this.HandleLeftClick();
+        if (this.TurnOrderHolder.PlayerIsHuman(this.TurnOrderHolder.PlayerCountIndex))
+        {
+            this.HandleLeftClick();
+        }
+    }
+
+    public void ChooseCell(Vector2Int toChoose)
+    {
+        ChooseCell(PositionsToCells[toChoose]);
     }
 
     public void ChooseCell(Cell toChoose)
     {
         toChoose.SetSide(TurnOrderHolder.CurrentTurnIconHolder.sprite, TurnOrderHolder.PlayerCountIndex);
+        this.CurrentGameState.SpotToSideOwnership[toChoose.Position] = TurnOrderHolder.PlayerCountIndex;
 
         foreach (Cell curCell in PositionsToCells.Values)
         {
