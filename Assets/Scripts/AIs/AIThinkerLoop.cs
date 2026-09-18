@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class AIThinkerLoop : MonoBehaviour
 {
-    public AICore BasicAICore = new AICore();
+    public AICore BasicAICore;
 
     public GameConductor GameConductor;
     public TurnOrderHolder TurnOrderHolder;

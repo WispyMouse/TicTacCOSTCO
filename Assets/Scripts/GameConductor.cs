@@ -122,20 +122,10 @@ public class GameConductor : MonoBehaviour
             switch (solutionsCount)
             {
                 case 1:
-                    this.CascadeText.TextString = "CASCADE";
-                    break;
-                case 2:
-                    this.CascadeText.TextString = "DOUBLE CASCADE";
-                    break;
-                case 3:
-                    this.CascadeText.TextString = "TRIPLE CASCADE";
-                    break;
-                case 4:
-                    this.CascadeText.TextString = "QUADRUPLE CASCADE";
+                    this.CascadeText.TextString = "ROW";
                     break;
                 default:
-                    // There should only be four possible
-                    this.CascadeText.TextString = "CASCADE???";
+                    this.CascadeText.TextString = $"CASCADE x{solutionsCount}";
                     break;
             }
         }

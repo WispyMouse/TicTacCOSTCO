@@ -1,7 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AICore
+[CreateAssetMenu(fileName = "AICore.asset", menuName = "COSTCO/AI Core")]
+public class AICore : ScriptableObject
 {
     public Vector2Int DetermineMove(GameState currentGameState)
     {
