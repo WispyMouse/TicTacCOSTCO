@@ -54,7 +54,7 @@ public class AIThinkerLoop : MonoBehaviour
 
         yield return new WaitForSeconds(this.TimeForAIToThinkBase + randomWait);
 
-        Vector2Int move = this.BasicAICore.DetermineMove(this.GameConductor.CurrentGameState);
+        Vector2Int move = this.BasicAICore.DetermineMove(this.TurnOrderHolder.CurrentPlayerIndex, this.GameConductor.CurrentGameState);
         this.GameConductor.ChooseCell(move);
 
         this.ThinkingCoroutine = null;

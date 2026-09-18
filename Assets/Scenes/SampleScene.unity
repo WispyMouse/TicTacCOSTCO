@@ -4440,7 +4440,6 @@ MonoBehaviour:
   CascadeText: {fileID: 1236317813}
   WinnerPanel: {fileID: 902168029}
   WinnerIcon: {fileID: 18702980}
-  InARowToSolve: 3
   LineRendererPF: {fileID: 8150672129194225867, guid: 5d608d5c55c05544b9687cafc4e5d28c, type: 3}
 --- !u!4 &1339510087
 Transform:
@@ -6270,7 +6269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e95c110e951e714da6b69cc725eca6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AIThinkerLoop
-  BasicAICore: {fileID: 11400000, guid: c6c5d06f0b4c6324d9b5095117e7b661, type: 2}
+  BasicAICore: {fileID: 11400000, guid: 1e663c19be380f04f895b53f27c587bc, type: 2}
   GameConductor: {fileID: 1339510086}
   TurnOrderHolder: {fileID: 1596149086}
   TimeForAIToThinkBase: 0.3

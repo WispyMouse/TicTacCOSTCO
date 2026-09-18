@@ -54,12 +54,12 @@ public class GridPainter : MonoBehaviour
         }
         this.instantiatedCells.Clear();
 
-        float xOffset = this.GameConductor.Width / 2f;
-        float yOffset = this.GameConductor.Height / 2f;
+        float xOffset = this.GameConductor.CurrentGameState.Width / 2f;
+        float yOffset = this.GameConductor.CurrentGameState.Height / 2f;
 
-        for (int xx = 0; xx < this.GameConductor.Width; xx++)
+        for (int xx = 0; xx < this.GameConductor.CurrentGameState.Width; xx++)
         {
-            for (int yy = 0; yy < this.GameConductor.Height; yy++)
+            for (int yy = 0; yy < this.GameConductor.CurrentGameState.Height; yy++)
             {
                 Vector2Int position = new Vector2Int(xx, yy);
                 Cell newCell = Instantiate(CellPF, this.transform);
@@ -71,7 +71,7 @@ public class GridPainter : MonoBehaviour
         }
 
         GridCamera.orthographicSize = OrthographicSizeBase 
-            + Mathf.Max(this.GameConductor.Width * WidthOrthographicViewMultiplier, this.GameConductor.Height) 
+            + Mathf.Max(this.GameConductor.CurrentGameState.Width * WidthOrthographicViewMultiplier, this.GameConductor.CurrentGameState.Height) 
             * OrthographicSizeScalar;
 
         return cells;
