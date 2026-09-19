@@ -42,6 +42,16 @@ public class CurrentTurnWheel : MonoBehaviour
             newSpoke.transform.localPosition = new Vector3(Mathf.Cos(rotationWithBase * Mathf.Deg2Rad), Mathf.Sin(rotationWithBase * Mathf.Deg2Rad)) * SpokeOffset;
 
             newSpoke.SpokeImage.sprite = this.TurnOrderHolder.SpritesForTurns[playerIndex];
+
+            string spokeName = this.TurnOrderHolder.PlayerNames[playerIndex];
+            if (string.IsNullOrEmpty(spokeName))
+            {
+                newSpoke.NameLabel.gameObject.SetActive(false);
+            }
+            else
+            {
+                newSpoke.NameLabel.text = spokeName;
+            }
         }
 
         this.UpdateToNewTurn(this.TurnOrderHolder.CurrentPlayerIndex);

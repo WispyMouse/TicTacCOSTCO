@@ -22,6 +22,13 @@ public class CascadeText : MonoBehaviour
 
         for (int ii = 0; ii < TextString.Length; ii++)
         {
+            if (TextString[ii] == '\\' && TextString[ii + 1] == 'n')
+            {
+                cascadeText.Append("\n");
+                ii++;
+                continue;
+            }
+
             float sampledTime = Mathf.PingPong(this.curTime + AdditionalSpacingPerIndex * ii, this.SecondsPerCycle / 2f);
             float sampledHeight = Mathf.Lerp(-halfHeight, halfHeight, Mathf.InverseLerp(0, this.SecondsPerCycle, sampledTime));
 

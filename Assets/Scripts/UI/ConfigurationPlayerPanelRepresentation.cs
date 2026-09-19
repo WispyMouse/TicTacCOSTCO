@@ -11,6 +11,10 @@ public class ConfigurationPlayerPanelRepresentation : MonoBehaviour
 
     public TMP_Text HumanityLabel;
 
+    public GameObject HumanOptions;
+    public TMP_InputField NameInput;
+
+
     public void Set(int index, TurnOrderHolder turnHolder)
     {
         this.TurnOrderHolder = turnHolder;
@@ -19,16 +23,18 @@ public class ConfigurationPlayerPanelRepresentation : MonoBehaviour
 
         if (turnHolder.PlayerIsHuman(index))
         {
-            this.HumanityLabel.text = "Human Player";
+            this.HumanityLabel.text = "Human\nPlayer";
         }
         else
         {
-            this.HumanityLabel.text = "Computer Player";
+            this.HumanityLabel.text = "Computer\nPlayer";
         }
+        this.HumanOptions.SetActive(this.TurnOrderHolder.PlayerIsHuman(this.Index));
     }
 
     public void ToggleHumanity()
     {
         this.TurnOrderHolder.ToggleHumanity(this.Index);
+        this.HumanOptions.SetActive(this.TurnOrderHolder.PlayerIsHuman(this.Index));
     }
 }

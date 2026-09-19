@@ -15,6 +15,7 @@ public class TurnOrderHolder : MonoBehaviour
     [Range(2, 5)]
     public int PlayerCount = 2;
     public int CurrentPlayerIndex { get; set; } = 0;
+    public List<string> PlayerNames { get; set; } = new List<string>();
 
     public Image CurrentTurnIconHolder;
 
@@ -31,14 +32,28 @@ public class TurnOrderHolder : MonoBehaviour
         this.PlayerCountSliderValueLabel.text = this.PlayerCount.ToString();
 
         this.SideIndexesStillInGame.Clear();
+        this.PlayerNames.Clear();
 
         for (int ii = 0; ii < this.PlayerCount; ii++)
         {
             this.SideIndexesStillInGame.Add(ii);
         }
 
-        this.SetTurnIndex(0);
         this.CurrentConfigurationPanel.PlayerCountUpdated();
+
+        for (int ii = 0; ii < this.PlayerCount; ii++)
+        {
+            if (!this.SidesThatAreAI.Contains(ii))
+            {
+                this.PlayerNames.Add(this.CurrentConfigurationPanel.GetPlayerName(ii));
+            }
+            else
+            {
+                this.PlayerNames.Add($"Computer");
+            }
+        }
+
+        this.SetTurnIndex(0);
     }
 
     public void SetTurnIndex(int index)

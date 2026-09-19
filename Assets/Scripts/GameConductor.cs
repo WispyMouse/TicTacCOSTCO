@@ -16,6 +16,7 @@ public class GameConductor : MonoBehaviour
     public CurrentTurnWheel CurrentTurnWheel;
     public CascadeText CascadeText;
     public TMP_Text WinnerPanel;
+    public TMP_Text WinnerText;
     public Image WinnerIcon;
 
     public Dictionary<Vector2Int, Cell> PositionsToCells { get; set; } = new Dictionary<Vector2Int, Cell>();
@@ -298,6 +299,17 @@ public class GameConductor : MonoBehaviour
             this.WinnerPanel.transform.parent.gameObject.SetActive(true);
             this.WinnerIcon.sprite = this.TurnOrderHolder.SpritesForTurns[this.TurnOrderHolder.CurrentPlayerIndex];
             this.CurrentGameState.CurrentGameState = GameState.GameStateEnum.End;
+
+            string winnerName = this.TurnOrderHolder.PlayerNames[this.TurnOrderHolder.CurrentPlayerIndex];
+            if (string.IsNullOrEmpty(winnerName))
+            {
+                this.WinnerText.text = winnerName;
+                this.WinnerText.gameObject.SetActive(true);
+            }
+            else
+            {
+                this.WinnerText.gameObject.SetActive(false);
+            }
         }
     }
 }
