@@ -19,7 +19,6 @@ public class GameConductor : MonoBehaviour
     public Image WinnerIcon;
 
     public Dictionary<Vector2Int, Cell> PositionsToCells { get; set; } = new Dictionary<Vector2Int, Cell>();
-    public Dictionary<Vector2Int, List<CellsSolution>> AcceptedSolutions { get; set; } = new Dictionary<Vector2Int, List<CellsSolution>>();
 
     public LineRenderer LineRendererPF;
     private List<LineRenderer> SolutionLineRenderers { get; set; } = new List<LineRenderer>();
@@ -38,21 +37,19 @@ public class GameConductor : MonoBehaviour
             Destroy(this.SolutionLineRenderers[ii].gameObject);
         }
         this.SolutionLineRenderers.Clear();
-        this.AcceptedSolutions.Clear();
         this.WinnerPanel.transform.parent.gameObject.SetActive(false);
         this.CascadeText.transform.parent.gameObject.SetActive(false);
 
         this.CurrentGameState = new GameState(Mathf.RoundToInt(this.GridPainter.WidthSlider.value), Mathf.RoundToInt(this.GridPainter.HeightSlider.value));
 
         this.PositionsToCells = this.GridPainter.Paint();
-
         this.TurnOrderHolder.ResetGame();
         this.CurrentTurnWheel.ResetGame();
     }
 
     public void Update()
     {
-        if (this.CurrentGameState.CurrentGameState == GameState.GameStateEnum.End)
+        if (this.CurrentGameState != null && this.CurrentGameState.CurrentGameState == GameState.GameStateEnum.End)
         {
             return;
         }
@@ -71,33 +68,20 @@ public class GameConductor : MonoBehaviour
     public void ChooseCell(Cell toChoose)
     {
         toChoose.SetSide(TurnOrderHolder.CurrentTurnIconHolder.sprite, TurnOrderHolder.CurrentPlayerIndex);
-        this.CurrentGameState.SpotToSideOwnership[toChoose.Position] = TurnOrderHolder.CurrentPlayerIndex;
+        this.CurrentGameState.SetSideOwnership(toChoose.Position, TurnOrderHolder.CurrentPlayerIndex, out List<CellsSolution> newSolutions);
 
-        foreach (Cell curCell in PositionsToCells.Values)
+
+        foreach (CellsSolution solution in newSolutions)
         {
-            curCell.SetHighlightStatus(false);
-        }
+            this.DrawLineBetween(solution.Root, solution.Tail);
 
-        List<CellsSolution> solutions = GetUntrackedSolutions();
-
-        foreach (CellsSolution solution in solutions)
-        {
             foreach (Vector2Int curCell in solution.Cells)
             {
-                if (!this.AcceptedSolutions.TryGetValue(curCell, out List<CellsSolution> cellSolutionsForHere))
-                {
-                    cellSolutionsForHere = new List<CellsSolution>();
-                    this.AcceptedSolutions.Add(curCell, cellSolutionsForHere);
-                }
-
-                cellSolutionsForHere.Add(solution);
-                PositionsToCells[curCell].SetHighlightStatus(true);
+                PositionsToCells[curCell].SetHighlightStatus(false);
             }
-
-            this.DrawLineBetween(solution.Root, solution.Tail);
         }
 
-        int solutionsCount = solutions.Count;
+        int solutionsCount = newSolutions.Count;
 
         if (this.CurrentGameState.CurrentGameState == GameState.GameStateEnum.Cascade && this.CurrentGameState.LastCascade > solutionsCount)
         {
@@ -122,7 +106,10 @@ public class GameConductor : MonoBehaviour
             }
         }
 
-        TurnOrderHolder.NextPlayerIcon();
+        if (this.CurrentGameState.CurrentGameState != GameState.GameStateEnum.End)
+        {
+            TurnOrderHolder.NextPlayerIcon();
+        }
     }
 
     void HandleLeftClick()
@@ -269,7 +256,7 @@ public class GameConductor : MonoBehaviour
         foreach (Vector2Int curCell in solution.Cells)
         {
             // If there aren't any accepted solutions with this as a root, continue
-            if (!this.AcceptedSolutions.TryGetValue(curCell, out List<CellsSolution> solutionsAtRoot))
+            if (!this.CurrentGameState.AcceptedSolutions.TryGetValue(curCell, out List<CellsSolution> solutionsAtRoot))
             {
                 continue;
             }
@@ -305,11 +292,12 @@ public class GameConductor : MonoBehaviour
 
         if (this.TurnOrderHolder.SideIndexesStillInGame.Count == 1)
         {
-            this.TurnOrderHolder.NextPlayerIcon();
+            this.TurnOrderHolder.SetTurnIndex(this.TurnOrderHolder.SideIndexesStillInGame.First());
             this.CascadeText.transform.parent.gameObject.SetActive(false);
             this.CurrentGameState.CurrentGameState = GameState.GameStateEnum.End;
             this.WinnerPanel.transform.parent.gameObject.SetActive(true);
             this.WinnerIcon.sprite = this.TurnOrderHolder.SpritesForTurns[this.TurnOrderHolder.CurrentPlayerIndex];
+            this.CurrentGameState.CurrentGameState = GameState.GameStateEnum.End;
         }
     }
 }

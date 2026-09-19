@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -34,6 +35,8 @@ public class GameState
     [Range(2, 5)]
     public int InARowToSolve = 3;
 
+    public Dictionary<Vector2Int, List<CellsSolution>> AcceptedSolutions { get; set; } = new Dictionary<Vector2Int, List<CellsSolution>>();
+
     public GameState(int width, int height)
     {
         this.Width = width;
@@ -48,9 +51,24 @@ public class GameState
         }
     }
 
-    public void SetSideOwnership(Vector2Int position, int side)
+    public void SetSideOwnership(Vector2Int position, int side, out List<CellsSolution> newSolutions)
     {
+        newSolutions = HypotheticalSolutionTool.GetSolutionsFromClaimingTile(this, position, side);
         this.SpotToSideOwnership[position] = side;
+        
+        foreach (CellsSolution newSolution in newSolutions)
+        {
+            foreach (Vector2Int cellPosition in newSolution.Cells)
+            {
+                if (!this.AcceptedSolutions.TryGetValue(cellPosition, out List<CellsSolution> existingSolutionsForCell))
+                {
+                    existingSolutionsForCell = new List<CellsSolution>();
+                    this.AcceptedSolutions.Add(cellPosition, existingSolutionsForCell);
+                }
+
+                existingSolutionsForCell.Add(newSolution);
+            }
+        }
     }
 
     public IReadOnlyList<Vector2Int> GetEmptySpots()
@@ -292,5 +310,80 @@ public class GameState
         } while (anyDiscarded);
 
         return solutions;
+    }
+
+    public bool SpotIsInBounds(Vector2Int position)
+    {
+        if (position.x >= this.Width)
+        {
+            return false;
+        }
+
+        if (position.x < 0)
+        {
+            return false;
+        }
+
+        if (position.y >= this.Height)
+        {
+            return false;
+        }
+
+        if (position.y < 0)
+        {
+            return false;
+        }
+
+        return true;
+    }
+
+    public List<Vector2Int> GetDirectionalitiesAlreadySolvedForPiece(Vector2Int position)
+    {
+        if (!this.AcceptedSolutions.TryGetValue(position, out List<CellsSolution> values))
+        {
+            return new List<Vector2Int>();
+        }
+
+        List<Vector2Int> directionalities = new List<Vector2Int>();
+
+        foreach (CellsSolution solution in values)
+        {
+            directionalities.Add(solution.Directionality);
+        }
+
+        return directionalities;
+    }
+
+    public List<CellsSolution> PruneSolutionsForNotAlreadySolved(List<CellsSolution> solutions)
+    {
+        List<CellsSolution> remainingSolutions = new List<CellsSolution>(solutions);
+
+        // Remove the parts that already have this same directionality solved, and only if there are enough pieces should we keep this
+        // Otherwise "4-in-a-rows" count as two
+        for (int solutionIndex = solutions.Count - 1; solutionIndex >= 0; solutionIndex--)
+        {
+            for (int cellIndex = 0; cellIndex < solutions[solutionIndex].Cells.Count; cellIndex++)
+            {
+                bool removeSolution = false;
+                if (this.AcceptedSolutions.TryGetValue(solutions[solutionIndex].Cells[cellIndex], out List<CellsSolution> existingSolutions))
+                {
+                    foreach (CellsSolution solution in existingSolutions)
+                    {
+                        if (solution.Directionality == solutions[solutionIndex].Directionality)
+                        {
+                            removeSolution = true;
+                            break;
+                        }
+                    }
+                }
+                if (removeSolution)
+                {
+                    remainingSolutions.RemoveAt(solutionIndex);
+                    break;
+                }
+            }
+        }
+
+        return remainingSolutions;
     }
 }

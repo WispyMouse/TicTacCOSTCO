@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 /// <summary>
@@ -15,30 +16,19 @@ public class AIDoNotLoseSimple : AICore
         if (currentGameState.CurrentGameState != GameState.GameStateEnum.Cascade)
         {
             // I can't possibly lose!
-            return possibleMoves[Random.Range(0, possibleMoves.Count)];
+            return ChooseRandomly(possibleMoves);
         }
 
         // Oh, I might lose
-        List<Vector2Int> notLosingMoves = new List<Vector2Int>(possibleMoves.Count);
+        IReadOnlyList<Vector2Int> notLosingMoves = this.GetMovesThatDoNotImmediatleyLose(possibleMoves, currentGameState, forSide);
 
-        foreach (Vector2Int move in possibleMoves)
+        if (notLosingMoves.Any())
         {
-            if (currentGameState.TryGetAllSolutionsFromCell(forSide, move, out List<CellsSolution> solutions))
-            {
-                if (solutions.Count >= currentGameState.LastCascade)
-                {
-                    notLosingMoves.Add(move);
-                }
-            }
+            return ChooseRandomly(notLosingMoves);
         }
 
-        if (notLosingMoves.Count == 0)
-        {
-            // Doesn't matter, then!
-            Debug.Log($"{nameof(AIDoNotLoseSimple)} could not figure out any non-losing moves!");
-            return possibleMoves[Random.Range(0, possibleMoves.Count)];
-        }
-
-        return notLosingMoves[Random.Range(0, notLosingMoves.Count)];
+        // Doesn't matter, then!
+        Debug.Log($"{nameof(AIDoNotLoseSimple)} could not figure out any non-losing moves!");
+        return ChooseRandomly(possibleMoves);
     }
 }
