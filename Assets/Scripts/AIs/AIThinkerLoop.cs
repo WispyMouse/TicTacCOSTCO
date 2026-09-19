@@ -39,6 +39,12 @@ public class AIThinkerLoop : MonoBehaviour
             return;
         }
 
+        // If this side has been eliminated, skip them
+        if (!this.TurnOrderHolder.SideIndexesStillInGame.Contains(this.TurnOrderHolder.CurrentPlayerIndex))
+        {
+            return;
+        }
+
         // If there are no possible moves, do nothing
         if (!this.GameConductor.CurrentGameState.AnyEmptySpots())
         {

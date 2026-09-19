@@ -315,7 +315,7 @@ public class GameConductor : MonoBehaviour
                 this.WinnerText.gameObject.SetActive(false);
             }
         }
-        else if (this.CurrentGameState.AnyEmptySpots())
+        else if (!this.CurrentGameState.AnyEmptySpots())
         {
             this.NoMoreMovesPanel.SetActive(true);
         }
