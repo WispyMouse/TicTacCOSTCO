@@ -26,7 +26,11 @@ Material:
     m_TexEnvs: []
     m_Ints: []
     m_Floats:
-    - _OutlineWidth: 0.221
+    - _OutlineWidth: 0.308
+    - _UnderlayDilate: 0.544
+    - _UnderlayOffsetX: 0.327
+    - _UnderlayOffsetY: 0.042
+    - _UnderlaySoftness: 0
     m_Colors: []
   m_BuildTextureStacks: []
   m_AllowLocking: 1

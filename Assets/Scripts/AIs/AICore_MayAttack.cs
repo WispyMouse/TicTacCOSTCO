@@ -31,6 +31,12 @@ public class AIMayAttack : AICore
         {
             int solutionCounts = HypotheticalSolutionTool.GetSolutionsFromClaimingTile(currentGameState, possibleMove, forSide).Count;
 
+            // Only count solutions that won't lose to the current cascade
+            if (currentGameState.LastCascade > solutionCounts)
+            {
+                continue;
+            }
+
             // ladder of attacks!
             // Identify how many solutions stem from one piece
             if (solutionCounts >= 1)

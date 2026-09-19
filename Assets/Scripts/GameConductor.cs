@@ -14,6 +14,7 @@ public class GameConductor : MonoBehaviour
     public TurnOrderHolder TurnOrderHolder;
     public GridPainter GridPainter;
     public CurrentTurnWheel CurrentTurnWheel;
+    public ScoreBoard ScoreBoard;
     public CascadeText CascadeText;
     public TMP_Text WinnerPanel;
     public TMP_Text WinnerText;
@@ -307,6 +308,7 @@ public class GameConductor : MonoBehaviour
             {
                 this.WinnerText.text = winnerName;
                 this.WinnerText.gameObject.SetActive(true);
+                this.ScoreBoard.AddToScoreboard(this.TurnOrderHolder.CurrentPlayerIndex);
             }
             else
             {
