@@ -1,18 +1,67 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Assertions.Must;
 using UnityEngine.UIElements;
 
 /// <summary>
-/// When considering what action to take, identify if there is a subset of actions that will not result in a lost game immediately.
-/// This is not a very solid strategy, but will at least attempt to defend Cascades.
+/// When it is possible to make a connection, consider a % chance of taking it.
 /// </summary>
-[CreateAssetMenu(fileName = "AICore_Investor.asset", menuName = "COSTCO/Investor AI Core")]
-public class AIInvestor : AICore
+[CreateAssetMenu(fileName = "AICore_MayAttack.asset", menuName = "COSTCO/May Attack AI Core")]
+public class AIMayAttack : AICore
 {
+    [Range(0, 1f)]
+    public float OneConnectionChance = .2f;
+
+    [Range(0, 1f)]
+    public float TwoConnectionChance = .9f;
+
+    [Range(0, 1f)]
+    public float ThreeOrMoreConnectionChance = 1f;
+
     public override Vector2Int DetermineMove(int forSide, GameState currentGameState)
     {
         IReadOnlyList<Vector2Int> possibleMoves = currentGameState.GetEmptySpots();
+
+        float connectionChanceAttackRoll = Random.Range(0, 1f);
+        List<Vector2Int> oneConnectionAttacks = new List<Vector2Int>();
+        List<Vector2Int> twoConnectionAttacks = new List<Vector2Int>();
+        List<Vector2Int> moreConnectionAttacks = new List<Vector2Int>();
+        foreach (Vector2Int possibleMove in possibleMoves)
+        {
+            int solutionCounts = HypotheticalSolutionTool.GetSolutionsFromClaimingTile(currentGameState, possibleMove, forSide).Count;
+
+            // ladder of attacks!
+            // Identify how many solutions stem from one piece
+            if (solutionCounts >= 1)
+            {
+                oneConnectionAttacks.Add(possibleMove);
+
+                if (solutionCounts >= 2)
+                {
+                    twoConnectionAttacks.Add(possibleMove);
+
+                    if (solutionCounts >= 3)
+                    {
+                        moreConnectionAttacks.Add(possibleMove);
+                    }
+                }
+            }
+        }
+
+        if (moreConnectionAttacks.Any() && connectionChanceAttackRoll <= ThreeOrMoreConnectionChance)
+        {
+            return ChooseRandomly(moreConnectionAttacks);
+        }
+        else if (twoConnectionAttacks.Any() && connectionChanceAttackRoll <= TwoConnectionChance)
+        {
+            return ChooseRandomly(twoConnectionAttacks);
+        }
+        else if(oneConnectionAttacks.Any() && connectionChanceAttackRoll <= OneConnectionChance)
+        {
+            return ChooseRandomly(oneConnectionAttacks);
+        }
+
 
         if (currentGameState.CurrentGameState != GameState.GameStateEnum.Cascade)
         {

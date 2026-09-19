@@ -23,6 +23,11 @@ public class AIThinkerLoop : MonoBehaviour
 
     private void OnTurnStarted(int turn)
     {
+        if (!this.GameConductor.CurrentGameState.AnyEmptySpots())
+        {
+            return;
+        }
+
         if (this.GameConductor.CurrentGameState == null || this.GameConductor.CurrentGameState.CurrentGameState == GameState.GameStateEnum.End)
         {
             return;

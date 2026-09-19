@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class CurrentTurnWheel : MonoBehaviour
@@ -47,10 +48,13 @@ public class CurrentTurnWheel : MonoBehaviour
             if (string.IsNullOrEmpty(spokeName))
             {
                 newSpoke.NameLabel.gameObject.SetActive(false);
+                newSpoke.NameLabel.text = "";
             }
             else
             {
                 newSpoke.NameLabel.text = spokeName;
+                // It'll be set to active when they're the current turn
+                newSpoke.NameLabel.gameObject.SetActive(false);
             }
         }
 
@@ -71,6 +75,11 @@ public class CurrentTurnWheel : MonoBehaviour
     {
         float targetRotation = ((float)newTurn / this.TurnOrderHolder.PlayerCount) * 360f;
         float distanceRemaining;
+
+        for (int ii = 0; ii < this.Spokes.Count; ii++)
+        {
+            this.Spokes[ii].NameLabel.gameObject.SetActive(ii == newTurn);
+        }
 
         do
         {

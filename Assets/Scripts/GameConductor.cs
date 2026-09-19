@@ -18,6 +18,7 @@ public class GameConductor : MonoBehaviour
     public TMP_Text WinnerPanel;
     public TMP_Text WinnerText;
     public Image WinnerIcon;
+    public GameObject NoMoreMovesPanel;
 
     public Dictionary<Vector2Int, Cell> PositionsToCells { get; set; } = new Dictionary<Vector2Int, Cell>();
 
@@ -40,6 +41,7 @@ public class GameConductor : MonoBehaviour
         this.SolutionLineRenderers.Clear();
         this.WinnerPanel.transform.parent.gameObject.SetActive(false);
         this.CascadeText.transform.parent.gameObject.SetActive(false);
+        this.NoMoreMovesPanel.SetActive(false);
 
         this.CurrentGameState = new GameState(Mathf.RoundToInt(this.GridPainter.WidthSlider.value), Mathf.RoundToInt(this.GridPainter.HeightSlider.value));
 
@@ -310,6 +312,10 @@ public class GameConductor : MonoBehaviour
             {
                 this.WinnerText.gameObject.SetActive(false);
             }
+        }
+        else if (this.CurrentGameState.AnyEmptySpots())
+        {
+            this.NoMoreMovesPanel.SetActive(true);
         }
     }
 }
