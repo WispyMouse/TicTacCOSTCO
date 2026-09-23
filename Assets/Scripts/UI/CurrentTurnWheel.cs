@@ -58,7 +58,7 @@ public class CurrentTurnWheel : MonoBehaviour
             }
         }
 
-        this.UpdateToNewTurn(this.TurnOrderHolder.CurrentPlayerIndex);
+        this.UpdateToNewTurn(this.TurnOrderHolder.GameConductor.CurrentGameState.CurrentPlayerIndex);
     }
 
     public void UpdateToNewTurn(int newTurn)

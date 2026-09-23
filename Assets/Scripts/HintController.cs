@@ -36,7 +36,7 @@ public class HintController : MonoBehaviour
                 continue;
             }
 
-            cell.SetHint(HypotheticalSolutionTool.GetSolutionsFromClaimingTile(this.GameConductor.CurrentGameState, cell.Position, TurnOrderHolder.CurrentPlayerIndex).Count);
+            cell.SetHint(HypotheticalSolutionTool.GetSolutionsFromClaimingTile(this.GameConductor.CurrentGameState, cell.Position, this.GameConductor.CurrentGameState.CurrentPlayerIndex).Count);
         }
         isOn = true;
     }

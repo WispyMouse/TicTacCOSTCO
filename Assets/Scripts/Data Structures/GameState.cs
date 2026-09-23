@@ -1,9 +1,11 @@
 namespace TicTacCOSTCO.DataStructures
 {
+    using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Numerics;
     using TicTacCOSTCO.DataStructures;
+    using TicTacCOSTCO.DataStructures.Tools;
     using Unity.VisualScripting;
 
     public class GameState
@@ -33,16 +35,25 @@ namespace TicTacCOSTCO.DataStructures
 
         public readonly int Height;
         public readonly int Width;
+        public readonly int PlayerCount;
 
         public int InARowToSolve = 3;
 
+        public int CurrentPlayerIndex { get; set; } = 0;
+        public HashSet<int> SideIndexesStillInGame = new HashSet<int>();
+
+        public delegate void OnPlayerTurnDelegate(int turn);
+        public OnPlayerTurnDelegate OnPlayerTurn;
+
         public Dictionary<Coordinate, List<CellsSolution>> AcceptedSolutions { get; set; } = new Dictionary<Coordinate, List<CellsSolution>>();
 
-        public GameState(int width, int height)
+        public GameState(int width, int height, int playerCount)
         {
+            this.PlayerCount = playerCount;
             this.Width = width;
             this.Height = height;
 
+            this.SpotToSideOwnership.EnsureCapacity(width * height);
             for (int xx = 0; xx < width; xx++)
             {
                 for (int yy = 0; yy < height; yy++)
@@ -50,24 +61,79 @@ namespace TicTacCOSTCO.DataStructures
                     this.SpotToSideOwnership.Add(new Coordinate(xx, yy), null);
                 }
             }
+
+            this.SideIndexesStillInGame.EnsureCapacity(this.PlayerCount);
+            for (int ii = 0; ii < this.PlayerCount; ii++)
+            {
+                this.SideIndexesStillInGame.Add(ii);
+            }
+
+            // Choose a random player to go first
+            this.CurrentPlayerIndex = new Random().Next(this.PlayerCount);
         }
 
-        public void SetSideOwnership(Coordinate position, int side, out List<CellsSolution> newSolutions)
+        /// <summary>
+        /// Sets the ownership of a coordinate.
+        /// </summary>
+        /// <param name="position">Coordinate to mark.</param>
+        /// <param name="side">Side to set. Null is "empty and unclaimed", otherwise it is the side's <see cref="CurrentPlayerIndex"/>.</param>
+        /// <param name="newSolutions">New solutions stemming from this move.</param>
+        /// <param name="advancePlayer">If true, make it the next player's turn. Otherwise, don't touch the current player index.</param>
+        /// 
+        public void SetSideOwnership(Coordinate position, int? side, out List<CellsSolution> newSolutions, bool advancePlayer = true)
         {
-            newSolutions = HypotheticalSolutionTool.GetSolutionsFromClaimingTile(this, position, side);
+            if (side.HasValue)
+            {
+                newSolutions = HypotheticalSolutionTool.GetSolutionsFromClaimingTile(this, position, side.Value);
+
+                foreach (CellsSolution newSolution in newSolutions)
+                {
+                    foreach (Coordinate cellPosition in newSolution.Cells)
+                    {
+                        if (!this.AcceptedSolutions.TryGetValue(cellPosition, out List<CellsSolution> existingSolutionsForCell))
+                        {
+                            existingSolutionsForCell = new List<CellsSolution>();
+                            this.AcceptedSolutions.Add(cellPosition, existingSolutionsForCell);
+                        }
+
+                        existingSolutionsForCell.Add(newSolution);
+                    }
+                }
+            }
+            else
+            {
+                newSolutions = new List<CellsSolution>();
+            }
+
             this.SpotToSideOwnership[position] = side;
 
-            foreach (CellsSolution newSolution in newSolutions)
+            int solutionsCount = newSolutions.Count;
+
+            if (this.CurrentGameState == GameState.GameStateEnum.Cascade && this.LastCascade > solutionsCount)
             {
-                foreach (Coordinate cellPosition in newSolution.Cells)
+                // If there were no new solutions, or not enough solutions for previous cascade, and we're in cascade state,
+                // the current player should be knocked out
+                this.SideIndexesStillInGame.Remove(this.CurrentPlayerIndex);
+            }
+            else if (solutionsCount > 0)
+            {
+                this.CurrentGameState = GameState.GameStateEnum.Cascade;
+                this.LastCascade = solutionsCount;
+            }
+
+            if (advancePlayer)
+            {
+                for (int ii = 1; ii < this.PlayerCount; ii++)
                 {
-                    if (!this.AcceptedSolutions.TryGetValue(cellPosition, out List<CellsSolution> existingSolutionsForCell))
+                    int nextProspectivePlayer = (this.CurrentPlayerIndex + ii) % this.PlayerCount;
+                    if (!this.SideIndexesStillInGame.Contains(nextProspectivePlayer))
                     {
-                        existingSolutionsForCell = new List<CellsSolution>();
-                        this.AcceptedSolutions.Add(cellPosition, existingSolutionsForCell);
+                        continue;
                     }
 
-                    existingSolutionsForCell.Add(newSolution);
+                    this.CurrentPlayerIndex = nextProspectivePlayer;
+                    this.OnPlayerTurn?.Invoke(this.CurrentPlayerIndex);
+                    break;
                 }
             }
         }

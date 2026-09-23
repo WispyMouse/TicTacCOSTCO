@@ -45,7 +45,7 @@ public class GameConductor : MonoBehaviour
         this.CascadeText.transform.parent.gameObject.SetActive(false);
         this.NoMoreMovesPanel.SetActive(false);
 
-        this.CurrentGameState = new GameState(Mathf.RoundToInt(this.GridPainter.WidthSlider.value), Mathf.RoundToInt(this.GridPainter.HeightSlider.value));
+        this.CurrentGameState = new GameState(Mathf.RoundToInt(this.GridPainter.WidthSlider.value), Mathf.RoundToInt(this.GridPainter.HeightSlider.value), (int)this.TurnOrderHolder.PlayerCountSlider.value);
 
         this.PositionsToCells = this.GridPainter.Paint();
         this.TurnOrderHolder.ResetGame();
@@ -59,7 +59,7 @@ public class GameConductor : MonoBehaviour
             return;
         }
 
-        if (this.TurnOrderHolder.PlayerIsHuman(this.TurnOrderHolder.CurrentPlayerIndex))
+        if (this.TurnOrderHolder.PlayerIsHuman(this.CurrentGameState.CurrentPlayerIndex))
         {
             this.HandleLeftClick();
         }
@@ -72,13 +72,15 @@ public class GameConductor : MonoBehaviour
 
     public void ChooseCell(Cell toChoose)
     {
-        toChoose.SetSide(TurnOrderHolder.CurrentTurnIconHolder.sprite, TurnOrderHolder.CurrentPlayerIndex);
-        this.CurrentGameState.SetSideOwnership(toChoose.Position, TurnOrderHolder.CurrentPlayerIndex, out List<CellsSolution> newSolutions);
+        int takingTurn = this.CurrentGameState.CurrentPlayerIndex;
+        int previousCascade = this.CurrentGameState.LastCascade;
 
+        toChoose.SetSide(TurnOrderHolder.CurrentTurnIconHolder.sprite, this.CurrentGameState.CurrentPlayerIndex);
+        this.CurrentGameState.SetSideOwnership(toChoose.Position, this.CurrentGameState.CurrentPlayerIndex, out List<CellsSolution> newSolutions);
 
         foreach (CellsSolution solution in newSolutions)
         {
-            this.DrawLineBetween(solution.Root, solution.Tail);
+            this.DrawLineBetween(solution.Root, solution.Tail, takingTurn);
 
             foreach (Coordinate curCell in solution.Cells)
             {
@@ -87,19 +89,9 @@ public class GameConductor : MonoBehaviour
         }
 
         int solutionsCount = newSolutions.Count;
-
-        if (this.CurrentGameState.CurrentGameState == GameState.GameStateEnum.Cascade && this.CurrentGameState.LastCascade > solutionsCount)
+        if (solutionsCount > previousCascade)
         {
-            // If there were no new solutions, or not enough solutions for previous cascade, and we're in cascade state,
-            // the current player should be knocked out
-            this.KnockoutPlayer(this.TurnOrderHolder.CurrentPlayerIndex);
-        }
-        else if (solutionsCount > 0)
-        {
-            this.CurrentGameState.CurrentGameState = GameState.GameStateEnum.Cascade;
             this.CascadeText.transform.parent.gameObject.SetActive(true);
-            this.CurrentGameState.LastCascade = solutionsCount;
-
             switch (solutionsCount)
             {
                 case 1:
@@ -111,9 +103,9 @@ public class GameConductor : MonoBehaviour
             }
         }
 
-        if (this.CurrentGameState.CurrentGameState != GameState.GameStateEnum.End)
+        if (this.CurrentGameState.SideIndexesStillInGame.Count == 1)
         {
-            TurnOrderHolder.NextPlayerIcon();
+            DeclareCurrentPlayerVictorious();
         }
     }
 
@@ -176,7 +168,7 @@ public class GameConductor : MonoBehaviour
                     continue;
                 }
 
-                if (currentCell.SideIndex != this.TurnOrderHolder.CurrentPlayerIndex)
+                if (currentCell.SideIndex != this.CurrentGameState.CurrentPlayerIndex)
                 {
                     // This cell isn't ours
                     continue;
@@ -253,7 +245,7 @@ public class GameConductor : MonoBehaviour
 
     bool TryGetUntrackedSolutionsFromCellAlongDirection(Coordinate cell, Coordinate offset, out CellsSolution solution)
     {
-        if (!this.CurrentGameState.TryGetAllSolutionsFromCellAlongDirection(this.TurnOrderHolder.CurrentPlayerIndex, cell, offset, out solution))
+        if (!this.CurrentGameState.TryGetAllSolutionsFromCellAlongDirection(this.CurrentGameState.CurrentPlayerIndex, cell, offset, out solution))
         {
             return false;
         }
@@ -280,45 +272,35 @@ public class GameConductor : MonoBehaviour
         return true;
     }
 
-    public void DrawLineBetween(Coordinate cellA, Coordinate cellB)
+    public void DrawLineBetween(Coordinate cellA, Coordinate cellB, int factionIndex)
     {
         LineRenderer newRenderer = Instantiate(this.LineRendererPF);
         newRenderer.SetPosition(0, this.PositionsToCells[cellA].transform.position + Vector3.back * 5f);
         newRenderer.SetPosition(1, this.PositionsToCells[cellB].transform.position + Vector3.back * 5f);
-        newRenderer.startColor = this.TurnOrderHolder.KnockoutColorsForTurns[this.TurnOrderHolder.CurrentPlayerIndex];
-        newRenderer.endColor = this.TurnOrderHolder.KnockoutColorsForTurns[this.TurnOrderHolder.CurrentPlayerIndex];
+        newRenderer.startColor = this.TurnOrderHolder.KnockoutColorsForTurns[factionIndex];
+        newRenderer.endColor = this.TurnOrderHolder.KnockoutColorsForTurns[factionIndex];
         this.SolutionLineRenderers.Add(newRenderer);
     }
 
-    public void KnockoutPlayer(int index)
+    public void DeclareCurrentPlayerVictorious()
     {
-        this.TurnOrderHolder.KnockOutPlayer(index);
-        this.CurrentTurnWheel.KnockOutPlayer(index);
+        this.TurnOrderHolder.UpdateTurn(this.CurrentGameState.CurrentPlayerIndex);
+        this.CascadeText.transform.parent.gameObject.SetActive(false);
+        this.CurrentGameState.CurrentGameState = GameState.GameStateEnum.End;
+        this.WinnerPanel.transform.parent.gameObject.SetActive(true);
+        this.WinnerIcon.sprite = this.TurnOrderHolder.SpritesForTurns[this.CurrentGameState.CurrentPlayerIndex];
+        this.CurrentGameState.CurrentGameState = GameState.GameStateEnum.End;
 
-        if (this.TurnOrderHolder.SideIndexesStillInGame.Count == 1)
+        string winnerName = this.TurnOrderHolder.PlayerNames[this.CurrentGameState.CurrentPlayerIndex];
+        if (string.IsNullOrEmpty(winnerName))
         {
-            this.TurnOrderHolder.SetTurnIndex(this.TurnOrderHolder.SideIndexesStillInGame.First());
-            this.CascadeText.transform.parent.gameObject.SetActive(false);
-            this.CurrentGameState.CurrentGameState = GameState.GameStateEnum.End;
-            this.WinnerPanel.transform.parent.gameObject.SetActive(true);
-            this.WinnerIcon.sprite = this.TurnOrderHolder.SpritesForTurns[this.TurnOrderHolder.CurrentPlayerIndex];
-            this.CurrentGameState.CurrentGameState = GameState.GameStateEnum.End;
-
-            string winnerName = this.TurnOrderHolder.PlayerNames[this.TurnOrderHolder.CurrentPlayerIndex];
-            if (string.IsNullOrEmpty(winnerName))
-            {
-                this.WinnerText.text = winnerName;
-                this.WinnerText.gameObject.SetActive(true);
-                this.ScoreBoard.AddToScoreboard(this.TurnOrderHolder.CurrentPlayerIndex);
-            }
-            else
-            {
-                this.WinnerText.gameObject.SetActive(false);
-            }
+            this.WinnerText.text = winnerName;
+            this.WinnerText.gameObject.SetActive(true);
+            this.ScoreBoard.AddToScoreboard(this.CurrentGameState.CurrentPlayerIndex);
         }
-        else if (!this.CurrentGameState.AnyEmptySpots())
+        else
         {
-            this.NoMoreMovesPanel.SetActive(true);
+            this.WinnerText.gameObject.SetActive(false);
         }
     }
 }

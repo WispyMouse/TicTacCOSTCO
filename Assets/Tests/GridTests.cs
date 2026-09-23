@@ -70,7 +70,7 @@ public class GridTests
     public void PlacingThirdWouldResultInRow(PlacementCausesSolve_DataSource_Object plan)
     {
         int lastIndex = plan.Placements.Count - 1;
-        GameState testState = new GameState(plan.Width, plan.Height);
+        GameState testState = new GameState(plan.Width, plan.Height, 1);
 
         for (int ii = 0; ii < lastIndex; ii++)
         {

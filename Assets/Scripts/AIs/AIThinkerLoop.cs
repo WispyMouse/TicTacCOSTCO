@@ -35,13 +35,13 @@ public class AIThinkerLoop : MonoBehaviour
         }
 
         // If the current player is human, do nothing
-        if (this.TurnOrderHolder.PlayerIsHuman(this.TurnOrderHolder.CurrentPlayerIndex))
+        if (this.TurnOrderHolder.PlayerIsHuman(this.GameConductor.CurrentGameState.CurrentPlayerIndex))
         {
             return;
         }
 
         // If this side has been eliminated, skip them
-        if (!this.TurnOrderHolder.SideIndexesStillInGame.Contains(this.TurnOrderHolder.CurrentPlayerIndex))
+        if (!this.GameConductor.CurrentGameState.SideIndexesStillInGame.Contains(this.GameConductor.CurrentGameState.CurrentPlayerIndex))
         {
             return;
         }
@@ -71,9 +71,8 @@ public class AIThinkerLoop : MonoBehaviour
             yield break;
         }
 
-        Coordinate move = this.BasicAICore.DetermineMove(this.TurnOrderHolder.CurrentPlayerIndex, this.GameConductor.CurrentGameState);
-        this.GameConductor.ChooseCell(move);
-
         this.ThinkingCoroutine = null;
+        Coordinate move = this.BasicAICore.DetermineMove(this.GameConductor.CurrentGameState.CurrentPlayerIndex, this.GameConductor.CurrentGameState);
+        this.GameConductor.ChooseCell(move);
     }
 }
