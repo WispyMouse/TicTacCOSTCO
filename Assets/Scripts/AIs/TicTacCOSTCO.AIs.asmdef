@@ -1,0 +1,16 @@
+{
+    "name": "TicTacCOSTCO.AIs",
+    "rootNamespace": "TicTacCOSTCO.AIs",
+    "references": [
+        "GUID:3c9d604a283fa324ebe5a40228f15207"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
