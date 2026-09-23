@@ -1,6 +1,6 @@
 {
-    "name": "Tests",
-    "rootNamespace": "",
+    "name": "TicTacCOSTCO.Tests",
+    "rootNamespace": "TicTacCOSTCO.Tests",
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
