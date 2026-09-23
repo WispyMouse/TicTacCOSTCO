@@ -9,22 +9,22 @@ namespace TicTacCOSTCO.DataStructures.Tools
         /// Given a starting tile, this is all of the "directions" a scoring point can go in.
         /// This assumes that instead of scoring "up and left", you should instead start there and go "down and right".
         /// </summary>
-        public static IReadOnlyList<Coordinate> ScoreDirectionalities = new Coordinate[]
+        public static IReadOnlyList<DirectionalityVector> ScoreDirectionalities = new DirectionalityVector[]
         {
-            Coordinate.right,
-            Coordinate.right + Coordinate.down,
-            Coordinate.down,
-            Coordinate.left + Coordinate.down,
+            new DirectionalityVector(1, 0),
+            new DirectionalityVector(1, -1),
+            new DirectionalityVector(0, -1),
+            new DirectionalityVector(-1, -1),
         };
 
         /// <summary>
         /// Gets all solutions that involve a given tile, if that tile were placed.
         /// </summary>
-        public static List<CellsSolution> GetSolutionsFromClaimingTile(GameState currentGameState, Coordinate position, int ownership)
+        public static List<CellsConnection> GetSolutionsFromClaimingTile(GameState currentGameState, Coordinate position, int ownership)
         {
-            List<CellsSolution> newSolutions = new List<CellsSolution>();
+            List<CellsConnection> newSolutions = new List<CellsConnection>();
 
-            foreach (Coordinate scoreDirectionality in ScoreDirectionalities)
+            foreach (DirectionalityVector scoreDirectionality in ScoreDirectionalities)
             {
                 // Let's say this is a "right" directionality
                 // This is a point if it has three in a row with that directionality,
@@ -45,13 +45,13 @@ namespace TicTacCOSTCO.DataStructures.Tools
                 pairings.Add(position);
                 pairings.AddRange(pairingsForward);
 
-                newSolutions.Add(new CellsSolution(pairings, scoreDirectionality));
+                newSolutions.Add(new CellsConnection(pairings, scoreDirectionality));
             }
 
             return currentGameState.PruneSolutionsForNotAlreadySolved(newSolutions);
         }
 
-        public static List<Coordinate> OccupiedNeighborsCountInDirection(GameState currentGameState, Coordinate position, int ownership, Coordinate directionality)
+        public static List<Coordinate> OccupiedNeighborsCountInDirection(GameState currentGameState, Coordinate position, int ownership, DirectionalityVector directionality)
         {
             List<Coordinate> occupiedPositions = new List<Coordinate>(currentGameState.Width);
 

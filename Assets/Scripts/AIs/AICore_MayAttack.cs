@@ -104,7 +104,7 @@ public class AIMayAttack : AICore
         IReadOnlyList<Coordinate> possibleMoves = currentGameState.GetEmptySpots();
         List<Coordinate> results = new List<Coordinate>();
 
-        List<Coordinate> relativeDirections = new List<Coordinate>();
+        List<DirectionalityVector> relativeDirections = new List<DirectionalityVector>();
         relativeDirections.AddRange(currentGameState.directionalities);
         relativeDirections.AddRange(currentGameState.directionalities.Select(x => -x));
 
@@ -117,13 +117,13 @@ public class AIMayAttack : AICore
             }
 
             // Are there immediate neighbors we can develop next to?
-            foreach (Coordinate direction in relativeDirections)
+            foreach (DirectionalityVector direction in relativeDirections)
             {
                 // If there is a claimed tile from this side in an adjacent direction,
                 // and there isn't ~the void~ or an opposing claimed tile in the opposite direction,
                 // then this would be an investing move
-                Coordinate position = move + direction;
-                Coordinate back = move - direction;
+                Coordinate position = move + direction * 1;
+                Coordinate back = move - direction * 1;
                 if (!currentGameState.SpotIsInBounds(position))
                 {
                     continue;
@@ -143,9 +143,9 @@ public class AIMayAttack : AICore
             }
 
             // Are there distal neighbors we can develop next to?
-            foreach (Coordinate direction in relativeDirections)
+            foreach (DirectionalityVector direction in relativeDirections)
             {
-                Coordinate adjacentPositionThatWeWantToBeEmpty = move + direction;
+                Coordinate adjacentPositionThatWeWantToBeEmpty = move + direction * 1;
 
                 if (!currentGameState.SpotIsInBounds(adjacentPositionThatWeWantToBeEmpty))
                 {

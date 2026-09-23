@@ -8,8 +8,9 @@ namespace TicTacCOSTCO.DataStructures
     /// Coordinate defining 2D space.
     /// Very, very similar to Vector2Int. Most code lifted from that struct.
     /// This is split out so that we can refer to a coordinate without using Unity's core module.
+    /// Caches the HashCode so that this can be used for lookup frequently.
     /// </summary>
-    public struct Coordinate
+    public struct Coordinate : IEquatable<Coordinate>, IFormattable
     {
         public readonly int X;
         public readonly int Y;

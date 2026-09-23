@@ -20,12 +20,12 @@ namespace TicTacCOSTCO.DataStructures
 
         public GameStateEnum CurrentGameState = GameStateEnum.NotStarted;
 
-        public IReadOnlyList<Coordinate> directionalities = new Coordinate[]
+        public IReadOnlyList<DirectionalityVector> directionalities = new DirectionalityVector[]
         {
-            Coordinate.right,
-            Coordinate.right + Coordinate.down,
-            Coordinate.down,
-            Coordinate.left + Coordinate.down,
+            new DirectionalityVector(1, 0),
+            new DirectionalityVector(1, -1),
+            new DirectionalityVector(0, -1),
+            new DirectionalityVector(-1, -1),
         };
 
         public readonly Dictionary<Coordinate, int?> SpotToSideOwnership = new Dictionary<Coordinate, int?>();
@@ -45,7 +45,7 @@ namespace TicTacCOSTCO.DataStructures
         public delegate void OnPlayerTurnDelegate(int turn);
         public OnPlayerTurnDelegate OnPlayerTurn;
 
-        public Dictionary<Coordinate, List<CellsSolution>> AcceptedSolutions { get; set; } = new Dictionary<Coordinate, List<CellsSolution>>();
+        public Dictionary<Coordinate, List<CellsConnection>> AcceptedSolutions { get; set; } = new Dictionary<Coordinate, List<CellsConnection>>();
 
         public GameState(int width, int height, int playerCount)
         {
@@ -80,19 +80,19 @@ namespace TicTacCOSTCO.DataStructures
         /// <param name="newSolutions">New solutions stemming from this move.</param>
         /// <param name="advancePlayer">If true, make it the next player's turn. Otherwise, don't touch the current player index.</param>
         /// 
-        public void SetSideOwnership(Coordinate position, int? side, out List<CellsSolution> newSolutions, bool advancePlayer = true)
+        public void SetSideOwnership(Coordinate position, int? side, out List<CellsConnection> newSolutions, bool advancePlayer = true)
         {
             if (side.HasValue)
             {
                 newSolutions = HypotheticalSolutionTool.GetSolutionsFromClaimingTile(this, position, side.Value);
 
-                foreach (CellsSolution newSolution in newSolutions)
+                foreach (CellsConnection newSolution in newSolutions)
                 {
                     foreach (Coordinate cellPosition in newSolution.Cells)
                     {
-                        if (!this.AcceptedSolutions.TryGetValue(cellPosition, out List<CellsSolution> existingSolutionsForCell))
+                        if (!this.AcceptedSolutions.TryGetValue(cellPosition, out List<CellsConnection> existingSolutionsForCell))
                         {
-                            existingSolutionsForCell = new List<CellsSolution>();
+                            existingSolutionsForCell = new List<CellsConnection>();
                             this.AcceptedSolutions.Add(cellPosition, existingSolutionsForCell);
                         }
 
@@ -102,7 +102,7 @@ namespace TicTacCOSTCO.DataStructures
             }
             else
             {
-                newSolutions = new List<CellsSolution>();
+                newSolutions = new List<CellsConnection>();
             }
 
             this.SpotToSideOwnership[position] = side;
@@ -170,11 +170,11 @@ namespace TicTacCOSTCO.DataStructures
             return false;
         }
 
-        public bool TryGetAllSolutionsFromCell(int sideIndex, Coordinate cell, out List<CellsSolution> solutionsInvolvingCell)
+        public bool TryGetAllSolutionsFromCell(int sideIndex, Coordinate cell, out List<CellsConnection> solutionsInvolvingCell)
         {
-            solutionsInvolvingCell = new List<CellsSolution>();
+            solutionsInvolvingCell = new List<CellsConnection>();
 
-            foreach (CellsSolution solution in GetAllSolutions(sideIndex, cell))
+            foreach (CellsConnection solution in GetAllSolutions(sideIndex, cell))
             {
                 if (solution.Cells.Contains(cell))
                 {
@@ -185,34 +185,22 @@ namespace TicTacCOSTCO.DataStructures
             return solutionsInvolvingCell.Any();
         }
 
-        public bool TryGetAllSolutionsFromCellAlongDirection(int sideIndex, Coordinate cell, Coordinate offset, out CellsSolution solution)
+        public bool TryGetAllSolutionsFromCellAlongDirection(int sideIndex, Coordinate cell, DirectionalityVector offset, out CellsConnection solution)
         {
+            solution = default;
+
             // If we're too close to the end direction this offset is going in, don't consider this at all
-            if (cell.X + offset.X * InARowToSolve > this.Width)
+            if (SpotIsInBounds(cell + (offset * (InARowToSolve - 1))))
             {
-                solution = null;
                 return false;
             }
 
-            if (cell.X + offset.X * (InARowToSolve - 1) < 0)
+            if (SpotIsInBounds(cell - (offset * (InARowToSolve - 1))))
             {
-                solution = null;
                 return false;
             }
 
-            if (cell.Y + offset.Y * InARowToSolve > this.Height)
-            {
-                solution = null;
-                return false;
-            }
-
-            if (cell.Y + offset.Y * (InARowToSolve - 1) < 0)
-            {
-                solution = null;
-                return false;
-            }
-
-            List<CellsSolution> solutions = new List<CellsSolution>();
+            List<CellsConnection> solutions = new List<CellsConnection>();
 
             bool valid = true;
 
@@ -232,7 +220,6 @@ namespace TicTacCOSTCO.DataStructures
 
             if (!valid)
             {
-                solution = null;
                 return false;
             }
 
@@ -243,14 +230,14 @@ namespace TicTacCOSTCO.DataStructures
                 Coordinate position = cell + offset * ii;
                 solutionCells.Add(position);
             }
-            solution = new CellsSolution(solutionCells, offset);
+            solution = new CellsConnection(solutionCells, offset);
             return true;
         }
 
 
-        public List<CellsSolution> GetAllSolutions()
+        public List<CellsConnection> GetAllSolutions()
         {
-            List<CellsSolution> solutions = new List<CellsSolution>();
+            List<CellsConnection> solutions = new List<CellsConnection>();
 
             for (int xx = 0; xx < this.Width; xx++)
             {
@@ -264,9 +251,9 @@ namespace TicTacCOSTCO.DataStructures
                         continue;
                     }
 
-                    foreach (Coordinate direction in directionalities)
+                    foreach (DirectionalityVector direction in directionalities)
                     {
-                        if (TryGetAllSolutionsFromCellAlongDirection(SpotToSideOwnership[position].Value, position, direction, out CellsSolution cellSolutions))
+                        if (TryGetAllSolutionsFromCellAlongDirection(SpotToSideOwnership[position].Value, position, direction, out CellsConnection cellSolutions))
                         {
                             solutions.Add(cellSolutions);
                         }
@@ -285,15 +272,15 @@ namespace TicTacCOSTCO.DataStructures
                 for (int leftSolutionIndex = solutions.Count - 2; leftSolutionIndex >= 0; leftSolutionIndex--)
                 {
                     bool discardLeftSolution = false;
-                    CellsSolution leftCellsSolution = solutions[leftSolutionIndex];
+                    CellsConnection leftCellsSolution = solutions[leftSolutionIndex];
                     for (int rightSolutionIndex = solutions.Count - 1; rightSolutionIndex > leftSolutionIndex; rightSolutionIndex--)
                     {
-                        CellsSolution rightCellsSolution = solutions[rightSolutionIndex];
+                        CellsConnection rightCellsSolution = solutions[rightSolutionIndex];
 
                         if (leftCellsSolution.Directionality == rightCellsSolution.Directionality)
                         {
                             // Add a new composite solution to the end of the list, which won't be evaluated again
-                            CellsSolution compositeSolution = new CellsSolution(leftCellsSolution.Cells.Union(rightCellsSolution.Cells).ToList(), leftCellsSolution.Directionality);
+                            CellsConnection compositeSolution = new CellsConnection(leftCellsSolution.Cells.Union(rightCellsSolution.Cells).ToList(), leftCellsSolution.Directionality);
                             solutions.Add(compositeSolution);
                             discardLeftSolution = true;
                             anyDiscarded = true;
@@ -314,9 +301,9 @@ namespace TicTacCOSTCO.DataStructures
         }
 
 
-        public List<CellsSolution> GetAllSolutions(int sideIndex, Coordinate hypotheticalPosition)
+        public List<CellsConnection> GetAllSolutions(int sideIndex, Coordinate hypotheticalPosition)
         {
-            List<CellsSolution> solutions = new List<CellsSolution>();
+            List<CellsConnection> solutions = new List<CellsConnection>();
 
             for (int xx = 0; xx < this.Width; xx++)
             {
@@ -330,9 +317,9 @@ namespace TicTacCOSTCO.DataStructures
                         continue;
                     }
 
-                    foreach (Coordinate direction in directionalities)
+                    foreach (DirectionalityVector direction in directionalities)
                     {
-                        if (TryGetAllSolutionsFromCellAlongDirection(sideIndex, position, direction, out CellsSolution cellSolutions))
+                        if (TryGetAllSolutionsFromCellAlongDirection(sideIndex, position, direction, out CellsConnection cellSolutions))
                         {
                             solutions.Add(cellSolutions);
                         }
@@ -351,15 +338,15 @@ namespace TicTacCOSTCO.DataStructures
                 for (int leftSolutionIndex = solutions.Count - 2; leftSolutionIndex >= 0; leftSolutionIndex--)
                 {
                     bool discardLeftSolution = false;
-                    CellsSolution leftCellsSolution = solutions[leftSolutionIndex];
+                    CellsConnection leftCellsSolution = solutions[leftSolutionIndex];
                     for (int rightSolutionIndex = solutions.Count - 1; rightSolutionIndex > leftSolutionIndex; rightSolutionIndex--)
                     {
-                        CellsSolution rightCellsSolution = solutions[rightSolutionIndex];
+                        CellsConnection rightCellsSolution = solutions[rightSolutionIndex];
 
                         if (leftCellsSolution.Directionality == rightCellsSolution.Directionality)
                         {
                             // Add a new composite solution to the end of the list, which won't be evaluated again
-                            CellsSolution compositeSolution = new CellsSolution(leftCellsSolution.Cells.Union(rightCellsSolution.Cells).ToList(), leftCellsSolution.Directionality);
+                            CellsConnection compositeSolution = new CellsConnection(leftCellsSolution.Cells.Union(rightCellsSolution.Cells).ToList(), leftCellsSolution.Directionality);
                             solutions.Add(compositeSolution);
                             discardLeftSolution = true;
                             anyDiscarded = true;
@@ -404,26 +391,9 @@ namespace TicTacCOSTCO.DataStructures
             return true;
         }
 
-        public List<Coordinate> GetDirectionalitiesAlreadySolvedForPiece(Coordinate position)
+        public List<CellsConnection> PruneSolutionsForNotAlreadySolved(List<CellsConnection> solutions)
         {
-            if (!this.AcceptedSolutions.TryGetValue(position, out List<CellsSolution> values))
-            {
-                return new List<Coordinate>();
-            }
-
-            List<Coordinate> directionalities = new List<Coordinate>();
-
-            foreach (CellsSolution solution in values)
-            {
-                directionalities.Add(solution.Directionality);
-            }
-
-            return directionalities;
-        }
-
-        public List<CellsSolution> PruneSolutionsForNotAlreadySolved(List<CellsSolution> solutions)
-        {
-            List<CellsSolution> remainingSolutions = new List<CellsSolution>(solutions);
+            List<CellsConnection> remainingSolutions = new List<CellsConnection>(solutions);
 
             // Remove the parts that already have this same directionality solved, and only if there are enough pieces should we keep this
             // Otherwise "4-in-a-rows" count as two
@@ -432,9 +402,9 @@ namespace TicTacCOSTCO.DataStructures
                 for (int cellIndex = 0; cellIndex < solutions[solutionIndex].Cells.Count; cellIndex++)
                 {
                     bool removeSolution = false;
-                    if (this.AcceptedSolutions.TryGetValue(solutions[solutionIndex].Cells[cellIndex], out List<CellsSolution> existingSolutions))
+                    if (this.AcceptedSolutions.TryGetValue(solutions[solutionIndex].Cells[cellIndex], out List<CellsConnection> existingSolutions))
                     {
-                        foreach (CellsSolution solution in existingSolutions)
+                        foreach (CellsConnection solution in existingSolutions)
                         {
                             if (solution.Directionality == solutions[solutionIndex].Directionality)
                             {

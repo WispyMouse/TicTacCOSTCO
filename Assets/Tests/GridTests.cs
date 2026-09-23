@@ -79,17 +79,17 @@ namespace TicTacCOSTCO.Tests
                 testState.SetSideOwnership(plan.Placements[ii], 0, out _);
             }
 
-            List<CellsSolution> solutions = HypotheticalSolutionTool.GetSolutionsFromClaimingTile(testState, plan.Placements[lastIndex], 0);
+            List<CellsConnection> solutions = HypotheticalSolutionTool.GetSolutionsFromClaimingTile(testState, plan.Placements[lastIndex], 0);
             Assert.AreEqual(plan.ExpectedSolutions, solutions.Count, $"Expecting a specific amount of solutions from placing the last tile");
 
-            testState.SetSideOwnership(plan.Placements[lastIndex], 0, out List<CellsSolution> newSolutions);
+            testState.SetSideOwnership(plan.Placements[lastIndex], 0, out List<CellsConnection> newSolutions);
             Assert.AreEqual(plan.ExpectedSolutions, newSolutions.Count, $"Especting a specific amount of solutions total");
 
             if (plan.ExpectedSolutions > 0)
             {
                 foreach (Coordinate position in plan.Placements)
                 {
-                    if (!testState.AcceptedSolutions.TryGetValue(position, out List<CellsSolution> positionSolutions))
+                    if (!testState.AcceptedSolutions.TryGetValue(position, out List<CellsConnection> positionSolutions))
                     {
                         Assert.Fail($"There should be an accepted solution for {position}.");
                     }
