@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using TicTacCOSTCO.DataStructures;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -10,14 +11,14 @@ using UnityEngine.UIElements;
 [CreateAssetMenu(fileName = "AICore_Investor.asset", menuName = "COSTCO/Investor AI Core")]
 public class AIInvestor : AICore
 {
-    public override Vector2Int DetermineMove(int forSide, GameState currentGameState)
+    public override Coordinate DetermineMove(int forSide, GameState currentGameState)
     {
-        IReadOnlyList<Vector2Int> possibleMoves = currentGameState.GetEmptySpots();
+        IReadOnlyList<Coordinate> possibleMoves = currentGameState.GetEmptySpots();
 
         if (currentGameState.CurrentGameState != GameState.GameStateEnum.Cascade)
         {
             // Try to invest
-            List<Vector2Int> investingMoves = GetPositionsThatInvestWithoutSolving(forSide, currentGameState);
+            List<Coordinate> investingMoves = GetPositionsThatInvestWithoutSolving(forSide, currentGameState);
             if (investingMoves.Count > 0)
             {
                 return ChooseRandomly(investingMoves);
@@ -30,7 +31,7 @@ public class AIInvestor : AICore
         }
 
         // Oh, I might lose
-        IReadOnlyList<Vector2Int> notLosingMoves = this.GetMovesThatDoNotImmediatleyLose(possibleMoves, currentGameState, forSide);
+        IReadOnlyList<Coordinate> notLosingMoves = this.GetMovesThatDoNotImmediatleyLose(possibleMoves, currentGameState, forSide);
 
         if (notLosingMoves.Any())
         {
@@ -42,16 +43,16 @@ public class AIInvestor : AICore
         return ChooseRandomly(possibleMoves);
     }
 
-    private List<Vector2Int> GetPositionsThatInvestWithoutSolving(int forSide, GameState currentGameState)
+    private List<Coordinate> GetPositionsThatInvestWithoutSolving(int forSide, GameState currentGameState)
     {
-        IReadOnlyList<Vector2Int> possibleMoves = currentGameState.GetEmptySpots();
-        List<Vector2Int> results = new List<Vector2Int>();
+        IReadOnlyList<Coordinate> possibleMoves = currentGameState.GetEmptySpots();
+        List<Coordinate> results = new List<Coordinate>();
 
-        List<Vector2Int> relativeDirections = new List<Vector2Int>();
+        List<Coordinate> relativeDirections = new List<Coordinate>();
         relativeDirections.AddRange(currentGameState.directionalities);
         relativeDirections.AddRange(currentGameState.directionalities.Select(x => -x));
 
-        foreach (Vector2Int move in possibleMoves)
+        foreach (Coordinate move in possibleMoves)
         {
             // If this solves anything, we shouldn't use it
             if (HypotheticalSolutionTool.GetSolutionsFromClaimingTile(currentGameState, move, forSide).Any())
@@ -60,13 +61,13 @@ public class AIInvestor : AICore
             }
 
             // Are there immediate neighbors we can develop next to?
-            foreach (Vector2Int direction in relativeDirections)
+            foreach (Coordinate direction in relativeDirections)
             {
                 // If there is a claimed tile from this side in an adjacent direction,
                 // and there isn't ~the void~ or an opposing claimed tile in the opposite direction,
                 // then this would be an investing move
-                Vector2Int position = move + direction;
-                Vector2Int back = move - direction;
+                Coordinate position = move + direction;
+                Coordinate back = move - direction;
                 if (!currentGameState.SpotIsInBounds(position))
                 {
                     continue;
@@ -86,16 +87,16 @@ public class AIInvestor : AICore
             }
 
             // Are there distal neighbors we can develop next to?
-            foreach (Vector2Int direction in relativeDirections)
+            foreach (Coordinate direction in relativeDirections)
             {
-                Vector2Int adjacentPositionThatWeWantToBeEmpty = move + direction;
+                Coordinate adjacentPositionThatWeWantToBeEmpty = move + direction;
 
                 if (!currentGameState.SpotIsInBounds(adjacentPositionThatWeWantToBeEmpty))
                 {
                     continue;
                 }
 
-                Vector2Int distalPositionThatWeWantToBeOurs = move + direction * 2;
+                Coordinate distalPositionThatWeWantToBeOurs = move + direction * 2;
 
                 if (!currentGameState.SpotIsInBounds(distalPositionThatWeWantToBeOurs))
                 {

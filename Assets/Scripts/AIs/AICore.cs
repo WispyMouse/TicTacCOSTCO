@@ -1,25 +1,26 @@
 using System.Collections.Generic;
+using TicTacCOSTCO.DataStructures;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "AICore.asset", menuName = "COSTCO/AI Core")]
 public class AICore : ScriptableObject
 {
-    public virtual Vector2Int DetermineMove(int forSide, GameState currentGameState)
+    public virtual Coordinate DetermineMove(int forSide, GameState currentGameState)
     {
-        IReadOnlyList<Vector2Int> possibleMoves = currentGameState.GetEmptySpots();
+        IReadOnlyList<Coordinate> possibleMoves = currentGameState.GetEmptySpots();
         return ChooseRandomly(possibleMoves);
     }
 
-    protected virtual Vector2Int ChooseRandomly(IReadOnlyList<Vector2Int> options)
+    protected virtual Coordinate ChooseRandomly(IReadOnlyList<Coordinate> options)
     {
         return options[Random.Range(0, options.Count)];
     }
 
-    protected IReadOnlyList<Vector2Int> GetMovesThatDoNotImmediatleyLose(IReadOnlyList<Vector2Int> options, GameState currentGameState, int forSide)
+    protected IReadOnlyList<Coordinate> GetMovesThatDoNotImmediatleyLose(IReadOnlyList<Coordinate> options, GameState currentGameState, int forSide)
     {
-        List<Vector2Int> notLosingMoves = new List<Vector2Int>(options.Count);
+        List<Coordinate> notLosingMoves = new List<Coordinate>(options.Count);
 
-        foreach (Vector2Int move in options)
+        foreach (Coordinate move in options)
         {
             int solutionCountFromMove = HypotheticalSolutionTool.GetSolutionsFromClaimingTile(currentGameState, move, forSide).Count;
             if (solutionCountFromMove >= currentGameState.LastCascade)

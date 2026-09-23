@@ -1,18 +1,19 @@
 using NUnit.Framework;
 using System.Collections.Generic;
 using System.Linq;
+using TicTacCOSTCO.DataStructures;
 using UnityEngine;
 
 public class GridTests
 {
     public class PlacementCausesSolve_DataSource_Object
     {
-        public List<Vector2Int> Placements;
+        public List<Coordinate> Placements;
         public int Width;
         public int Height;
         public int ExpectedSolutions;
 
-        public PlacementCausesSolve_DataSource_Object(List<Vector2Int> placements, int width, int height, int expectedSolutions)
+        public PlacementCausesSolve_DataSource_Object(List<Coordinate> placements, int width, int height, int expectedSolutions)
         {
             this.Placements = placements;
             this.Width = width;
@@ -30,36 +31,36 @@ public class GridTests
     {
         // Simple single test cases
         new PlacementCausesSolve_DataSource_Object(
-            new List<Vector2Int>() { Vector2Int.right, Vector2Int.right + Vector2Int.right, Vector2Int.zero, },
+            new List<Coordinate>() { Coordinate.right, Coordinate.right + Coordinate.right, Coordinate.zero, },
             3, 3, 1),
         new PlacementCausesSolve_DataSource_Object(
-            new List<Vector2Int>() { Vector2Int.right, Vector2Int.zero, Vector2Int.right + Vector2Int.right },
+            new List<Coordinate>() { Coordinate.right, Coordinate.zero, Coordinate.right + Coordinate.right },
             3, 3, 1),
         new PlacementCausesSolve_DataSource_Object(
-            new List<Vector2Int>() { Vector2Int.zero, Vector2Int.up, Vector2Int.up * 2 },
+            new List<Coordinate>() { Coordinate.zero, Coordinate.up, Coordinate.up * 2 },
             3, 3, 1),
         new PlacementCausesSolve_DataSource_Object(
-            new List<Vector2Int>() { Vector2Int.right, Vector2Int.right + Vector2Int.right + Vector2Int.up, Vector2Int.up * 2 + Vector2Int.right * 3 },
+            new List<Coordinate>() { Coordinate.right, Coordinate.right + Coordinate.right + Coordinate.up, Coordinate.up * 2 + Coordinate.right * 3 },
             5, 5, 1),
 
         // This shouldn't be a score
         new PlacementCausesSolve_DataSource_Object(
-            new List<Vector2Int>() { Vector2Int.right + Vector2Int.up, Vector2Int.right + Vector2Int.up + Vector2Int.up, Vector2Int.zero },
+            new List<Coordinate>() { Coordinate.right + Coordinate.up, Coordinate.right + Coordinate.up + Coordinate.up, Coordinate.zero },
             5, 5, 0),
 
         // Double cascade
         new PlacementCausesSolve_DataSource_Object(
-            new List<Vector2Int>() { Vector2Int.right * 2, Vector2Int.right, Vector2Int.up, Vector2Int.up * 2, Vector2Int.zero },
+            new List<Coordinate>() { Coordinate.right * 2, Coordinate.right, Coordinate.up, Coordinate.up * 2, Coordinate.zero },
             5, 5, 2),
 
         // 4-in-a-row should count as one solution
         new PlacementCausesSolve_DataSource_Object(
-            new List<Vector2Int>() { Vector2Int.zero, Vector2Int.right * 2, Vector2Int.right * 3, Vector2Int.right },
+            new List<Coordinate>() { Coordinate.zero, Coordinate.right * 2, Coordinate.right * 3, Coordinate.right },
             5, 5, 1),
 
         // Shouldn't count as a new solution if you continue an old 3-of
         new PlacementCausesSolve_DataSource_Object(
-            new List<Vector2Int>() { Vector2Int.right, Vector2Int.right * 2, Vector2Int.right * 3, Vector2Int.right * 4 },
+            new List<Coordinate>() { Coordinate.right, Coordinate.right * 2, Coordinate.right * 3, Coordinate.right * 4 },
             5, 5, 0),
     };
 
@@ -83,7 +84,7 @@ public class GridTests
 
         if (plan.ExpectedSolutions > 0)
         {
-            foreach (Vector2Int position in plan.Placements)
+            foreach (Coordinate position in plan.Placements)
             {
                 if (!testState.AcceptedSolutions.TryGetValue(position, out List<CellsSolution> positionSolutions))
                 {

@@ -1,3 +1,4 @@
+using TicTacCOSTCO.DataStructures;
 using TMPro;
 using UnityEngine;
 
@@ -15,7 +16,7 @@ public class Cell : MonoBehaviour
     public bool AlreadyPlaced { get; set; } = false;
 
     public int SideIndex { get; private set; }
-    public Vector2Int Position { get; set; }
+    public Coordinate Position { get; set; }
 
     private void Awake()
     {

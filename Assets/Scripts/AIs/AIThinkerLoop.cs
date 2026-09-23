@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using System.Collections;
+using TicTacCOSTCO.DataStructures;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -70,7 +71,7 @@ public class AIThinkerLoop : MonoBehaviour
             yield break;
         }
 
-        Vector2Int move = this.BasicAICore.DetermineMove(this.TurnOrderHolder.CurrentPlayerIndex, this.GameConductor.CurrentGameState);
+        Coordinate move = this.BasicAICore.DetermineMove(this.TurnOrderHolder.CurrentPlayerIndex, this.GameConductor.CurrentGameState);
         this.GameConductor.ChooseCell(move);
 
         this.ThinkingCoroutine = null;

@@ -1,3 +1,4 @@
+using TicTacCOSTCO.DataStructures;
 using UnityEngine;
 
 public class HintController : MonoBehaviour

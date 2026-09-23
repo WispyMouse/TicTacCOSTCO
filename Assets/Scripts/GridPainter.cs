@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TicTacCOSTCO.DataStructures;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -41,12 +42,12 @@ public class GridPainter : MonoBehaviour
         this.GameConductor.ResetGame();
     }
 
-    public Dictionary<Vector2Int, Cell> Paint()
+    public Dictionary<Coordinate, Cell> Paint()
     {
         this.WidthSliderValueLabel.text = this.WidthSlider.value.ToString();
         this.HeightSliderValueLabel.text = this.HeightSlider.value.ToString();
 
-        Dictionary<Vector2Int, Cell> cells = new Dictionary<Vector2Int, Cell>();
+        Dictionary<Coordinate, Cell> cells = new Dictionary<Coordinate, Cell>();
 
         for (int ii = this.instantiatedCells.Count - 1; ii >= 0; ii--)
         {
@@ -61,7 +62,7 @@ public class GridPainter : MonoBehaviour
         {
             for (int yy = 0; yy < this.GameConductor.CurrentGameState.Height; yy++)
             {
-                Vector2Int position = new Vector2Int(xx, yy);
+                Coordinate position = new Coordinate(xx, yy);
                 Cell newCell = Instantiate(CellPF, this.transform);
                 newCell.Position = position;
                 newCell.transform.localPosition = new Vector2(xx - xOffset, yy - yOffset);

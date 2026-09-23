@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using TicTacCOSTCO.DataStructures;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -21,7 +22,7 @@ public class GameConductor : MonoBehaviour
     public Image WinnerIcon;
     public GameObject NoMoreMovesPanel;
 
-    public Dictionary<Vector2Int, Cell> PositionsToCells { get; set; } = new Dictionary<Vector2Int, Cell>();
+    public Dictionary<Coordinate, Cell> PositionsToCells { get; set; } = new Dictionary<Coordinate, Cell>();
 
     public LineRenderer LineRendererPF;
     private List<LineRenderer> SolutionLineRenderers { get; set; } = new List<LineRenderer>();
@@ -64,7 +65,7 @@ public class GameConductor : MonoBehaviour
         }
     }
 
-    public void ChooseCell(Vector2Int toChoose)
+    public void ChooseCell(Coordinate toChoose)
     {
         ChooseCell(PositionsToCells[toChoose]);
     }
@@ -79,7 +80,7 @@ public class GameConductor : MonoBehaviour
         {
             this.DrawLineBetween(solution.Root, solution.Tail);
 
-            foreach (Vector2Int curCell in solution.Cells)
+            foreach (Coordinate curCell in solution.Cells)
             {
                 PositionsToCells[curCell].SetHighlightStatus(false);
             }
@@ -166,7 +167,7 @@ public class GameConductor : MonoBehaviour
         {
             for (int yy = 0; yy < this.CurrentGameState.Height; yy++)
             {
-                Vector2Int position = new Vector2Int(xx, yy);
+                Coordinate position = new Coordinate(xx, yy);
                 this.PositionsToCells.TryGetValue(position, out Cell currentCell);
 
                 if (!currentCell.AlreadyPlaced)
@@ -223,26 +224,26 @@ public class GameConductor : MonoBehaviour
         return solutions;
     }
 
-    public List<CellsSolution> GetUntrackedSolutionsFromCell(Vector2Int cell)
+    public List<CellsSolution> GetUntrackedSolutionsFromCell(Coordinate cell)
     {
         List<CellsSolution> solutions = new List<CellsSolution>();
 
-        if (TryGetUntrackedSolutionsFromCellAlongDirection(cell, Vector2Int.right, out CellsSolution rightSolution))
+        if (TryGetUntrackedSolutionsFromCellAlongDirection(cell, Coordinate.right, out CellsSolution rightSolution))
         {
             solutions.Add(rightSolution);
         }
 
-        if (TryGetUntrackedSolutionsFromCellAlongDirection(cell, Vector2Int.down, out CellsSolution downSolution))
+        if (TryGetUntrackedSolutionsFromCellAlongDirection(cell, Coordinate.down, out CellsSolution downSolution))
         {
             solutions.Add(downSolution);
         }
 
-        if (TryGetUntrackedSolutionsFromCellAlongDirection(cell, Vector2Int.right + Vector2Int.down, out CellsSolution downRightSolution))
+        if (TryGetUntrackedSolutionsFromCellAlongDirection(cell, Coordinate.right + Coordinate.down, out CellsSolution downRightSolution))
         {
             solutions.Add(downRightSolution);
         }
 
-        if (TryGetUntrackedSolutionsFromCellAlongDirection(cell, Vector2Int.left + Vector2Int.down, out CellsSolution downLeftSolution))
+        if (TryGetUntrackedSolutionsFromCellAlongDirection(cell, Coordinate.left + Coordinate.down, out CellsSolution downLeftSolution))
         {
             solutions.Add(downLeftSolution);
         }
@@ -250,14 +251,14 @@ public class GameConductor : MonoBehaviour
         return solutions;
     }
 
-    bool TryGetUntrackedSolutionsFromCellAlongDirection(Vector2Int cell, Vector2Int offset, out CellsSolution solution)
+    bool TryGetUntrackedSolutionsFromCellAlongDirection(Coordinate cell, Coordinate offset, out CellsSolution solution)
     {
         if (!this.CurrentGameState.TryGetAllSolutionsFromCellAlongDirection(this.TurnOrderHolder.CurrentPlayerIndex, cell, offset, out solution))
         {
             return false;
         }
         
-        foreach (Vector2Int curCell in solution.Cells)
+        foreach (Coordinate curCell in solution.Cells)
         {
             // If there aren't any accepted solutions with this as a root, continue
             if (!this.CurrentGameState.AcceptedSolutions.TryGetValue(curCell, out List<CellsSolution> solutionsAtRoot))
@@ -279,7 +280,7 @@ public class GameConductor : MonoBehaviour
         return true;
     }
 
-    public void DrawLineBetween(Vector2Int cellA, Vector2Int cellB)
+    public void DrawLineBetween(Coordinate cellA, Coordinate cellB)
     {
         LineRenderer newRenderer = Instantiate(this.LineRendererPF);
         newRenderer.SetPosition(0, this.PositionsToCells[cellA].transform.position + Vector3.back * 5f);

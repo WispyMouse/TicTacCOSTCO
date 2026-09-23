@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using TicTacCOSTCO.DataStructures;
 using UnityEngine;
 
 /// <summary>
@@ -9,9 +10,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "AICore_DoNotLoseSimple.asset", menuName = "COSTCO/Do Not Lose Simple AI Core")]
 public class AIDoNotLoseSimple : AICore
 {
-    public override Vector2Int DetermineMove(int forSide, GameState currentGameState)
+    public override Coordinate DetermineMove(int forSide, GameState currentGameState)
     {
-        IReadOnlyList<Vector2Int> possibleMoves = currentGameState.GetEmptySpots();
+        IReadOnlyList<Coordinate> possibleMoves = currentGameState.GetEmptySpots();
 
         if (currentGameState.CurrentGameState != GameState.GameStateEnum.Cascade)
         {
@@ -20,7 +21,7 @@ public class AIDoNotLoseSimple : AICore
         }
 
         // Oh, I might lose
-        IReadOnlyList<Vector2Int> notLosingMoves = this.GetMovesThatDoNotImmediatleyLose(possibleMoves, currentGameState, forSide);
+        IReadOnlyList<Coordinate> notLosingMoves = this.GetMovesThatDoNotImmediatleyLose(possibleMoves, currentGameState, forSide);
 
         if (notLosingMoves.Any())
         {

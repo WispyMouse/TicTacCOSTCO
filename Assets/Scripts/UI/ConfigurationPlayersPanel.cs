@@ -56,4 +56,14 @@ public class ConfigurationPlayersPanel : MonoBehaviour
         }
         this.TurnOrderHolder.ResetGame();
     }
+
+    public void OpenSymbolPanel(int forPlayer)
+    {
+
+    }
+
+    public void OpenColorPanel(int forPlayer)
+    {
+
+    }
 }
