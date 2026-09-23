@@ -1,7 +1,6 @@
-namespace TicTacCOSTCO.DataStructures
+namespace TicTacCOSTCO.DataStructures.Tools
 {
     using System.Collections.Generic;
-    using System.Runtime.CompilerServices;
     using TicTacCOSTCO.DataStructures;
 
     public static class HypotheticalSolutionTool
@@ -12,10 +11,10 @@ namespace TicTacCOSTCO.DataStructures
         /// </summary>
         public static IReadOnlyList<Coordinate> ScoreDirectionalities = new Coordinate[]
         {
-        Coordinate.right,
-        Coordinate.right + Coordinate.down,
-        Coordinate.down,
-        Coordinate.left + Coordinate.down,
+            Coordinate.right,
+            Coordinate.right + Coordinate.down,
+            Coordinate.down,
+            Coordinate.left + Coordinate.down,
         };
 
         /// <summary>

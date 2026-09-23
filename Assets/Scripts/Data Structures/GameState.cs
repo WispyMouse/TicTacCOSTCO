@@ -20,10 +20,10 @@ namespace TicTacCOSTCO.DataStructures
 
         public IReadOnlyList<Coordinate> directionalities = new Coordinate[]
         {
-        Coordinate.right,
-        Coordinate.right + Coordinate.down,
-        Coordinate.down,
-        Coordinate.left + Coordinate.down,
+            Coordinate.right,
+            Coordinate.right + Coordinate.down,
+            Coordinate.down,
+            Coordinate.left + Coordinate.down,
         };
 
         public readonly Dictionary<Coordinate, int?> SpotToSideOwnership = new Dictionary<Coordinate, int?>();

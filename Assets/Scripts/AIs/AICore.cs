@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using TicTacCOSTCO.DataStructures;
+using TicTacCOSTCO.DataStructures.Tools;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "AICore.asset", menuName = "COSTCO/AI Core")]

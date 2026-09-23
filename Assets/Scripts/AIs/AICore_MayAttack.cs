@@ -4,6 +4,8 @@ using TicTacCOSTCO.DataStructures;
 using UnityEngine;
 using UnityEngine.Assertions.Must;
 using UnityEngine.UIElements;
+using TicTacCOSTCO.DataStructures;
+using TicTacCOSTCO.DataStructures.Tools;
 
 /// <summary>
 /// When it is possible to make a connection, consider a % chance of taking it.
