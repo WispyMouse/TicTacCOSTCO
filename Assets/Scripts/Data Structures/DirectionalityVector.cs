@@ -5,10 +5,13 @@ namespace TicTacCOSTCO.DataStructures
 
     /// <summary>
     /// Represents a "direction", useful for determining connections.
+    /// In COSTO, a 4-in-a-row and 5-in-a-row in a game with 3-in-a-row connections
+    /// are not extra points. By grouping them using DirectionalityVectors, we can
+    /// avoid double-scoring these longer lines.
     /// </summary>
     public struct DirectionalityVector : IEquatable<DirectionalityVector>
     {
-        const string NOTZERO = "Directionality cannot be zero";
+        const string NOTZERO = "Directionality cannot be zero for both X and Y";
 
         public int X;
         public int Y;
@@ -20,6 +23,11 @@ namespace TicTacCOSTCO.DataStructures
 
             this.X = x;
             this.Y = y;
+
+            if (this.X == 0 && this.Y == 0)
+            {
+                throw new ArgumentException(NOTZERO);
+            }
         }
 
         public override readonly bool Equals(object other)
