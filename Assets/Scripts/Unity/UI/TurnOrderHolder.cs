@@ -19,28 +19,21 @@ namespace TicTacCOSTCO.Unity.UI
 
         public HashSet<int> SidesThatAreAI = new HashSet<int>();
 
-        public Slider PlayerCountSlider;
-        public TMP_Text PlayerCountSliderValueLabel;
-        public ConfigurationPlayersPanel CurrentConfigurationPanel;
-
         public GameConductor GameConductor;
         public int PlayerCount => this.GameConductor.CurrentGameState == null ? 0 : this.GameConductor.CurrentGameState.PlayerCount;
 
         public void ResetGame()
         {
             int playerCount = this.GameConductor.CurrentGameState.SideIndexesStillInGame.Count;
-            playerCount = (int)this.PlayerCountSlider.value;
-            this.PlayerCountSliderValueLabel.text = playerCount.ToString();
 
             this.PlayerNames.Clear();
-
-            this.CurrentConfigurationPanel.PlayerCountUpdated();
 
             for (int ii = 0; ii < playerCount; ii++)
             {
                 if (!this.SidesThatAreAI.Contains(ii))
                 {
-                    this.PlayerNames.Add(this.CurrentConfigurationPanel.GetPlayerName(ii));
+                    // TODO: Re-enable naming yourself!
+                    this.PlayerNames.Add("Human");
                 }
                 else
                 {

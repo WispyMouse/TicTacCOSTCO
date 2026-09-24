@@ -46,7 +46,7 @@ namespace TicTacCOSTCO.Unity.UI
             this.CascadeText.transform.parent.gameObject.SetActive(false);
             this.NoMoreMovesPanel.SetActive(false);
 
-            this.CurrentGameState = new GameState(Mathf.RoundToInt(this.GridPainter.WidthSlider.value), Mathf.RoundToInt(this.GridPainter.HeightSlider.value), (int)this.TurnOrderHolder.PlayerCountSlider.value);
+            this.CurrentGameState = new GameState(PersistentGameConfiguration.Singleton.Width, PersistentGameConfiguration.Singleton.Height, PersistentGameConfiguration.Singleton.PlayerCount);
 
             this.PositionsToCells = this.GridPainter.Paint();
             this.TurnOrderHolder.ResetGame();

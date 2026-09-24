@@ -1,8 +1,7 @@
 {
     "name": "TicTacCOSTCO.Unity",
-    "rootNamespace": "",
+    "rootNamespace": "TicTacCOSTCO.Unity",
     "references": [
-        "GUID:7cd6a93b2d500bd469b481c1ff70b804",
         "GUID:3c9d604a283fa324ebe5a40228f15207"
     ],
     "includePlatforms": [],
