@@ -44,6 +44,10 @@
 ExportedObj/
 .consulo/
 *.csproj
+!Tools/HeadlessTests/*.csproj
+Tools/HeadlessTests/bin/
+Tools/HeadlessTests/obj/
+TestResult.xml
 *.unityproj
 *.sln
 *.slnx

@@ -29,6 +29,8 @@ namespace TicTacCOSTCO.Unity.UI
         private List<LineRenderer> SolutionLineRenderers { get; set; } = new List<LineRenderer>();
 
         public GameState CurrentGameState { get; set; }
+        public long StateVersion { get; private set; }
+        public event System.Action OnGameReset;
 
         public void Start()
         {
@@ -37,6 +39,8 @@ namespace TicTacCOSTCO.Unity.UI
 
         public void ResetGame()
         {
+            this.StateVersion++;
+            this.OnGameReset?.Invoke();
             for (int ii = this.SolutionLineRenderers.Count - 1; ii >= 0; ii--)
             {
                 Destroy(this.SolutionLineRenderers[ii].gameObject);
@@ -73,6 +77,14 @@ namespace TicTacCOSTCO.Unity.UI
 
         public void ChooseCell(Cell toChoose)
         {
+            if (this.CurrentGameState == null ||
+                this.CurrentGameState.CurrentGameState == GameState.GameStateEnum.End ||
+                !this.CurrentGameState.SpotToSideOwnership.TryGetValue(toChoose.Position, out int? owner) ||
+                owner.HasValue)
+            {
+                return;
+            }
+            this.StateVersion++;
             int takingTurn = this.CurrentGameState.CurrentPlayerIndex;
             int previousCascade = this.CurrentGameState.LastCascade;
 

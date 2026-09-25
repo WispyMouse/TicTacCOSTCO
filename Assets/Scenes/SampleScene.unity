@@ -6018,7 +6018,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e95c110e951e714da6b69cc725eca6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AIThinkerLoop
-  BasicAICore: {fileID: 11400000, guid: 33a5d7b5313678f4cb99a7f06177c15b, type: 2}
+  BasicAICore: {fileID: 11400000, guid: 7be8929889314ba8997c6de33b0cb128, type: 2}
   GameConductor: {fileID: 1339510086}
   TurnOrderHolder: {fileID: 1596149086}
   TimeForAIToThinkBase: 0.3

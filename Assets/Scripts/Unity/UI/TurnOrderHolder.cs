@@ -18,13 +18,27 @@ namespace TicTacCOSTCO.Unity.UI
         public Image CurrentTurnIconHolder;
 
         public HashSet<int> SidesThatAreAI = new HashSet<int>();
+        // Inspector-configurable seats; runtime toggles continue to work as before.
+        public List<int> InitialComputerPlayers = new List<int>();
+        private TicTacCOSTCO.DataStructures.GameState subscribedGame;
 
         public GameConductor GameConductor;
         public int PlayerCount => this.GameConductor.CurrentGameState == null ? 0 : this.GameConductor.CurrentGameState.PlayerCount;
 
+        private void Awake()
+        {
+            foreach (int side in InitialComputerPlayers)
+                if (side >= 0) SidesThatAreAI.Add(side);
+        }
+
+        private void OnDestroy()
+        {
+            if (subscribedGame != null) subscribedGame.OnPlayerTurn -= UpdateTurn;
+        }
+
         public void ResetGame()
         {
-            int playerCount = this.GameConductor.CurrentGameState.SideIndexesStillInGame.Count;
+            int playerCount = this.GameConductor.CurrentGameState.PlayerCount;
 
             this.PlayerNames.Clear();
 
@@ -41,7 +55,9 @@ namespace TicTacCOSTCO.Unity.UI
                 }
             }
 
-            this.GameConductor.CurrentGameState.OnPlayerTurn += UpdateTurn;
+            if (subscribedGame != null) subscribedGame.OnPlayerTurn -= UpdateTurn;
+            subscribedGame = this.GameConductor.CurrentGameState;
+            subscribedGame.OnPlayerTurn += UpdateTurn;
             this.UpdateTurn(this.GameConductor.CurrentGameState.CurrentPlayerIndex);
         }
 

@@ -6,7 +6,6 @@ namespace TicTacCOSTCO.DataStructures
     using System.Numerics;
     using TicTacCOSTCO.DataStructures;
     using TicTacCOSTCO.DataStructures.Tools;
-    using Unity.VisualScripting;
 
     public class GameState
     {

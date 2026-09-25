@@ -1,6 +1,5 @@
 namespace TicTacCOSTCO.DataStructures
 {
-    using NUnit.Framework;
     using System;
     using System.Collections.Generic;
 
@@ -40,9 +39,10 @@ namespace TicTacCOSTCO.DataStructures
         /// <param name="directionality">Directionality vector of the connection.</param>
         public CellsConnection(IReadOnlyList<Coordinate> cells, DirectionalityVector directionality)
         {
-            int cellsCount = cells.Count;
-
-            Assert.GreaterOrEqual(cellsCount, 1, REQUIRESONEORMORECELLS);
+            if (cells == null || cells.Count == 0)
+            {
+                throw new ArgumentException(REQUIRESONEORMORECELLS, nameof(cells));
+            }
 
             this.Cells = cells;
             this.Root = cells[0];

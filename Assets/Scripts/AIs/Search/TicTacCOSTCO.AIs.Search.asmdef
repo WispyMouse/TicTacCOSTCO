@@ -1,0 +1,7 @@
+{
+    "name": "TicTacCOSTCO.AIs.Search",
+    "rootNamespace": "TicTacCOSTCO.AIs.Search",
+    "references": ["TicTacCOSTCO.DataStructures"],
+    "autoReferenced": true,
+    "noEngineReferences": true
+}

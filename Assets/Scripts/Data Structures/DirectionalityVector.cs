@@ -1,6 +1,5 @@
 namespace TicTacCOSTCO.DataStructures
 {
-    using NUnit.Framework;
     using System;
 
     /// <summary>

@@ -5,7 +5,8 @@
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
         "Scripts",
-        "TicTacCOSTCO.DataStructures"
+        "TicTacCOSTCO.DataStructures",
+        "TicTacCOSTCO.AIs.Search"
     ],
     "includePlatforms": [
         "Editor"
