@@ -44,9 +44,9 @@ namespace TicTacCOSTCO.Unity.UI
                 newSpoke.transform.localRotation = Quaternion.Euler(0, 0, rotation);
                 newSpoke.transform.localPosition = new Vector3(Mathf.Cos(rotationWithBase * Mathf.Deg2Rad), Mathf.Sin(rotationWithBase * Mathf.Deg2Rad)) * SpokeOffset;
 
-                newSpoke.SpokeImage.sprite = this.TurnOrderHolder.SpritesForTurns[playerIndex];
+                newSpoke.SpokeImage.sprite = PersistentGameConfiguration.Singleton.Players[playerIndex].RepresenterSprite;
 
-                string spokeName = this.TurnOrderHolder.PlayerNames[playerIndex];
+                string spokeName = PersistentGameConfiguration.Singleton.Players[playerIndex].PlayerName;
                 if (string.IsNullOrEmpty(spokeName))
                 {
                     newSpoke.NameLabel.gameObject.SetActive(false);

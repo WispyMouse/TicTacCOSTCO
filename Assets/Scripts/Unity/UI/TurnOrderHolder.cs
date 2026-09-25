@@ -8,12 +8,8 @@ namespace TicTacCOSTCO.Unity.UI
 
     public class TurnOrderHolder : MonoBehaviour
     {
-        public delegate void UITurnStarted(int sideIndex);
+        public delegate void UITurnStarted(int playerProfileIndex);
         public UITurnStarted OnTurnStarted;
-
-        public List<Sprite> SpritesForTurns = new List<Sprite>();
-        public List<Color> KnockoutColorsForTurns = new List<Color>();
-        public List<string> PlayerNames { get; set; } = new List<string>();
 
         public Image CurrentTurnIconHolder;
 
@@ -26,29 +22,15 @@ namespace TicTacCOSTCO.Unity.UI
         {
             int playerCount = this.GameConductor.CurrentGameState.SideIndexesStillInGame.Count;
 
-            this.PlayerNames.Clear();
-
-            for (int ii = 0; ii < playerCount; ii++)
-            {
-                if (!this.SidesThatAreAI.Contains(ii))
-                {
-                    // TODO: Re-enable naming yourself!
-                    this.PlayerNames.Add("Human");
-                }
-                else
-                {
-                    this.PlayerNames.Add($"Computer");
-                }
-            }
-
             this.GameConductor.CurrentGameState.OnPlayerTurn += UpdateTurn;
             this.UpdateTurn(this.GameConductor.CurrentGameState.CurrentPlayerIndex);
         }
 
-        public void UpdateTurn(int index)
+        public void UpdateTurn(int toProfileIndex)
         {
-            this.CurrentTurnIconHolder.sprite = this.SpritesForTurns[index];
-            OnTurnStarted?.Invoke(index);
+            PlayerProfile profile = PersistentGameConfiguration.Singleton.Players[toProfileIndex];
+            this.CurrentTurnIconHolder.sprite = profile.RepresenterSprite;
+            OnTurnStarted?.Invoke(toProfileIndex);
         }
 
         public void ToggleHumanity(int index)

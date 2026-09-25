@@ -10,6 +10,8 @@ namespace TicTacCOSTCO.DataStructures
 
     public class GameState
     {
+        public const int MINIMUMPLAYERS = 2;
+
         public enum GameStateEnum
         {
             /// <summary>

@@ -21,14 +21,14 @@ namespace TicTacCOSTCO.Unity.UI
             }
         }
 
-        public void AddToScoreboard(int winner)
+        public void AddToScoreboard(PlayerProfile winner)
         {
             if (this.WinnerIconHolder.childCount >= this.MaxDisplayedWins)
             {
                 Destroy(this.WinnerIconHolder.GetChild(0).gameObject);
             }
 
-            Sprite winnerSprite = TurnOrderHolder.SpritesForTurns[winner];
+            Sprite winnerSprite = winner.RepresenterSprite;
             Image newImage = Instantiate(WinnerIconImage, WinnerIconHolder);
             newImage.sprite = winnerSprite;
         }

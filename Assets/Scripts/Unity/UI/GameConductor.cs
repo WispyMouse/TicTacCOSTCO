@@ -46,7 +46,10 @@ namespace TicTacCOSTCO.Unity.UI
             this.CascadeText.transform.parent.gameObject.SetActive(false);
             this.NoMoreMovesPanel.SetActive(false);
 
-            this.CurrentGameState = new GameState(PersistentGameConfiguration.Singleton.Width, PersistentGameConfiguration.Singleton.Height, PersistentGameConfiguration.Singleton.PlayerCount);
+            this.CurrentGameState = new GameState(
+                PersistentGameConfiguration.Singleton.Width, 
+                PersistentGameConfiguration.Singleton.Height, 
+                PersistentGameConfiguration.Singleton.Players.Count);
 
             this.PositionsToCells = this.GridPainter.Paint();
             this.TurnOrderHolder.ResetGame();
@@ -74,6 +77,7 @@ namespace TicTacCOSTCO.Unity.UI
         public void ChooseCell(Cell toChoose)
         {
             int takingTurn = this.CurrentGameState.CurrentPlayerIndex;
+            PlayerProfile player = PersistentGameConfiguration.Singleton.Players[takingTurn];
             int previousCascade = this.CurrentGameState.LastCascade;
 
             toChoose.SetSide(TurnOrderHolder.CurrentTurnIconHolder.sprite, this.CurrentGameState.CurrentPlayerIndex);
@@ -81,7 +85,7 @@ namespace TicTacCOSTCO.Unity.UI
 
             foreach (CellsConnection solution in newSolutions)
             {
-                this.DrawLineBetween(solution.Root, solution.Tail, takingTurn);
+                this.DrawLineBetween(solution.Root, solution.Tail, player);
 
                 foreach (Coordinate curCell in solution.Cells)
                 {
@@ -159,24 +163,26 @@ namespace TicTacCOSTCO.Unity.UI
             this.ChooseCell(getCell);
         }
 
-        public void DrawLineBetween(Coordinate cellA, Coordinate cellB, int factionIndex)
+        public void DrawLineBetween(Coordinate cellA, Coordinate cellB, PlayerProfile faction)
         {
             LineRenderer newRenderer = Instantiate(this.LineRendererPF);
             newRenderer.SetPosition(0, this.PositionsToCells[cellA].transform.position + Vector3.back * 5f);
             newRenderer.SetPosition(1, this.PositionsToCells[cellB].transform.position + Vector3.back * 5f);
-            newRenderer.startColor = this.TurnOrderHolder.KnockoutColorsForTurns[factionIndex];
-            newRenderer.endColor = this.TurnOrderHolder.KnockoutColorsForTurns[factionIndex];
+            newRenderer.startColor = faction.KnockoutColor;
+            newRenderer.endColor = faction.KnockoutColor;
             this.SolutionLineRenderers.Add(newRenderer);
         }
 
         public void DeclareCurrentPlayerVictorious()
         {
+            PlayerProfile player = PersistentGameConfiguration.Singleton.Players[this.CurrentGameState.CurrentPlayerIndex];
+
             this.TurnOrderHolder.UpdateTurn(this.CurrentGameState.CurrentPlayerIndex);
             this.CascadeText.transform.parent.gameObject.SetActive(false);
             this.WinnerPanel.transform.parent.gameObject.SetActive(true);
-            this.WinnerIcon.sprite = this.TurnOrderHolder.SpritesForTurns[this.CurrentGameState.CurrentPlayerIndex];
+            this.WinnerIcon.sprite = player.RepresenterSprite;
 
-            string winnerName = this.TurnOrderHolder.PlayerNames[this.CurrentGameState.CurrentPlayerIndex];
+            string winnerName = player.PlayerName;
             if (string.IsNullOrEmpty(winnerName))
             {
                 this.WinnerText.text = winnerName;
@@ -187,7 +193,7 @@ namespace TicTacCOSTCO.Unity.UI
                 this.WinnerText.gameObject.SetActive(false);
             }
 
-            this.ScoreBoard.AddToScoreboard(this.CurrentGameState.CurrentPlayerIndex);
+            this.ScoreBoard.AddToScoreboard(player);
         }
     }
 }
