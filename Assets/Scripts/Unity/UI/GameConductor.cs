@@ -104,9 +104,16 @@ namespace TicTacCOSTCO.Unity.UI
                 }
             }
 
-            if (this.CurrentGameState.SideIndexesStillInGame.Count == 1)
+            if (this.CurrentGameState.CurrentGameState == GameState.GameStateEnum.End)
             {
-                DeclareCurrentPlayerVictorious();
+                if (!this.CurrentGameState.Winner.HasValue)
+                {
+                    this.NoMoreMovesPanel.gameObject.SetActive(true);
+                }
+                else
+                {
+                    DeclareCurrentPlayerVictorious();
+                }
             }
         }
 
@@ -166,10 +173,8 @@ namespace TicTacCOSTCO.Unity.UI
         {
             this.TurnOrderHolder.UpdateTurn(this.CurrentGameState.CurrentPlayerIndex);
             this.CascadeText.transform.parent.gameObject.SetActive(false);
-            this.CurrentGameState.CurrentGameState = GameState.GameStateEnum.End;
             this.WinnerPanel.transform.parent.gameObject.SetActive(true);
             this.WinnerIcon.sprite = this.TurnOrderHolder.SpritesForTurns[this.CurrentGameState.CurrentPlayerIndex];
-            this.CurrentGameState.CurrentGameState = GameState.GameStateEnum.End;
 
             string winnerName = this.TurnOrderHolder.PlayerNames[this.CurrentGameState.CurrentPlayerIndex];
             if (string.IsNullOrEmpty(winnerName))

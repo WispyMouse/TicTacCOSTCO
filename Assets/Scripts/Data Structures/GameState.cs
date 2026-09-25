@@ -12,15 +12,32 @@ namespace TicTacCOSTCO.DataStructures
     {
         public enum GameStateEnum
         {
+            /// <summary>
+            /// This game has not started yet.
+            /// </summary>
             NotStarted = 0,
+            /// <summary>
+            /// The game is progress.
+            /// </summary>
             Playing = 1,
+            /// <summary>
+            /// Indicates the "cascade" state.
+            /// Once in Cascade, players need to make at least <see cref="LastCascade"/>
+            /// connections on their turn, or they are eliminated.
+            /// </summary>
             Cascade = 2,
+            /// <summary>
+            /// Indicates that the game has ended.
+            /// If <see cref="Winner"/> has no value, the game is a draw.
+            /// Otherwise, that player index is declared the winner.
+            /// </summary>
             End = 3
         }
 
-        public GameStateEnum CurrentGameState = GameStateEnum.NotStarted;
+        public GameStateEnum CurrentGameState { get; private set; } = GameStateEnum.NotStarted;
+        public int? Winner { get; private set; } = null;
 
-        public IReadOnlyList<DirectionalityVector> directionalities = new DirectionalityVector[]
+        public IReadOnlyList<DirectionalityVector> Directionalities = new DirectionalityVector[]
         {
             new DirectionalityVector(1, 0),
             new DirectionalityVector(1, -1),
@@ -114,11 +131,26 @@ namespace TicTacCOSTCO.DataStructures
                 // If there were no new solutions, or not enough solutions for previous cascade, and we're in cascade state,
                 // the current player should be knocked out
                 this.SideIndexesStillInGame.Remove(this.CurrentPlayerIndex);
+
+                if (this.SideIndexesStillInGame.Count == 1)
+                {
+                    this.CurrentPlayerIndex = this.SideIndexesStillInGame.First();
+                    this.Winner = this.CurrentPlayerIndex;
+                    this.CurrentGameState = GameStateEnum.End;
+                    return;
+                }
             }
             else if (solutionsCount > 0)
             {
                 this.CurrentGameState = GameState.GameStateEnum.Cascade;
                 this.LastCascade = solutionsCount;
+            }
+
+            if (!this.AnyEmptySpots())
+            {
+                this.CurrentGameState = GameStateEnum.End;
+                this.Winner = null;
+                return;
             }
 
             if (advancePlayer)
@@ -251,7 +283,7 @@ namespace TicTacCOSTCO.DataStructures
                         continue;
                     }
 
-                    foreach (DirectionalityVector direction in directionalities)
+                    foreach (DirectionalityVector direction in Directionalities)
                     {
                         if (TryGetAllSolutionsFromCellAlongDirection(SpotToSideOwnership[position].Value, position, direction, out CellsConnection cellSolutions))
                         {
@@ -317,7 +349,7 @@ namespace TicTacCOSTCO.DataStructures
                         continue;
                     }
 
-                    foreach (DirectionalityVector direction in directionalities)
+                    foreach (DirectionalityVector direction in Directionalities)
                     {
                         if (TryGetAllSolutionsFromCellAlongDirection(sideIndex, position, direction, out CellsConnection cellSolutions))
                         {

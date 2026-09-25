@@ -105,8 +105,8 @@ public class AIMayAttack : AICore
         List<Coordinate> results = new List<Coordinate>();
 
         List<DirectionalityVector> relativeDirections = new List<DirectionalityVector>();
-        relativeDirections.AddRange(currentGameState.directionalities);
-        relativeDirections.AddRange(currentGameState.directionalities.Select(x => -x));
+        relativeDirections.AddRange(currentGameState.Directionalities);
+        relativeDirections.AddRange(currentGameState.Directionalities.Select(x => -x));
 
         foreach (Coordinate move in possibleMoves)
         {
