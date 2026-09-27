@@ -8,6 +8,7 @@ namespace TicTacCOSTCO.Unity.UI
     using UnityEngine.EventSystems;
     using UnityEngine.InputSystem;
     using UnityEngine.Profiling;
+    using UnityEngine.SceneManagement;
     using UnityEngine.UI;
 
     public class GameConductor : MonoBehaviour
@@ -195,6 +196,11 @@ namespace TicTacCOSTCO.Unity.UI
             }
 
             this.ScoreBoard.AddToScoreboard(player);
+        }
+
+        public void MainMenu()
+        {
+            SceneManager.LoadScene(0);
         }
     }
 }
