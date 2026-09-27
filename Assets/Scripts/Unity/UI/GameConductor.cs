@@ -24,6 +24,7 @@ namespace TicTacCOSTCO.Unity.UI
         public TMP_Text WinnerText;
         public Image WinnerIcon;
         public GameObject NoMoreMovesPanel;
+        public CascadeBanner CascadeBanner;
 
         public Dictionary<Coordinate, Cell> PositionsToCells { get; set; } = new Dictionary<Coordinate, Cell>();
 
@@ -56,6 +57,7 @@ namespace TicTacCOSTCO.Unity.UI
             this.PositionsToCells = this.GridPainter.Paint();
             this.TurnOrderHolder.ResetGame();
             this.CurrentTurnWheel.ResetGame();
+            this.CascadeBanner.ResetGame();
         }
 
         public void Update()

@@ -487,6 +487,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: framed_wood
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 165
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 15, y: 11, z: 13, w: 12}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea83804ec1921b446893c84b5462c5f7
+      internalID: 883084721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -509,6 +531,7 @@ TextureImporter:
       GreenBordered: -1251895527
       RedBordered: -1464713320
       WoodTile: 8490642196906846815
+      framed_wood: 883084721
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

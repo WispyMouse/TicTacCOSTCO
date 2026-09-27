@@ -22,7 +22,7 @@ namespace TicTacCOSTCO.Unity.UI
         {
             int playerCount = this.GameConductor.CurrentGameState.SideIndexesStillInGame.Count;
 
-            this.GameConductor.CurrentGameState.OnPlayerTurn += UpdateTurn;
+            this.GameConductor.CurrentGameState.OnPlayerStartTurn += UpdateTurn;
             this.UpdateTurn(this.GameConductor.CurrentGameState.CurrentPlayerIndex);
         }
 

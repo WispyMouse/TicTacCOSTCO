@@ -15,6 +15,11 @@ public class CascadeText : MonoBehaviour
 
     void Update()
     {
+        if (this.SecondsPerCycle < 0)
+        {
+            return;
+        }
+
         curTime += Time.deltaTime;
 
         StringBuilder cascadeText = new StringBuilder();
@@ -36,5 +41,16 @@ public class CascadeText : MonoBehaviour
         }
 
         this.Text.text = cascadeText.ToString();
+    }
+
+    public void DisableAnimation()
+    {
+        this.SecondsPerCycle = -1;
+        this.Text.text = this.TextString;
+    }
+
+    public void EnableAnimation(float timePerCycle)
+    {
+        this.SecondsPerCycle = timePerCycle;
     }
 }

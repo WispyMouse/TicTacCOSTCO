@@ -62,7 +62,8 @@ namespace TicTacCOSTCO.DataStructures
         public HashSet<int> SideIndexesStillInGame = new HashSet<int>();
 
         public delegate void OnPlayerTurnDelegate(int turn);
-        public OnPlayerTurnDelegate OnPlayerTurn;
+        public OnPlayerTurnDelegate OnPlayerStartTurn;
+        public OnPlayerTurnDelegate OnPlayerMadeMove;
 
         public Dictionary<Coordinate, List<CellsConnection>> AcceptedSolutions { get; set; } = new Dictionary<Coordinate, List<CellsConnection>>();
 
@@ -157,6 +158,8 @@ namespace TicTacCOSTCO.DataStructures
 
             if (advancePlayer)
             {
+                this.OnPlayerMadeMove?.Invoke(this.CurrentPlayerIndex);
+
                 for (int ii = 1; ii < this.PlayerCount; ii++)
                 {
                     int nextProspectivePlayer = (this.CurrentPlayerIndex + ii) % this.PlayerCount;
@@ -166,7 +169,7 @@ namespace TicTacCOSTCO.DataStructures
                     }
 
                     this.CurrentPlayerIndex = nextProspectivePlayer;
-                    this.OnPlayerTurn?.Invoke(this.CurrentPlayerIndex);
+                    this.OnPlayerStartTurn?.Invoke(this.CurrentPlayerIndex);
                     break;
                 }
             }

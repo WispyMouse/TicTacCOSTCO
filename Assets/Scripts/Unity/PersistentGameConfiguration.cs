@@ -6,6 +6,9 @@ namespace TicTacCOSTCO.Unity
 
     public class PersistentGameConfiguration : MonoBehaviour
     {
+        public delegate void GameplaySettingsUpdated();
+        public GameplaySettingsUpdated OnGameplaySettingsUpdated;
+
         public const string HUMAN = "Human";
         public static PersistentGameConfiguration Singleton { get; private set; } = null;
 
@@ -53,16 +56,20 @@ namespace TicTacCOSTCO.Unity
             {
                 AddPlayer();
             }
+
+            this.OnGameplaySettingsUpdated?.Invoke();
         }
 
         public void UpdateWidth(int newValue)
         {
             this.Width = newValue;
+            this.OnGameplaySettingsUpdated?.Invoke();
         }
 
         public void UpdateHeight(int newValue)
         {
             this.Height = newValue;
+            this.OnGameplaySettingsUpdated?.Invoke();
         }
 
         /// <summary>
@@ -94,6 +101,8 @@ namespace TicTacCOSTCO.Unity
                     continue;
                 }
             }
+
+            this.OnGameplaySettingsUpdated?.Invoke();
         }
 
         /// <summary>
@@ -135,6 +144,8 @@ namespace TicTacCOSTCO.Unity
             newProfile.PlayerName = HUMAN;
 
             this._Players.Add(newProfile);
+
+            this.OnGameplaySettingsUpdated?.Invoke();
 
             return newProfile;
         }

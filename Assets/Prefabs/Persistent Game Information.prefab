@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4228208467606485366
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2284308473870015341}
+  - component: {fileID: 1224295847967308278}
+  m_Layer: 0
+  m_Name: Persistent Game Information
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2284308473870015341
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4228208467606485366}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1224295847967308278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4228208467606485366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf1751227d2d0c44fb9c03a29487aaa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: TicTacCOSTCO.Unity::PersistentGameConfiguration
+  _StartWidth: 5
+  _StartHeight: 5
+  _StartPlayerCount: 2
+  knockoutColorsForTurns:
+  - {r: 0.020592337, g: 0.24528301, b: 0, a: 1}
+  - {r: 0.3584906, g: 0, b: 0, a: 1}
+  - {r: 0.5566038, g: 0.43112722, b: 0.018378438, a: 1}
+  - {r: 0, g: 0.20611286, b: 0.8584906, a: 1}
+  - {r: 0.284, g: 0.27335, b: 0.27335, a: 1}
+  - {r: 0.45248762, g: 0.7169812, b: 0, a: 1}
+  PlayerIconOptions:
+  - {fileID: 21300000, guid: 3472bc0d9d2611a4e8bf6a75fd194e62, type: 3}
+  - {fileID: 21300000, guid: 6ab943ec47b8c3c448abc30d86fc7b0d, type: 3}
+  - {fileID: 21300000, guid: a58e87facd0599b49bb69cb0857cf52c, type: 3}
+  - {fileID: 21300000, guid: 5a4a40f1bcfe40c4a93cd8b90dc74961, type: 3}
+  - {fileID: 21300000, guid: b370234f70ff5d643b2a55cb06a2e1b4, type: 3}
+  - {fileID: 21300000, guid: 5f3152704fb5ace4cb3fa4335c2eb5e5, type: 3}
+  AICores:
+  - {fileID: 11400000, guid: 1e663c19be380f04f895b53f27c587bc, type: 2}
+  - {fileID: 11400000, guid: 70a1deee9adca984da56d0a89e2cf833, type: 2}
+  - {fileID: 11400000, guid: 33a5d7b5313678f4cb99a7f06177c15b, type: 2}
