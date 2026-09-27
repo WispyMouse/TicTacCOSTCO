@@ -72,7 +72,9 @@ namespace TicTacCOSTCO.Unity.UI
             }
 
             this.ThinkingCoroutine = null;
-            Coordinate move = this.BasicAICore.DetermineMove(this.GameConductor.CurrentGameState.CurrentPlayerIndex, this.GameConductor.CurrentGameState);
+            Coordinate move =
+                PersistentGameConfiguration.Singleton.Players[this.GameConductor.CurrentGameState.CurrentPlayerIndex].AICore
+                .DetermineMove(this.GameConductor.CurrentGameState.CurrentPlayerIndex, this.GameConductor.CurrentGameState);
             this.GameConductor.ChooseCell(move);
         }
     }

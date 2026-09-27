@@ -29,7 +29,7 @@ namespace TicTacCOSTCO.Unity.UI
                 Destroy(this.WinnerIconHolder.GetChild(0).gameObject);
             }
 
-            Sprite winnerSprite = PersistentGameConfiguration.Singleton.PlayerIconOptions[winner.RepresenterSpriteIndex];
+            Sprite winnerSprite = winner.SpriteRepresentation;
             Image newImage = Instantiate(WinnerIconImage, WinnerIconHolder);
             newImage.sprite = winnerSprite;
         }

@@ -181,7 +181,7 @@ namespace TicTacCOSTCO.Unity.UI
             this.TurnOrderHolder.UpdateTurn(this.CurrentGameState.CurrentPlayerIndex);
             this.CascadeText.transform.parent.gameObject.SetActive(false);
             this.WinnerPanel.transform.parent.gameObject.SetActive(true);
-            this.WinnerIcon.sprite = PersistentGameConfiguration.Singleton.PlayerIconOptions[player.RepresenterSpriteIndex];
+            this.WinnerIcon.sprite = player.SpriteRepresentation;
 
             string winnerName = player.PlayerName;
             if (string.IsNullOrEmpty(winnerName))

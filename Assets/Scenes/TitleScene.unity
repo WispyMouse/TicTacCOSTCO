@@ -3589,6 +3589,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 5a4a40f1bcfe40c4a93cd8b90dc74961, type: 3}
   - {fileID: 21300000, guid: b370234f70ff5d643b2a55cb06a2e1b4, type: 3}
   - {fileID: 21300000, guid: 5f3152704fb5ace4cb3fa4335c2eb5e5, type: 3}
+  AICores:
+  - {fileID: 11400000, guid: 1e663c19be380f04f895b53f27c587bc, type: 2}
+  - {fileID: 11400000, guid: 70a1deee9adca984da56d0a89e2cf833, type: 2}
+  - {fileID: 11400000, guid: 33a5d7b5313678f4cb99a7f06177c15b, type: 2}
 --- !u!4 &1019092117
 Transform:
   m_ObjectHideFlags: 0

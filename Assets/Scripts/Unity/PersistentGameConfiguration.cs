@@ -32,6 +32,8 @@ namespace TicTacCOSTCO.Unity
 
         public List<Sprite> PlayerIconOptions = new List<Sprite>();
 
+        public List<AICore> AICores = new List<AICore>();
+
         private void Awake()
         {
             // If we already have an instance, don't make another

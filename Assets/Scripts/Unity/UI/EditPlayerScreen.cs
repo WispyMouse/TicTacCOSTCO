@@ -1,10 +1,10 @@
-using NUnit.Framework;
-using TMPro;
-using UnityEngine;
-using UnityEngine.UI;
-
 namespace TicTacCOSTCO.Unity.UI
 {
+    using System.Collections.Generic;
+    using TMPro;
+    using UnityEngine;
+    using UnityEngine.UI;
+
     public class EditPlayerScreen : MonoBehaviour
     {
         public PlayerProfile ShowingProfile { get; private set; }
@@ -17,6 +17,9 @@ namespace TicTacCOSTCO.Unity.UI
         public GameObject AIPanel;
 
         public GameObject AlreadyTakenPanel;
+
+        public List<AICore> AICores = new List<AICore>();
+        public TMP_Text AICoreLabel;
 
         public void OpenFromPlayer(int player)
         {
@@ -35,8 +38,7 @@ namespace TicTacCOSTCO.Unity.UI
                 this.NameInputField.SetTextWithoutNotify(this.ShowingProfile.PlayerName);
             }
 
-
-            this.PlayerSpriteDisplay.sprite = PersistentGameConfiguration.Singleton.PlayerIconOptions[this.ShowingProfile.RepresenterSpriteIndex];
+            this.PlayerSpriteDisplay.sprite = this.ShowingProfile.SpriteRepresentation;
 
             if (this.ShowingProfile.IsAI)
             {
@@ -50,6 +52,7 @@ namespace TicTacCOSTCO.Unity.UI
             }
 
             this.UpdateIcon();
+            this.UpdateAICore();
         }
 
         public void ToggleHumanAI()
@@ -59,6 +62,7 @@ namespace TicTacCOSTCO.Unity.UI
             if (this.ShowingProfile.IsAI)
             {
                 this.ShowingProfile.PlayerName = "AI";
+                this.ShowingProfile.AICoreIndex = 0;
             }
             else
             {
@@ -89,7 +93,7 @@ namespace TicTacCOSTCO.Unity.UI
 
         private void UpdateIcon()
         {
-            this.PlayerSpriteDisplay.sprite = PersistentGameConfiguration.Singleton.PlayerIconOptions[this.ShowingProfile.RepresenterSpriteIndex];
+            this.PlayerSpriteDisplay.sprite = this.ShowingProfile.SpriteRepresentation;
 
             int countWithIndex = 0;
 
@@ -103,6 +107,31 @@ namespace TicTacCOSTCO.Unity.UI
 
             // If there was more than one with this icon, we can't allow you to select it
             this.AlreadyTakenPanel.SetActive(countWithIndex > 1);
+        }
+
+        public void NextAICore()
+        {
+            this.ShowingProfile.AICoreIndex = (this.ShowingProfile.AICoreIndex + 1) % PersistentGameConfiguration.Singleton.AICores.Count;
+            this.UpdateAICore();
+        }
+
+        public void PreviousAICore()
+        {
+            this.ShowingProfile.AICoreIndex = (this.ShowingProfile.AICoreIndex + PersistentGameConfiguration.Singleton.AICores.Count - 1) % PersistentGameConfiguration.Singleton.AICores.Count;
+            this.UpdateAICore();
+        }
+
+        void UpdateAICore()
+        {
+            if (this.ShowingProfile.IsAI)
+            {
+                this.AICoreLabel.gameObject.SetActive(true);
+                this.AICoreLabel.text = this.ShowingProfile.AICore.name;
+            }
+            else
+            {
+                this.AICoreLabel.gameObject.SetActive(false);
+            }
         }
     }
 }

@@ -29,7 +29,7 @@ namespace TicTacCOSTCO.Unity.UI
         public void UpdateTurn(int toProfileIndex)
         {
             PlayerProfile profile = PersistentGameConfiguration.Singleton.Players[toProfileIndex];
-            this.CurrentTurnIconHolder.sprite = PersistentGameConfiguration.Singleton.PlayerIconOptions[profile.RepresenterSpriteIndex];
+            this.CurrentTurnIconHolder.sprite = profile.SpriteRepresentation;
             OnTurnStarted?.Invoke(toProfileIndex);
         }
 
