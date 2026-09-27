@@ -6,6 +6,7 @@ namespace TicTacCOSTCO.Unity
 
     public class PersistentGameConfiguration : MonoBehaviour
     {
+        public const string HUMAN = "Human";
         public static PersistentGameConfiguration Singleton { get; private set; } = null;
 
         public int Width { get; private set; }
@@ -27,9 +28,9 @@ namespace TicTacCOSTCO.Unity
         private readonly List<PlayerProfile> _Players = new List<PlayerProfile>();
 
         [SerializeField]
-        private List<Sprite> spritesForTurns = new List<Sprite>();
-        [SerializeField]
         private List<Color> knockoutColorsForTurns = new List<Color>();
+
+        public List<Sprite> PlayerIconOptions = new List<Sprite>();
 
         private void Awake()
         {
@@ -76,10 +77,6 @@ namespace TicTacCOSTCO.Unity
                 if (startRemoving)
                 {
                     this._Players[ii].Index--;
-
-                    // HACK: Re-assign the sprite
-                    // They should keep it, but we'll want to retool how sprites are assigned first
-                    this._Players[ii].RepresenterSprite = this.spritesForTurns[ii];
                     continue;
                 }
 
@@ -106,11 +103,34 @@ namespace TicTacCOSTCO.Unity
         {
             PlayerProfile newProfile = new PlayerProfile();
 
+            // Find the first index not used by anyone for the icon
+            // It'll see if anyone is using the first, and if not, use that;
+            // otherwise check the second, etc.
+            int iconIndex = 0;
+            for (int ii = 0, count = this.PlayerIconOptions.Count; ii < count; ii++)
+            {
+                // Check each player to see if they're using this index
+                bool unused = true;
+                for (int jj = 0, jjcount = this.Players.Count; jj < jjcount; jj++)
+                {
+                    if (this.Players[jj].RepresenterSpriteIndex == ii)
+                    {
+                        unused = false;
+                        break;
+                    }
+                }
+                if (unused)
+                {
+                    iconIndex = ii;
+                    break;
+                }
+            }
+
             newProfile.Index = this._Players.Count;
-            newProfile.RepresenterSprite = spritesForTurns[newProfile.Index];
+            newProfile.RepresenterSpriteIndex = iconIndex;
             newProfile.KnockoutColor = knockoutColorsForTurns[newProfile.Index];
             newProfile.IsAI = false;
-            newProfile.PlayerName = "Human";
+            newProfile.PlayerName = HUMAN;
 
             this._Players.Add(newProfile);
 

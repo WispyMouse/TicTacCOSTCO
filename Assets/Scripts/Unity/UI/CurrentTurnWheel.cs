@@ -4,6 +4,7 @@ namespace TicTacCOSTCO.Unity.UI
     using System.Collections.Generic;
     using System.Runtime.CompilerServices;
     using UnityEngine;
+    using UnityEngine.Profiling;
 
     public class CurrentTurnWheel : MonoBehaviour
     {
@@ -44,7 +45,7 @@ namespace TicTacCOSTCO.Unity.UI
                 newSpoke.transform.localRotation = Quaternion.Euler(0, 0, rotation);
                 newSpoke.transform.localPosition = new Vector3(Mathf.Cos(rotationWithBase * Mathf.Deg2Rad), Mathf.Sin(rotationWithBase * Mathf.Deg2Rad)) * SpokeOffset;
 
-                newSpoke.SpokeImage.sprite = PersistentGameConfiguration.Singleton.Players[playerIndex].RepresenterSprite;
+                newSpoke.SpokeImage.sprite = PersistentGameConfiguration.Singleton.PlayerIconOptions[PersistentGameConfiguration.Singleton.Players[playerIndex].RepresenterSpriteIndex];
 
                 string spokeName = PersistentGameConfiguration.Singleton.Players[playerIndex].PlayerName;
                 if (string.IsNullOrEmpty(spokeName))

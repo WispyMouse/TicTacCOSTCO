@@ -7,7 +7,7 @@ namespace TicTacCOSTCO.Unity
         public int Index;
         public string PlayerName;
         public bool IsAI;
-        public Sprite RepresenterSprite;
+        public int RepresenterSpriteIndex;
         public Color KnockoutColor;
     }
 }

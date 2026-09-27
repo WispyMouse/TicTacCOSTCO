@@ -19,15 +19,6 @@ namespace TicTacCOSTCO.Unity.UI
         [SerializeReference]
         private PlayerConfiguratorSelector PlayerConfiguratorSelector;
 
-        private void Awake()
-        {
-            this.ConfigureButtonBase.SetActive(false);
-            this.PlusButtonBase.SetActive(true);
-            this.MinusButtonBase.SetActive(false);
-            this.IconRepresenterBase.SetActive(false);
-            this.TextOfPlayer.gameObject.SetActive(false);
-        }
-
         public void SetFromProfile(PlayerProfile profile)
         {
             this.PlayerProfile = profile;
@@ -37,9 +28,11 @@ namespace TicTacCOSTCO.Unity.UI
             // Don't show minus for minimum players
             this.MinusButtonBase.SetActive(PersistentGameConfiguration.Singleton.Players.Count > GameState.MINIMUMPLAYERS);
 
-            this.IconOfPlayer.sprite = profile.RepresenterSprite;
+            this.IconOfPlayer.sprite = PersistentGameConfiguration.Singleton.PlayerIconOptions[profile.RepresenterSpriteIndex];
             this.IconRepresenterBase.SetActive(true);
+
             this.TextOfPlayer.gameObject.SetActive(true);
+            this.TextOfPlayer.text = profile.PlayerName;
         }
 
         public void OnMinus()

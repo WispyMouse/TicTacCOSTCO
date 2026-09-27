@@ -29,7 +29,7 @@ namespace TicTacCOSTCO.Unity.UI
         public void UpdateTurn(int toProfileIndex)
         {
             PlayerProfile profile = PersistentGameConfiguration.Singleton.Players[toProfileIndex];
-            this.CurrentTurnIconHolder.sprite = profile.RepresenterSprite;
+            this.CurrentTurnIconHolder.sprite = PersistentGameConfiguration.Singleton.PlayerIconOptions[profile.RepresenterSpriteIndex];
             OnTurnStarted?.Invoke(toProfileIndex);
         }
 
@@ -48,7 +48,7 @@ namespace TicTacCOSTCO.Unity.UI
 
         public bool PlayerIsHuman(int index)
         {
-            return !this.SidesThatAreAI.Contains(index);
+            return !PersistentGameConfiguration.Singleton.Players[index].IsAI;
         }
     }
 }

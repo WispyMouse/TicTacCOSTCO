@@ -1,6 +1,7 @@
 namespace TicTacCOSTCO.Unity.UI
 {
     using UnityEngine;
+    using UnityEngine.Profiling;
     using UnityEngine.UI;
 
     public class ScoreBoard : MonoBehaviour
@@ -28,7 +29,7 @@ namespace TicTacCOSTCO.Unity.UI
                 Destroy(this.WinnerIconHolder.GetChild(0).gameObject);
             }
 
-            Sprite winnerSprite = winner.RepresenterSprite;
+            Sprite winnerSprite = PersistentGameConfiguration.Singleton.PlayerIconOptions[winner.RepresenterSpriteIndex];
             Image newImage = Instantiate(WinnerIconImage, WinnerIconHolder);
             newImage.sprite = winnerSprite;
         }

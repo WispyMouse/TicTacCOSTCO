@@ -7,6 +7,7 @@ namespace TicTacCOSTCO.Unity.UI
     using UnityEngine;
     using UnityEngine.EventSystems;
     using UnityEngine.InputSystem;
+    using UnityEngine.Profiling;
     using UnityEngine.UI;
 
     public class GameConductor : MonoBehaviour
@@ -180,7 +181,7 @@ namespace TicTacCOSTCO.Unity.UI
             this.TurnOrderHolder.UpdateTurn(this.CurrentGameState.CurrentPlayerIndex);
             this.CascadeText.transform.parent.gameObject.SetActive(false);
             this.WinnerPanel.transform.parent.gameObject.SetActive(true);
-            this.WinnerIcon.sprite = player.RepresenterSprite;
+            this.WinnerIcon.sprite = PersistentGameConfiguration.Singleton.PlayerIconOptions[player.RepresenterSpriteIndex];
 
             string winnerName = player.PlayerName;
             if (string.IsNullOrEmpty(winnerName))
