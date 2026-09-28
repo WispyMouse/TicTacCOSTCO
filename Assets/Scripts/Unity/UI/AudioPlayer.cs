@@ -29,6 +29,8 @@ namespace TicTacCOSTCO.Unity.UI
                 return;
             }
 
+            // This is now the singleton; unparent it so that we can mark as DontDestroyOnLoad
+            this.transform.SetParent(null);
             Singleton = this;
             DontDestroyOnLoad(this.gameObject);
 

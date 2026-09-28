@@ -46,7 +46,9 @@ namespace TicTacCOSTCO.Unity
                 return;
             }
 
+            // This is now the singleton; unparent it so that we can mark as DontDestroyOnLoad
             Singleton = this;
+            this.transform.SetParent(null);
             DontDestroyOnLoad(this.gameObject);
 
             this.Width = _StartWidth;

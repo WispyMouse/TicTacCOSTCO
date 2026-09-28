@@ -9,6 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5738793b99a0806498ae2b9fb5de3abc, type: 3}
-  m_Name: AICore_Investor
-  m_EditorClassIdentifier: Assembly-CSharp::AIInvestor
+  m_Script: {fileID: 11500000, guid: 0d12f17ec5c1c1148909583cac340377, type: 3}
+  m_Name: Does Not Lose Heuristic
+  m_EditorClassIdentifier: TicTacCOSTCO.AIs::TicTacCOSTCO.AIs.DoesNotLoseHeuristic
+  Weight: 10

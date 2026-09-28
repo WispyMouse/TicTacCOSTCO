@@ -10,5 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d6f1443985a5a0448153237a83d279a, type: 3}
-  m_Name: Basic AI Core
-  m_EditorClassIdentifier: Assembly-CSharp::AICore
+  m_Name: Beginner
+  m_EditorClassIdentifier: TicTacCOSTCO.AIs::AICore
+  TopCut: 0.8
+  AIHeuristics:
+  - {fileID: 11400000, guid: d2366b5b285d10e43a37906cbd8174ca, type: 2}
+  - {fileID: 11400000, guid: c54e561c985aa944ab7e7ef39c5b3bfe, type: 2}

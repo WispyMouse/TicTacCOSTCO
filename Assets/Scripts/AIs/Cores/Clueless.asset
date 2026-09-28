@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b2a7bff373dbd74098902bfd67353bc, type: 3}
-  m_Name: AICore_MayAttack
-  m_EditorClassIdentifier: Scripts::AIMayAttack
-  OneConnectionChance: 0.05
-  TwoConnectionChance: 1
-  ThreeOrMoreConnectionChance: 1
+  m_Script: {fileID: 11500000, guid: 9d6f1443985a5a0448153237a83d279a, type: 3}
+  m_Name: Clueless
+  m_EditorClassIdentifier: TicTacCOSTCO.AIs::AICore
+  TopCut: 0
+  AIHeuristics: []

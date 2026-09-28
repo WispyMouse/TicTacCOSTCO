@@ -18,7 +18,6 @@ namespace TicTacCOSTCO.Unity.UI
 
         public GameObject AlreadyTakenPanel;
 
-        public List<AICore> AICores = new List<AICore>();
         public TMP_Text AICoreLabel;
 
         public void OpenFromPlayer(int player)
@@ -61,8 +60,8 @@ namespace TicTacCOSTCO.Unity.UI
 
             if (this.ShowingProfile.IsAI)
             {
-                this.ShowingProfile.PlayerName = "AI";
                 this.ShowingProfile.AICoreIndex = 0;
+                this.ShowingProfile.PlayerName = this.ShowingProfile.AICore.name;
             }
             else
             {
@@ -126,6 +125,7 @@ namespace TicTacCOSTCO.Unity.UI
             if (this.ShowingProfile.IsAI)
             {
                 this.AICoreLabel.gameObject.SetActive(true);
+                this.ShowingProfile.PlayerName = this.ShowingProfile.AICore.name;
                 this.AICoreLabel.text = this.ShowingProfile.AICore.name;
             }
             else
