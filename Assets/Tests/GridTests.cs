@@ -56,14 +56,40 @@ namespace TicTacCOSTCO.Tests
             new List<Coordinate>() { Coordinate.right * 2, Coordinate.right, Coordinate.up, Coordinate.up * 2, Coordinate.zero },
             5, 5, 2),
 
+        // Quadruple Cascade
+        new PlacementCausesSolve_DataSource_Object(
+            new List<Coordinate>() { 
+                // Diagonal up/right
+                Coordinate.zero, Coordinate.right + Coordinate.up, (Coordinate.right + Coordinate.up) * 3, (Coordinate.right + Coordinate.up) * 4,
+                // Diagonal up/left
+                Coordinate.right * 4, Coordinate.right * 3 + Coordinate.up, Coordinate.right + Coordinate.up * 3, Coordinate.up * 4,
+                // Horizontal
+                Coordinate.up * 2, Coordinate.up * 2 + Coordinate.right, Coordinate.up * 2 + Coordinate.right * 3, Coordinate.up * 2 + Coordinate.right * 4,
+                // Vertical
+                Coordinate.right * 2, Coordinate.right * 2 + Coordinate.up, Coordinate.right * 2 + Coordinate.up * 3,  Coordinate.right * 2 + Coordinate.up * 4,
+                // Pop it!
+                Coordinate.up * 2 + Coordinate.right * 2
+            },
+            5, 5, 4),
+
         // 4-in-a-row should count as one solution
         new PlacementCausesSolve_DataSource_Object(
             new List<Coordinate>() { Coordinate.zero, Coordinate.right * 2, Coordinate.right * 3, Coordinate.right },
             5, 5, 1),
 
+        // 5-in-a-row should count as one solution
+        new PlacementCausesSolve_DataSource_Object(
+            new List<Coordinate>() { Coordinate.zero, Coordinate.right, Coordinate.right * 3, Coordinate.right * 4, Coordinate.right * 2 },
+            5, 5, 1),
+
         // Shouldn't count as a new solution if you continue an old 3-of
         new PlacementCausesSolve_DataSource_Object(
             new List<Coordinate>() { Coordinate.right, Coordinate.right * 2, Coordinate.right * 3, Coordinate.right * 4 },
+            5, 5, 0),
+
+        // Shouldn't care that there was a previously made connection
+        new PlacementCausesSolve_DataSource_Object(
+            new List<Coordinate>() { Coordinate.right, Coordinate.right * 2, Coordinate.right * 3, Coordinate.up + Coordinate.right, Coordinate.up + Coordinate.right * 2 },
             5, 5, 0),
     };
 
@@ -76,14 +102,13 @@ namespace TicTacCOSTCO.Tests
 
             for (int ii = 0; ii < lastIndex; ii++)
             {
-                testState.SetSideOwnership(plan.Placements[ii], 0, out _);
+                testState.ApplyMoveCommand(testState.GenerateCommandFromMove(0, plan.Placements[ii]), false);
             }
 
-            List<CellsConnection> solutions = HypotheticalSolutionTool.GetSolutionsFromClaimingTile(testState, plan.Placements[lastIndex], 0);
-            Assert.AreEqual(plan.ExpectedSolutions, solutions.Count, $"Expecting a specific amount of solutions from placing the last tile");
+            MoveCommand lastCommand = testState.GenerateCommandFromMove(0, plan.Placements[lastIndex]);
+            Assert.AreEqual(plan.ExpectedSolutions, lastCommand.NewConnectionsMade, $"Especting a specific amount of solutions total");
 
-            testState.SetSideOwnership(plan.Placements[lastIndex], 0, out List<CellsConnection> newSolutions);
-            Assert.AreEqual(plan.ExpectedSolutions, newSolutions.Count, $"Especting a specific amount of solutions total");
+            testState.ApplyMoveCommand(lastCommand, false);
 
             if (plan.ExpectedSolutions > 0)
             {

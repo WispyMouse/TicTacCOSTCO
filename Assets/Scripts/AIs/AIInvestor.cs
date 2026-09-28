@@ -56,7 +56,7 @@ public class AIInvestor : AICore
         foreach (Coordinate move in possibleMoves)
         {
             // If this solves anything, we shouldn't use it
-            if (HypotheticalSolutionTool.GetSolutionsFromClaimingTile(currentGameState, move, forSide).Any())
+            if (currentGameState.TryGetAllSolutionsFromCell(forSide, move, out _))
             {
                 continue;
             }

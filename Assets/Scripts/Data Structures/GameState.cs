@@ -65,9 +65,12 @@ namespace TicTacCOSTCO.DataStructures
         public OnPlayerTurnDelegate OnPlayerStartTurn;
         public OnPlayerTurnDelegate OnPlayerMadeMove;
 
+        public IReadOnlyList<MoveCommand> MoveCommandsApplied => this._MoveCommandsApplied;
+        private List<MoveCommand> _MoveCommandsApplied { get; set; } = new List<MoveCommand>();
+
         public Dictionary<Coordinate, List<CellsConnection>> AcceptedSolutions { get; set; } = new Dictionary<Coordinate, List<CellsConnection>>();
 
-        public GameState(int width, int height, int playerCount)
+        public GameState(int width, int height, int playerCount, bool forceZeroIndexStart = false)
         {
             this.PlayerCount = playerCount;
             this.Width = width;
@@ -88,90 +91,15 @@ namespace TicTacCOSTCO.DataStructures
                 this.SideIndexesStillInGame.Add(ii);
             }
 
-            // Choose a random player to go first
-            this.CurrentPlayerIndex = new Random().Next(this.PlayerCount);
-        }
-
-        /// <summary>
-        /// Sets the ownership of a coordinate.
-        /// </summary>
-        /// <param name="position">Coordinate to mark.</param>
-        /// <param name="side">Side to set. Null is "empty and unclaimed", otherwise it is the side's <see cref="CurrentPlayerIndex"/>.</param>
-        /// <param name="newSolutions">New solutions stemming from this move.</param>
-        /// <param name="advancePlayer">If true, make it the next player's turn. Otherwise, don't touch the current player index.</param>
-        /// 
-        public void SetSideOwnership(Coordinate position, int? side, out List<CellsConnection> newSolutions, bool advancePlayer = true)
-        {
-            if (side.HasValue)
+            if (forceZeroIndexStart)
             {
-                newSolutions = HypotheticalSolutionTool.GetSolutionsFromClaimingTile(this, position, side.Value);
-
-                foreach (CellsConnection newSolution in newSolutions)
-                {
-                    foreach (Coordinate cellPosition in newSolution.Cells)
-                    {
-                        if (!this.AcceptedSolutions.TryGetValue(cellPosition, out List<CellsConnection> existingSolutionsForCell))
-                        {
-                            existingSolutionsForCell = new List<CellsConnection>();
-                            this.AcceptedSolutions.Add(cellPosition, existingSolutionsForCell);
-                        }
-
-                        existingSolutionsForCell.Add(newSolution);
-                    }
-                }
+                // Force the first player to be zero, perhaps because we're in test mode
+                this.CurrentPlayerIndex = 0;
             }
             else
             {
-                newSolutions = new List<CellsConnection>();
-            }
-
-            this.SpotToSideOwnership[position] = side;
-
-            int solutionsCount = newSolutions.Count;
-
-            if (this.CurrentGameState == GameState.GameStateEnum.Cascade && this.LastCascade > solutionsCount)
-            {
-                // If there were no new solutions, or not enough solutions for previous cascade, and we're in cascade state,
-                // the current player should be knocked out
-                this.SideIndexesStillInGame.Remove(this.CurrentPlayerIndex);
-
-                if (this.SideIndexesStillInGame.Count == 1)
-                {
-                    this.CurrentPlayerIndex = this.SideIndexesStillInGame.First();
-                    this.Winner = this.CurrentPlayerIndex;
-                    this.CurrentGameState = GameStateEnum.End;
-                    return;
-                }
-            }
-            else if (solutionsCount > 0)
-            {
-                this.CurrentGameState = GameState.GameStateEnum.Cascade;
-                this.LastCascade = solutionsCount;
-            }
-
-            if (!this.AnyEmptySpots())
-            {
-                this.CurrentGameState = GameStateEnum.End;
-                this.Winner = null;
-                return;
-            }
-
-            if (advancePlayer)
-            {
-                this.OnPlayerMadeMove?.Invoke(this.CurrentPlayerIndex);
-
-                for (int ii = 1; ii < this.PlayerCount; ii++)
-                {
-                    int nextProspectivePlayer = (this.CurrentPlayerIndex + ii) % this.PlayerCount;
-                    if (!this.SideIndexesStillInGame.Contains(nextProspectivePlayer))
-                    {
-                        continue;
-                    }
-
-                    this.CurrentPlayerIndex = nextProspectivePlayer;
-                    this.OnPlayerStartTurn?.Invoke(this.CurrentPlayerIndex);
-                    break;
-                }
+                // Choose a random player to go first
+                this.CurrentPlayerIndex = new Random().Next(this.PlayerCount);
             }
         }
 
@@ -211,7 +139,7 @@ namespace TicTacCOSTCO.DataStructures
         {
             solutionsInvolvingCell = new List<CellsConnection>();
 
-            foreach (CellsConnection solution in GetAllSolutions(sideIndex, cell))
+            foreach (CellsConnection solution in GetAllNewSolutions(sideIndex, cell))
             {
                 if (solution.Cells.Contains(cell))
                 {
@@ -222,17 +150,12 @@ namespace TicTacCOSTCO.DataStructures
             return solutionsInvolvingCell.Any();
         }
 
-        public bool TryGetAllSolutionsFromCellAlongDirection(int sideIndex, Coordinate cell, DirectionalityVector offset, out CellsConnection solution)
+        public bool TryGetAllSolutionsFromCellAlongDirection(int sideIndex, Coordinate cell, DirectionalityVector offset, out CellsConnection solution, Coordinate selectedCoordinate)
         {
             solution = default;
 
             // If we're too close to the end direction this offset is going in, don't consider this at all
-            if (SpotIsInBounds(cell + (offset * (InARowToSolve - 1))))
-            {
-                return false;
-            }
-
-            if (SpotIsInBounds(cell - (offset * (InARowToSolve - 1))))
+            if (!SpotIsInBounds(cell + (offset * (InARowToSolve - 1))))
             {
                 return false;
             }
@@ -241,14 +164,20 @@ namespace TicTacCOSTCO.DataStructures
 
             bool valid = true;
 
-            for (int ii = 1; ii < InARowToSolve; ii++)
+            for (int ii = 0; ii < InARowToSolve; ii++)
             {
                 Coordinate position = cell + offset * ii;
 
+                if (!SpotIsInBounds(position))
+                {
+                    return false;
+                }
+
                 int? ownership = this.SpotToSideOwnership[position];
 
-                // This cell isn't ours
-                if (ownership != sideIndex)
+                // If this isn't the cell we're hypothetically selecting,
+                // and it isn't ours already, this shape must not be valid
+                if (position != selectedCoordinate && ownership != sideIndex)
                 {
                     valid = false;
                     break;
@@ -271,10 +200,9 @@ namespace TicTacCOSTCO.DataStructures
             return true;
         }
 
-
-        public List<CellsConnection> GetAllSolutions()
+        public List<CellsConnection> GetAllNewSolutions(int sideIndex, Coordinate hypotheticalPosition)
         {
-            List<CellsConnection> solutions = new List<CellsConnection>();
+            List<CellsConnection> newSolutions = new List<CellsConnection>();
 
             for (int xx = 0; xx < this.Width; xx++)
             {
@@ -282,125 +210,39 @@ namespace TicTacCOSTCO.DataStructures
                 {
                     Coordinate position = new Coordinate(xx, yy);
 
-                    if (!SpotToSideOwnership[position].HasValue)
+                    if (hypotheticalPosition != position && !SpotToSideOwnership[position].HasValue && SpotToSideOwnership[position] != sideIndex)
                     {
                         // This cell isn't claimed
                         continue;
                     }
 
-                    foreach (DirectionalityVector direction in Directionalities)
-                    {
-                        if (TryGetAllSolutionsFromCellAlongDirection(SpotToSideOwnership[position].Value, position, direction, out CellsConnection cellSolutions))
-                        {
-                            solutions.Add(cellSolutions);
-                        }
-                    }
-
-                }
-            }
-
-            // Check if any new solutions should be banded together; 4-in-a-row is the same value as a 3-in-a-row
-            // Any solutions that have the same directionality *must* be bandable
-            bool anyDiscarded = false;
-
-            do
-            {
-                anyDiscarded = false;
-                for (int leftSolutionIndex = solutions.Count - 2; leftSolutionIndex >= 0; leftSolutionIndex--)
-                {
-                    bool discardLeftSolution = false;
-                    CellsConnection leftCellsSolution = solutions[leftSolutionIndex];
-                    for (int rightSolutionIndex = solutions.Count - 1; rightSolutionIndex > leftSolutionIndex; rightSolutionIndex--)
-                    {
-                        CellsConnection rightCellsSolution = solutions[rightSolutionIndex];
-
-                        if (leftCellsSolution.Directionality == rightCellsSolution.Directionality)
-                        {
-                            // Add a new composite solution to the end of the list, which won't be evaluated again
-                            CellsConnection compositeSolution = new CellsConnection(leftCellsSolution.Cells.Union(rightCellsSolution.Cells).ToList(), leftCellsSolution.Directionality);
-                            solutions.Add(compositeSolution);
-                            discardLeftSolution = true;
-                            anyDiscarded = true;
-
-                            // We can immediately discard this rightSolution
-                            solutions.RemoveAt(rightSolutionIndex);
-                        }
-                    }
-
-                    if (discardLeftSolution)
-                    {
-                        solutions.RemoveAt(leftSolutionIndex);
-                    }
-                }
-            } while (anyDiscarded);
-
-            return solutions;
-        }
-
-
-        public List<CellsConnection> GetAllSolutions(int sideIndex, Coordinate hypotheticalPosition)
-        {
-            List<CellsConnection> solutions = new List<CellsConnection>();
-
-            for (int xx = 0; xx < this.Width; xx++)
-            {
-                for (int yy = 0; yy < this.Height; yy++)
-                {
-                    Coordinate position = new Coordinate(xx, yy);
-
-                    if (hypotheticalPosition != position && !SpotToSideOwnership[position].HasValue)
-                    {
-                        // This cell isn't claimed
-                        continue;
-                    }
+                    List<CellsConnection> allSolutions = new List<CellsConnection>();
 
                     foreach (DirectionalityVector direction in Directionalities)
                     {
-                        if (TryGetAllSolutionsFromCellAlongDirection(sideIndex, position, direction, out CellsConnection cellSolutions))
+                        if (TryGetAllSolutionsFromCellAlongDirection(sideIndex, position, direction, out CellsConnection cellSolutions, hypotheticalPosition))
                         {
-                            solutions.Add(cellSolutions);
+                            allSolutions.Add(cellSolutions);
+                        }
+
+                        if (TryGetAllSolutionsFromCellAlongDirection(sideIndex, position, -direction, out cellSolutions, hypotheticalPosition))
+                        {
+                            allSolutions.Add(cellSolutions);
                         }
                     }
 
+                    // Check that these solutions contain the new piece
+                    for (int ii = 0, count = allSolutions.Count; ii < count; ii++)
+                    {
+                        if (allSolutions[ii].Cells.Contains(hypotheticalPosition))
+                        {
+                            newSolutions.Add(allSolutions[ii]);
+                        }
+                    }
                 }
             }
 
-            // Check if any new solutions should be banded together; 4-in-a-row is the same value as a 3-in-a-row
-            // Any solutions that have the same directionality *must* be bandable
-            bool anyDiscarded = false;
-
-            do
-            {
-                anyDiscarded = false;
-                for (int leftSolutionIndex = solutions.Count - 2; leftSolutionIndex >= 0; leftSolutionIndex--)
-                {
-                    bool discardLeftSolution = false;
-                    CellsConnection leftCellsSolution = solutions[leftSolutionIndex];
-                    for (int rightSolutionIndex = solutions.Count - 1; rightSolutionIndex > leftSolutionIndex; rightSolutionIndex--)
-                    {
-                        CellsConnection rightCellsSolution = solutions[rightSolutionIndex];
-
-                        if (leftCellsSolution.Directionality == rightCellsSolution.Directionality)
-                        {
-                            // Add a new composite solution to the end of the list, which won't be evaluated again
-                            CellsConnection compositeSolution = new CellsConnection(leftCellsSolution.Cells.Union(rightCellsSolution.Cells).ToList(), leftCellsSolution.Directionality);
-                            solutions.Add(compositeSolution);
-                            discardLeftSolution = true;
-                            anyDiscarded = true;
-
-                            // We can immediately discard this rightSolution
-                            solutions.RemoveAt(rightSolutionIndex);
-                        }
-                    }
-
-                    if (discardLeftSolution)
-                    {
-                        solutions.RemoveAt(leftSolutionIndex);
-                    }
-                }
-            } while (anyDiscarded);
-
-            return solutions;
+            return PruneSolutionsForNotAlreadySolved(newSolutions, out _);
         }
 
         public bool SpotIsInBounds(Coordinate position)
@@ -428,31 +270,69 @@ namespace TicTacCOSTCO.DataStructures
             return true;
         }
 
-        public List<CellsConnection> PruneSolutionsForNotAlreadySolved(List<CellsConnection> solutions)
+        public List<CellsConnection> PruneSolutionsForNotAlreadySolved(List<CellsConnection> solutions, out List<CellsConnection> removedConnections)
         {
             List<CellsConnection> remainingSolutions = new List<CellsConnection>(solutions);
+            removedConnections = new List<CellsConnection>();
 
-            // Remove the parts that already have this same directionality solved, and only if there are enough pieces should we keep this
-            // Otherwise "4-in-a-rows" count as two
-            for (int solutionIndex = solutions.Count - 1; solutionIndex >= 0; solutionIndex--)
+            // Check if any new solutions should be banded together; 4-in-a-row is the same value as a 3-in-a-row
+            // Any solutions that have the same directionality *must* be bandable
+            bool anyDiscarded = false;
+
+            do
             {
-                for (int cellIndex = 0; cellIndex < solutions[solutionIndex].Cells.Count; cellIndex++)
+                anyDiscarded = false;
+                for (int leftSolutionIndex = remainingSolutions.Count - 2; leftSolutionIndex >= 0; leftSolutionIndex--)
                 {
-                    bool removeSolution = false;
-                    if (this.AcceptedSolutions.TryGetValue(solutions[solutionIndex].Cells[cellIndex], out List<CellsConnection> existingSolutions))
+                    CellsConnection leftCellsSolution = remainingSolutions[leftSolutionIndex];
+                    for (int rightSolutionIndex = remainingSolutions.Count - 1; rightSolutionIndex > leftSolutionIndex; rightSolutionIndex--)
                     {
-                        foreach (CellsConnection solution in existingSolutions)
+                        CellsConnection rightCellsSolution = remainingSolutions[rightSolutionIndex];
+
+                        // Forward or backward are the same
+                        if (leftCellsSolution.Directionality == rightCellsSolution.Directionality || leftCellsSolution.Directionality == -rightCellsSolution.Directionality)
                         {
-                            if (solution.Directionality == solutions[solutionIndex].Directionality)
+                            // Remove these two composite solutions, and note that they were removed
+                            remainingSolutions.RemoveAt(rightSolutionIndex);
+                            remainingSolutions.RemoveAt(leftSolutionIndex);
+                            removedConnections.Add(rightCellsSolution);
+                            removedConnections.Add(leftCellsSolution);
+
+                            // Add a new composite solution to the end of the list, which won't be evaluated again
+                            CellsConnection compositeSolution = new CellsConnection(leftCellsSolution.Cells.Union(rightCellsSolution.Cells).ToList(), leftCellsSolution.Directionality);
+                            remainingSolutions.Add(compositeSolution);
+                            anyDiscarded = true;
+
+
+                            break;
+                        }
+                    }
+                }
+            } while (anyDiscarded);
+
+            // Next check if any of our new solutions contains pieces that already have that directionality solved
+            for (int ii = remainingSolutions.Count - 1; ii >= 0; ii--)
+            {
+                bool discard = false;
+                CellsConnection thisSolution = remainingSolutions[ii];
+
+                foreach (Coordinate curCoordinate in remainingSolutions[ii].Cells)
+                {
+                    if (this.AcceptedSolutions.TryGetValue(curCoordinate, out List<CellsConnection> existingConnections))
+                    {
+                        foreach (CellsConnection existingConnection in existingConnections)
+                        {
+                            if (existingConnection.Directionality == thisSolution.Directionality)
                             {
-                                removeSolution = true;
+                                discard = true;
                                 break;
                             }
                         }
                     }
-                    if (removeSolution)
+
+                    if (discard)
                     {
-                        remainingSolutions.RemoveAt(solutionIndex);
+                        remainingSolutions.RemoveAt(ii);
                         break;
                     }
                 }
@@ -460,6 +340,143 @@ namespace TicTacCOSTCO.DataStructures
 
             return remainingSolutions;
         }
-    }
 
+        public void ApplyMoveCommand(MoveCommand toApply, bool advancePlayer = true)
+        {
+            if (this.CurrentGameState == GameStateEnum.NotStarted)
+            {
+                this.CurrentGameState = GameStateEnum.Playing;
+            }
+
+            this._MoveCommandsApplied.Add(toApply);
+
+            this.SpotToSideOwnership[toApply.Position] = toApply.SideIndex;
+
+            int solutionsCount = toApply.NewConnectionsMade;
+
+            foreach (CellsConnection connection in toApply.ConnectionsMade)
+            {
+                foreach (Coordinate coordinate in connection.Cells)
+                {
+                    if (!this.AcceptedSolutions.TryGetValue(coordinate, out List<CellsConnection> existingConnections))
+                    {
+                        existingConnections = new List<CellsConnection>();
+                        this.AcceptedSolutions.Add(coordinate, existingConnections);
+                    }
+                    existingConnections.Add(connection);
+                }
+            }
+
+            // HACK SHOULD GENERALIZE: Would this move result in a loss
+            if (this.CurrentGameState == GameState.GameStateEnum.Cascade && this.LastCascade > solutionsCount)
+            {
+                // If there were no new solutions, or not enough solutions for previous cascade, and we're in cascade state,
+                // the current player should be knocked out
+                this.SideIndexesStillInGame.Remove(this.CurrentPlayerIndex);
+
+                if (this.SideIndexesStillInGame.Count == 1)
+                {
+                    this.CurrentPlayerIndex = this.SideIndexesStillInGame.First();
+                    this.Winner = this.CurrentPlayerIndex;
+                    this.CurrentGameState = GameStateEnum.End;
+                    return;
+                }
+            }
+            else if (solutionsCount > 0)
+            {
+                this.CurrentGameState = GameState.GameStateEnum.Cascade;
+                this.LastCascade = solutionsCount;
+            }
+
+            if (!this.AnyEmptySpots())
+            {
+                this.CurrentGameState = GameStateEnum.End;
+                this.Winner = null;
+                return;
+            }
+
+            if (advancePlayer)
+            {
+                AdvancePlayer();
+            }
+        }
+
+        public MoveCommand ReversePreviousMoveCommand()
+        {
+            int moveCommandsApplied = this._MoveCommandsApplied.Count;
+            if (moveCommandsApplied == 0)
+            {
+                return null;
+            }
+
+            MoveCommand toRemove = this.MoveCommandsApplied[moveCommandsApplied - 1];
+            this._MoveCommandsApplied.RemoveAt(moveCommandsApplied - 1);
+
+            // HACK: At this point in the game's development, the only thing that *could* have been here is null
+            this.SpotToSideOwnership[toRemove.Position] = null;
+            this.LastCascade = toRemove.PreviousCascade;
+
+            foreach (int playerRemoved in toRemove.PlayersRemoved)
+            {
+                this.SideIndexesStillInGame.Add(playerRemoved);
+            }
+
+            foreach (CellsConnection connectionsAdded in toRemove.ConnectionsMade)
+            {
+                foreach (Coordinate coordinate in connectionsAdded.Cells)
+                {
+                    this.AcceptedSolutions[coordinate].Remove(connectionsAdded);
+                }
+            }
+
+            foreach (CellsConnection connectionRemoved in toRemove.ConnectionsRemoved)
+            {
+                foreach (Coordinate coordinate in connectionRemoved.Cells)
+                {
+                    this.AcceptedSolutions[coordinate].Add(connectionRemoved);
+                }
+            }
+
+            this.AdvancePlayer(reversePlayer: true);
+            return toRemove;
+        }
+
+        public MoveCommand GenerateCommandFromMove(int sideIndex, Coordinate position)
+        {
+            List<CellsConnection> connections = GetAllNewSolutions(sideIndex, position);
+            List<int> playersRemoved = new List<int>();
+
+            connections = PruneSolutionsForNotAlreadySolved(connections, out List<CellsConnection> removedConnections);
+
+            // HACK SHOULD GENERALIZE: Would this move result in a loss
+            if (this.CurrentGameState == GameState.GameStateEnum.Cascade && this.LastCascade > connections.Count)
+            {
+                playersRemoved.Add(sideIndex);
+            }
+
+            return new MoveCommand(sideIndex, position, connections, this.LastCascade, playersRemoved, removedConnections);
+        }
+
+        public void AdvancePlayer(bool reversePlayer = false)
+        {
+            this.OnPlayerMadeMove?.Invoke(this.CurrentPlayerIndex);
+
+            // If we're advancing, add one. Reversing, minus one
+            // This will modulo around the player count and let us find the next valid player
+            int advancer = reversePlayer ? -1 : 1;
+
+            for (int ii = 1; ii < this.PlayerCount; ii++)
+            {
+                int nextProspectivePlayer = (this.CurrentPlayerIndex + advancer + this.PlayerCount) % this.PlayerCount;
+                if (!this.SideIndexesStillInGame.Contains(nextProspectivePlayer))
+                {
+                    continue;
+                }
+
+                this.CurrentPlayerIndex = nextProspectivePlayer;
+                this.OnPlayerStartTurn?.Invoke(this.CurrentPlayerIndex);
+                break;
+            }
+        }
+    }
 }

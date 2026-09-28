@@ -31,7 +31,12 @@ public class AIMayAttack : AICore
         List<Coordinate> moreConnectionAttacks = new List<Coordinate>();
         foreach (Coordinate possibleMove in possibleMoves)
         {
-            int solutionCounts = HypotheticalSolutionTool.GetSolutionsFromClaimingTile(currentGameState, possibleMove, forSide).Count;
+            if (!currentGameState.TryGetAllSolutionsFromCell(forSide, possibleMove, out List<CellsConnection> newConnections))
+            {
+                continue;
+            }
+
+            int solutionCounts = newConnections.Count;
 
             // Only count solutions that won't lose to the current cascade
             if (currentGameState.LastCascade > solutionCounts)
@@ -111,7 +116,7 @@ public class AIMayAttack : AICore
         foreach (Coordinate move in possibleMoves)
         {
             // If this solves anything, we shouldn't use it
-            if (HypotheticalSolutionTool.GetSolutionsFromClaimingTile(currentGameState, move, forSide).Any())
+            if (currentGameState.TryGetAllSolutionsFromCell(forSide, move, out List<CellsConnection> newConnections))
             {
                 continue;
             }

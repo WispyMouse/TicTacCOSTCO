@@ -33,6 +33,8 @@ namespace TicTacCOSTCO.Unity.UI
 
         public GameState CurrentGameState { get; set; }
 
+        public GameObject RewindButtonHolder;
+
         public void Start()
         {
             this.ResetGame();
@@ -47,6 +49,7 @@ namespace TicTacCOSTCO.Unity.UI
             this.SolutionLineRenderers.Clear();
             this.WinnerPanel.transform.parent.gameObject.SetActive(false);
             this.CascadeText.transform.parent.gameObject.SetActive(false);
+            this.RewindButtonHolder.SetActive(false);
             this.NoMoreMovesPanel.SetActive(false);
 
             this.CurrentGameState = new GameState(
@@ -85,9 +88,10 @@ namespace TicTacCOSTCO.Unity.UI
             int previousCascade = this.CurrentGameState.LastCascade;
 
             toChoose.SetSide(TurnOrderHolder.CurrentTurnIconHolder.sprite, this.CurrentGameState.CurrentPlayerIndex);
-            this.CurrentGameState.SetSideOwnership(toChoose.Position, this.CurrentGameState.CurrentPlayerIndex, out List<CellsConnection> newSolutions);
+            MoveCommand command = this.CurrentGameState.GenerateCommandFromMove(this.CurrentGameState.CurrentPlayerIndex, toChoose.Position);
+            this.CurrentGameState.ApplyMoveCommand(command);
 
-            foreach (CellsConnection solution in newSolutions)
+            foreach (CellsConnection solution in command.ConnectionsMade)
             {
                 this.DrawLineBetween(solution.Root, solution.Tail, player);
 
@@ -97,7 +101,7 @@ namespace TicTacCOSTCO.Unity.UI
                 }
             }
 
-            int solutionsCount = newSolutions.Count;
+            int solutionsCount = command.NewConnectionsMade;
             if (solutionsCount > previousCascade)
             {
                 this.CascadeText.transform.parent.gameObject.SetActive(true);
@@ -122,6 +126,10 @@ namespace TicTacCOSTCO.Unity.UI
                 {
                     DeclareCurrentPlayerVictorious();
                 }
+            }
+            else
+            {
+                this.RewindButtonHolder.SetActive(this.CurrentGameState != null && this.CurrentGameState.MoveCommandsApplied.Count > 0);
             }
         }
 
@@ -203,6 +211,22 @@ namespace TicTacCOSTCO.Unity.UI
         public void MainMenu()
         {
             SceneManager.LoadScene(0);
+        }
+
+        public void Rewind()
+        {
+            // Rewind until we reach the last human move, or the beginning of the game.
+            while (this.CurrentGameState.MoveCommandsApplied.Count > 0)
+            {
+                MoveCommand undoneCommand = this.CurrentGameState.ReversePreviousMoveCommand();
+                this.PositionsToCells[undoneCommand.Position].Clear();
+
+                // When we reach a player, stop
+                if (!PersistentGameConfiguration.Singleton.Players[this.CurrentGameState.CurrentPlayerIndex].IsAI)
+                {
+                    break;
+                }
+            }
         }
     }
 }

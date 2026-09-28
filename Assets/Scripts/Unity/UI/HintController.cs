@@ -1,5 +1,7 @@
 namespace TicTacCOSTCO.Unity.UI
 {
+    using NUnit.Framework;
+    using System.Collections.Generic;
     using TicTacCOSTCO.DataStructures;
     using TicTacCOSTCO.DataStructures.Tools;
     using UnityEngine;
@@ -33,12 +35,15 @@ namespace TicTacCOSTCO.Unity.UI
         {
             foreach (Cell cell in GameConductor.PositionsToCells.Values)
             {
+                cell.SetHint(0);
+
                 if (cell.AlreadyPlaced)
                 {
                     continue;
                 }
 
-                cell.SetHint(HypotheticalSolutionTool.GetSolutionsFromClaimingTile(this.GameConductor.CurrentGameState, cell.Position, this.GameConductor.CurrentGameState.CurrentPlayerIndex).Count);
+                this.GameConductor.CurrentGameState.TryGetAllSolutionsFromCell(this.GameConductor.CurrentGameState.CurrentPlayerIndex, cell.Position, out List<CellsConnection> newConnections);
+                cell.SetHint(newConnections.Count);
             }
             isOn = true;
         }

@@ -15,7 +15,7 @@ public class Cell : MonoBehaviour
 
     public bool AlreadyPlaced { get; set; } = false;
 
-    public int SideIndex { get; private set; }
+    public int? SideIndex { get; private set; }
     public Coordinate Position { get; set; }
 
     private void Awake()
@@ -47,5 +47,12 @@ public class Cell : MonoBehaviour
             this.HintHolder.SetActive(true);
             this.HintNumber.text = amount.ToString();
         }
+    }
+
+    public void Clear()
+    {
+        this.SideIndex = 0;
+        this.IconSpriteRenderer.sprite = null;
+        this.AlreadyPlaced = false;
     }
 }

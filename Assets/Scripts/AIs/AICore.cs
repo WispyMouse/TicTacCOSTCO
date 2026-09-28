@@ -23,10 +23,12 @@ public class AICore : ScriptableObject
 
         foreach (Coordinate move in options)
         {
-            int solutionCountFromMove = HypotheticalSolutionTool.GetSolutionsFromClaimingTile(currentGameState, move, forSide).Count;
-            if (solutionCountFromMove >= currentGameState.LastCascade)
+            if (currentGameState.TryGetAllSolutionsFromCell(forSide, move, out List<CellsConnection> newConnections))
             {
-                notLosingMoves.Add(move);
+                if (newConnections.Count >= currentGameState.LastCascade)
+                {
+                    notLosingMoves.Add(move);
+                }
             }
         }
 

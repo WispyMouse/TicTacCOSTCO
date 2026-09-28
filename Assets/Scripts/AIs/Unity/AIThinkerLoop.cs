@@ -24,6 +24,12 @@ namespace TicTacCOSTCO.Unity.UI
 
         private void OnTurnStarted(int turn)
         {
+            if (ThinkingCoroutine != null)
+            {
+                StopCoroutine(ThinkingCoroutine);
+                ThinkingCoroutine = null;
+            }
+
             if (!this.GameConductor.CurrentGameState.AnyEmptySpots())
             {
                 return;
