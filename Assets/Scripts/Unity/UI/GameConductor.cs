@@ -86,6 +86,8 @@ namespace TicTacCOSTCO.Unity.UI
 
         public void ChooseCell(Cell toChoose)
         {
+            AudioPlayer.Singleton.PlayBlip();
+
             int takingTurn = this.CurrentGameState.CurrentPlayerIndex;
             PlayerProfile player = PersistentGameConfiguration.Singleton.Players[takingTurn];
             int previousCascade = this.CurrentGameState.CurrentCascadeLevel;

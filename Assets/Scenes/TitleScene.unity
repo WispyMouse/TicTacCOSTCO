@@ -315,6 +315,7 @@ GameObject:
   - component: {fileID: 66202466}
   - component: {fileID: 66202465}
   - component: {fileID: 66202464}
+  - component: {fileID: 66202468}
   m_Layer: 5
   m_Name: Back Button
   m_TagString: Untagged
@@ -418,6 +419,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 66202468}
+        m_TargetAssemblyTypeName: TicTacCOSTCO.Unity.UI.BlipPlayer, TicTacCOSTCO.Unity.UI
+        m_MethodName: PlayBlip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &66202466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -456,6 +469,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 66202462}
   m_CullTransparentMesh: 1
+--- !u!114 &66202468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 66202462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24c1e5cee4867a54b8cce51eca032a68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: TicTacCOSTCO.Unity.UI::TicTacCOSTCO.Unity.UI.BlipPlayer
 --- !u!1 &73550627
 GameObject:
   m_ObjectHideFlags: 0
@@ -544,6 +569,7 @@ GameObject:
   - component: {fileID: 88292797}
   - component: {fileID: 88292796}
   - component: {fileID: 88292795}
+  - component: {fileID: 88292799}
   m_Layer: 5
   m_Name: Play Button
   m_TagString: Untagged
@@ -647,6 +673,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 88292799}
+        m_TargetAssemblyTypeName: TicTacCOSTCO.Unity.UI.BlipPlayer, TicTacCOSTCO.Unity.UI
+        m_MethodName: PlayBlip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &88292797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -685,6 +723,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 88292793}
   m_CullTransparentMesh: 1
+--- !u!114 &88292799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 88292793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24c1e5cee4867a54b8cce51eca032a68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: TicTacCOSTCO.Unity.UI::TicTacCOSTCO.Unity.UI.BlipPlayer
 --- !u!1 &118964678
 GameObject:
   m_ObjectHideFlags: 0
@@ -699,6 +749,7 @@ GameObject:
   - component: {fileID: 118964681}
   - component: {fileID: 118964680}
   - component: {fileID: 118964684}
+  - component: {fileID: 118964685}
   m_Layer: 5
   m_Name: Play Button
   m_TagString: Untagged
@@ -790,6 +841,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 118964685}
+        m_TargetAssemblyTypeName: TicTacCOSTCO.Unity.UI.BlipPlayer, TicTacCOSTCO.Unity.UI
+        m_MethodName: PlayBlip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
       - m_Target: {fileID: 118964684}
         m_TargetAssemblyTypeName: TicTacCOSTCO.Unity.UI.PlayButton, TicTacCOSTCO.Unity.UI
         m_MethodName: OnPress
@@ -852,6 +915,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35c51bb1bf8e4c142af5f60c62daf028, type: 3}
   m_Name: 
   m_EditorClassIdentifier: TicTacCOSTCO.Unity.UI::TicTacCOSTCO.Unity.UI.PlayButton
+--- !u!114 &118964685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118964678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24c1e5cee4867a54b8cce51eca032a68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: TicTacCOSTCO.Unity.UI::TicTacCOSTCO.Unity.UI.BlipPlayer
 --- !u!1 &143676231
 GameObject:
   m_ObjectHideFlags: 0
@@ -1151,6 +1226,7 @@ GameObject:
   - component: {fileID: 167649325}
   - component: {fileID: 167649324}
   - component: {fileID: 167649328}
+  - component: {fileID: 167649329}
   m_Layer: 5
   m_Name: Exit Button
   m_TagString: Untagged
@@ -1254,6 +1330,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 167649329}
+        m_TargetAssemblyTypeName: TicTacCOSTCO.Unity.UI.BlipPlayer, TicTacCOSTCO.Unity.UI
+        m_MethodName: PlayBlip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &167649326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1304,6 +1392,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18bc57688e461dc48a7a395054628ac4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: TicTacCOSTCO.Unity.UI::TicTacCOSTCO.Unity.UI.ExitButton
+--- !u!114 &167649329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 167649322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24c1e5cee4867a54b8cce51eca032a68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: TicTacCOSTCO.Unity.UI::TicTacCOSTCO.Unity.UI.BlipPlayer
 --- !u!1 &179506309
 GameObject:
   m_ObjectHideFlags: 0
@@ -1567,6 +1667,7 @@ GameObject:
   - component: {fileID: 208902621}
   - component: {fileID: 208902620}
   - component: {fileID: 208902619}
+  - component: {fileID: 208902623}
   m_Layer: 5
   m_Name: Configure Players
   m_TagString: Untagged
@@ -1670,6 +1771,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 208902623}
+        m_TargetAssemblyTypeName: TicTacCOSTCO.Unity.UI.BlipPlayer, TicTacCOSTCO.Unity.UI
+        m_MethodName: PlayBlip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &208902621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1708,6 +1821,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 208902617}
   m_CullTransparentMesh: 1
+--- !u!114 &208902623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 208902617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24c1e5cee4867a54b8cce51eca032a68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: TicTacCOSTCO.Unity.UI::TicTacCOSTCO.Unity.UI.BlipPlayer
 --- !u!1 &264408221
 GameObject:
   m_ObjectHideFlags: 0
@@ -2366,7 +2491,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5008587739802472585, guid: 44ee3dff8f88bb942bf2c3d447b13249, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5008587739802472585, guid: 44ee3dff8f88bb942bf2c3d447b13249, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -2377,12 +2502,28 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1601203168}
     - target: {fileID: 5008587739802472585, guid: 44ee3dff8f88bb942bf2c3d447b13249, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 413373937}
+    - target: {fileID: 5008587739802472585, guid: 44ee3dff8f88bb942bf2c3d447b13249, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: UpdateFromSliders
       objectReference: {fileID: 0}
     - target: {fileID: 5008587739802472585, guid: 44ee3dff8f88bb942bf2c3d447b13249, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlayBlip
+      objectReference: {fileID: 0}
+    - target: {fileID: 5008587739802472585, guid: 44ee3dff8f88bb942bf2c3d447b13249, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: TicTacCOSTCO.Unity.UI.SelectBoardScreen, TicTacCOSTCO.Unity.UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 5008587739802472585, guid: 44ee3dff8f88bb942bf2c3d447b13249, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: TicTacCOSTCO.Unity.UI.BlipPlayer, TicTacCOSTCO.Unity.UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 5008587739802472585, guid: 44ee3dff8f88bb942bf2c3d447b13249, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5738759401095086061, guid: 44ee3dff8f88bb942bf2c3d447b13249, type: 3}
       propertyPath: m_Name
@@ -2407,6 +2548,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5738759401095086061, guid: 44ee3dff8f88bb942bf2c3d447b13249, type: 3}
       insertIndex: -1
       addedObject: {fileID: 413373934}
+    - targetCorrespondingSourceObject: {fileID: 5738759401095086061, guid: 44ee3dff8f88bb942bf2c3d447b13249, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 413373937}
   m_SourcePrefab: {fileID: 100100000, guid: 44ee3dff8f88bb942bf2c3d447b13249, type: 3}
 --- !u!224 &413373932 stripped
 RectTransform:
@@ -2460,6 +2604,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
+--- !u!114 &413373937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 413373933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24c1e5cee4867a54b8cce51eca032a68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: TicTacCOSTCO.Unity.UI::TicTacCOSTCO.Unity.UI.BlipPlayer
 --- !u!1 &499325819
 GameObject:
   m_ObjectHideFlags: 0
@@ -2750,6 +2906,7 @@ GameObject:
   - component: {fileID: 526617732}
   - component: {fileID: 526617731}
   - component: {fileID: 526617730}
+  - component: {fileID: 526617734}
   m_Layer: 5
   m_Name: Select Board
   m_TagString: Untagged
@@ -2853,6 +3010,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 526617734}
+        m_TargetAssemblyTypeName: TicTacCOSTCO.Unity.UI.BlipPlayer, TicTacCOSTCO.Unity.UI
+        m_MethodName: PlayBlip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &526617732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2891,6 +3060,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 526617728}
   m_CullTransparentMesh: 1
+--- !u!114 &526617734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526617728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24c1e5cee4867a54b8cce51eca032a68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: TicTacCOSTCO.Unity.UI::TicTacCOSTCO.Unity.UI.BlipPlayer
 --- !u!1 &575139967
 GameObject:
   m_ObjectHideFlags: 0
@@ -4281,7 +4462,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5008587739802472585, guid: 44ee3dff8f88bb942bf2c3d447b13249, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5008587739802472585, guid: 44ee3dff8f88bb942bf2c3d447b13249, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -4292,12 +4473,28 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1601203168}
     - target: {fileID: 5008587739802472585, guid: 44ee3dff8f88bb942bf2c3d447b13249, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1341042828}
+    - target: {fileID: 5008587739802472585, guid: 44ee3dff8f88bb942bf2c3d447b13249, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: UpdateFromSliders
       objectReference: {fileID: 0}
     - target: {fileID: 5008587739802472585, guid: 44ee3dff8f88bb942bf2c3d447b13249, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlayBlip
+      objectReference: {fileID: 0}
+    - target: {fileID: 5008587739802472585, guid: 44ee3dff8f88bb942bf2c3d447b13249, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: TicTacCOSTCO.Unity.UI.SelectBoardScreen, TicTacCOSTCO.Unity.UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 5008587739802472585, guid: 44ee3dff8f88bb942bf2c3d447b13249, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: TicTacCOSTCO.Unity.UI.BlipPlayer, TicTacCOSTCO.Unity.UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 5008587739802472585, guid: 44ee3dff8f88bb942bf2c3d447b13249, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5738759401095086061, guid: 44ee3dff8f88bb942bf2c3d447b13249, type: 3}
       propertyPath: m_Name
@@ -4322,6 +4519,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5738759401095086061, guid: 44ee3dff8f88bb942bf2c3d447b13249, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1341042825}
+    - targetCorrespondingSourceObject: {fileID: 5738759401095086061, guid: 44ee3dff8f88bb942bf2c3d447b13249, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1341042828}
   m_SourcePrefab: {fileID: 100100000, guid: 44ee3dff8f88bb942bf2c3d447b13249, type: 3}
 --- !u!224 &1341042823 stripped
 RectTransform:
@@ -4375,6 +4575,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
+--- !u!114 &1341042828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1341042824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24c1e5cee4867a54b8cce51eca032a68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: TicTacCOSTCO.Unity.UI::TicTacCOSTCO.Unity.UI.BlipPlayer
+--- !u!114 &1400437880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 546963851861754411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24c1e5cee4867a54b8cce51eca032a68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: TicTacCOSTCO.Unity.UI::TicTacCOSTCO.Unity.UI.BlipPlayer
 --- !u!1 &1434803050
 GameObject:
   m_ObjectHideFlags: 0
@@ -4388,6 +4612,7 @@ GameObject:
   - component: {fileID: 1434803054}
   - component: {fileID: 1434803053}
   - component: {fileID: 1434803052}
+  - component: {fileID: 1434803056}
   m_Layer: 5
   m_Name: Back Button
   m_TagString: Untagged
@@ -4491,6 +4716,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1434803056}
+        m_TargetAssemblyTypeName: TicTacCOSTCO.Unity.UI.BlipPlayer, TicTacCOSTCO.Unity.UI
+        m_MethodName: PlayBlip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1434803054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4529,6 +4766,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1434803050}
   m_CullTransparentMesh: 1
+--- !u!114 &1434803056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1434803050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24c1e5cee4867a54b8cce51eca032a68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: TicTacCOSTCO.Unity.UI::TicTacCOSTCO.Unity.UI.BlipPlayer
 --- !u!1 &1483317396
 GameObject:
   m_ObjectHideFlags: 0
@@ -4645,6 +4894,7 @@ GameObject:
   - component: {fileID: 1484847086}
   - component: {fileID: 1484847085}
   - component: {fileID: 1484847084}
+  - component: {fileID: 1484847088}
   m_Layer: 5
   m_Name: Back Button
   m_TagString: Untagged
@@ -4748,6 +4998,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1484847088}
+        m_TargetAssemblyTypeName: TicTacCOSTCO.Unity.UI.BlipPlayer, TicTacCOSTCO.Unity.UI
+        m_MethodName: PlayBlip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1484847086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4786,6 +5048,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1484847082}
   m_CullTransparentMesh: 1
+--- !u!114 &1484847088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1484847082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24c1e5cee4867a54b8cce51eca032a68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: TicTacCOSTCO.Unity.UI::TicTacCOSTCO.Unity.UI.BlipPlayer
 --- !u!1 &1601203163
 GameObject:
   m_ObjectHideFlags: 0
@@ -4907,6 +5181,18 @@ MonoBehaviour:
   WidthValueLabel: {fileID: 413373935}
   HeightSlider: {fileID: 1341042827}
   HeightValueLabel: {fileID: 1341042826}
+--- !u!114 &1664619818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 546963851861754410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24c1e5cee4867a54b8cce51eca032a68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: TicTacCOSTCO.Unity.UI::TicTacCOSTCO.Unity.UI.BlipPlayer
 --- !u!1 &1684924894
 GameObject:
   m_ObjectHideFlags: 0
@@ -5131,6 +5417,7 @@ GameObject:
   - component: {fileID: 1862353694}
   - component: {fileID: 1862353693}
   - component: {fileID: 1862353692}
+  - component: {fileID: 1862353696}
   m_Layer: 5
   m_Name: Rules Button
   m_TagString: Untagged
@@ -5234,6 +5521,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1862353696}
+        m_TargetAssemblyTypeName: TicTacCOSTCO.Unity.UI.BlipPlayer, TicTacCOSTCO.Unity.UI
+        m_MethodName: PlayBlip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1862353694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5272,6 +5571,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1862353690}
   m_CullTransparentMesh: 1
+--- !u!114 &1862353696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1862353690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24c1e5cee4867a54b8cce51eca032a68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: TicTacCOSTCO.Unity.UI::TicTacCOSTCO.Unity.UI.BlipPlayer
 --- !u!1 &1871196746
 GameObject:
   m_ObjectHideFlags: 0
@@ -5421,6 +5732,7 @@ GameObject:
   - component: {fileID: 1898329558}
   - component: {fileID: 1898329557}
   - component: {fileID: 1898329556}
+  - component: {fileID: 1898329559}
   m_Layer: 5
   m_Name: Return
   m_TagString: Untagged
@@ -5504,6 +5816,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1898329559}
+        m_TargetAssemblyTypeName: TicTacCOSTCO.Unity.UI.BlipPlayer, TicTacCOSTCO.Unity.UI
+        m_MethodName: PlayBlip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1898329557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5542,6 +5866,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1898329554}
   m_CullTransparentMesh: 1
+--- !u!114 &1898329559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1898329554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24c1e5cee4867a54b8cce51eca032a68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: TicTacCOSTCO.Unity.UI::TicTacCOSTCO.Unity.UI.BlipPlayer
 --- !u!1 &1924154441
 GameObject:
   m_ObjectHideFlags: 0
@@ -5907,6 +6243,10 @@ PrefabInstance:
       propertyPath: m_PixelsPerUnitMultiplier
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 403219845951150078, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -75
+      objectReference: {fileID: 0}
     - target: {fileID: 608098148734823974, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
       propertyPath: m_Transition
       value: 2
@@ -5921,10 +6261,14 @@ PrefabInstance:
       objectReference: {fileID: 1996184922, guid: 05221887f363f7248a95c35a8eea285c, type: 3}
     - target: {fileID: 608098148734823974, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 608098148734823974, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 608098148734823974, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 608098148734823974, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
@@ -5932,7 +6276,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 148423741}
     - target: {fileID: 608098148734823974, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1664619818}
+    - target: {fileID: 608098148734823974, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 608098148734823974, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 608098148734823974, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
@@ -5940,12 +6292,44 @@ PrefabInstance:
       value: NextIcon
       objectReference: {fileID: 0}
     - target: {fileID: 608098148734823974, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlayBlip
+      objectReference: {fileID: 0}
+    - target: {fileID: 608098148734823974, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: TicTacCOSTCO.Unity.UI.EditPlayerScreen, TicTacCOSTCO.Unity.UI
       objectReference: {fileID: 0}
     - target: {fileID: 608098148734823974, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: TicTacCOSTCO.Unity.UI.BlipPlayer, TicTacCOSTCO.Unity.UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 608098148734823974, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 608098148734823974, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1792816684938787676, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.81
+      objectReference: {fileID: 0}
+    - target: {fileID: 1792816684938787676, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 1792816684938787676, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -80
+      objectReference: {fileID: 0}
+    - target: {fileID: 1792816684938787676, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1792816684938787676, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -75
       objectReference: {fileID: 0}
     - target: {fileID: 1819018208633708810, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
       propertyPath: m_Sprite
@@ -5954,6 +6338,22 @@ PrefabInstance:
     - target: {fileID: 1819018208633708810, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
       propertyPath: m_PixelsPerUnitMultiplier
       value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1849502622165663657, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1849502622165663657, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1849502622165663657, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 1849502622165663657, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 2456275654115017598, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
       propertyPath: m_Name
@@ -5975,6 +6375,34 @@ PrefabInstance:
       propertyPath: m_SpriteState.m_HighlightedSprite
       value: 
       objectReference: {fileID: 1996184922, guid: 05221887f363f7248a95c35a8eea285c, type: 3}
+    - target: {fileID: 3903717109111054767, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3903717109111054767, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3903717109111054767, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 546963851861754417}
+    - target: {fileID: 3903717109111054767, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3903717109111054767, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlayBlip
+      objectReference: {fileID: 0}
+    - target: {fileID: 3903717109111054767, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: TicTacCOSTCO.Unity.UI.BlipPlayer, TicTacCOSTCO.Unity.UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 3903717109111054767, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4033989438692321936, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -6081,10 +6509,14 @@ PrefabInstance:
       objectReference: {fileID: 1996184922, guid: 05221887f363f7248a95c35a8eea285c, type: 3}
     - target: {fileID: 4565294750939714640, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4565294750939714640, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4565294750939714640, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4565294750939714640, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
@@ -6092,7 +6524,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 148423741}
     - target: {fileID: 4565294750939714640, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1400437880}
+    - target: {fileID: 4565294750939714640, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4565294750939714640, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4565294750939714640, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
@@ -6100,13 +6540,41 @@ PrefabInstance:
       value: PreviousIcon
       objectReference: {fileID: 0}
     - target: {fileID: 4565294750939714640, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlayBlip
+      objectReference: {fileID: 0}
+    - target: {fileID: 4565294750939714640, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: TicTacCOSTCO.Unity.UI.EditPlayerScreen, TicTacCOSTCO.Unity.UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 4565294750939714640, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: TicTacCOSTCO.Unity.UI.BlipPlayer, TicTacCOSTCO.Unity.UI
       objectReference: {fileID: 0}
     - target: {fileID: 4565294750939714640, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 4565294750939714640, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4689546455115581366, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4689546455115581366, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4689546455115581366, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 4689546455115581366, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 4768650004271073570, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
       propertyPath: m_Transition
       value: 2
@@ -6119,10 +6587,42 @@ PrefabInstance:
       propertyPath: m_SpriteState.m_HighlightedSprite
       value: 
       objectReference: {fileID: 1996184922, guid: 05221887f363f7248a95c35a8eea285c, type: 3}
+    - target: {fileID: 4768650004271073570, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4768650004271073570, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4768650004271073570, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 365753010}
+    - target: {fileID: 4768650004271073570, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 546963851861754421}
+    - target: {fileID: 4768650004271073570, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4768650004271073570, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: PlayBlip
+      objectReference: {fileID: 0}
+    - target: {fileID: 4768650004271073570, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: TicTacCOSTCO.Unity.UI.BlipPlayer, TicTacCOSTCO.Unity.UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 4768650004271073570, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4768650004271073570, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4790768662533137099, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -6175,6 +6675,78 @@ PrefabInstance:
       propertyPath: m_SpriteState.m_HighlightedSprite
       value: 
       objectReference: {fileID: 1996184922, guid: 05221887f363f7248a95c35a8eea285c, type: 3}
+    - target: {fileID: 5856820727445967945, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5856820727445967945, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5856820727445967945, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 546963851861754420}
+    - target: {fileID: 5856820727445967945, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5856820727445967945, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlayBlip
+      objectReference: {fileID: 0}
+    - target: {fileID: 5856820727445967945, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: TicTacCOSTCO.Unity.UI.BlipPlayer, TicTacCOSTCO.Unity.UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 5856820727445967945, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5993973984591919603, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5993973984591919603, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5993973984591919603, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 546963851861754418}
+    - target: {fileID: 5993973984591919603, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5993973984591919603, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlayBlip
+      objectReference: {fileID: 0}
+    - target: {fileID: 5993973984591919603, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: TicTacCOSTCO.Unity.UI.BlipPlayer, TicTacCOSTCO.Unity.UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 5993973984591919603, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6978944038712202876, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_fontSize
+      value: 48
+      objectReference: {fileID: 0}
+    - target: {fileID: 6978944038712202876, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 48
+      objectReference: {fileID: 0}
+    - target: {fileID: 6978944038712202876, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_TextWrappingMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6978944038712202876, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7336532312175510608, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
       propertyPath: AlreadyTakenPanel
       value: 
@@ -6191,6 +6763,34 @@ PrefabInstance:
       propertyPath: m_SpriteState.m_HighlightedSprite
       value: 
       objectReference: {fileID: 1996184922, guid: 05221887f363f7248a95c35a8eea285c, type: 3}
+    - target: {fileID: 7550452327291165423, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7550452327291165423, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7550452327291165423, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 546963851861754419}
+    - target: {fileID: 7550452327291165423, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7550452327291165423, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlayBlip
+      objectReference: {fileID: 0}
+    - target: {fileID: 7550452327291165423, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: TicTacCOSTCO.Unity.UI.BlipPlayer, TicTacCOSTCO.Unity.UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 7550452327291165423, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8751603447782429193, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -6222,13 +6822,186 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4983045199546481345, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 546963851861754418}
+    - targetCorrespondingSourceObject: {fileID: 4465855104477371758, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 546963851861754420}
+    - targetCorrespondingSourceObject: {fileID: 2433756082356137005, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 546963851861754419}
+    - targetCorrespondingSourceObject: {fileID: 1221741162642725050, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 546963851861754417}
+    - targetCorrespondingSourceObject: {fileID: 7109670543297592905, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1400437880}
+    - targetCorrespondingSourceObject: {fileID: 6108051182585222408, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1664619818}
+    - targetCorrespondingSourceObject: {fileID: 3213866798862793755, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 546963851861754421}
   m_SourcePrefab: {fileID: 100100000, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
 --- !u!1 &546963851861754409 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8286753949190278122, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
   m_PrefabInstance: {fileID: 546963851861754408}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &546963851861754410 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6108051182585222408, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+  m_PrefabInstance: {fileID: 546963851861754408}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &546963851861754411 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7109670543297592905, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+  m_PrefabInstance: {fileID: 546963851861754408}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &546963851861754412 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1221741162642725050, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+  m_PrefabInstance: {fileID: 546963851861754408}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &546963851861754413 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4983045199546481345, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+  m_PrefabInstance: {fileID: 546963851861754408}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &546963851861754414 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2433756082356137005, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+  m_PrefabInstance: {fileID: 546963851861754408}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &546963851861754415 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4465855104477371758, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+  m_PrefabInstance: {fileID: 546963851861754408}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &546963851861754416 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3213866798862793755, guid: 7b7d250f35933284eab4421a2d7dae31, type: 3}
+  m_PrefabInstance: {fileID: 546963851861754408}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &546963851861754417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 546963851861754412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24c1e5cee4867a54b8cce51eca032a68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: TicTacCOSTCO.Unity.UI::TicTacCOSTCO.Unity.UI.BlipPlayer
+--- !u!114 &546963851861754418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 546963851861754413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24c1e5cee4867a54b8cce51eca032a68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: TicTacCOSTCO.Unity.UI::TicTacCOSTCO.Unity.UI.BlipPlayer
+--- !u!114 &546963851861754419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 546963851861754414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24c1e5cee4867a54b8cce51eca032a68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: TicTacCOSTCO.Unity.UI::TicTacCOSTCO.Unity.UI.BlipPlayer
+--- !u!114 &546963851861754420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 546963851861754415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24c1e5cee4867a54b8cce51eca032a68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: TicTacCOSTCO.Unity.UI::TicTacCOSTCO.Unity.UI.BlipPlayer
+--- !u!114 &546963851861754421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 546963851861754416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24c1e5cee4867a54b8cce51eca032a68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: TicTacCOSTCO.Unity.UI::TicTacCOSTCO.Unity.UI.BlipPlayer
+--- !u!1001 &1835940601061800685
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1542601095759539193, guid: ccdccf9c15e257b48ad0cbd41f7bc637, type: 3}
+      propertyPath: m_Name
+      value: Singletons
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460238996711962615, guid: ccdccf9c15e257b48ad0cbd41f7bc637, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460238996711962615, guid: ccdccf9c15e257b48ad0cbd41f7bc637, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460238996711962615, guid: ccdccf9c15e257b48ad0cbd41f7bc637, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460238996711962615, guid: ccdccf9c15e257b48ad0cbd41f7bc637, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460238996711962615, guid: ccdccf9c15e257b48ad0cbd41f7bc637, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460238996711962615, guid: ccdccf9c15e257b48ad0cbd41f7bc637, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460238996711962615, guid: ccdccf9c15e257b48ad0cbd41f7bc637, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460238996711962615, guid: ccdccf9c15e257b48ad0cbd41f7bc637, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460238996711962615, guid: ccdccf9c15e257b48ad0cbd41f7bc637, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460238996711962615, guid: ccdccf9c15e257b48ad0cbd41f7bc637, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ccdccf9c15e257b48ad0cbd41f7bc637, type: 3}
 --- !u!1001 &2089472125376563904
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6305,9 +7078,13 @@ PrefabInstance:
       propertyPath: m_Padding.m_Left
       value: 80
       objectReference: {fileID: 0}
+    - target: {fileID: 2410678814586685681, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
+      propertyPath: m_fontSize
+      value: 72
+      objectReference: {fileID: 0}
     - target: {fileID: 2765695507491500212, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2765695507491500212, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -6318,6 +7095,10 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2765695507491500212, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2765695507491500212, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 148423741}
@@ -6326,11 +7107,19 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 365753010}
     - target: {fileID: 2765695507491500212, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 2089472125376563908}
+    - target: {fileID: 2765695507491500212, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2765695507491500212, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2765695507491500212, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2765695507491500212, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
@@ -6342,12 +7131,20 @@ PrefabInstance:
       value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: 2765695507491500212, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: PlayBlip
+      objectReference: {fileID: 0}
+    - target: {fileID: 2765695507491500212, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: TicTacCOSTCO.Unity.UI.EditPlayerScreen, TicTacCOSTCO.Unity.UI
       objectReference: {fileID: 0}
     - target: {fileID: 2765695507491500212, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2765695507491500212, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: TicTacCOSTCO.Unity.UI.BlipPlayer, TicTacCOSTCO.Unity.UI
       objectReference: {fileID: 0}
     - target: {fileID: 2765695507491500212, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
@@ -6361,6 +7158,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 2765695507491500212, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3328604089841308594, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -6369,9 +7170,13 @@ PrefabInstance:
       propertyPath: PlayerConfiguratorSelector
       value: 
       objectReference: {fileID: 2089472125376563909}
+    - target: {fileID: 4889854520294922009, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
+      propertyPath: m_fontSize
+      value: 72
+      objectReference: {fileID: 0}
     - target: {fileID: 4956644814257336156, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4956644814257336156, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -6382,6 +7187,10 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4956644814257336156, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4956644814257336156, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 148423741}
@@ -6390,11 +7199,19 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 365753010}
     - target: {fileID: 4956644814257336156, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 2089472125376563907}
+    - target: {fileID: 4956644814257336156, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4956644814257336156, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4956644814257336156, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4956644814257336156, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
@@ -6406,12 +7223,20 @@ PrefabInstance:
       value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: 4956644814257336156, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: PlayBlip
+      objectReference: {fileID: 0}
+    - target: {fileID: 4956644814257336156, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: TicTacCOSTCO.Unity.UI.EditPlayerScreen, TicTacCOSTCO.Unity.UI
       objectReference: {fileID: 0}
     - target: {fileID: 4956644814257336156, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4956644814257336156, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: TicTacCOSTCO.Unity.UI.BlipPlayer, TicTacCOSTCO.Unity.UI
       objectReference: {fileID: 0}
     - target: {fileID: 4956644814257336156, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
@@ -6425,13 +7250,29 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 4956644814257336156, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5162520305450333495, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
       propertyPath: m_Name
       value: Player Configurator Selector
       objectReference: {fileID: 0}
+    - target: {fileID: 5210919798908080561, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
+      propertyPath: m_fontSize
+      value: 72
+      objectReference: {fileID: 0}
+    - target: {fileID: 5494261943140777510, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5494261943140777510, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5494261943140777510, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5494261943140777510, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
       propertyPath: m_AnchorMin.y
@@ -6503,7 +7344,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5712021214451739124, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5712021214451739124, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -6514,6 +7355,10 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5712021214451739124, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5712021214451739124, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 148423741}
@@ -6522,11 +7367,19 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 365753010}
     - target: {fileID: 5712021214451739124, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 2089472125376563911}
+    - target: {fileID: 5712021214451739124, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5712021214451739124, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5712021214451739124, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5712021214451739124, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
@@ -6538,12 +7391,20 @@ PrefabInstance:
       value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: 5712021214451739124, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: PlayBlip
+      objectReference: {fileID: 0}
+    - target: {fileID: 5712021214451739124, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: TicTacCOSTCO.Unity.UI.EditPlayerScreen, TicTacCOSTCO.Unity.UI
       objectReference: {fileID: 0}
     - target: {fileID: 5712021214451739124, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5712021214451739124, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: TicTacCOSTCO.Unity.UI.BlipPlayer, TicTacCOSTCO.Unity.UI
       objectReference: {fileID: 0}
     - target: {fileID: 5712021214451739124, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
@@ -6557,6 +7418,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 5712021214451739124, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6189998742864561662, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
       propertyPath: PlayerConfiguratorSelector
       value: 
@@ -6565,9 +7430,21 @@ PrefabInstance:
       propertyPath: PlayerConfiguratorSelector
       value: 
       objectReference: {fileID: 2089472125376563909}
+    - target: {fileID: 6945351689407429658, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
+      propertyPath: m_fontSize
+      value: 72
+      objectReference: {fileID: 0}
+    - target: {fileID: 7050877823560640917, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
+      propertyPath: m_fontSize
+      value: 72
+      objectReference: {fileID: 0}
+    - target: {fileID: 7178309518245244454, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
+      propertyPath: m_fontSize
+      value: 72
+      objectReference: {fileID: 0}
     - target: {fileID: 7245078542386681443, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7245078542386681443, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -6578,6 +7455,10 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7245078542386681443, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7245078542386681443, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 148423741}
@@ -6586,11 +7467,19 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 365753010}
     - target: {fileID: 7245078542386681443, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 2089472125376563906}
+    - target: {fileID: 7245078542386681443, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7245078542386681443, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7245078542386681443, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7245078542386681443, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
@@ -6602,12 +7491,20 @@ PrefabInstance:
       value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: 7245078542386681443, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: PlayBlip
+      objectReference: {fileID: 0}
+    - target: {fileID: 7245078542386681443, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: TicTacCOSTCO.Unity.UI.EditPlayerScreen, TicTacCOSTCO.Unity.UI
       objectReference: {fileID: 0}
     - target: {fileID: 7245078542386681443, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7245078542386681443, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: TicTacCOSTCO.Unity.UI.BlipPlayer, TicTacCOSTCO.Unity.UI
       objectReference: {fileID: 0}
     - target: {fileID: 7245078542386681443, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
@@ -6619,6 +7516,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7245078542386681443, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7245078542386681443, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7329236585427224066, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
@@ -6647,7 +7548,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7407307516751745488, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7407307516751745488, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -6658,6 +7559,10 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7407307516751745488, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7407307516751745488, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 148423741}
@@ -6666,11 +7571,19 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 365753010}
     - target: {fileID: 7407307516751745488, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 2089472125376563912}
+    - target: {fileID: 7407307516751745488, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7407307516751745488, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7407307516751745488, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7407307516751745488, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
@@ -6682,12 +7595,20 @@ PrefabInstance:
       value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: 7407307516751745488, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: PlayBlip
+      objectReference: {fileID: 0}
+    - target: {fileID: 7407307516751745488, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: TicTacCOSTCO.Unity.UI.EditPlayerScreen, TicTacCOSTCO.Unity.UI
       objectReference: {fileID: 0}
     - target: {fileID: 7407307516751745488, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7407307516751745488, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: TicTacCOSTCO.Unity.UI.BlipPlayer, TicTacCOSTCO.Unity.UI
       objectReference: {fileID: 0}
     - target: {fileID: 7407307516751745488, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -6697,9 +7618,13 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 7407307516751745488, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7455447933628613727, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7455447933628613727, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -6710,6 +7635,10 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7455447933628613727, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7455447933628613727, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 148423741}
@@ -6718,11 +7647,19 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 365753010}
     - target: {fileID: 7455447933628613727, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 2089472125376563910}
+    - target: {fileID: 7455447933628613727, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7455447933628613727, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7455447933628613727, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7455447933628613727, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
@@ -6734,12 +7671,20 @@ PrefabInstance:
       value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: 7455447933628613727, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: PlayBlip
+      objectReference: {fileID: 0}
+    - target: {fileID: 7455447933628613727, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: TicTacCOSTCO.Unity.UI.EditPlayerScreen, TicTacCOSTCO.Unity.UI
       objectReference: {fileID: 0}
     - target: {fileID: 7455447933628613727, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7455447933628613727, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: TicTacCOSTCO.Unity.UI.BlipPlayer, TicTacCOSTCO.Unity.UI
       objectReference: {fileID: 0}
     - target: {fileID: 7455447933628613727, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
@@ -6751,6 +7696,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7455447933628613727, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7455447933628613727, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7770889115516100801, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
@@ -6792,6 +7741,22 @@ PrefabInstance:
     - target: {fileID: 7942672859512225962, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -566.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8312575467695108611, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8312575467695108611, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8312575467695108611, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8312575467695108611, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: TicTacCOSTCO.Unity.UI.BlipPlayer, TicTacCOSTCO.Unity.UI
       objectReference: {fileID: 0}
     - target: {fileID: 8477306881501232321, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
       propertyPath: PlayerConfiguratorSelector
@@ -6895,6 +7860,39 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 9141414663781691813, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
   m_PrefabInstance: {fileID: 2089472125376563904}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2089472125376563906 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5830094785653249152, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
+  m_PrefabInstance: {fileID: 2089472125376563904}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24c1e5cee4867a54b8cce51eca032a68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: TicTacCOSTCO.Unity.UI::TicTacCOSTCO.Unity.UI.BlipPlayer
+--- !u!114 &2089472125376563907 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8118462836418309567, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
+  m_PrefabInstance: {fileID: 2089472125376563904}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24c1e5cee4867a54b8cce51eca032a68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: TicTacCOSTCO.Unity.UI::TicTacCOSTCO.Unity.UI.BlipPlayer
+--- !u!114 &2089472125376563908 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1297777441155576407, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
+  m_PrefabInstance: {fileID: 2089472125376563904}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24c1e5cee4867a54b8cce51eca032a68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: TicTacCOSTCO.Unity.UI::TicTacCOSTCO.Unity.UI.BlipPlayer
 --- !u!114 &2089472125376563909 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7065406871070149187, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
@@ -6906,6 +7904,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 464e76f602d40724b815cf22d87423ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: TicTacCOSTCO.Unity.UI::TicTacCOSTCO.Unity.UI.PlayerConfiguratorSelector
+--- !u!114 &2089472125376563910 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5986421593363039932, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
+  m_PrefabInstance: {fileID: 2089472125376563904}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24c1e5cee4867a54b8cce51eca032a68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: TicTacCOSTCO.Unity.UI::TicTacCOSTCO.Unity.UI.BlipPlayer
+--- !u!114 &2089472125376563911 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8873839327098923799, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
+  m_PrefabInstance: {fileID: 2089472125376563904}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24c1e5cee4867a54b8cce51eca032a68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: TicTacCOSTCO.Unity.UI::TicTacCOSTCO.Unity.UI.BlipPlayer
+--- !u!114 &2089472125376563912 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5958000816641725235, guid: 745d4e65a75c92c4c9697897845067bd, type: 3}
+  m_PrefabInstance: {fileID: 2089472125376563904}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24c1e5cee4867a54b8cce51eca032a68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: TicTacCOSTCO.Unity.UI::TicTacCOSTCO.Unity.UI.BlipPlayer
 --- !u!1001 &2246436021559883380
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7008,63 +8039,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5302323393838573592, guid: dd11ffa0b1cae2e43ba2a622671775a4, type: 3}
   m_PrefabInstance: {fileID: 2246436021559883380}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &7480306830780879708
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2284308473870015341, guid: 6d44706c8ebf66d45b08e0572399afbe, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2284308473870015341, guid: 6d44706c8ebf66d45b08e0572399afbe, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2284308473870015341, guid: 6d44706c8ebf66d45b08e0572399afbe, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2284308473870015341, guid: 6d44706c8ebf66d45b08e0572399afbe, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2284308473870015341, guid: 6d44706c8ebf66d45b08e0572399afbe, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2284308473870015341, guid: 6d44706c8ebf66d45b08e0572399afbe, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2284308473870015341, guid: 6d44706c8ebf66d45b08e0572399afbe, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2284308473870015341, guid: 6d44706c8ebf66d45b08e0572399afbe, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2284308473870015341, guid: 6d44706c8ebf66d45b08e0572399afbe, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2284308473870015341, guid: 6d44706c8ebf66d45b08e0572399afbe, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4228208467606485366, guid: 6d44706c8ebf66d45b08e0572399afbe, type: 3}
-      propertyPath: m_Name
-      value: Persistent Game Information
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6d44706c8ebf66d45b08e0572399afbe, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -7076,5 +8050,5 @@ SceneRoots:
   - {fileID: 1684924898}
   - {fileID: 1601203167}
   - {fileID: 365753015}
-  - {fileID: 7480306830780879708}
   - {fileID: 546963851861754408}
+  - {fileID: 1835940601061800685}

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6161202673383995721}
   - component: {fileID: 4142059477689895460}
   - component: {fileID: 7819403088803447366}
+  - component: {fileID: 1784589405095515886}
   m_Layer: 5
   m_Name: Minus Button
   m_TagString: Untagged
@@ -69,14 +70,14 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 6925867028736810452, guid: 05221887f363f7248a95c35a8eea285c, type: 3}
   m_Type: 1
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 0.2
+  m_PixelsPerUnitMultiplier: 0.3
 --- !u!114 &7819403088803447366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,6 +134,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1784589405095515886}
+        m_TargetAssemblyTypeName: TicTacCOSTCO.Unity.UI.BlipPlayer, TicTacCOSTCO.Unity.UI
+        m_MethodName: PlayBlip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1784589405095515886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119021842525072927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24c1e5cee4867a54b8cce51eca032a68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: TicTacCOSTCO.Unity.UI::TicTacCOSTCO.Unity.UI.BlipPlayer
 --- !u!1 &174808731250483473
 GameObject:
   m_ObjectHideFlags: 0
@@ -303,10 +328,10 @@ RectTransform:
   - {fileID: 3570256488812958132}
   m_Father: {fileID: 825818388994140665}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 120, y: 120}
+  m_AnchoredPosition: {x: 0, y: -20}
+  m_SizeDelta: {x: -20, y: 80}
   m_Pivot: {x: 1, y: 1}
 --- !u!222 &7614405749776491027
 CanvasRenderer:
@@ -379,10 +404,10 @@ RectTransform:
   - {fileID: 1576708229316785134}
   m_Father: {fileID: 825818388994140665}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: -5}
-  m_SizeDelta: {x: 120, y: 120}
+  m_AnchoredPosition: {x: 0, y: 20}
+  m_SizeDelta: {x: -20, y: 80}
   m_Pivot: {x: 1, y: 0}
 --- !u!222 &3388574711135011290
 CanvasRenderer:
@@ -413,8 +438,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
+  m_Type: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -458,10 +483,10 @@ RectTransform:
   - {fileID: 1056487291031610162}
   m_Father: {fileID: 3252668563889398987}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 10, y: 0}
-  m_SizeDelta: {x: 250, y: 250}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 30, y: 0}
+  m_SizeDelta: {x: 160, y: -60}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &6750082065631111372
 CanvasRenderer:
@@ -492,8 +517,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 6925867028736810452, guid: 05221887f363f7248a95c35a8eea285c, type: 3}
-  m_Type: 1
-  m_PreserveAspect: 0
+  m_Type: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -633,6 +658,7 @@ GameObject:
   - component: {fileID: 950053782695572985}
   - component: {fileID: 7638770440733656763}
   - component: {fileID: 563033529517001533}
+  - component: {fileID: 3725414632614365662}
   m_Layer: 5
   m_Name: Configure
   m_TagString: Untagged
@@ -697,7 +723,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 0.2
+  m_PixelsPerUnitMultiplier: 0.3
 --- !u!114 &563033529517001533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -741,7 +767,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7638770440733656763}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3725414632614365662}
+        m_TargetAssemblyTypeName: TicTacCOSTCO.Unity.UI.BlipPlayer, TicTacCOSTCO.Unity.UI
+        m_MethodName: PlayBlip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3725414632614365662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4688274197223847041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24c1e5cee4867a54b8cce51eca032a68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: TicTacCOSTCO.Unity.UI::TicTacCOSTCO.Unity.UI.BlipPlayer
 --- !u!1 &4690815505451472965
 GameObject:
   m_ObjectHideFlags: 0
@@ -777,7 +827,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -60, y: -60}
+  m_SizeDelta: {x: -40, y: -40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3550311853237525964
 CanvasRenderer:
@@ -809,7 +859,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: -6418337541015408120, guid: 53f20b320f279ef458afd9bedac34615, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -909,7 +959,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 81.95
+  m_fontSize: 49.15
   m_fontSizeBase: 120
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1178,6 +1228,7 @@ GameObject:
   - component: {fileID: 1662553334582660129}
   - component: {fileID: 3112090839714055807}
   - component: {fileID: 5975650201510447498}
+  - component: {fileID: 7560601094811199046}
   m_Layer: 5
   m_Name: Plus Button
   m_TagString: Untagged
@@ -1299,6 +1350,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7560601094811199046}
+        m_TargetAssemblyTypeName: TicTacCOSTCO.Unity.UI.BlipPlayer, TicTacCOSTCO.Unity.UI
+        m_MethodName: PlayBlip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7560601094811199046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7005459322989012966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24c1e5cee4867a54b8cce51eca032a68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: TicTacCOSTCO.Unity.UI::TicTacCOSTCO.Unity.UI.BlipPlayer
 --- !u!1 &7175904093792940583
 GameObject:
   m_ObjectHideFlags: 0
@@ -1337,7 +1412,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 400, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4069416193130996221
 CanvasRenderer:
@@ -1354,20 +1429,20 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7175904093792940583}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.38475233, b: 0, a: 0.72156864}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1384869569, guid: 1000bcffc0f370346987d482cc305133, type: 3}
+  m_Sprite: {fileID: 883084721, guid: 1000bcffc0f370346987d482cc305133, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1376,7 +1451,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 0.2
 --- !u!114 &1656917014111281567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1432,8 +1507,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -5, y: 0}
-  m_SizeDelta: {x: 200, y: -10}
+  m_AnchoredPosition: {x: -25, y: 0}
+  m_SizeDelta: {x: 160, y: -10}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!222 &8326744433500856120
 CanvasRenderer:
