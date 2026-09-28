@@ -16,22 +16,22 @@ public class CascadeBanner : MonoBehaviour
 
     public void OnMoveMade(int player)
     {
-        if (this.GameConductor.CurrentGameState.LastCascade == 0)
+        if (this.GameConductor.CurrentGameState.CurrentCascadeLevel == 0)
         {
             ToggleParent.SetActive(false);
             return;
         }
 
         ToggleParent.SetActive(true);
-        if (this.GameConductor.CurrentGameState.LastCascade == 1)
+        if (this.GameConductor.CurrentGameState.CurrentCascadeLevel == 1)
         {
             this.CascadeAnimator.TextString = "Row x1";
         }
         else
         {
-            this.CascadeAnimator.TextString = $"Cascade x{this.GameConductor.CurrentGameState.LastCascade}";
+            this.CascadeAnimator.TextString = $"Cascade x{this.GameConductor.CurrentGameState.CurrentCascadeLevel}";
         }
 
-        this.CascadeAnimator.EnableAnimation(1f / this.GameConductor.CurrentGameState.LastCascade);
+        this.CascadeAnimator.EnableAnimation(1f / this.GameConductor.CurrentGameState.CurrentCascadeLevel);
     }
 }

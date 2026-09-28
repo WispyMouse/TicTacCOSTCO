@@ -24,7 +24,7 @@ namespace TicTacCOSTCO.DataStructures
             Playing = 1,
             /// <summary>
             /// Indicates the "cascade" state.
-            /// Once in Cascade, players need to make at least <see cref="LastCascade"/>
+            /// Once in Cascade, players need to make at least <see cref="CurrentCascadeLevel"/>
             /// connections on their turn, or they are eliminated.
             /// </summary>
             Cascade = 2,
@@ -49,7 +49,7 @@ namespace TicTacCOSTCO.DataStructures
 
         public readonly Dictionary<Coordinate, int?> SpotToSideOwnership = new Dictionary<Coordinate, int?>();
 
-        public int LastCascade { get; set; } = 0;
+        public int CurrentCascadeLevel { get; set; } = 0;
 
 
         public readonly int Height;
@@ -353,7 +353,9 @@ namespace TicTacCOSTCO.DataStructures
             this.SpotToSideOwnership[toApply.Position] = toApply.SideIndex;
 
             int solutionsCount = toApply.NewConnectionsMade;
+            this.CurrentCascadeLevel = Math.Max(this.CurrentCascadeLevel, solutionsCount);
 
+            // Notate all accepted connections
             foreach (CellsConnection connection in toApply.ConnectionsMade)
             {
                 foreach (Coordinate coordinate in connection.Cells)
@@ -367,12 +369,15 @@ namespace TicTacCOSTCO.DataStructures
                 }
             }
 
-            // HACK SHOULD GENERALIZE: Would this move result in a loss
-            if (this.CurrentGameState == GameState.GameStateEnum.Cascade && this.LastCascade > solutionsCount)
+            // Removed knocked out players, and consider end game state
+            if (toApply.PlayersRemoved.Any())
             {
-                // If there were no new solutions, or not enough solutions for previous cascade, and we're in cascade state,
-                // the current player should be knocked out
-                this.SideIndexesStillInGame.Remove(this.CurrentPlayerIndex);
+                foreach (int playerRemoved in toApply.PlayersRemoved)
+                {
+                    // If there were no new solutions, or not enough solutions for previous cascade, and we're in cascade state,
+                    // the current player should be knocked out
+                    this.SideIndexesStillInGame.Remove(this.CurrentPlayerIndex);
+                }
 
                 if (this.SideIndexesStillInGame.Count == 1)
                 {
@@ -385,7 +390,6 @@ namespace TicTacCOSTCO.DataStructures
             else if (solutionsCount > 0)
             {
                 this.CurrentGameState = GameState.GameStateEnum.Cascade;
-                this.LastCascade = solutionsCount;
             }
 
             if (!this.AnyEmptySpots())
@@ -401,6 +405,14 @@ namespace TicTacCOSTCO.DataStructures
             }
         }
 
+        /// <summary>
+        /// Reverse the previous move command, entirely undoing everything it did.
+        /// The players in the game should be in the state they were before the move, as though it was never run.
+        /// </summary>
+        /// <returns>
+        /// Returns the <see cref="MoveCommand"/> that was undone from <see cref="MoveCommandsApplied"/>.
+        /// Returns null if there was nothing that could be removed.
+        /// </returns>
         public MoveCommand ReversePreviousMoveCommand()
         {
             int moveCommandsApplied = this._MoveCommandsApplied.Count;
@@ -412,9 +424,10 @@ namespace TicTacCOSTCO.DataStructures
             MoveCommand toRemove = this.MoveCommandsApplied[moveCommandsApplied - 1];
             this._MoveCommandsApplied.RemoveAt(moveCommandsApplied - 1);
 
-            // HACK: At this point in the game's development, the only thing that *could* have been here is null
+            // HACK: At this point in the game's development, the only thing that *could* be placed during a reverse is a null
+            // Will need to track what it used to be, if we can make it any other value while reversing
             this.SpotToSideOwnership[toRemove.Position] = null;
-            this.LastCascade = toRemove.PreviousCascade;
+            this.CurrentCascadeLevel = toRemove.PreviousCascadeLevel;
 
             foreach (int playerRemoved in toRemove.PlayersRemoved)
             {
@@ -437,6 +450,19 @@ namespace TicTacCOSTCO.DataStructures
                 }
             }
 
+            if (this.MoveCommandsApplied.Count == 0)
+            {
+                this.CurrentGameState = GameStateEnum.NotStarted;
+            }
+            else if (this.CurrentCascadeLevel > 0)
+            {
+                this.CurrentGameState = GameStateEnum.Cascade;
+            }
+            else
+            {
+                this.CurrentGameState = GameStateEnum.Playing;
+            }
+
             this.AdvancePlayer(reversePlayer: true);
             return toRemove;
         }
@@ -449,12 +475,14 @@ namespace TicTacCOSTCO.DataStructures
             connections = PruneSolutionsForNotAlreadySolved(connections, out List<CellsConnection> removedConnections);
 
             // HACK SHOULD GENERALIZE: Would this move result in a loss
-            if (this.CurrentGameState == GameState.GameStateEnum.Cascade && this.LastCascade > connections.Count)
+            // "newConnections" are determined by the number of actual new connections minus the connections that are redundant to it
+            // we want to only check new scoring connections in this process
+            if (this.CurrentGameState == GameState.GameStateEnum.Cascade && this.CurrentCascadeLevel > connections.Count - removedConnections.Count)
             {
                 playersRemoved.Add(sideIndex);
             }
 
-            return new MoveCommand(sideIndex, position, connections, this.LastCascade, playersRemoved, removedConnections);
+            return new MoveCommand(sideIndex, position, connections, this.CurrentCascadeLevel, playersRemoved, removedConnections);
         }
 
         public void AdvancePlayer(bool reversePlayer = false)

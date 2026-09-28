@@ -11,7 +11,7 @@ namespace TicTacCOSTCO.DataStructures
         public List<CellsConnection> ConnectionsRemoved;
         public int NewConnectionsMade => this.ConnectionsMade.Count - this.ConnectionsRemoved.Count;
 
-        public int PreviousCascade;
+        public int PreviousCascadeLevel;
 
         public List<int> PlayersRemoved;
 
@@ -20,7 +20,7 @@ namespace TicTacCOSTCO.DataStructures
             SideIndex = sideIndex;
             Position = position;
             ConnectionsMade = connectionsMade;
-            PreviousCascade = previousCascade;
+            PreviousCascadeLevel = previousCascade;
             this.PlayersRemoved = playersRemoved;
             this.ConnectionsRemoved = connectionsRemoved;
         }

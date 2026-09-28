@@ -85,7 +85,7 @@ namespace TicTacCOSTCO.Unity.UI
         {
             int takingTurn = this.CurrentGameState.CurrentPlayerIndex;
             PlayerProfile player = PersistentGameConfiguration.Singleton.Players[takingTurn];
-            int previousCascade = this.CurrentGameState.LastCascade;
+            int previousCascade = this.CurrentGameState.CurrentCascadeLevel;
 
             toChoose.SetSide(TurnOrderHolder.CurrentTurnIconHolder.sprite, this.CurrentGameState.CurrentPlayerIndex);
             MoveCommand command = this.CurrentGameState.GenerateCommandFromMove(this.CurrentGameState.CurrentPlayerIndex, toChoose.Position);

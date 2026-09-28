@@ -39,7 +39,7 @@ public class AIMayAttack : AICore
             int solutionCounts = newConnections.Count;
 
             // Only count solutions that won't lose to the current cascade
-            if (currentGameState.LastCascade > solutionCounts)
+            if (currentGameState.CurrentCascadeLevel > solutionCounts)
             {
                 continue;
             }

@@ -90,7 +90,7 @@ namespace TicTacCOSTCO.Tests
 
             Assert.AreEqual(plan.ExpectedGameStateEnum, testState.CurrentGameState, $"Expecting game state to be in specific status");
             Assert.AreEqual(plan.ExpectedPlayerIndex, testState.CurrentPlayerIndex, $"Expecting current player index to be specific");
-            Assert.AreEqual(plan.ExpectedCascade, testState.LastCascade, $"Expecting cascade to be specific");
+            Assert.AreEqual(plan.ExpectedCascade, testState.CurrentCascadeLevel, $"Expecting cascade to be specific");
             Assert.AreEqual(plan.ExpectedRemainingPlayers, testState.SideIndexesStillInGame.Count, $"Expecting remaining player count to be specific");
         }
     }

@@ -25,7 +25,7 @@ public class AICore : ScriptableObject
         {
             if (currentGameState.TryGetAllSolutionsFromCell(forSide, move, out List<CellsConnection> newConnections))
             {
-                if (newConnections.Count >= currentGameState.LastCascade)
+                if (newConnections.Count >= currentGameState.CurrentCascadeLevel)
                 {
                     notLosingMoves.Add(move);
                 }
