@@ -33,5 +33,17 @@ namespace TicTacCOSTCO.Unity.UI
             Image newImage = Instantiate(WinnerIconImage, WinnerIconHolder);
             newImage.sprite = winnerSprite;
         }
+
+        public void RemoveRecentWin()
+        {
+            int childCount = this.WinnerIconHolder.childCount;
+
+            if (childCount == 0)
+            {
+                return;
+            }
+
+            Destroy(this.WinnerIconHolder.GetChild(childCount - 1).gameObject);
+        }
     }
 }

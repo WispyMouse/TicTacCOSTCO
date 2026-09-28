@@ -30,6 +30,7 @@ namespace TicTacCOSTCO.Unity.UI
 
         public LineRenderer LineRendererPF;
         private List<LineRenderer> SolutionLineRenderers { get; set; } = new List<LineRenderer>();
+        private Dictionary<CellsConnection, LineRenderer> connectionToRenderer { get; set; } = new Dictionary<CellsConnection, LineRenderer>();
 
         public GameState CurrentGameState { get; set; }
 
@@ -47,6 +48,8 @@ namespace TicTacCOSTCO.Unity.UI
                 Destroy(this.SolutionLineRenderers[ii].gameObject);
             }
             this.SolutionLineRenderers.Clear();
+            this.connectionToRenderer.Clear();
+
             this.WinnerPanel.transform.parent.gameObject.SetActive(false);
             this.CascadeText.transform.parent.gameObject.SetActive(false);
             this.RewindButtonHolder.SetActive(false);
@@ -93,7 +96,7 @@ namespace TicTacCOSTCO.Unity.UI
 
             foreach (CellsConnection solution in command.ConnectionsMade)
             {
-                this.DrawLineBetween(solution.Root, solution.Tail, player);
+                this.DrawLineBetween(solution, player);
 
                 foreach (Coordinate curCell in solution.Cells)
                 {
@@ -101,20 +104,7 @@ namespace TicTacCOSTCO.Unity.UI
                 }
             }
 
-            int solutionsCount = command.NewConnectionsMade;
-            if (solutionsCount > previousCascade)
-            {
-                this.CascadeText.transform.parent.gameObject.SetActive(true);
-                switch (solutionsCount)
-                {
-                    case 1:
-                        this.CascadeText.TextString = "ROW";
-                        break;
-                    default:
-                        this.CascadeText.TextString = $"CASCADE x{solutionsCount}";
-                        break;
-                }
-            }
+            SetCascadeVisuals(command);
 
             if (this.CurrentGameState.CurrentGameState == GameState.GameStateEnum.End)
             {
@@ -130,6 +120,28 @@ namespace TicTacCOSTCO.Unity.UI
             else
             {
                 this.RewindButtonHolder.SetActive(this.CurrentGameState != null && this.CurrentGameState.MoveCommandsApplied.Count > 0);
+            }
+        }
+
+        void SetCascadeVisuals(MoveCommand fromCommand)
+        {
+            int cascadeLevel = fromCommand == null ? 0 : Mathf.Max(fromCommand.PreviousCascadeLevel, fromCommand.NewConnectionsMade);
+            if (cascadeLevel > 0)
+            {
+                this.CascadeText.transform.parent.gameObject.SetActive(true);
+                switch (cascadeLevel)
+                {
+                    case 1:
+                        this.CascadeText.TextString = "ROW";
+                        break;
+                    default:
+                        this.CascadeText.TextString = $"CASCADE x{cascadeLevel}";
+                        break;
+                }
+            }
+            else
+            {
+                this.CascadeText.transform.parent.gameObject.SetActive(false);
             }
         }
 
@@ -175,14 +187,15 @@ namespace TicTacCOSTCO.Unity.UI
             this.ChooseCell(getCell);
         }
 
-        public void DrawLineBetween(Coordinate cellA, Coordinate cellB, PlayerProfile faction)
+        public void DrawLineBetween(CellsConnection connection, PlayerProfile faction)
         {
             LineRenderer newRenderer = Instantiate(this.LineRendererPF);
-            newRenderer.SetPosition(0, this.PositionsToCells[cellA].transform.position + Vector3.back * 5f);
-            newRenderer.SetPosition(1, this.PositionsToCells[cellB].transform.position + Vector3.back * 5f);
+            newRenderer.SetPosition(0, this.PositionsToCells[connection.Root].transform.position + Vector3.back * 5f);
+            newRenderer.SetPosition(1, this.PositionsToCells[connection.Tail].transform.position + Vector3.back * 5f);
             newRenderer.startColor = faction.KnockoutColor;
             newRenderer.endColor = faction.KnockoutColor;
             this.SolutionLineRenderers.Add(newRenderer);
+            this.connectionToRenderer.Add(connection, newRenderer);
         }
 
         public void DeclareCurrentPlayerVictorious()
@@ -195,17 +208,17 @@ namespace TicTacCOSTCO.Unity.UI
             this.WinnerIcon.sprite = player.SpriteRepresentation;
 
             string winnerName = player.PlayerName;
-            if (string.IsNullOrEmpty(winnerName))
+            if (!string.IsNullOrEmpty(winnerName))
             {
-                this.WinnerText.text = winnerName;
                 this.WinnerText.gameObject.SetActive(true);
+                this.WinnerText.text = winnerName;
             }
             else
             {
                 this.WinnerText.gameObject.SetActive(false);
             }
 
-            this.ScoreBoard.AddToScoreboard(player);
+                this.ScoreBoard.AddToScoreboard(player);
         }
 
         public void MainMenu()
@@ -215,10 +228,31 @@ namespace TicTacCOSTCO.Unity.UI
 
         public void Rewind()
         {
+            // If this undid a win, we should remove the "recent wint" entry because this game has been undone
+            if (this.CurrentGameState.CurrentGameState == GameState.GameStateEnum.End && this.CurrentGameState.Winner.HasValue)
+            {
+                this.ScoreBoard.RemoveRecentWin();
+            }
+
             // Rewind until we reach the last human move, or the beginning of the game.
             while (this.CurrentGameState.MoveCommandsApplied.Count > 0)
             {
                 MoveCommand undoneCommand = this.CurrentGameState.ReversePreviousMoveCommand();
+                
+                foreach (CellsConnection connectionToRemove in undoneCommand.ConnectionsMade)
+                {
+                    LineRenderer renderer = connectionToRenderer[connectionToRemove];
+                    Destroy(renderer.gameObject);
+                    connectionToRenderer.Remove(connectionToRemove);
+                }    
+
+                // If a connection was "removed", it was probably a composite of two lines
+                // Put it back!
+                foreach (CellsConnection connectionToAddBack in undoneCommand.ConnectionsRemoved)
+                {
+                    this.DrawLineBetween(connectionToAddBack, PersistentGameConfiguration.Singleton.Players[undoneCommand.SideIndex]);
+                }
+
                 this.PositionsToCells[undoneCommand.Position].Clear();
 
                 // When we reach a player, stop
@@ -227,6 +261,13 @@ namespace TicTacCOSTCO.Unity.UI
                     break;
                 }
             }
+
+            // We have to have more moves, right?
+            // Can't have a winner anymore either
+            this.NoMoreMovesPanel.SetActive(false);
+            this.WinnerPanel.transform.parent.gameObject.SetActive(false);
+
+            SetCascadeVisuals(this.CurrentGameState.MoveCommandsApplied.Count == 0 ? null : this.CurrentGameState.MoveCommandsApplied[this.CurrentGameState.MoveCommandsApplied.Count - 1]);
         }
     }
 }

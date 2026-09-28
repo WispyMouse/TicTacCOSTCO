@@ -65,6 +65,9 @@ namespace TicTacCOSTCO.DataStructures
         public OnPlayerTurnDelegate OnPlayerStartTurn;
         public OnPlayerTurnDelegate OnPlayerMadeMove;
 
+        public delegate void OnMoveUndoneDelegate(MoveCommand undone);
+        public OnMoveUndoneDelegate OnMoveUndone;
+
         public IReadOnlyList<MoveCommand> MoveCommandsApplied => this._MoveCommandsApplied;
         private List<MoveCommand> _MoveCommandsApplied { get; set; } = new List<MoveCommand>();
 
@@ -464,6 +467,12 @@ namespace TicTacCOSTCO.DataStructures
             }
 
             this.AdvancePlayer(reversePlayer: true);
+
+            this.OnMoveUndone?.Invoke(toRemove);
+
+            // We certainly no longer have a winner
+            this.Winner = null;
+
             return toRemove;
         }
 

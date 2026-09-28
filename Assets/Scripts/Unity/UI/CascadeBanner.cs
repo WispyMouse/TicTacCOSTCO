@@ -1,3 +1,4 @@
+using TicTacCOSTCO.DataStructures;
 using TicTacCOSTCO.Unity.UI;
 using TMPro;
 using UnityEngine;
@@ -11,7 +12,13 @@ public class CascadeBanner : MonoBehaviour
     public void ResetGame()
     {
         this.GameConductor.CurrentGameState.OnPlayerMadeMove += OnMoveMade;
+        this.GameConductor.CurrentGameState.OnMoveUndone += OnMoveUndone;
         this.ToggleParent.SetActive(false);
+    }
+
+    public void OnMoveUndone(MoveCommand undone)
+    {
+        this.OnMoveMade(this.GameConductor.CurrentGameState.CurrentPlayerIndex);
     }
 
     public void OnMoveMade(int player)
