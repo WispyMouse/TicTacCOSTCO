@@ -26,7 +26,7 @@ namespace TicTacCOSTCO.Unity.UI
             this.PlusButtonBase.SetActive(false);
 
             // Don't show minus for minimum players
-            this.MinusButtonBase.SetActive(PersistentGameConfiguration.Singleton.Players.Count > GameState.MINIMUMPLAYERS);
+            this.MinusButtonBase.SetActive(PersistentGameConfiguration.Singleton.Players.Count > BoardStateHolder.MINIMUMPLAYERS);
 
             this.IconOfPlayer.sprite = profile.SpriteRepresentation;
             this.IconRepresenterBase.SetActive(true);

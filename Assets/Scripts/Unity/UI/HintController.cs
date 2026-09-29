@@ -1,9 +1,5 @@
 namespace TicTacCOSTCO.Unity.UI
 {
-    using NUnit.Framework;
-    using System.Collections.Generic;
-    using TicTacCOSTCO.DataStructures;
-    using TicTacCOSTCO.DataStructures.Tools;
     using UnityEngine;
 
     public class HintController : MonoBehaviour
@@ -42,8 +38,8 @@ namespace TicTacCOSTCO.Unity.UI
                     continue;
                 }
 
-                this.GameConductor.CurrentGameState.TryGetAllSolutionsFromCell(this.GameConductor.CurrentGameState.CurrentPlayerIndex, cell.Position, out List<CellsConnection> newConnections);
-                cell.SetHint(newConnections.Count);
+                ;
+                cell.SetHint(this.GameConductor.CurrentGameState.CurrentBoardState.GenerateCommandFromMove(this.GameConductor.CurrentGameState.CurrentBoardState.CurrentPlayerIndex, cell.Position).ConnectionsMade.Count);
             }
             isOn = true;
         }

@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using TicTacCOSTCO.AIs;
 using TicTacCOSTCO.DataStructures;
-using TicTacCOSTCO.DataStructures.Tools;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "AICore.asset", menuName = "COSTCO/AI Core")]
@@ -17,7 +16,7 @@ public class AICore : ScriptableObject
 
     public List<AIHeuristic> AIHeuristics = new List<AIHeuristic>();
 
-    public virtual Coordinate DetermineMove(int forSide, GameState currentGameState)
+    public virtual Coordinate DetermineMove(int forSide, BoardState currentGameState)
     {
         IReadOnlyList<Coordinate> possibleMoves = currentGameState.GetEmptySpots();
 
@@ -25,32 +24,40 @@ public class AICore : ScriptableObject
         Dictionary<Coordinate, float> moveToHeuristicTotal = new Dictionary<Coordinate, float>(possibleMoves.Count);
         float highestHeuristic = 0;
 
+        foreach (Coordinate move in possibleMoves)
+        {
+            moveToHeuristicTotal.Add(move, 0);
+        }
+
 #if UNITY_EDITOR
         string logText = $"(Side: {forSide}) (Core: {this.name})";
 #endif
 
-        foreach (Coordinate coordinate in possibleMoves)
+        foreach (AIHeuristic heuristic in AIHeuristics)
         {
-            float heuristicTotal = 0;
 
 #if UNITY_EDITOR
-            string withCoordinate = logText + $" (Coordinate: {coordinate})";
+            string withHeuristic = logText + $" (Heuristic: {heuristic.name})";
 #endif
 
-            foreach (AIHeuristic heuristic in AIHeuristics)
+            heuristic.BakeInformation(forSide, currentGameState);
+
+            foreach (Coordinate coordinate in possibleMoves)
             {
+#if UNITY_EDITOR
+                string withCoordinate = withHeuristic + $" (Coordinate: {coordinate})";
+#endif
+
                 float heuristicValue = heuristic.ScorePosition(forSide, currentGameState, coordinate);
 
 #if UNITY_EDITOR
-                UnityEngine.Debug.Log(withCoordinate + $" (Heuristic: {heuristic.name}) (Value: {heuristicValue})");
+                UnityEngine.Debug.Log(withCoordinate + $" (Value: {heuristicValue})");
 #endif
 
-                heuristicTotal += heuristicValue;
+                float newTotal = moveToHeuristicTotal[coordinate] + heuristicValue;
+                highestHeuristic = Mathf.Max(newTotal, highestHeuristic);
+                moveToHeuristicTotal[coordinate] = newTotal;
             }
-
-            moveToHeuristicTotal.Add(coordinate, heuristicTotal);
-
-            highestHeuristic = Mathf.Max(highestHeuristic, heuristicTotal);
         }
 
         // Determine which coordinates scored *at least* the TopCut percentage of the highest heuristic
@@ -66,29 +73,17 @@ public class AICore : ScriptableObject
         }
 
         // Unweightedly pick one at random
-        return ChooseRandomly(coordinatesToConsider);
+        Coordinate choice = ChooseRandomly(coordinatesToConsider);
+
+#if UNITY_EDITOR
+        UnityEngine.Debug.Log(logText + $" Chose {choice} which was {(moveToHeuristicTotal[choice] / highestHeuristic).ToString("P2")} of highest at {moveToHeuristicTotal[choice]}");
+#endif
+
+        return choice;
     }
 
     protected virtual Coordinate ChooseRandomly(IReadOnlyList<Coordinate> options)
     {
         return options[Random.Range(0, options.Count)];
-    }
-
-    protected IReadOnlyList<Coordinate> GetMovesThatDoNotImmediatleyLose(IReadOnlyList<Coordinate> options, GameState currentGameState, int forSide)
-    {
-        List<Coordinate> notLosingMoves = new List<Coordinate>(options.Count);
-
-        foreach (Coordinate move in options)
-        {
-            if (currentGameState.TryGetAllSolutionsFromCell(forSide, move, out List<CellsConnection> newConnections))
-            {
-                if (newConnections.Count >= currentGameState.CurrentCascadeLevel)
-                {
-                    notLosingMoves.Add(move);
-                }
-            }
-        }
-
-        return notLosingMoves;
     }
 }

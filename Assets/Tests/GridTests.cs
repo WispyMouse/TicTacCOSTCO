@@ -4,8 +4,6 @@ namespace TicTacCOSTCO.Tests
     using System.Collections.Generic;
     using System.Linq;
     using TicTacCOSTCO.DataStructures;
-    using UnityEngine;
-    using TicTacCOSTCO.DataStructures.Tools;
 
     public class GridTests
     {
@@ -98,15 +96,15 @@ namespace TicTacCOSTCO.Tests
         public void PlacingThirdWouldResultInRow(PlacementCausesSolve_DataSource_Object plan)
         {
             int lastIndex = plan.Placements.Count - 1;
-            GameState testState = new GameState(plan.Width, plan.Height, 1);
+            BoardStateHolder testState = new BoardStateHolder(plan.Width, plan.Height, 1);
 
             for (int ii = 0; ii < lastIndex; ii++)
             {
-                testState.ApplyMoveCommand(testState.GenerateCommandFromMove(0, plan.Placements[ii]), false);
+                testState.ApplyMoveCommand(testState.CurrentBoardState.GenerateCommandFromMove(0, plan.Placements[ii]), false);
             }
 
-            MoveCommand lastCommand = testState.GenerateCommandFromMove(0, plan.Placements[lastIndex]);
-            Assert.AreEqual(plan.ExpectedSolutions, lastCommand.NewConnectionsMade, $"Especting a specific amount of solutions total");
+            MoveCommand lastCommand = testState.CurrentBoardState.GenerateCommandFromMove(0, plan.Placements[lastIndex]);
+            Assert.AreEqual(plan.ExpectedSolutions, lastCommand.ConnectionsMade.Count, $"Especting a specific amount of solutions total");
 
             testState.ApplyMoveCommand(lastCommand, false);
 
@@ -114,7 +112,7 @@ namespace TicTacCOSTCO.Tests
             {
                 foreach (Coordinate position in plan.Placements)
                 {
-                    if (!testState.AcceptedSolutions.TryGetValue(position, out List<CellsConnection> positionSolutions))
+                    if (!testState.CurrentBoardState.AcceptedSolutions.TryGetValue(position, out List<CellsConnection> positionSolutions))
                     {
                         Assert.Fail($"There should be an accepted solution for {position}.");
                     }

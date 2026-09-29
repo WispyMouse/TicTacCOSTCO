@@ -61,7 +61,7 @@ namespace TicTacCOSTCO.Unity.UI
                 }
             }
 
-            this.UpdateToNewTurn(this.TurnOrderHolder.GameConductor.CurrentGameState.CurrentPlayerIndex);
+            this.UpdateToNewTurn(this.TurnOrderHolder.GameConductor.CurrentGameState.CurrentBoardState.CurrentPlayerIndex);
         }
 
         public void UpdateToNewTurn(int newTurn)

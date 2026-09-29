@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using TicTacCOSTCO.DataStructures;
 using UnityEngine;
 
@@ -6,7 +7,14 @@ namespace TicTacCOSTCO.AIs
     [CreateAssetMenu(fileName = "DevelopsOriginDirectionalitiesHeuristic.asset", menuName = "COSTCO/AI Heuristic/Develops Origin Directionalities")]
     public class DevelopsOriginDirectionalitiesHeuristic : AIHeuristic
     {
-        public override float ScorePosition(int forSide, GameState currentGameState, Coordinate position)
+        /// <summary>
+        /// In order to consider a direction "developable", there must be at least this many claimed tiles in the direction
+        /// This helps with identifying easier to complete directions
+        /// </summary>
+        [Range(0, 3)]
+        public int MinimumExistingMembers = 0;
+
+        public override float ScorePosition(int forSide, BoardState currentGameState, Coordinate position)
         {
             // We're going to project a direction out in each of the directionalities, from this position
             // If the casted directionality is a possible development target, add to the weight
@@ -16,63 +24,63 @@ namespace TicTacCOSTCO.AIs
 
             foreach (DirectionalityVector directionality in currentGameState.Directionalities)
             {
-                bool forwardValid = true;
-
-                for (int ii = 1; ii < currentGameState.InARowToSolve; ii++)
+                bool IsDirectionValid(DirectionalityVector direction)
                 {
-                    Coordinate resultingPosition = position + directionality * ii;
+                    bool valid = true;
+                    int ownedInQuery = 0;
 
-                    if (!currentGameState.SpotIsInBounds(resultingPosition))
+                    for (int ii = 1; ii < currentGameState.InARowToSolve; ii++)
                     {
-                        forwardValid = false;
-                        break;
+                        Coordinate resultingPosition = position + direction * ii;
+
+                        if (!currentGameState.SpotIsInBounds(resultingPosition))
+                        {
+                            valid = false;
+                            break;
+                        }
+
+                        int? ownership = currentGameState.SpotToSideOwnership[resultingPosition];
+
+                        // If it's not empty, or not owned by us, it doesn't work
+                        if (!(ownership == null || ownership == forSide))
+                        {
+                            valid = false;
+                            break;
+                        }
+
+                        if (ownership == forSide)
+                        {
+                            ownedInQuery++;
+                        }
+
+                        // Check to see if that tile has 
+                        if (currentGameState.AcceptedSolutions.TryGetValue(resultingPosition, out List<CellsConnection> acceptedSolutions))
+                        {
+                            foreach (CellsConnection connection in acceptedSolutions)
+                            {
+                                if (connection.Directionality == direction)
+                                {
+                                    valid = false;
+                                    break;
+                                }
+                            }
+                        }
                     }
 
-                    int? ownership = currentGameState.SpotToSideOwnership[resultingPosition];
-
-                    // If it's not empty, or not owned by us, it doesn't work
-                    if (!(ownership == null || ownership == forSide))
-                    {
-                        forwardValid = false;
-                        break;
-                    }
+                    return valid && ownedInQuery >= this.MinimumExistingMembers;
                 }
 
-                if (forwardValid)
+                if (IsDirectionValid(directionality))
                 {
                     directionalitiesThatCouldDevelop++;
                 }
-
-                bool backwardValid = true;
-                Coordinate opposite = directionality * -1;
-
-                for (int ii = 1; ii < currentGameState.InARowToSolve; ii++)
-                {
-                    Coordinate resultingPosition = position + opposite * ii;
-
-                    if (!currentGameState.SpotIsInBounds(resultingPosition))
-                    {
-                        backwardValid = false;
-                        break;
-                    }
-
-                    int? ownership = currentGameState.SpotToSideOwnership[resultingPosition];
-
-                    // If it's not empty, or not owned by us, it doesn't work
-                    if (!(ownership == null || ownership == forSide))
-                    {
-                        backwardValid = false;
-                        break;
-                    }
-                }
-
-                if (backwardValid)
+                if (IsDirectionValid(-directionality))
                 {
                     directionalitiesThatCouldDevelop++;
                 }
             }
 
-            return (directionalitiesThatCouldDevelop / directionalitiesCounts) * this.Weight;
+            return ((float)directionalitiesThatCouldDevelop / (float)directionalitiesCounts) * this.Weight;
         }
     }
 }

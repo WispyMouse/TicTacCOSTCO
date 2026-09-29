@@ -48,26 +48,18 @@ MonoBehaviour:
   - {fileID: 8300000, guid: df18e7a21ba62b44da2c03c35a908f16, type: 3}
   - {fileID: 8300000, guid: 596971127da1915439824c43bf80db15, type: 3}
   - {fileID: 8300000, guid: 11f4092e330ecc34291c9e76510e8c41, type: 3}
-  - {fileID: 8300000, guid: b8fe1f51cce5ba7449e6809c96977a59, type: 3}
-  - {fileID: 8300000, guid: 35db4e0ad3784ab40b05cead35c67335, type: 3}
   - {fileID: 8300000, guid: 84f0691ce27218e4cb27a8346c49c7e6, type: 3}
   - {fileID: 8300000, guid: 61c59b4cb523fa0489536557e0478300, type: 3}
-  - {fileID: 8300000, guid: 2072dd6e4f779254daa00b87edbab96d, type: 3}
-  - {fileID: 8300000, guid: 87c14241105a5364e8258d1094375a3a, type: 3}
-  - {fileID: 8300000, guid: 2367a563b6f8cf34b99b7757bd48ae09, type: 3}
   - {fileID: 8300000, guid: 2d7884c3807018d458b19fb8ad1833c9, type: 3}
   - {fileID: 8300000, guid: a7a475f87bf0f804e8c1b1972bdf9439, type: 3}
   - {fileID: 8300000, guid: 55b1a1d28e8b2fd43bc4ef3996432ff4, type: 3}
   - {fileID: 8300000, guid: b7d859aff7289674abd31de65377f806, type: 3}
   - {fileID: 8300000, guid: b865ff4d38be5374faa5cfca88ab852d, type: 3}
-  - {fileID: 8300000, guid: ab2399d5d2ee5054ab84db98a8012da9, type: 3}
   - {fileID: 8300000, guid: ce1aad919e478304880e71d770a23cf5, type: 3}
   - {fileID: 8300000, guid: 06c2ccc226f6dee419ee29094176b362, type: 3}
-  - {fileID: 8300000, guid: 34a07f89602fd6d40af1468e07c35673, type: 3}
   - {fileID: 8300000, guid: 156359132c8a6854dbf9d93fb51e2730, type: 3}
   - {fileID: 8300000, guid: 457a77b698e3e174bba5a2cfae97cfa7, type: 3}
   - {fileID: 8300000, guid: aa328e7e977aae44f81e6e6126377ca7, type: 3}
-  - {fileID: 8300000, guid: 276fcc87b091ed942af0b0b0f8da531f, type: 3}
-  audioSourcesToCreate: 3
-  MinimumPitchForBlip: 0.8
-  MaximumPitchForBlip: 1.2
+  audioSourcesToCreate: 2
+  MinimumPitchForBlip: 0.7
+  MaximumPitchForBlip: 1.1

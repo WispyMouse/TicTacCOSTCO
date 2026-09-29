@@ -54,5 +54,6 @@ public class Cell : MonoBehaviour
         this.SideIndex = 0;
         this.IconSpriteRenderer.sprite = null;
         this.AlreadyPlaced = false;
+        this.SetHighlightStatus(false);
     }
 }

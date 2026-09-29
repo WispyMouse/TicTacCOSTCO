@@ -32,7 +32,7 @@ namespace TicTacCOSTCO.Unity.UI
         private List<LineRenderer> SolutionLineRenderers { get; set; } = new List<LineRenderer>();
         private Dictionary<CellsConnection, LineRenderer> connectionToRenderer { get; set; } = new Dictionary<CellsConnection, LineRenderer>();
 
-        public GameState CurrentGameState { get; set; }
+        public BoardStateHolder CurrentGameState { get; set; }
 
         public GameObject RewindButtonHolder;
 
@@ -55,7 +55,7 @@ namespace TicTacCOSTCO.Unity.UI
             this.RewindButtonHolder.SetActive(false);
             this.NoMoreMovesPanel.SetActive(false);
 
-            this.CurrentGameState = new GameState(
+            this.CurrentGameState = new BoardStateHolder(
                 PersistentGameConfiguration.Singleton.Width, 
                 PersistentGameConfiguration.Singleton.Height, 
                 PersistentGameConfiguration.Singleton.Players.Count);
@@ -68,12 +68,12 @@ namespace TicTacCOSTCO.Unity.UI
 
         public void Update()
         {
-            if (this.CurrentGameState != null && this.CurrentGameState.CurrentGameState == GameState.GameStateEnum.End)
+            if (this.CurrentGameState != null && this.CurrentGameState.CurrentBoardState.CurrentGameState == BoardState.GameStateEnum.End)
             {
                 return;
             }
 
-            if (this.TurnOrderHolder.PlayerIsHuman(this.CurrentGameState.CurrentPlayerIndex))
+            if (this.TurnOrderHolder.PlayerIsHuman(this.CurrentGameState.CurrentBoardState.CurrentPlayerIndex))
             {
                 this.HandleLeftClick();
             }
@@ -86,14 +86,19 @@ namespace TicTacCOSTCO.Unity.UI
 
         public void ChooseCell(Cell toChoose)
         {
+            foreach (Cell curCell in this.PositionsToCells.Values)
+            {
+                curCell.SetHighlightStatus(false);
+            }
+
             AudioPlayer.Singleton.PlayBlip();
 
-            int takingTurn = this.CurrentGameState.CurrentPlayerIndex;
+            int takingTurn = this.CurrentGameState.CurrentBoardState.CurrentPlayerIndex;
             PlayerProfile player = PersistentGameConfiguration.Singleton.Players[takingTurn];
-            int previousCascade = this.CurrentGameState.CurrentCascadeLevel;
+            int previousCascade = this.CurrentGameState.CurrentBoardState.CurrentCascadeLevel;
 
-            toChoose.SetSide(TurnOrderHolder.CurrentTurnIconHolder.sprite, this.CurrentGameState.CurrentPlayerIndex);
-            MoveCommand command = this.CurrentGameState.GenerateCommandFromMove(this.CurrentGameState.CurrentPlayerIndex, toChoose.Position);
+            toChoose.SetSide(TurnOrderHolder.CurrentTurnIconHolder.sprite, this.CurrentGameState.CurrentBoardState.CurrentPlayerIndex);
+            MoveCommand command = this.CurrentGameState.CurrentBoardState.GenerateCommandFromMove(this.CurrentGameState.CurrentBoardState.CurrentPlayerIndex, toChoose.Position);
             this.CurrentGameState.ApplyMoveCommand(command);
 
             foreach (CellsConnection solution in command.ConnectionsMade)
@@ -102,15 +107,15 @@ namespace TicTacCOSTCO.Unity.UI
 
                 foreach (Coordinate curCell in solution.Cells)
                 {
-                    PositionsToCells[curCell].SetHighlightStatus(false);
+                    PositionsToCells[curCell].SetHighlightStatus(true);
                 }
             }
 
             SetCascadeVisuals(command);
 
-            if (this.CurrentGameState.CurrentGameState == GameState.GameStateEnum.End)
+            if (this.CurrentGameState.CurrentBoardState.CurrentGameState == BoardState.GameStateEnum.End)
             {
-                if (!this.CurrentGameState.Winner.HasValue)
+                if (!this.CurrentGameState.CurrentBoardState.Winner.HasValue)
                 {
                     this.NoMoreMovesPanel.gameObject.SetActive(true);
                 }
@@ -123,11 +128,13 @@ namespace TicTacCOSTCO.Unity.UI
             {
                 this.RewindButtonHolder.SetActive(this.CurrentGameState != null && this.CurrentGameState.MoveCommandsApplied.Count > 0);
             }
+
+            toChoose.SetHighlightStatus(true);
         }
 
         void SetCascadeVisuals(MoveCommand fromCommand)
         {
-            int cascadeLevel = fromCommand == null ? 0 : Mathf.Max(fromCommand.PreviousCascadeLevel, fromCommand.NewConnectionsMade);
+            int cascadeLevel = fromCommand == null ? 0 : Mathf.Max(fromCommand.PreviousCascadeLevel, fromCommand.ConnectionsMade.Count);
             if (cascadeLevel > 0)
             {
                 this.CascadeText.transform.parent.gameObject.SetActive(true);
@@ -202,9 +209,9 @@ namespace TicTacCOSTCO.Unity.UI
 
         public void DeclareCurrentPlayerVictorious()
         {
-            PlayerProfile player = PersistentGameConfiguration.Singleton.Players[this.CurrentGameState.CurrentPlayerIndex];
+            PlayerProfile player = PersistentGameConfiguration.Singleton.Players[this.CurrentGameState.CurrentBoardState.CurrentPlayerIndex];
 
-            this.TurnOrderHolder.UpdateTurn(this.CurrentGameState.CurrentPlayerIndex);
+            this.TurnOrderHolder.UpdateTurn(this.CurrentGameState.CurrentBoardState.CurrentPlayerIndex);
             this.CascadeText.transform.parent.gameObject.SetActive(false);
             this.WinnerPanel.transform.parent.gameObject.SetActive(true);
             this.WinnerIcon.sprite = player.SpriteRepresentation;
@@ -231,7 +238,7 @@ namespace TicTacCOSTCO.Unity.UI
         public void Rewind()
         {
             // If this undid a win, we should remove the "recent wint" entry because this game has been undone
-            if (this.CurrentGameState.CurrentGameState == GameState.GameStateEnum.End && this.CurrentGameState.Winner.HasValue)
+            if (this.CurrentGameState.CurrentBoardState.CurrentGameState == BoardState.GameStateEnum.End && this.CurrentGameState.CurrentBoardState.Winner.HasValue)
             {
                 this.ScoreBoard.RemoveRecentWin();
             }
@@ -244,21 +251,15 @@ namespace TicTacCOSTCO.Unity.UI
                 foreach (CellsConnection connectionToRemove in undoneCommand.ConnectionsMade)
                 {
                     LineRenderer renderer = connectionToRenderer[connectionToRemove];
+                    this.connectionToRenderer.Remove(connectionToRemove);
+                    this.SolutionLineRenderers.Remove(renderer);
                     Destroy(renderer.gameObject);
-                    connectionToRenderer.Remove(connectionToRemove);
-                }    
-
-                // If a connection was "removed", it was probably a composite of two lines
-                // Put it back!
-                foreach (CellsConnection connectionToAddBack in undoneCommand.ConnectionsRemoved)
-                {
-                    this.DrawLineBetween(connectionToAddBack, PersistentGameConfiguration.Singleton.Players[undoneCommand.SideIndex]);
                 }
 
                 this.PositionsToCells[undoneCommand.Position].Clear();
 
                 // When we reach a player, stop
-                if (!PersistentGameConfiguration.Singleton.Players[this.CurrentGameState.CurrentPlayerIndex].IsAI)
+                if (!PersistentGameConfiguration.Singleton.Players[this.CurrentGameState.CurrentBoardState.CurrentPlayerIndex].IsAI)
                 {
                     break;
                 }
@@ -269,7 +270,23 @@ namespace TicTacCOSTCO.Unity.UI
             this.NoMoreMovesPanel.SetActive(false);
             this.WinnerPanel.transform.parent.gameObject.SetActive(false);
 
-            SetCascadeVisuals(this.CurrentGameState.MoveCommandsApplied.Count == 0 ? null : this.CurrentGameState.MoveCommandsApplied[this.CurrentGameState.MoveCommandsApplied.Count - 1]);
+            foreach (Cell curCell in this.PositionsToCells.Values)
+            {
+                curCell.SetHighlightStatus(false);
+            }
+
+            MoveCommand latestCommand = this.CurrentGameState.MoveCommandsApplied.Count == 0 ? null : this.CurrentGameState.MoveCommandsApplied[this.CurrentGameState.MoveCommandsApplied.Count - 1];
+            if (latestCommand != null)
+            {
+                this.SetCascadeVisuals(latestCommand);
+
+                this.PositionsToCells[latestCommand.Position].SetHighlightStatus(true);
+
+                foreach (Coordinate curCoordinate in latestCommand.ConnectionsMade.SelectMany(x => x.Cells))
+                {
+                    this.PositionsToCells[curCoordinate].SetHighlightStatus(true);
+                }
+            }
         }
     }
 }

@@ -1,16 +1,13 @@
 namespace TicTacCOSTCO.DataStructures
 {
-    using NUnit.Framework;
     using System;
     using System.Collections.Generic;
 
     /// <summary>
     /// Describes a "Connection", starting from the <see cref="Root"/> and ending at the <see cref="Tail"/>.
     /// </summary>
-    public struct CellsConnection
+    public struct CellsConnection : IEquatable<CellsConnection>
     {
-        const string REQUIRESONEORMORECELLS = "CellConnections must have one or more cells.";
-
         /// <summary>
         /// The <see cref="Coordinate"/> of cells making up this connection.
         /// Should be ordered such that <see cref="Root"/> is the 0th and <see cref="Tail"/> is the n-1th.
@@ -42,13 +39,21 @@ namespace TicTacCOSTCO.DataStructures
         {
             int cellsCount = cells.Count;
 
-            Assert.GreaterOrEqual(cellsCount, 1, REQUIRESONEORMORECELLS);
-
             this.Cells = cells;
             this.Root = cells[0];
             this.Tail = cells[this.Cells.Count - 1];
 
             this.Directionality = directionality;
+        }
+
+        public bool Equals(CellsConnection other)
+        {
+            return this.GetHashCode() == other.GetHashCode();
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(this.Root, this.Tail, this.Directionality);
         }
     }
 }

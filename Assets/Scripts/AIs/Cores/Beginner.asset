@@ -15,4 +15,10 @@ MonoBehaviour:
   TopCut: 0.8
   AIHeuristics:
   - {fileID: 11400000, guid: d2366b5b285d10e43a37906cbd8174ca, type: 2}
+  - {fileID: 11400000, guid: 90018880bd3c7cc43a3c30d28637f83b, type: 2}
+  - {fileID: 11400000, guid: 4560cb04ce7c76349a0513a348cb9def, type: 2}
+  - {fileID: 11400000, guid: 8059c329a0637974399c7e5fb5740a36, type: 2}
+  - {fileID: 11400000, guid: 289ea4f21f47aa64cba9ceda804e773c, type: 2}
+  - {fileID: 11400000, guid: 1254ed778bfae454ca86a8624b6a158a, type: 2}
   - {fileID: 11400000, guid: c54e561c985aa944ab7e7ef39c5b3bfe, type: 2}
+  - {fileID: 11400000, guid: 7227b7ffe66e9c34b8c213537c687cf6, type: 2}

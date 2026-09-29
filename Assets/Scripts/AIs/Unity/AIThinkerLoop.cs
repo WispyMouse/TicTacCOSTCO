@@ -30,30 +30,30 @@ namespace TicTacCOSTCO.Unity.UI
                 ThinkingCoroutine = null;
             }
 
-            if (!this.GameConductor.CurrentGameState.AnyEmptySpots())
+            if (!this.GameConductor.CurrentGameState.CurrentBoardState.AnyEmptySpots())
             {
                 return;
             }
 
-            if (this.GameConductor.CurrentGameState == null || this.GameConductor.CurrentGameState.CurrentGameState == GameState.GameStateEnum.End)
+            if (this.GameConductor.CurrentGameState == null || this.GameConductor.CurrentGameState.CurrentBoardState.CurrentGameState == BoardState.GameStateEnum.End)
             {
                 return;
             }
 
             // If the current player is human, do nothing
-            if (this.TurnOrderHolder.PlayerIsHuman(this.GameConductor.CurrentGameState.CurrentPlayerIndex))
+            if (this.TurnOrderHolder.PlayerIsHuman(this.GameConductor.CurrentGameState.CurrentBoardState.CurrentPlayerIndex))
             {
                 return;
             }
 
             // If this side has been eliminated, skip them
-            if (!this.GameConductor.CurrentGameState.SideIndexesStillInGame.Contains(this.GameConductor.CurrentGameState.CurrentPlayerIndex))
+            if (!this.GameConductor.CurrentGameState.CurrentBoardState.SideIndexesStillInGame.Contains(this.GameConductor.CurrentGameState.CurrentBoardState.CurrentPlayerIndex))
             {
                 return;
             }
 
             // If there are no possible moves, do nothing
-            if (!this.GameConductor.CurrentGameState.AnyEmptySpots())
+            if (!this.GameConductor.CurrentGameState.CurrentBoardState.AnyEmptySpots())
             {
                 return;
             }
@@ -65,22 +65,22 @@ namespace TicTacCOSTCO.Unity.UI
         {
             float randomWait = TimeForAIToThinkAdditionalSeconds.Evaluate(Random.Range(0, 1f));
 
-            if (this.GameConductor.CurrentGameState.CurrentGameState == GameState.GameStateEnum.Cascade)
+            if (this.GameConductor.CurrentGameState.CurrentBoardState.CurrentGameState == BoardState.GameStateEnum.Cascade)
             {
                 randomWait += AdditionalTimeDuringCascade.Evaluate(Random.Range(0, 1f));
             }
 
             yield return new WaitForSeconds(this.TimeForAIToThinkBase + randomWait);
 
-            if (this.GameConductor.CurrentGameState.CurrentGameState == GameState.GameStateEnum.End)
+            if (this.GameConductor.CurrentGameState.CurrentBoardState.CurrentGameState == BoardState.GameStateEnum.End)
             {
                 yield break;
             }
 
             this.ThinkingCoroutine = null;
             Coordinate move =
-                PersistentGameConfiguration.Singleton.Players[this.GameConductor.CurrentGameState.CurrentPlayerIndex].AICore
-                .DetermineMove(this.GameConductor.CurrentGameState.CurrentPlayerIndex, this.GameConductor.CurrentGameState);
+                PersistentGameConfiguration.Singleton.Players[this.GameConductor.CurrentGameState.CurrentBoardState.CurrentPlayerIndex].AICore
+                .DetermineMove(this.GameConductor.CurrentGameState.CurrentBoardState.CurrentPlayerIndex, this.GameConductor.CurrentGameState.CurrentBoardState);
             this.GameConductor.ChooseCell(move);
         }
     }
