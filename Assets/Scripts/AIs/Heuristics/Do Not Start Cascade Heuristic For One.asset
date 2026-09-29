@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81665ed79e620db419eb00fc3a254b6a, type: 3}
   m_Name: Do Not Start Cascade Heuristic For One
   m_EditorClassIdentifier: TicTacCOSTCO.AIs::TicTacCOSTCO.AIs.DoNotStartCascadeHeuristic
-  Weight: 0.5
+  Weight: 1
   MaximimumCascadeLevel: 1

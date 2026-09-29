@@ -72,7 +72,7 @@ namespace TicTacCOSTCO.DataStructures
 
             // HACK: At this point in the game's development, the only thing that *could* be placed during a reverse is a null
             // Will need to track what it used to be, if we can make it any other value while reversing
-            this.CurrentBoardState.SpotToSideOwnership[toRemove.Position] = null;
+            this.CurrentBoardState.ForceMarkOwnership(toRemove.Position, null);
             this.CurrentBoardState.CurrentCascadeLevel = toRemove.PreviousCascadeLevel;
 
             foreach (int playerRemoved in toRemove.PlayersRemoved)
@@ -85,7 +85,7 @@ namespace TicTacCOSTCO.DataStructures
             {
                 foreach (Coordinate coordinate in connectionsAdded.Cells)
                 {
-                    this.CurrentBoardState.AcceptedSolutions[coordinate].Remove(connectionsAdded);
+                    this.CurrentBoardState.RemoveConnection(coordinate, connectionsAdded);
                 }
             }
 

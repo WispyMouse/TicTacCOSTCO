@@ -60,7 +60,7 @@ namespace TicTacCOSTCO.AIs
 
             foreach (Coordinate potentialMove in copiedState.GetEmptySpots())
             {
-                int connectionsMadeByPlayingHere = copiedState.GenerateCommandFromMove(forSide, position).ConnectionsMade.Count;
+                int connectionsMadeByPlayingHere = copiedState.GenerateCommandFromMove(forSide, potentialMove).ConnectionsMade.Count;
 
                 // Only applies if the connection level is at least the minimum target
                 if (connectionsMadeByPlayingHere >= this.MinimumCascadeLevel)

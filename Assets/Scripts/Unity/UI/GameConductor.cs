@@ -99,7 +99,6 @@ namespace TicTacCOSTCO.Unity.UI
 
             toChoose.SetSide(TurnOrderHolder.CurrentTurnIconHolder.sprite, this.CurrentGameState.CurrentBoardState.CurrentPlayerIndex);
             MoveCommand command = this.CurrentGameState.CurrentBoardState.GenerateCommandFromMove(this.CurrentGameState.CurrentBoardState.CurrentPlayerIndex, toChoose.Position);
-            this.CurrentGameState.ApplyMoveCommand(command);
 
             foreach (CellsConnection solution in command.ConnectionsMade)
             {
@@ -112,6 +111,8 @@ namespace TicTacCOSTCO.Unity.UI
             }
 
             SetCascadeVisuals(command);
+
+            this.CurrentGameState.ApplyMoveCommand(command);
 
             if (this.CurrentGameState.CurrentBoardState.CurrentGameState == BoardState.GameStateEnum.End)
             {

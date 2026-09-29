@@ -6496,7 +6496,7 @@ MonoBehaviour:
   BasicAICore: {fileID: 11400000, guid: 33a5d7b5313678f4cb99a7f06177c15b, type: 2}
   GameConductor: {fileID: 1339510086}
   TurnOrderHolder: {fileID: 1596149086}
-  TimeForAIToThinkBase: 0.3
+  TimeForAIToThinkBase: 0.25
   TimeForAIToThinkAdditionalSeconds:
     serializedVersion: 2
     m_Curve:
@@ -6511,21 +6511,21 @@ MonoBehaviour:
       outWeight: 0
     - serializedVersion: 3
       time: 0.37326467
-      value: 0.19174916
-      inSlope: 1.7053239
-      outSlope: 1.7053239
+      value: 0.12647033
+      inSlope: 0.4660804
+      outSlope: 0.4660804
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.33333334
+      outWeight: 0.096289426
     - serializedVersion: 3
       time: 1.000687
-      value: 0.57837117
-      inSlope: 2
-      outSlope: 2
+      value: 0.38147125
+      inSlope: 1.2974641
+      outSlope: 1.2974641
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0
+      inWeight: 0.04569967
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -6535,7 +6535,7 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.17775348
       inSlope: 2
       outSlope: 2
       tangentMode: 0
@@ -6544,7 +6544,7 @@ MonoBehaviour:
       outWeight: 0
     - serializedVersion: 3
       time: 0.16723126
-      value: 0.094785795
+      value: 0.2580636
       inSlope: 0.90265733
       outSlope: 0.90265733
       tangentMode: 0
@@ -6553,7 +6553,7 @@ MonoBehaviour:
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 0.9081219
-      value: 0.30036667
+      value: 0.43224826
       inSlope: 0.35060945
       outSlope: 0.35060945
       tangentMode: 0

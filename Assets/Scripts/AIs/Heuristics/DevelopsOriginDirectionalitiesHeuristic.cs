@@ -19,10 +19,10 @@ namespace TicTacCOSTCO.AIs
             // We're going to project a direction out in each of the directionalities, from this position
             // If the casted directionality is a possible development target, add to the weight
             // We're going to return the allowed weight divided by the shares
-            int directionalitiesCounts = currentGameState.Directionalities.Count * 2;
+            int directionalitiesCounts = BoardState.DirectionalitiesWithBackwards.Count;
             int directionalitiesThatCouldDevelop = 0;
 
-            foreach (DirectionalityVector directionality in currentGameState.Directionalities)
+            foreach (DirectionalityVector directionality in BoardState.DirectionalitiesWithBackwards)
             {
                 bool IsDirectionValid(DirectionalityVector direction)
                 {
@@ -54,7 +54,7 @@ namespace TicTacCOSTCO.AIs
                         }
 
                         // Check to see if that tile has 
-                        if (currentGameState.AcceptedSolutions.TryGetValue(resultingPosition, out List<CellsConnection> acceptedSolutions))
+                        if (currentGameState.TryGetConnectionsForCoordinate(resultingPosition, out IReadOnlyCollection<CellsConnection> acceptedSolutions))
                         {
                             foreach (CellsConnection connection in acceptedSolutions)
                             {
@@ -71,10 +71,6 @@ namespace TicTacCOSTCO.AIs
                 }
 
                 if (IsDirectionValid(directionality))
-                {
-                    directionalitiesThatCouldDevelop++;
-                }
-                if (IsDirectionValid(-directionality))
                 {
                     directionalitiesThatCouldDevelop++;
                 }

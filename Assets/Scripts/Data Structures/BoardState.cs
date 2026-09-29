@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Runtime.CompilerServices;
 
 namespace TicTacCOSTCO.DataStructures
 {
@@ -15,17 +16,32 @@ namespace TicTacCOSTCO.DataStructures
             new DirectionalityVector(-1, -1),
         };
 
+        public static IReadOnlyList<DirectionalityVector> DirectionalitiesWithBackwards = new DirectionalityVector[]
+        {
+            new DirectionalityVector(1, 0),
+            new DirectionalityVector(1, -1),
+            new DirectionalityVector(0, -1),
+            new DirectionalityVector(-1, -1),
+
+            new DirectionalityVector(-1, 0),
+            new DirectionalityVector(-1, 1),
+            new DirectionalityVector(0, 1),
+            new DirectionalityVector(1, 1),
+        };
+
         public readonly int Height;
         public readonly int Width;
         public readonly int PlayerCount;
         public readonly int InARowToSolve;
 
-        public readonly Dictionary<Coordinate, int?> SpotToSideOwnership = new Dictionary<Coordinate, int?>();
-        public int CurrentCascadeLevel { get; set; } = 0;
-        public int CurrentPlayerIndex { get; set; } = 0;
-        public HashSet<int> SideIndexesStillInGame = new HashSet<int>();
+        public IReadOnlyDictionary<Coordinate, int?> SpotToSideOwnership => this._SpotToSideOwnership;
+        private readonly Dictionary<Coordinate, int?> _SpotToSideOwnership;
 
-        public Dictionary<Coordinate, List<CellsConnection>> AcceptedSolutions { get; set; } = new Dictionary<Coordinate, List<CellsConnection>>();
+        public int CurrentCascadeLevel;
+        public int CurrentPlayerIndex;
+        public HashSet<int> SideIndexesStillInGame;
+
+        private Dictionary<Coordinate, List<CellsConnection>> AcceptedSolutions;
 
         public enum GameStateEnum
         {
@@ -51,8 +67,8 @@ namespace TicTacCOSTCO.DataStructures
             End = 3
         }
 
-        public GameStateEnum CurrentGameState { get; set; } = GameStateEnum.NotStarted;
-        public int? Winner { get; set; } = null;
+        public GameStateEnum CurrentGameState;
+        public int? Winner;
 
         public BoardState(int width, int height, int playerCount)
         {
@@ -63,39 +79,53 @@ namespace TicTacCOSTCO.DataStructures
             // HACK: Starting at 3 for development
             this.InARowToSolve = 3;
 
-            this.SpotToSideOwnership.EnsureCapacity(width * height);
+            this._SpotToSideOwnership = new Dictionary<Coordinate, int?>(width * height);
             for (int xx = 0; xx < width; xx++)
             {
                 for (int yy = 0; yy < height; yy++)
                 {
-                    this.SpotToSideOwnership.Add(new Coordinate(xx, yy), null);
+                    this._SpotToSideOwnership.Add(new Coordinate(xx, yy), null);
                 }
             }
 
-            this.SideIndexesStillInGame.EnsureCapacity(this.PlayerCount);
+            this.SideIndexesStillInGame = new HashSet<int>(this.PlayerCount);
             for (int ii = 0; ii < this.PlayerCount; ii++)
             {
                 this.SideIndexesStillInGame.Add(ii);
             }
+
+            this.Winner = null;
+            this.AcceptedSolutions = new Dictionary<Coordinate, List<CellsConnection>>(width * height);
+
+            this.CurrentGameState = GameStateEnum.NotStarted;
+            this.CurrentCascadeLevel = 0;
+            this.CurrentGameState = 0;
+            this.CurrentPlayerIndex = 0;
         }
 
         public BoardState(int width, int height, int playerCount,
             Dictionary<Coordinate, int?> ownershipToClone, int currentCascadeLevel, int currentPlayerIndex, Dictionary<Coordinate, List<CellsConnection>> connectionsToClone,
             GameStateEnum currentStatus, int? winner, HashSet<int> sideIndexesStillInGame) : this(width, height, playerCount)
         {
-            this.SpotToSideOwnership = new Dictionary<Coordinate, int?>(ownershipToClone);
             this.CurrentCascadeLevel = currentCascadeLevel;
             this.CurrentPlayerIndex = currentPlayerIndex;
-            this.AcceptedSolutions = new Dictionary<Coordinate, List<CellsConnection>>(connectionsToClone);
             this.CurrentGameState = currentStatus;
             this.Winner = winner;
+
+            this._SpotToSideOwnership = new Dictionary<Coordinate, int?>(ownershipToClone);
             this.SideIndexesStillInGame = new HashSet<int>(sideIndexesStillInGame);
+
+            this.AcceptedSolutions = new Dictionary<Coordinate, List<CellsConnection>>(connectionsToClone.Count);
+            foreach (Coordinate coordinate in connectionsToClone.Keys)
+            {
+                this.AcceptedSolutions.Add(coordinate, new List<CellsConnection>(connectionsToClone[coordinate]));
+            }
         }
 
         public BoardState DeepClone()
         {
             return new BoardState(this.Width, this.Height, this.PlayerCount,
-                this.SpotToSideOwnership, this.CurrentCascadeLevel, this.CurrentPlayerIndex,
+                this._SpotToSideOwnership, this.CurrentCascadeLevel, this.CurrentPlayerIndex,
                 this.AcceptedSolutions, this.CurrentGameState, this.Winner, this.SideIndexesStillInGame);
         }
 
@@ -147,7 +177,6 @@ namespace TicTacCOSTCO.DataStructures
             return new MoveCommand(sideIndex, position, connections, this.CurrentCascadeLevel, playersRemoved);
         }
 
-
         public List<CellsConnection> GetAllNewSolutions(int sideIndex, Coordinate hypotheticalPosition)
         {
             List<CellsConnection> newSolutions = new List<CellsConnection>();
@@ -158,22 +187,17 @@ namespace TicTacCOSTCO.DataStructures
                 {
                     Coordinate position = new Coordinate(xx, yy);
 
-                    if (hypotheticalPosition != position && !this.SpotToSideOwnership[position].HasValue && this.SpotToSideOwnership[position] != sideIndex)
+                    if (hypotheticalPosition != position && (this.SpotToSideOwnership[position] != sideIndex))
                     {
-                        // This cell isn't claimed
+                        // This cell isn't empty, or is taken and isn't ours
                         continue;
                     }
 
                     List<CellsConnection> allSolutions = new List<CellsConnection>();
 
-                    foreach (DirectionalityVector direction in Directionalities)
+                    foreach (DirectionalityVector direction in DirectionalitiesWithBackwards)
                     {
                         if (TryGetAllSolutionsFromCellAlongDirection(sideIndex, position, direction, out CellsConnection cellSolutions, hypotheticalPosition))
-                        {
-                            allSolutions.Add(cellSolutions);
-                        }
-
-                        if (TryGetAllSolutionsFromCellAlongDirection(sideIndex, position, -direction, out cellSolutions, hypotheticalPosition))
                         {
                             allSolutions.Add(cellSolutions);
                         }
@@ -218,130 +242,6 @@ namespace TicTacCOSTCO.DataStructures
             return true;
         }
 
-        public List<CellsConnection> PruneSolutionsForNotAlreadySolved(List<CellsConnection> solutions)
-        {
-            List<CellsConnection> remainingSolutions = new List<CellsConnection>(solutions);
-
-            // Check if any new solutions should be banded together; 4-in-a-row is the same value as a 3-in-a-row
-            // Any solutions that have the same directionality *must* be bandable
-            bool anyDiscarded = false;
-
-            do
-            {
-                anyDiscarded = false;
-                for (int leftSolutionIndex = remainingSolutions.Count - 2; leftSolutionIndex >= 0; leftSolutionIndex--)
-                {
-                    CellsConnection leftCellsSolution = remainingSolutions[leftSolutionIndex];
-                    for (int rightSolutionIndex = remainingSolutions.Count - 1; rightSolutionIndex > leftSolutionIndex; rightSolutionIndex--)
-                    {
-                        CellsConnection rightCellsSolution = remainingSolutions[rightSolutionIndex];
-
-                        // Forward or backward are the same
-                        if (leftCellsSolution.Directionality == rightCellsSolution.Directionality || leftCellsSolution.Directionality == -rightCellsSolution.Directionality)
-                        {
-                            // Remove these two composite solutions, and note that they were removed
-                            remainingSolutions.RemoveAt(rightSolutionIndex);
-                            remainingSolutions.RemoveAt(leftSolutionIndex);
-
-                            // Add a new composite solution to the end of the list, which won't be evaluated again
-                            List<Coordinate> Sorted = SortByDirectionality(leftCellsSolution.Cells.Union(rightCellsSolution.Cells), leftCellsSolution.Directionality);
-                            CellsConnection compositeSolution = new CellsConnection(Sorted, leftCellsSolution.Directionality);
-                            remainingSolutions.Add(compositeSolution);
-                            anyDiscarded = true;
-
-
-                            break;
-                        }
-                    }
-                }
-            } while (anyDiscarded);
-
-            anyDiscarded = false;
-            do
-            {
-                anyDiscarded = false;
-
-                // Next check if any of our new solutions contains pieces that already have that directionality solved
-                for (int ii = remainingSolutions.Count - 1; ii >= 0; ii--)
-                {
-                    CellsConnection thisSolution = remainingSolutions[ii];
-
-                    foreach (Coordinate curCoordinate in remainingSolutions[ii].Cells)
-                    {
-                        if (this.AcceptedSolutions.TryGetValue(curCoordinate, out List<CellsConnection> existingConnections))
-                        {
-                            foreach (CellsConnection existingConnection in existingConnections)
-                            {
-                                if (existingConnection.Directionality == thisSolution.Directionality || existingConnection.Directionality == -thisSolution.Directionality)
-                                {
-                                    anyDiscarded = true;
-                                    break;
-                                }
-                            }
-                        }
-
-                        if (anyDiscarded)
-                        {
-                            remainingSolutions.RemoveAt(ii);
-                            break;
-                        }
-                    }
-                }
-            } while (anyDiscarded);
-
-            return remainingSolutions;
-        }
-
-        public bool TryGetAllSolutionsFromCellAlongDirection(int sideIndex, Coordinate cell, DirectionalityVector offset, out CellsConnection solution, Coordinate selectedCoordinate)
-        {
-            solution = default;
-
-            // If we're too close to the end direction this offset is going in, don't consider this at all
-            if (!SpotIsInBounds(cell + (offset * (this.InARowToSolve - 1))))
-            {
-                return false;
-            }
-
-            List<CellsConnection> solutions = new List<CellsConnection>();
-
-            bool valid = true;
-
-            for (int ii = 0; ii < this.InARowToSolve; ii++)
-            {
-                Coordinate position = cell + offset * ii;
-
-                if (!SpotIsInBounds(position))
-                {
-                    return false;
-                }
-
-                int? ownership = this.SpotToSideOwnership[position];
-
-                // If this isn't the cell we're hypothetically selecting,
-                // and it isn't ours already, this shape must not be valid
-                if (position != selectedCoordinate && ownership != sideIndex)
-                {
-                    valid = false;
-                    break;
-                }
-            }
-
-            if (!valid)
-            {
-                return false;
-            }
-
-            // If still valid, this must have been a solve
-            List<Coordinate> solutionCells = new List<Coordinate>();
-            for (int ii = 0; ii < this.InARowToSolve; ii++)
-            {
-                Coordinate position = cell + offset * ii;
-                solutionCells.Add(position);
-            }
-            solution = new CellsConnection(solutionCells, offset);
-            return true;
-        }
-
         public void ApplyMoveCommand(MoveCommand toApply)
         {
             if (this.CurrentGameState == BoardState.GameStateEnum.NotStarted)
@@ -349,7 +249,7 @@ namespace TicTacCOSTCO.DataStructures
                 this.CurrentGameState = BoardState.GameStateEnum.Playing;
             }
 
-            this.SpotToSideOwnership[toApply.Position] = toApply.SideIndex;
+            this._SpotToSideOwnership[toApply.Position] = toApply.SideIndex;
 
             int solutionsCount = toApply.ConnectionsMade.Count;
             this.CurrentCascadeLevel = Math.Max(this.CurrentCascadeLevel, solutionsCount);
@@ -399,13 +299,167 @@ namespace TicTacCOSTCO.DataStructures
             }
         }
 
-        public List<Coordinate> SortByDirectionality(IEnumerable<Coordinate> coordinates, DirectionalityVector directionality)
+        private List<CellsConnection> PruneSolutionsForNotAlreadySolved(List<CellsConnection> solutions)
         {
-            List<Coordinate> ordered = new List<Coordinate>(coordinates);
+            List<CellsConnection> remainingSolutions = new List<CellsConnection>(solutions);
 
+            // Check if any new solutions should be banded together; 4-in-a-row is the same value as a 3-in-a-row
+            // Any solutions that have the same directionality *must* be bandable
+            bool anyDiscarded = false;
+
+            do
+            {
+                anyDiscarded = false;
+                for (int leftSolutionIndex = remainingSolutions.Count - 2; leftSolutionIndex >= 0; leftSolutionIndex--)
+                {
+                    CellsConnection leftCellsSolution = remainingSolutions[leftSolutionIndex];
+                    for (int rightSolutionIndex = remainingSolutions.Count - 1; rightSolutionIndex > leftSolutionIndex; rightSolutionIndex--)
+                    {
+                        CellsConnection rightCellsSolution = remainingSolutions[rightSolutionIndex];
+
+                        // Forward or backward are the same
+                        if (leftCellsSolution.Directionality == rightCellsSolution.Directionality || leftCellsSolution.Directionality == -rightCellsSolution.Directionality)
+                        {
+                            // Remove these two composite solutions, and note that they were removed
+                            remainingSolutions.RemoveAt(rightSolutionIndex);
+                            remainingSolutions.RemoveAt(leftSolutionIndex);
+
+                            // Add a new composite solution to the end of the list, which won't be evaluated again
+                            List<Coordinate> Sorted = SortByDirectionality(leftCellsSolution.Cells.Union(rightCellsSolution.Cells), leftCellsSolution.Directionality);
+                            CellsConnection compositeSolution = new CellsConnection(Sorted, leftCellsSolution.Directionality);
+                            remainingSolutions.Add(compositeSolution);
+                            anyDiscarded = true;
+                            break;
+                        }
+                    }
+
+                    if (anyDiscarded)
+                    {
+                        break;
+                    }
+                }
+            } while (anyDiscarded);
+
+            anyDiscarded = false;
+            do
+            {
+                anyDiscarded = false;
+
+                // Next check if any of our new solutions contains pieces that already have that directionality solved
+                for (int ii = remainingSolutions.Count - 1; ii >= 0; ii--)
+                {
+                    CellsConnection thisSolution = remainingSolutions[ii];
+
+                    foreach (Coordinate curCoordinate in remainingSolutions[ii].Cells)
+                    {
+                        if (this.AcceptedSolutions.TryGetValue(curCoordinate, out List<CellsConnection> existingConnections))
+                        {
+                            foreach (CellsConnection existingConnection in existingConnections)
+                            {
+                                if (existingConnection.Directionality == thisSolution.Directionality || existingConnection.Directionality == -thisSolution.Directionality)
+                                {
+                                    anyDiscarded = true;
+                                    break;
+                                }
+                            }
+                        }
+
+                        if (anyDiscarded)
+                        {
+                            remainingSolutions.RemoveAt(ii);
+                            break;
+                        }
+                    }
+                }
+            } while (anyDiscarded);
+
+            return remainingSolutions;
+        }
+
+        private bool TryGetAllSolutionsFromCellAlongDirection(int sideIndex, Coordinate cell, DirectionalityVector offset, out CellsConnection solution, Coordinate selectedCoordinate)
+        {
+            solution = default;
+
+            // If we're too close to the end direction this offset is going in, don't consider this at all
+            if (!SpotIsInBounds(cell + (offset * (this.InARowToSolve - 1))))
+            {
+                return false;
+            }
+
+            List<CellsConnection> solutions = new List<CellsConnection>();
+
+            bool valid = true;
+
+            for (int ii = 0; ii < this.InARowToSolve; ii++)
+            {
+                Coordinate position = cell + offset * ii;
+
+                if (!SpotIsInBounds(position))
+                {
+                    return false;
+                }
+
+                int? ownership = this.SpotToSideOwnership[position];
+
+                // If this isn't the cell we're hypothetically selecting,
+                // and it isn't ours already, this shape must not be valid
+                if (position != selectedCoordinate && ownership != sideIndex)
+                {
+                    valid = false;
+                    break;
+                }
+            }
+
+            if (!valid)
+            {
+                return false;
+            }
+
+            // If still valid, this must have been a solve
+            List<Coordinate> solutionCells = new List<Coordinate>();
+            for (int ii = 0; ii < this.InARowToSolve; ii++)
+            {
+                Coordinate position = cell + offset * ii;
+                solutionCells.Add(position);
+            }
+            solution = new CellsConnection(solutionCells, offset);
+            return true;
+        }
+
+        public static List<Coordinate> SortByDirectionality(IEnumerable<Coordinate> coordinates, DirectionalityVector directionality)
+        {
+            // First put in to a HashSet, which will naturally remove any duplicate coordinates
+            HashSet<Coordinate> bag = new HashSet<Coordinate>(coordinates);
+
+            // Place randomly in to list
+            List<Coordinate> ordered = new List<Coordinate>(bag);
+
+            // Then sort by likeness to directionality
             ordered.Sort((Coordinate x, Coordinate y) => { return (x.X * directionality.X + x.Y * directionality.Y).CompareTo(y.X * directionality.X + y.Y * directionality.Y); });
 
             return ordered;
+        }
+
+        public bool TryGetConnectionsForCoordinate(Coordinate toGet, out IReadOnlyCollection<CellsConnection> connections)
+        {
+            if (this.AcceptedSolutions.TryGetValue(toGet, out List<CellsConnection> writeableConnections))
+            {
+                connections = writeableConnections;
+                return connections.Any();
+            }
+
+            connections = Array.Empty<CellsConnection>();
+            return false;
+        }
+
+        public void ForceMarkOwnership(Coordinate position, int? ownership)
+        {
+            this._SpotToSideOwnership[position] = ownership;
+        }
+
+        public void RemoveConnection(Coordinate position, CellsConnection connection)
+        {
+            this.AcceptedSolutions[position].Remove(connection);
         }
     }
 }

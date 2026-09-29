@@ -6,8 +6,6 @@ namespace TicTacCOSTCO.Unity.UI
 
     public class AIThinkerLoop : MonoBehaviour
     {
-        public AICore BasicAICore;
-
         public GameConductor GameConductor;
         public TurnOrderHolder TurnOrderHolder;
 
@@ -58,17 +56,26 @@ namespace TicTacCOSTCO.Unity.UI
                 return;
             }
 
+            if (this.ThinkingCoroutine != null)
+            {
+                Debug.Log($"Instructed to stop coroutine for thinking. This suggests we were told to make another AI turn action too early.");
+                StopCoroutine(this.ThinkingCoroutine);
+            }
+
             this.ThinkingCoroutine = StartCoroutine(AIThinksAndTakesTurn());
         }
 
         IEnumerator AIThinksAndTakesTurn()
         {
+            int side = this.GameConductor.CurrentGameState.CurrentBoardState.CurrentPlayerIndex;
             float randomWait = TimeForAIToThinkAdditionalSeconds.Evaluate(Random.Range(0, 1f));
 
             if (this.GameConductor.CurrentGameState.CurrentBoardState.CurrentGameState == BoardState.GameStateEnum.Cascade)
             {
                 randomWait += AdditionalTimeDuringCascade.Evaluate(Random.Range(0, 1f));
             }
+
+            Debug.Log($"Starting to think for {side}, waiting {randomWait} seconds...");
 
             yield return new WaitForSeconds(this.TimeForAIToThinkBase + randomWait);
 
@@ -78,9 +85,16 @@ namespace TicTacCOSTCO.Unity.UI
             }
 
             this.ThinkingCoroutine = null;
+
             Coordinate move =
-                PersistentGameConfiguration.Singleton.Players[this.GameConductor.CurrentGameState.CurrentBoardState.CurrentPlayerIndex].AICore
-                .DetermineMove(this.GameConductor.CurrentGameState.CurrentBoardState.CurrentPlayerIndex, this.GameConductor.CurrentGameState.CurrentBoardState);
+                PersistentGameConfiguration.Singleton.Players[side].AICore
+                .DetermineMove(side, this.GameConductor.CurrentGameState.CurrentBoardState);
+
+#if UNITY_EDITOR
+            MoveCommand command = this.GameConductor.CurrentGameState.CurrentBoardState.GenerateCommandFromMove(side, move);
+            Debug.Log($"({PersistentGameConfiguration.Singleton.Players[side].AICore.name}) Making move at {move}, expecting {command.ConnectionsMade.Count} connections");
+#endif
+
             this.GameConductor.ChooseCell(move);
         }
     }

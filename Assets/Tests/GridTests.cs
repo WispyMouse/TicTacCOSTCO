@@ -112,7 +112,7 @@ namespace TicTacCOSTCO.Tests
             {
                 foreach (Coordinate position in plan.Placements)
                 {
-                    if (!testState.CurrentBoardState.AcceptedSolutions.TryGetValue(position, out List<CellsConnection> positionSolutions))
+                    if (!testState.CurrentBoardState.TryGetConnectionsForCoordinate(position, out IReadOnlyCollection<CellsConnection> positionSolutions))
                     {
                         Assert.Fail($"There should be an accepted solution for {position}.");
                     }
