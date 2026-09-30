@@ -41,6 +41,46 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5460238996711962615}
     m_Modifications:
+    - target: {fileID: 1224295847967308278, guid: 6d44706c8ebf66d45b08e0572399afbe, type: 3}
+      propertyPath: _StartWidth
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1224295847967308278, guid: 6d44706c8ebf66d45b08e0572399afbe, type: 3}
+      propertyPath: _StartHeight
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1224295847967308278, guid: 6d44706c8ebf66d45b08e0572399afbe, type: 3}
+      propertyPath: _StartPlayerCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1224295847967308278, guid: 6d44706c8ebf66d45b08e0572399afbe, type: 3}
+      propertyPath: AICores.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1224295847967308278, guid: 6d44706c8ebf66d45b08e0572399afbe, type: 3}
+      propertyPath: 'AICores.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 705d14de934870d4fb0c437448a61f92, type: 2}
+    - target: {fileID: 1224295847967308278, guid: 6d44706c8ebf66d45b08e0572399afbe, type: 3}
+      propertyPath: 'AICores.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: a9a251d1952d45f419c8701583e6c7ee, type: 2}
+    - target: {fileID: 1224295847967308278, guid: 6d44706c8ebf66d45b08e0572399afbe, type: 3}
+      propertyPath: 'AICores.Array.data[3]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 1fa4f5e37ee0f9147b39e97cf7d1faa3, type: 2}
+    - target: {fileID: 1224295847967308278, guid: 6d44706c8ebf66d45b08e0572399afbe, type: 3}
+      propertyPath: _coresByIndex.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1224295847967308278, guid: 6d44706c8ebf66d45b08e0572399afbe, type: 3}
+      propertyPath: '_coresByIndex.Array.data[1]'
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1224295847967308278, guid: 6d44706c8ebf66d45b08e0572399afbe, type: 3}
+      propertyPath: '_coresByIndex.Array.data[2]'
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2284308473870015341, guid: 6d44706c8ebf66d45b08e0572399afbe, type: 3}
       propertyPath: m_LocalPosition.x
       value: 601.41

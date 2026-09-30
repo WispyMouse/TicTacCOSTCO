@@ -10,8 +10,8 @@ namespace TicTacCOSTCO.AIs
     {
         public float Weight = 1f;
 
-        public abstract float ScorePosition(int forSide, BoardState currentGameState, Coordinate position);
-        public virtual void BakeInformation(int forSide, BoardState currentGameState)
+        public abstract float ScorePosition(int forSide, IReadOnlyBoardState currentGameState, Coordinate position);
+        public virtual void BakeInformation(int forSide, IReadOnlyBoardState currentGameState)
         {
 
         }

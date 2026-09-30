@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9207384ea4fde8749924f3f1719593e1, type: 3}
   m_Name: Prefer Center Heuristic
   m_EditorClassIdentifier: TicTacCOSTCO.AIs::TicTacCOSTCO.AIs.PrefersCenterHeuristic
-  Weight: 0.2
+  Weight: 0.3

@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 
 namespace TicTacCOSTCO.DataStructures
 {
-    public class BoardState
+    public class BoardState : IReadOnlyBoardState
     {
         public static IReadOnlyList<DirectionalityVector> Directionalities = new DirectionalityVector[]
         {
@@ -35,6 +35,16 @@ namespace TicTacCOSTCO.DataStructures
         public readonly int InARowToSolve;
 
         public IReadOnlyDictionary<Coordinate, int?> SpotToSideOwnership => this._SpotToSideOwnership;
+
+        int IReadOnlyBoardState.Height => this.Height;
+        int IReadOnlyBoardState.Width => this.Width;
+        int IReadOnlyBoardState.PlayerCount => this.PlayerCount;
+        int IReadOnlyBoardState.InARowToSolve => this.InARowToSolve;
+        int IReadOnlyBoardState.CurrentCascadeLevel => this.CurrentCascadeLevel;
+        int IReadOnlyBoardState.CurrentPlayerIndex => this.CurrentPlayerIndex;
+        IReadOnlyCollection<int> IReadOnlyBoardState.SideIndexesStillInGame => this.SideIndexesStillInGame;
+        GameStateEnum IReadOnlyBoardState.CurrentGameState => this.CurrentGameState;
+
         private readonly Dictionary<Coordinate, int?> _SpotToSideOwnership;
 
         public int CurrentCascadeLevel;
@@ -163,7 +173,7 @@ namespace TicTacCOSTCO.DataStructures
 
         public MoveCommand GenerateCommandFromMove(int sideIndex, Coordinate position)
         {
-            List<CellsConnection> connections = GetAllNewSolutions(sideIndex, position);
+            IReadOnlyList<CellsConnection> connections = GetAllNewSolutions(sideIndex, position);
             List<int> playersRemoved = new List<int>();
 
             // HACK SHOULD GENERALIZE: Would this move result in a loss
@@ -177,7 +187,7 @@ namespace TicTacCOSTCO.DataStructures
             return new MoveCommand(sideIndex, position, connections, this.CurrentCascadeLevel, playersRemoved);
         }
 
-        public List<CellsConnection> GetAllNewSolutions(int sideIndex, Coordinate hypotheticalPosition)
+        public IReadOnlyList<CellsConnection> GetAllNewSolutions(int sideIndex, Coordinate hypotheticalPosition)
         {
             List<CellsConnection> newSolutions = new List<CellsConnection>();
 
@@ -460,6 +470,11 @@ namespace TicTacCOSTCO.DataStructures
         public void RemoveConnection(Coordinate position, CellsConnection connection)
         {
             this.AcceptedSolutions[position].Remove(connection);
+        }
+
+        bool IReadOnlyBoardState.TryGetAllSolutionsFromCellAlongDirection(int sideIndex, Coordinate cell, DirectionalityVector offset, out CellsConnection solution, Coordinate selectedCoordinate)
+        {
+            return TryGetAllSolutionsFromCellAlongDirection(sideIndex, cell, offset, out solution, selectedCoordinate);
         }
     }
 }

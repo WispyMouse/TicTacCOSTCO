@@ -121,7 +121,7 @@ namespace TicTacCOSTCO.DataStructures
 
             for (int ii = 1; ii < this.CurrentBoardState.PlayerCount; ii++)
             {
-                int nextProspectivePlayer = (this.CurrentBoardState.CurrentPlayerIndex + advancer + this.CurrentBoardState.PlayerCount) % this.CurrentBoardState.PlayerCount;
+                int nextProspectivePlayer = (this.CurrentBoardState.CurrentPlayerIndex + (advancer * ii) + this.CurrentBoardState.PlayerCount) % this.CurrentBoardState.PlayerCount;
                 if (!this.CurrentBoardState.SideIndexesStillInGame.Contains(nextProspectivePlayer))
                 {
                     continue;

@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96568d6d81988bb45b81e70111cacb57, type: 3}
-  m_Name: Random Heuristic
-  m_EditorClassIdentifier: TicTacCOSTCO.AIs::TicTacCOSTCO.AIs.RandomHeuristic
-  Weight: 0.1
+  m_Script: {fileID: 11500000, guid: 9207384ea4fde8749924f3f1719593e1, type: 3}
+  m_Name: Prefer Center Heuristic Less
+  m_EditorClassIdentifier: TicTacCOSTCO.AIs::TicTacCOSTCO.AIs.PrefersCenterHeuristic
+  Weight: 0.3

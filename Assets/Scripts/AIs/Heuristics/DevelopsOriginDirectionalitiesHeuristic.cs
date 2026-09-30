@@ -20,7 +20,7 @@ namespace TicTacCOSTCO.AIs
         [Range(0, 8)]
         public int CutoffConnections = 3;
 
-        public override float ScorePosition(int forSide, BoardState currentGameState, Coordinate position)
+        public override float ScorePosition(int forSide, IReadOnlyBoardState currentGameState, Coordinate position)
         {
             // We're going to project a direction out in each of the directionalities, from this position
             // If the casted directionality is a possible development target, add to the weight

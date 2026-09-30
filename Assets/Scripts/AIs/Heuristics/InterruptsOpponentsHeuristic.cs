@@ -11,7 +11,7 @@ namespace TicTacCOSTCO.AIs
         /// </summary>
         public int MinimumConnections = 1;
 
-        public override float ScorePosition(int forSide, BoardState currentGameState, Coordinate position)
+        public override float ScorePosition(int forSide, IReadOnlyBoardState currentGameState, Coordinate position)
         {
             int connectionsOpponentsCanMake = 0;
 

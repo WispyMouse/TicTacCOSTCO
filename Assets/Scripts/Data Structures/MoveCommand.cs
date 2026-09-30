@@ -7,13 +7,13 @@ namespace TicTacCOSTCO.DataStructures
         public int SideIndex;
         public Coordinate Position;
 
-        public List<CellsConnection> ConnectionsMade;
+        public IReadOnlyList<CellsConnection> ConnectionsMade;
 
         public int PreviousCascadeLevel;
 
-        public List<int> PlayersRemoved;
+        public IReadOnlyList<int> PlayersRemoved;
 
-        public MoveCommand(int sideIndex, Coordinate position, List<CellsConnection> connectionsMade, int previousCascade, List<int> playersRemoved)
+        public MoveCommand(int sideIndex, Coordinate position, IReadOnlyList<CellsConnection> connectionsMade, int previousCascade, IReadOnlyList<int> playersRemoved)
         {
             SideIndex = sideIndex;
             Position = position;

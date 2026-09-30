@@ -6,7 +6,7 @@ namespace TicTacCOSTCO.AIs
     [CreateAssetMenu(fileName = "AIHeuristic.asset", menuName = "COSTCO/AI Heuristic/Does Not Lose")]
     public class DoesNotLoseHeuristic : AIHeuristic
     {
-        public override float ScorePosition(int forSide, BoardState currentGameState, Coordinate position)
+        public override float ScorePosition(int forSide, IReadOnlyBoardState currentGameState, Coordinate position)
         {
             // If the game isn't in the cascade state, then it doesn't matter 
             if (currentGameState.CurrentGameState != BoardState.GameStateEnum.Cascade)

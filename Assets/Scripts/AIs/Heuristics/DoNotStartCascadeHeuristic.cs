@@ -10,10 +10,10 @@ namespace TicTacCOSTCO.AIs
         [Range(0, 4)]
         public int MaximimumCascadeLevel = 1;
 
-        public override float ScorePosition(int forSide, BoardState currentGameState, Coordinate position)
+        public override float ScorePosition(int forSide, IReadOnlyBoardState currentGameState, Coordinate position)
         {
             // We're already in Cascade, so this rule doesn't apply anymore
-            if (currentGameState.CurrentGameState != BoardState.GameStateEnum.Cascade)
+            if (currentGameState.CurrentGameState == BoardState.GameStateEnum.Cascade)
             {
                 return 0;
             }
@@ -21,14 +21,20 @@ namespace TicTacCOSTCO.AIs
             // If we aren't in cascade mode, don't start cascade with this set value of cascade level or lower
             int connectionsMadeByPlayingHere = currentGameState.GenerateCommandFromMove(forSide, position).ConnectionsMade.Count;
 
-            // Sufficient cascade for this to not count
-            if (connectionsMadeByPlayingHere > this.MaximimumCascadeLevel)
+            // If there aren't any cascades here, then apply weight
+            if (connectionsMadeByPlayingHere == 0)
             {
-                return 0;
+                return this.Weight;
             }
 
-            // This doesn't start it, so favor this position
-            return this.Weight;
+            // If there is *enough* cascade level, then this seems fin etoo
+            if (connectionsMadeByPlayingHere > this.MaximimumCascadeLevel)
+            {
+                return this.Weight;
+            }
+
+            // Seems like this has connections and isn't large enough, so don't apply weight
+            return 0;
         }
     }
 }

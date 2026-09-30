@@ -21,7 +21,7 @@ namespace TicTacCOSTCO.AIs
         
         private int currentConnectionsCount { get; set; } = 0;
 
-        public override void BakeInformation(int forSide, BoardState currentGameState)
+        public override void BakeInformation(int forSide, IReadOnlyBoardState currentGameState)
         {
             this.currentConnectionsCount = 0;
 
@@ -40,7 +40,7 @@ namespace TicTacCOSTCO.AIs
 #endif
         }
 
-        public override float ScorePosition(int forSide, BoardState currentGameState, Coordinate position)
+        public override float ScorePosition(int forSide, IReadOnlyBoardState currentGameState, Coordinate position)
         {
             // We've baked the information and now know if we have any existing connections
             // First question; are we already satisfied?

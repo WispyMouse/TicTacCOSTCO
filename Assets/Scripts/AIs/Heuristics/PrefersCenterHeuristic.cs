@@ -10,7 +10,7 @@ namespace TicTacCOSTCO.AIs
         int maxY;
         Coordinate centerish;
 
-        public override void BakeInformation(int forSide, BoardState currentGameState)
+        public override void BakeInformation(int forSide, IReadOnlyBoardState currentGameState)
         {
             // Integer division rounds, there might not be an exact center
             maxX = currentGameState.Width / 2;
@@ -19,7 +19,7 @@ namespace TicTacCOSTCO.AIs
             centerish = new Coordinate(maxX, maxY);
         }
 
-        public override float ScorePosition(int forSide, BoardState currentGameState, Coordinate position)
+        public override float ScorePosition(int forSide, IReadOnlyBoardState currentGameState, Coordinate position)
         {
             return Weight * (2 - ((Mathf.Abs(centerish.Y - position.Y) / (float)(maxX)) + (Mathf.Abs(centerish.X - position.X) / (float)(maxY))));
         }

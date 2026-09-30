@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deb2859501ce6cb408aec7d51bc9df76, type: 3}
   m_Name: Wants More Than Cascade Level Heuristic
   m_EditorClassIdentifier: TicTacCOSTCO.AIs::TicTacCOSTCO.AIs.WantsAtLeastCascadeLevelHeuristic
-  Weight: 2
+  Weight: 1
   MinimumRaisedLevel: 1

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a6819ae906578c4db62e0e8b004ce67, type: 3}
   m_Name: Interrupts Opponent One Heuristic Two Plus
   m_EditorClassIdentifier: TicTacCOSTCO.AIs::TicTacCOSTCO.AIs.InterruptsOpponentHeuristic
-  Weight: 0.6
+  Weight: 0.4
   MinimumConnections: 2
