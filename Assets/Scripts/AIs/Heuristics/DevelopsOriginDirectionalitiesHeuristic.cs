@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace TicTacCOSTCO.AIs
 {
-    [CreateAssetMenu(fileName = "DevelopsOriginDirectionalitiesHeuristic.asset", menuName = "COSTCO/AI Heuristic/Develops Origin Directionalities")]
+    [CreateAssetMenu(fileName = "Develops Origin Directionalities Heuristic.asset", menuName = "COSTCO/AI Heuristic/Develops Origin Directionalities")]
     public class DevelopsOriginDirectionalitiesHeuristic : AIHeuristic
     {
         /// <summary>
@@ -13,6 +13,12 @@ namespace TicTacCOSTCO.AIs
         /// </summary>
         [Range(0, 3)]
         public int MinimumExistingMembers = 0;
+
+        /// <summary>
+        /// When calculating how many members are connected, only care about values up to this amount.
+        /// </summary>
+        [Range(0, 8)]
+        public int CutoffConnections = 3;
 
         public override float ScorePosition(int forSide, BoardState currentGameState, Coordinate position)
         {
@@ -76,7 +82,7 @@ namespace TicTacCOSTCO.AIs
                 }
             }
 
-            return ((float)directionalitiesThatCouldDevelop / (float)directionalitiesCounts) * this.Weight;
+            return Mathf.InverseLerp(0, this.CutoffConnections, directionalitiesThatCouldDevelop) * this.Weight;
         }
     }
 }

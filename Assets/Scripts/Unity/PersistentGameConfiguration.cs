@@ -3,6 +3,7 @@ namespace TicTacCOSTCO.Unity
     using System.Collections.Generic;
     using TicTacCOSTCO.DataStructures;
     using UnityEngine;
+    using UnityEngine.UIElements;
 
     public class PersistentGameConfiguration : MonoBehaviour
     {
@@ -31,6 +32,9 @@ namespace TicTacCOSTCO.Unity
         private readonly List<PlayerProfile> _Players = new List<PlayerProfile>();
 
         [SerializeField]
+        private List<int> _coresByIndex = new List<int>();
+
+        [SerializeField]
         private List<Color> knockoutColorsForTurns = new List<Color>();
 
         public List<Sprite> PlayerIconOptions = new List<Sprite>();
@@ -56,7 +60,17 @@ namespace TicTacCOSTCO.Unity
 
             for (int ii = 0; ii < this._StartPlayerCount; ii++)
             {
-                AddPlayer();
+                PlayerProfile newProfile = AddPlayer();
+
+#if UNITY_EDITOR
+                // Quick AI core test
+                if (this._coresByIndex.Count > ii && this._coresByIndex[ii] >= 0)
+                {
+                    newProfile.AICoreIndex = this._coresByIndex[ii];
+                    newProfile.IsAI = true;
+                    newProfile.PlayerName = this.AICores[this._coresByIndex[ii]].name;
+                }
+#endif
             }
 
             this.OnGameplaySettingsUpdated?.Invoke();

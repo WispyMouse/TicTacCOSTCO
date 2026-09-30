@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 586fd96ea37ad05499a15d70273faca8, type: 3}
-  m_Name: Wants At Least Two Connections
-  m_EditorClassIdentifier: TicTacCOSTCO.AIs::TicTacCOSTCO.AIs.WantsAtLeastOneConnectionHeuristic
+  m_Script: {fileID: 11500000, guid: 2a6819ae906578c4db62e0e8b004ce67, type: 3}
+  m_Name: Interrupts Opponent One Heuristic Two Plus
+  m_EditorClassIdentifier: TicTacCOSTCO.AIs::TicTacCOSTCO.AIs.InterruptsOpponentHeuristic
   Weight: 0.6
-  MinimumCascadeLevel: 1
   MinimumConnections: 2

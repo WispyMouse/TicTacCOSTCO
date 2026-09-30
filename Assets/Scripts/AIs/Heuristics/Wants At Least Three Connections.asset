@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 586fd96ea37ad05499a15d70273faca8, type: 3}
   m_Name: Wants At Least Three Connections
   m_EditorClassIdentifier: TicTacCOSTCO.AIs::TicTacCOSTCO.AIs.WantsAtLeastOneConnectionHeuristic
-  Weight: 0.3
+  Weight: 0.9
   MinimumCascadeLevel: 1
   MinimumConnections: 3
