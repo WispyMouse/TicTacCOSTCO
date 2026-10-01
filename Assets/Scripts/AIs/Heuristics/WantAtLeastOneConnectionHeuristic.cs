@@ -28,8 +28,8 @@ namespace TicTacCOSTCO.AIs
             // Determine all possible connection granting positions
             foreach (Coordinate coordinate in currentGameState.GetEmptySpots())
             {
-                MoveCommand command = currentGameState.GenerateCommandFromMove(forSide, coordinate);
-                if (command.ConnectionsMade.Count >= this.MinimumCascadeLevel)
+                int createdConnections = currentGameState.GetAllNewSolutions(forSide, coordinate).Count;
+                if (createdConnections >= this.MinimumCascadeLevel)
                 {
                     this.currentConnectionsCount += 1;
                 }
@@ -52,18 +52,38 @@ namespace TicTacCOSTCO.AIs
 
             // Consider a version of the map where we've picked this position
             // If we do, how many connections open up?
-            BoardState copiedState = currentGameState.DeepClone();
-
-            copiedState.ApplyMoveCommand(copiedState.GenerateCommandFromMove(forSide, position));
-
             int connectionsAllowed = 0;
 
-            foreach (Coordinate potentialMove in copiedState.GetEmptySpots())
+            // Check each potential connection for the position we're placing
+            // then check which of these are imminently possible
+            foreach (CellsConnection possibleConnection in currentGameState.PossibilityContainer.PossibleConnections[position])
             {
-                int connectionsMadeByPlayingHere = copiedState.GenerateCommandFromMove(forSide, potentialMove).ConnectionsMade.Count;
+                bool isValid = true;
+                int hits = 0;
 
-                // Only applies if the connection level is at least the minimum target
-                if (connectionsMadeByPlayingHere >= this.MinimumCascadeLevel)
+                foreach (Coordinate connectionComponent in possibleConnection.Cells)
+                {
+                    // If this spot is taken by another team, we can't possibly score here
+                    int? ownership = currentGameState.SpotToSideOwnership[connectionComponent];
+                    if (ownership.HasValue && ownership != forSide)
+                    {
+                        isValid = false;
+                        break;
+                    }
+
+                    // If this is the tile we're checking against, it's always at least one hit
+                    if (connectionComponent == position)
+                    {
+                        hits++;
+                    }
+                    else if (ownership == forSide)
+                    {
+                        hits++;
+                    }
+                }
+
+                // If this connection is valid, and only one away from full, then it counts
+                if (isValid && hits == currentGameState.InARowToSolve - 1)
                 {
                     connectionsAllowed++;
                 }

@@ -16,11 +16,11 @@ namespace TicTacCOSTCO.Unity
         public int Width { get; private set; }
         public int Height { get; private set; }
 
-        [Range(3, 20)]
+        [Range(3, 12)]
         [SerializeField]
         private int _StartWidth = 5;
 
-        [Range(3, 20)]
+        [Range(3, 12)]
         [SerializeField]
         private int _StartHeight = 5;
 

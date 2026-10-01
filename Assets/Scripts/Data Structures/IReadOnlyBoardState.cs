@@ -22,5 +22,7 @@ namespace TicTacCOSTCO.DataStructures
         public IReadOnlyCollection<int> SideIndexesStillInGame { get; }
         public IReadOnlyDictionary<Coordinate, int?> SpotToSideOwnership { get; }
         public GameStateEnum CurrentGameState { get; }
+
+        public PossibilityContainer PossibilityContainer { get; }
     }
 }

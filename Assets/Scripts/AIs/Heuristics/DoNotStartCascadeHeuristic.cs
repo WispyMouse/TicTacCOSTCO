@@ -19,7 +19,7 @@ namespace TicTacCOSTCO.AIs
             }
 
             // If we aren't in cascade mode, don't start cascade with this set value of cascade level or lower
-            int connectionsMadeByPlayingHere = currentGameState.GenerateCommandFromMove(forSide, position).ConnectionsMade.Count;
+            int connectionsMadeByPlayingHere = currentGameState.GetAllNewSolutions(forSide, position).Count;
 
             // If there aren't any cascades here, then apply weight
             if (connectionsMadeByPlayingHere == 0)

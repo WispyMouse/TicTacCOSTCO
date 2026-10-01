@@ -10,23 +10,26 @@ namespace TicTacCOSTCO.AIs
 
         public override float ScorePosition(int forSide, IReadOnlyBoardState currentGameState, Coordinate position)
         {
-            int newlyCreatedConnectionSpots = 0;
+            int connectionsMade = 0;
 
-            BoardState clonedState = currentGameState.DeepClone();
-            clonedState.ForceMarkOwnership(position, forSide);
-
-            foreach (Coordinate checkedPosition in currentGameState.GetEmptySpots())
+            foreach (CellsConnection possibleConnection in currentGameState.PossibilityContainer.PossibleConnections[position])
             {
-                int currentlyConnectionsThere = currentGameState.GetAllNewSolutions(forSide, checkedPosition).Count;
-                int newConnectionsThere = clonedState.GetAllNewSolutions(forSide, checkedPosition).Count;
+                foreach (Coordinate connectionComponent in possibleConnection.Cells)
+                {
+                    // We only want tiles owned by this team
+                    int? ownership = currentGameState.SpotToSideOwnership[connectionComponent];
+                    if (ownership != forSide)
+                    {
+                        break;
+                    }
 
-                newlyCreatedConnectionSpots = newConnectionsThere - currentlyConnectionsThere;
-            }
+                    connectionsMade++;
 
-            // This move created enough things
-            if (newlyCreatedConnectionSpots > ConnectionsRequired)
-            {
-                return this.Weight;
+                    if (connectionsMade >= this.ConnectionsRequired)
+                    {
+                        return this.Weight;
+                    }
+                }
             }
 
             return 0;

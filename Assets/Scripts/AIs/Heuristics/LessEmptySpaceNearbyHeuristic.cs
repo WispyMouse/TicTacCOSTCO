@@ -13,27 +13,28 @@ namespace TicTacCOSTCO.AIs
         {
             int unplayableSpaces = 0;
 
-            List<Coordinate> coordinatesToCheck = new List<Coordinate>(Radius * Radius);
+            int expectedCoordinates = Radius * 2 - 2;
+            List<Coordinate> coordinatesToCheck = new List<Coordinate>(Radius * 2 - 2);
+            IReadOnlyList<Coordinate> coordinatesAround = currentGameState.PossibilityContainer.GetCoordinatesAround(currentGameState, position, this.Radius);
 
-            for (int xx = -Radius; xx < Radius; xx++)
+            // If there are areas that aren't on the grid, those are by definition unplayable
+            // Imagine a query for the radius around a corner piece; it should add the missing space to the total
+            unplayableSpaces += expectedCoordinates - coordinatesAround.Count;
+
+            foreach (Coordinate resultingPosition in currentGameState.PossibilityContainer.GetCoordinatesAround(currentGameState, position, this.Radius))
             {
-                for (int yy = -Radius; yy < Radius; yy++)
+                if (resultingPosition == position)
                 {
-                    Coordinate resultingCoordinate = new Coordinate(xx, yy) + position;
-
-                    if (resultingCoordinate == position)
-                    {
-                        continue;
-                    }
-
-                    if (!currentGameState.SpotIsInBounds(resultingCoordinate))
-                    {
-                        unplayableSpaces++;
-                        continue;
-                    }
-
-                    coordinatesToCheck.Add(resultingCoordinate);
+                    continue;
                 }
+
+                if (!currentGameState.SpotIsInBounds(resultingPosition))
+                {
+                    unplayableSpaces++;
+                    continue;
+                }
+
+                coordinatesToCheck.Add(resultingPosition);
             }
 
             foreach (Coordinate curCoordinate in coordinatesToCheck)

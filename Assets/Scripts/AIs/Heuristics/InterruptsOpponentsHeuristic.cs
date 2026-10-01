@@ -25,7 +25,7 @@ namespace TicTacCOSTCO.AIs
                 connectionsOpponentsCanMake += currentGameState.GetAllNewSolutions(playerIndex, position).Count;
             }
 
-            if (connectionsOpponentsCanMake > this.MinimumConnections)
+            if (connectionsOpponentsCanMake >= this.MinimumConnections)
             {
                 return this.Weight;
             }

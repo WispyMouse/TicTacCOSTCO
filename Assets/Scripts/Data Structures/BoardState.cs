@@ -44,6 +44,7 @@ namespace TicTacCOSTCO.DataStructures
         int IReadOnlyBoardState.CurrentPlayerIndex => this.CurrentPlayerIndex;
         IReadOnlyCollection<int> IReadOnlyBoardState.SideIndexesStillInGame => this.SideIndexesStillInGame;
         GameStateEnum IReadOnlyBoardState.CurrentGameState => this.CurrentGameState;
+        PossibilityContainer IReadOnlyBoardState.PossibilityContainer => this.PossibilityContainer;
 
         private readonly Dictionary<Coordinate, int?> _SpotToSideOwnership;
 
@@ -119,11 +120,19 @@ namespace TicTacCOSTCO.DataStructures
 
         public BoardState(int width, int height, int playerCount,
             Dictionary<Coordinate, int?> ownershipToClone, int currentCascadeLevel, int currentPlayerIndex, Dictionary<Coordinate, List<CellsConnection>> connectionsToClone,
-            GameStateEnum currentStatus, int? winner, HashSet<int> sideIndexesStillInGame) : this(width, height, playerCount)
+            GameStateEnum currentStatus, int? winner, HashSet<int> sideIndexesStillInGame, PossibilityContainer possibilityContainer)
         {
+            this.Width = width;
+            this.Height = height;
+            this.PlayerCount = playerCount;
+
+            // HACK: Starting at 3 for development
+            this.InARowToSolve = 3;
+
             this.CurrentCascadeLevel = currentCascadeLevel;
             this.CurrentPlayerIndex = currentPlayerIndex;
             this.CurrentGameState = currentStatus;
+            this.PossibilityContainer = possibilityContainer;
             this.Winner = winner;
 
             this._SpotToSideOwnership = new Dictionary<Coordinate, int?>(ownershipToClone);
@@ -140,20 +149,19 @@ namespace TicTacCOSTCO.DataStructures
         {
             return new BoardState(this.Width, this.Height, this.PlayerCount,
                 this._SpotToSideOwnership, this.CurrentCascadeLevel, this.CurrentPlayerIndex,
-                this.AcceptedSolutions, this.CurrentGameState, this.Winner, this.SideIndexesStillInGame);
+                this.AcceptedSolutions, this.CurrentGameState, this.Winner, this.SideIndexesStillInGame,
+                this.PossibilityContainer);
         }
 
         public IReadOnlyList<Coordinate> GetEmptySpots()
         {
-            List<Coordinate> emptySpots = new List<Coordinate>();
+            List<Coordinate> emptySpots = new List<Coordinate>(this.SpotToSideOwnership.Count);
 
-            foreach (Coordinate position in this.SpotToSideOwnership.Keys)
+            foreach (KeyValuePair<Coordinate, int?> position in this.SpotToSideOwnership)
             {
-                int? ownership = this.SpotToSideOwnership[position];
-
-                if (ownership == null)
+                if (position.Value == null)
                 {
-                    emptySpots.Add(position);
+                    emptySpots.Add(position.Key);
                 }
             }
 
@@ -193,7 +201,7 @@ namespace TicTacCOSTCO.DataStructures
 
         public IReadOnlyList<CellsConnection> GetAllNewSolutions(int sideIndex, Coordinate hypotheticalPosition)
         {
-            List<CellsConnection> newSolutions = new List<CellsConnection>();
+            List<CellsConnection> newSolutions = new List<CellsConnection>(DirectionalitiesWithBackwards.Count);
 
             IReadOnlyCollection<CellsConnection> possibleConnections = this.PossibilityContainer.PossibleConnections[hypotheticalPosition];
 
@@ -369,11 +377,8 @@ namespace TicTacCOSTCO.DataStructures
 
         public static List<Coordinate> SortByDirectionality(IEnumerable<Coordinate> coordinates, DirectionalityVector directionality)
         {
-            // First put in to a HashSet, which will naturally remove any duplicate coordinates
-            HashSet<Coordinate> bag = new HashSet<Coordinate>(coordinates);
-
             // Place randomly in to list
-            List<Coordinate> ordered = new List<Coordinate>(bag);
+            List<Coordinate> ordered = new List<Coordinate>(coordinates.Distinct());
 
             // Then sort by likeness to directionality
             ordered.Sort((Coordinate x, Coordinate y) => { return (x.X * directionality.X + x.Y * directionality.Y).CompareTo(y.X * directionality.X + y.Y * directionality.Y); });

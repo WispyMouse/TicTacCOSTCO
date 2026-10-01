@@ -22,29 +22,7 @@ namespace TicTacCOSTCO.AIs
         {
             int occupiedNeighbors = 0;
 
-            List<Coordinate> coordinatesToCheck = new List<Coordinate>(Radius * Radius);
-
-            for (int xx = -Radius; xx < Radius; xx++)
-            {
-                for (int yy = -Radius; yy < Radius; yy++)
-                {
-                    Coordinate resultingCoordinate = new Coordinate(xx, yy) + position;
-
-                    if (resultingCoordinate == position)
-                    {
-                        continue;
-                    }
-
-                    if (!currentGameState.SpotIsInBounds(resultingCoordinate))
-                    {
-                        continue;
-                    }
-
-                    coordinatesToCheck.Add(resultingCoordinate);
-                }
-            }
-
-            foreach (Coordinate resultingPosition in coordinatesToCheck)
+            foreach (Coordinate resultingPosition in currentGameState.PossibilityContainer.GetCoordinatesAround(currentGameState, position, 1))
             {
                 if (!currentGameState.SpotIsInBounds(resultingPosition))
                 {

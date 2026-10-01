@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -5,6 +6,25 @@ namespace TicTacCOSTCO.DataStructures
 {
     public class PossibilityContainer
     {
+        struct GetCoordinatesAroundKey
+        {
+            public Coordinate position;
+            public int radius;
+
+            public GetCoordinatesAroundKey(Coordinate position, int radius)
+            {
+                this.position = position;
+                this.radius = radius;
+            }
+
+            public override int GetHashCode()
+            {
+                return HashCode.Combine(this.position, this.radius);
+            }
+        }
+
+        private Dictionary<GetCoordinatesAroundKey, List<Coordinate>> coordinateToRadiusNearby { get; set; } = new Dictionary<GetCoordinatesAroundKey, List<Coordinate>>();
+
         public readonly IDictionary<Coordinate, IReadOnlyCollection<CellsConnection>> PossibleConnections;
 
         public PossibilityContainer(BoardState boardState)
@@ -89,6 +109,43 @@ namespace TicTacCOSTCO.DataStructures
             }
 
             return true;
+        }
+
+        public IReadOnlyList<Coordinate> GetCoordinatesAround(IReadOnlyBoardState currentGameState, Coordinate position, int radius)
+        {
+            GetCoordinatesAroundKey key = new GetCoordinatesAroundKey(position, radius);
+
+            if (this.coordinateToRadiusNearby.TryGetValue(key, out List<Coordinate> coordinates))
+            {
+                return coordinates;
+            }
+
+            int span = radius * 2 - 1;
+            List<Coordinate> coordinatesToCheck = new List<Coordinate>(span);
+
+            for (int xx = -radius; xx <= radius; xx++)
+            {
+                for (int yy = -radius; yy <= radius; yy++)
+                {
+                    Coordinate resultingCoordinate = new Coordinate(xx, yy) + position;
+
+                    if (resultingCoordinate == position)
+                    {
+                        continue;
+                    }
+
+                    if (!currentGameState.SpotIsInBounds(resultingCoordinate))
+                    {
+                        continue;
+                    }
+
+                    coordinatesToCheck.Add(resultingCoordinate);
+                }
+            }
+
+            this.coordinateToRadiusNearby.Add(key,  coordinatesToCheck);
+
+            return coordinatesToCheck;
         }
     }
 }

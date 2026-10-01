@@ -30,14 +30,14 @@ public class AICore : ScriptableObject
         }
 
 #if UNITY_EDITOR
-        string logText = $"(Side: {forSide}) (Core: {this.name})";
+        // string logText = $"(Side: {forSide}) (Core: {this.name})";
 #endif
 
         foreach (AIHeuristic heuristic in AIHeuristics)
         {
 
 #if UNITY_EDITOR
-            string withHeuristic = logText + $" (Heuristic: {heuristic.name})";
+            // string withHeuristic = logText + $" (Heuristic: {heuristic.name})";
 #endif
 
             heuristic.BakeInformation(forSide, currentGameState);
@@ -45,13 +45,13 @@ public class AICore : ScriptableObject
             foreach (Coordinate coordinate in possibleMoves)
             {
 #if UNITY_EDITOR
-                string withCoordinate = withHeuristic + $" (Coordinate: {coordinate})";
+                // string withCoordinate = withHeuristic + $" (Coordinate: {coordinate})";
 #endif
 
                 float heuristicValue = heuristic.ScorePosition(forSide, currentGameState, coordinate);
 
 #if UNITY_EDITOR
-                UnityEngine.Debug.Log(withCoordinate + $" (Value: {heuristicValue})");
+                // UnityEngine.Debug.Log(withCoordinate + $" (Value: {heuristicValue})");
 #endif
 
                 float newTotal = moveToHeuristicTotal[coordinate] + heuristicValue;
@@ -62,7 +62,7 @@ public class AICore : ScriptableObject
 
         // Determine which coordinates scored *at least* the TopCut percentage of the highest heuristic
         float heuristicCutoff = highestHeuristic * TopCut;
-        List<Coordinate> coordinatesToConsider = new List<Coordinate>();
+        List<Coordinate> coordinatesToConsider = new List<Coordinate>(possibleMoves.Count);
 
         foreach (Coordinate coordinate in possibleMoves)
         {
@@ -76,7 +76,7 @@ public class AICore : ScriptableObject
         Coordinate choice = ChooseRandomly(coordinatesToConsider);
 
 #if UNITY_EDITOR
-        UnityEngine.Debug.Log(logText + $" Chose {choice} which was {(moveToHeuristicTotal[choice] / highestHeuristic).ToString("P2")} of highest at {moveToHeuristicTotal[choice]}");
+        // UnityEngine.Debug.Log(logText + $" Selected {choice} which was {(moveToHeuristicTotal[choice] / highestHeuristic).ToString("P2")} of highest at {moveToHeuristicTotal[choice]}");
 #endif
 
         return choice;

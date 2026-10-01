@@ -4,7 +4,7 @@ using UnityEngine;
 namespace TicTacCOSTCO.AIs
 {
     [CreateAssetMenu(fileName = "Wants At Cascade Level Heuristic.asset", menuName = "COSTCO/AI Heuristic/Wants At Least Cacade Level")]
-    public class WantsAtLeastCascadeLevelHeuristic : AIHeuristic
+    public class WantsAvailableCascadeHeuristic : AIHeuristic
     {
         /// <summary>
         /// Add this to the cascade level for the target connection level
@@ -20,8 +20,8 @@ namespace TicTacCOSTCO.AIs
             // Determine all possible connection granting positions
             foreach (Coordinate coordinate in currentGameState.GetEmptySpots())
             {
-                MoveCommand command = currentGameState.GenerateCommandFromMove(forSide, coordinate);
-                if (command.ConnectionsMade.Count >= currentGameState.CurrentCascadeLevel + MinimumRaisedLevel)
+                int connectionsMade = currentGameState.GetAllNewSolutions(forSide, coordinate).Count;
+                if (connectionsMade >= currentGameState.CurrentCascadeLevel + MinimumRaisedLevel)
                 {
                     this.currentConnectionsCount += 1;
                 }
@@ -44,25 +44,34 @@ namespace TicTacCOSTCO.AIs
 
             // Consider a version of the map where we've picked this position
             // If we do, how many connections open up?
-            BoardState copiedState = currentGameState.DeepClone();
+            int connectionsPossibleFromThisPosition = 0;
 
-            copiedState.ForceMarkOwnership(position, forSide);
-
-            int connectionsAllowed = 0;
-
-            foreach (Coordinate potentialMove in copiedState.GetEmptySpots())
+            foreach (CellsConnection possibleConnection in currentGameState.PossibilityContainer.PossibleConnections[position])
             {
-                int connectionsMadeByPlayingHere = copiedState.GenerateCommandFromMove(forSide, potentialMove).ConnectionsMade.Count;
+                bool valid = true;
 
-                // Only applies if the connection level is at least the minimum target
-                if (connectionsMadeByPlayingHere >= currentGameState.CurrentCascadeLevel + MinimumRaisedLevel)
+                foreach (Coordinate connectionComponent in possibleConnection.Cells)
                 {
-                    connectionsAllowed++;
+                    if (connectionComponent ==  position)
+                    {
+                        continue;
+                    }
+
+                    if (currentGameState.SpotToSideOwnership[connectionComponent] != forSide)
+                    {
+                        valid = false;
+                        break;
+                    }
+                }
+
+                if (valid)
+                {
+                    connectionsPossibleFromThisPosition++;
                 }
             }
 
             // If there are enough connections, apply weight
-            return (connectionsAllowed >= copiedState.CurrentCascadeLevel) ? this.Weight : 0;
+            return (connectionsPossibleFromThisPosition >= currentGameState.CurrentCascadeLevel) ? this.Weight : 0;
         }
     }
 }

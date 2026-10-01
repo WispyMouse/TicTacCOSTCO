@@ -14,7 +14,7 @@ namespace TicTacCOSTCO.AIs
                 return 0;
             }
 
-            int connectionsMadeByPlayingHere = currentGameState.GenerateCommandFromMove(forSide, position).ConnectionsMade.Count;
+            int connectionsMadeByPlayingHere = currentGameState.GetAllNewSolutions(forSide, position).Count;
 
             // If this wouldn't make enough of a cascade, then we would lose if we pick it
             if (connectionsMadeByPlayingHere < currentGameState.CurrentCascadeLevel)

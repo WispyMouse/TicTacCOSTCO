@@ -2,6 +2,7 @@ using UnityEngine;
 
 namespace TicTacCOSTCO.AIs
 {
+    using System.Collections.Generic;
     using TicTacCOSTCO.DataStructures;
     using UnityEngine;
 

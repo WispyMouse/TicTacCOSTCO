@@ -75,7 +75,7 @@ namespace TicTacCOSTCO.Unity.UI
                 randomWait += AdditionalTimeDuringCascade.Evaluate(Random.Range(0, 1f));
             }
 
-            Debug.Log($"Starting to think for {side}, waiting {randomWait} seconds...");
+            // Debug.Log($"Starting to think for {side}, waiting {randomWait} seconds...");
 
             yield return new WaitForSeconds(this.TimeForAIToThinkBase + randomWait);
 
