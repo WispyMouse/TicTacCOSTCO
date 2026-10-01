@@ -9,7 +9,6 @@ namespace TicTacCOSTCO.DataStructures
         public IReadOnlyList<Coordinate> GetEmptySpots();
         public MoveCommand GenerateCommandFromMove(int sideIndex, Coordinate position);
         public BoardState DeepClone();
-        public bool TryGetAllSolutionsFromCellAlongDirection(int sideIndex, Coordinate cell, DirectionalityVector offset, out CellsConnection solution, Coordinate selectedCoordinate);
         public bool TryGetConnectionsForCoordinate(Coordinate toGet, out IReadOnlyCollection<CellsConnection> connections);
         public IReadOnlyList<CellsConnection> GetAllNewSolutions(int sideIndex, Coordinate hypotheticalPosition);
 

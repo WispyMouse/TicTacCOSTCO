@@ -53,6 +53,8 @@ namespace TicTacCOSTCO.DataStructures
 
         private Dictionary<Coordinate, List<CellsConnection>> AcceptedSolutions;
 
+        public readonly PossibilityContainer PossibilityContainer;
+
         public enum GameStateEnum
         {
             /// <summary>
@@ -88,6 +90,8 @@ namespace TicTacCOSTCO.DataStructures
 
             // HACK: Starting at 3 for development
             this.InARowToSolve = 3;
+
+            this.PossibilityContainer = new PossibilityContainer(this);
 
             this._SpotToSideOwnership = new Dictionary<Coordinate, int?>(width * height);
             for (int xx = 0; xx < width; xx++)
@@ -191,36 +195,13 @@ namespace TicTacCOSTCO.DataStructures
         {
             List<CellsConnection> newSolutions = new List<CellsConnection>();
 
-            for (int xx = 0; xx < this.Width; xx++)
+            IReadOnlyCollection<CellsConnection> possibleConnections = this.PossibilityContainer.PossibleConnections[hypotheticalPosition];
+
+            foreach (CellsConnection possibleConnection in possibleConnections)
             {
-                for (int yy = 0; yy < this.Height; yy++)
+                if (OverlayConnectionOwnedAfterPlacement(hypotheticalPosition, possibleConnection, sideIndex))
                 {
-                    Coordinate position = new Coordinate(xx, yy);
-
-                    if (hypotheticalPosition != position && (this.SpotToSideOwnership[position] != sideIndex))
-                    {
-                        // This cell isn't empty, or is taken and isn't ours
-                        continue;
-                    }
-
-                    List<CellsConnection> allSolutions = new List<CellsConnection>();
-
-                    foreach (DirectionalityVector direction in DirectionalitiesWithBackwards)
-                    {
-                        if (TryGetAllSolutionsFromCellAlongDirection(sideIndex, position, direction, out CellsConnection cellSolutions, hypotheticalPosition))
-                        {
-                            allSolutions.Add(cellSolutions);
-                        }
-                    }
-
-                    // Check that these solutions contain the new piece
-                    for (int ii = 0, count = allSolutions.Count; ii < count; ii++)
-                    {
-                        if (allSolutions[ii].Cells.Contains(hypotheticalPosition))
-                        {
-                            newSolutions.Add(allSolutions[ii]);
-                        }
-                    }
+                    newSolutions.Add(possibleConnection);
                 }
             }
 
@@ -386,56 +367,6 @@ namespace TicTacCOSTCO.DataStructures
             return remainingSolutions;
         }
 
-        private bool TryGetAllSolutionsFromCellAlongDirection(int sideIndex, Coordinate cell, DirectionalityVector offset, out CellsConnection solution, Coordinate selectedCoordinate)
-        {
-            solution = default;
-
-            // If we're too close to the end direction this offset is going in, don't consider this at all
-            if (!SpotIsInBounds(cell + (offset * (this.InARowToSolve - 1))))
-            {
-                return false;
-            }
-
-            List<CellsConnection> solutions = new List<CellsConnection>();
-
-            bool valid = true;
-
-            for (int ii = 0; ii < this.InARowToSolve; ii++)
-            {
-                Coordinate position = cell + offset * ii;
-
-                if (!SpotIsInBounds(position))
-                {
-                    return false;
-                }
-
-                int? ownership = this.SpotToSideOwnership[position];
-
-                // If this isn't the cell we're hypothetically selecting,
-                // and it isn't ours already, this shape must not be valid
-                if (position != selectedCoordinate && ownership != sideIndex)
-                {
-                    valid = false;
-                    break;
-                }
-            }
-
-            if (!valid)
-            {
-                return false;
-            }
-
-            // If still valid, this must have been a solve
-            List<Coordinate> solutionCells = new List<Coordinate>();
-            for (int ii = 0; ii < this.InARowToSolve; ii++)
-            {
-                Coordinate position = cell + offset * ii;
-                solutionCells.Add(position);
-            }
-            solution = new CellsConnection(solutionCells, offset);
-            return true;
-        }
-
         public static List<Coordinate> SortByDirectionality(IEnumerable<Coordinate> coordinates, DirectionalityVector directionality)
         {
             // First put in to a HashSet, which will naturally remove any duplicate coordinates
@@ -471,10 +402,40 @@ namespace TicTacCOSTCO.DataStructures
         {
             this.AcceptedSolutions[position].Remove(connection);
         }
-
-        bool IReadOnlyBoardState.TryGetAllSolutionsFromCellAlongDirection(int sideIndex, Coordinate cell, DirectionalityVector offset, out CellsConnection solution, Coordinate selectedCoordinate)
+    
+        public bool OverlayConnectionOwned(CellsConnection connection, int side)
         {
-            return TryGetAllSolutionsFromCellAlongDirection(sideIndex, cell, offset, out solution, selectedCoordinate);
+            bool allMatch = true;
+
+            foreach (Coordinate curCell in connection.Cells)
+            {
+                if (this.SpotToSideOwnership[curCell] != side)
+                {
+                    return false;
+                }
+            }
+
+            return allMatch;
+        }
+
+        public bool OverlayConnectionOwnedAfterPlacement(Coordinate overrideCoordinate, CellsConnection connection, int side)
+        {
+            bool allMatch = true;
+
+            foreach (Coordinate curCell in connection.Cells)
+            {
+                if (curCell == overrideCoordinate)
+                {
+                    continue;
+                }
+
+                if (this.SpotToSideOwnership[curCell] != side)
+                {
+                    return false;
+                }
+            }
+
+            return allMatch;
         }
     }
 }
