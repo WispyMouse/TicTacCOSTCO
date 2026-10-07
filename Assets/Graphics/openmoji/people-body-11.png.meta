@@ -1,0 +1,3268 @@
+fileFormatVersion: 2
+guid: f1f5d205108af0a4f9fa3c1c850ee47c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4314086599077119323
+    second: people-body-11_0
+  - first:
+      213: -2325442209757057098
+    second: people-body-11_1
+  - first:
+      213: -4251579324236943268
+    second: people-body-11_2
+  - first:
+      213: 5064132086776386759
+    second: people-body-11_3
+  - first:
+      213: 4316195492076152382
+    second: people-body-11_4
+  - first:
+      213: -6397620753884043818
+    second: people-body-11_5
+  - first:
+      213: -7519794237222651148
+    second: people-body-11_6
+  - first:
+      213: 6708894791131710362
+    second: people-body-11_7
+  - first:
+      213: 3760884699811814398
+    second: people-body-11_8
+  - first:
+      213: 3747441451161831732
+    second: people-body-11_9
+  - first:
+      213: 6290586808704018728
+    second: people-body-11_10
+  - first:
+      213: 8238176413381757734
+    second: people-body-11_11
+  - first:
+      213: -2097416185786267157
+    second: people-body-11_12
+  - first:
+      213: 8563811706605518673
+    second: people-body-11_13
+  - first:
+      213: 3828678617306326269
+    second: people-body-11_14
+  - first:
+      213: 7158178642956904847
+    second: people-body-11_15
+  - first:
+      213: 6773448044474773211
+    second: people-body-11_16
+  - first:
+      213: -874099227688183310
+    second: people-body-11_17
+  - first:
+      213: 5933670718571435411
+    second: people-body-11_18
+  - first:
+      213: -7480570230581931282
+    second: people-body-11_19
+  - first:
+      213: 3140693990508851257
+    second: people-body-11_20
+  - first:
+      213: 7650553556718743599
+    second: people-body-11_21
+  - first:
+      213: 5293179198982962731
+    second: people-body-11_22
+  - first:
+      213: -6111258117798731439
+    second: people-body-11_23
+  - first:
+      213: 57520955801949459
+    second: people-body-11_24
+  - first:
+      213: 8914161441176952741
+    second: people-body-11_25
+  - first:
+      213: -706410690949624711
+    second: people-body-11_26
+  - first:
+      213: 4305519620361944015
+    second: people-body-11_27
+  - first:
+      213: -8872637336505753936
+    second: people-body-11_28
+  - first:
+      213: -3754781073568295198
+    second: people-body-11_29
+  - first:
+      213: -7948077441622268000
+    second: people-body-11_30
+  - first:
+      213: -4378218282825718315
+    second: people-body-11_31
+  - first:
+      213: 8742480713830463501
+    second: people-body-11_32
+  - first:
+      213: 6320960237151736413
+    second: people-body-11_33
+  - first:
+      213: 8363815440375420720
+    second: people-body-11_34
+  - first:
+      213: 4005014098376151435
+    second: people-body-11_35
+  - first:
+      213: -5751821130329117338
+    second: people-body-11_36
+  - first:
+      213: -6992102347256539923
+    second: people-body-11_37
+  - first:
+      213: 6084533752958671746
+    second: people-body-11_38
+  - first:
+      213: 6156753132898449818
+    second: people-body-11_39
+  - first:
+      213: 6555779288588170975
+    second: people-body-11_40
+  - first:
+      213: -1092664526016043956
+    second: people-body-11_41
+  - first:
+      213: 8219166882499595686
+    second: people-body-11_42
+  - first:
+      213: -4353563027142615098
+    second: people-body-11_43
+  - first:
+      213: -377783762859549093
+    second: people-body-11_44
+  - first:
+      213: -4233202141078414943
+    second: people-body-11_45
+  - first:
+      213: -6959025961402421203
+    second: people-body-11_46
+  - first:
+      213: -1896743667735253959
+    second: people-body-11_47
+  - first:
+      213: -3244755533702965217
+    second: people-body-11_48
+  - first:
+      213: -7654881848805972814
+    second: people-body-11_49
+  - first:
+      213: 340790460968203822
+    second: people-body-11_50
+  - first:
+      213: 293940616499279877
+    second: people-body-11_51
+  - first:
+      213: 7232239932872251696
+    second: people-body-11_52
+  - first:
+      213: -6744589614924231276
+    second: people-body-11_53
+  - first:
+      213: -8432362392234851448
+    second: people-body-11_54
+  - first:
+      213: -6304632195470959071
+    second: people-body-11_55
+  - first:
+      213: -271811844459345946
+    second: people-body-11_56
+  - first:
+      213: -8524558715768711866
+    second: people-body-11_57
+  - first:
+      213: 3732767059856181423
+    second: people-body-11_58
+  - first:
+      213: -5614210826873498341
+    second: people-body-11_59
+  - first:
+      213: -4026281921183702925
+    second: people-body-11_60
+  - first:
+      213: 6462115250549213707
+    second: people-body-11_61
+  - first:
+      213: -2511740196096693896
+    second: people-body-11_62
+  - first:
+      213: -210472291822966581
+    second: people-body-11_63
+  - first:
+      213: -2328986729571527160
+    second: people-body-11_64
+  - first:
+      213: -8375763474950348668
+    second: people-body-11_65
+  - first:
+      213: 4758274601800953978
+    second: people-body-11_66
+  - first:
+      213: 2459844266713731100
+    second: people-body-11_67
+  - first:
+      213: -1817120877795792491
+    second: people-body-11_68
+  - first:
+      213: 1968422598393375912
+    second: people-body-11_69
+  - first:
+      213: -5197516267459571543
+    second: people-body-11_70
+  - first:
+      213: -3390065132660553249
+    second: people-body-11_71
+  - first:
+      213: 7919902316225927407
+    second: people-body-11_72
+  - first:
+      213: 7136502082754140601
+    second: people-body-11_73
+  - first:
+      213: -2234375121376612884
+    second: people-body-11_74
+  - first:
+      213: 6972203130245426230
+    second: people-body-11_75
+  - first:
+      213: -1305178484588198393
+    second: people-body-11_76
+  - first:
+      213: -6135589558976966900
+    second: people-body-11_77
+  - first:
+      213: -4147120376758168793
+    second: people-body-11_78
+  - first:
+      213: 3140243757832348017
+    second: people-body-11_79
+  - first:
+      213: 5991015290160241305
+    second: people-body-11_80
+  - first:
+      213: 1974882741619020059
+    second: people-body-11_81
+  - first:
+      213: 2550482897796287562
+    second: people-body-11_82
+  - first:
+      213: -855618764892822018
+    second: people-body-11_83
+  - first:
+      213: -4997278170661390233
+    second: people-body-11_84
+  - first:
+      213: -5285078667754855530
+    second: people-body-11_85
+  - first:
+      213: -7747707537142130050
+    second: people-body-11_86
+  - first:
+      213: -6228749138430941872
+    second: people-body-11_87
+  - first:
+      213: 8676648104280258367
+    second: people-body-11_88
+  - first:
+      213: 716222434532649221
+    second: people-body-11_89
+  - first:
+      213: -2328019096436454202
+    second: people-body-11_90
+  - first:
+      213: -2564536372282947470
+    second: people-body-11_91
+  - first:
+      213: -583884588994218851
+    second: people-body-11_92
+  - first:
+      213: 6674929425523426984
+    second: people-body-11_93
+  - first:
+      213: 4696426314493090608
+    second: people-body-11_94
+  - first:
+      213: -6364009590699456889
+    second: people-body-11_95
+  - first:
+      213: 7321367562168864716
+    second: people-body-11_96
+  - first:
+      213: 559546763166748451
+    second: people-body-11_97
+  - first:
+      213: 4135419573949361365
+    second: people-body-11_98
+  - first:
+      213: 8637829642849830205
+    second: people-body-11_99
+  - first:
+      213: 7532818863402991140
+    second: people-body-11_100
+  - first:
+      213: -7497110380672858285
+    second: people-body-11_101
+  - first:
+      213: -2717327164339772411
+    second: people-body-11_102
+  - first:
+      213: 9012376314192072942
+    second: people-body-11_103
+  - first:
+      213: -23549198200180566
+    second: people-body-11_104
+  - first:
+      213: 7568785488740270059
+    second: people-body-11_105
+  - first:
+      213: 8756758647002865078
+    second: people-body-11_106
+  - first:
+      213: -5003810767275491318
+    second: people-body-11_107
+  - first:
+      213: 5956246793327935233
+    second: people-body-11_108
+  - first:
+      213: -7371291823470177937
+    second: people-body-11_109
+  - first:
+      213: -2696213302875148986
+    second: people-body-11_110
+  - first:
+      213: -6924543495314470727
+    second: people-body-11_111
+  - first:
+      213: -338953033428809984
+    second: people-body-11_112
+  - first:
+      213: -2122306510358247374
+    second: people-body-11_113
+  - first:
+      213: -3613276560298781305
+    second: people-body-11_114
+  - first:
+      213: 6127482126473896878
+    second: people-body-11_115
+  - first:
+      213: -8395562529972936442
+    second: people-body-11_116
+  - first:
+      213: -1812056730003050127
+    second: people-body-11_117
+  - first:
+      213: 4917972615395006673
+    second: people-body-11_118
+  - first:
+      213: 5524679991916375343
+    second: people-body-11_119
+  - first:
+      213: -5849984913991588373
+    second: people-body-11_120
+  - first:
+      213: 7278508864412461916
+    second: people-body-11_121
+  - first:
+      213: 1871995199926403181
+    second: people-body-11_122
+  - first:
+      213: -7150994634255120455
+    second: people-body-11_123
+  - first:
+      213: -1503468710207440462
+    second: people-body-11_124
+  - first:
+      213: -4982251945645271076
+    second: people-body-11_125
+  - first:
+      213: 3681792910078071310
+    second: people-body-11_126
+  - first:
+      213: 1094637921648435565
+    second: people-body-11_127
+  - first:
+      213: 7937601340210229240
+    second: people-body-11_128
+  - first:
+      213: -4503230098131329747
+    second: people-body-11_129
+  - first:
+      213: -4402510691407655926
+    second: people-body-11_130
+  - first:
+      213: 8693820956202778263
+    second: people-body-11_131
+  - first:
+      213: 8641644526244432356
+    second: people-body-11_132
+  - first:
+      213: 3876518731049033455
+    second: people-body-11_133
+  - first:
+      213: 5817861585636412040
+    second: people-body-11_134
+  - first:
+      213: -3678161247343774840
+    second: people-body-11_135
+  - first:
+      213: -1508616642080467086
+    second: people-body-11_136
+  - first:
+      213: -3259533016814303785
+    second: people-body-11_137
+  - first:
+      213: 7515825331316271064
+    second: people-body-11_138
+  - first:
+      213: 5313111809435877531
+    second: people-body-11_139
+  - first:
+      213: -2318429240957034233
+    second: people-body-11_140
+  - first:
+      213: -7915715868881557631
+    second: people-body-11_141
+  - first:
+      213: 379000143523279935
+    second: people-body-11_142
+  - first:
+      213: 3118265609816332090
+    second: people-body-11_143
+  - first:
+      213: 8096806285325611623
+    second: people-body-11_144
+  - first:
+      213: -5404127919213324090
+    second: people-body-11_145
+  - first:
+      213: 8308186905692248683
+    second: people-body-11_146
+  - first:
+      213: 1935244042215416631
+    second: people-body-11_147
+  - first:
+      213: -1220719545210788479
+    second: people-body-11_148
+  - first:
+      213: -4583407699536145273
+    second: people-body-11_149
+  - first:
+      213: -8113555369302513183
+    second: people-body-11_150
+  - first:
+      213: -3518656598671399800
+    second: people-body-11_151
+  - first:
+      213: -5095540777188070488
+    second: people-body-11_152
+  - first:
+      213: 8683438026882845955
+    second: people-body-11_153
+  - first:
+      213: -4699261991995498466
+    second: people-body-11_154
+  - first:
+      213: -8373006720688105052
+    second: people-body-11_155
+  - first:
+      213: -9019760357261907538
+    second: people-body-11_156
+  - first:
+      213: -5674310931898927548
+    second: people-body-11_157
+  - first:
+      213: -3815741361045117181
+    second: people-body-11_158
+  - first:
+      213: -6733399033001079374
+    second: people-body-11_159
+  - first:
+      213: -6830040947112701063
+    second: people-body-11_160
+  - first:
+      213: 2027680200516354418
+    second: people-body-11_161
+  - first:
+      213: -3883133603037029036
+    second: people-body-11_162
+  - first:
+      213: -447276741031752748
+    second: people-body-11_163
+  - first:
+      213: 9099581100775491832
+    second: people-body-11_164
+  - first:
+      213: -583603298908105741
+    second: people-body-11_165
+  - first:
+      213: 71310986691723044
+    second: people-body-11_166
+  - first:
+      213: 5296309445071630179
+    second: people-body-11_167
+  - first:
+      213: -7676626319456456171
+    second: people-body-11_168
+  - first:
+      213: -6342702446338298161
+    second: people-body-11_169
+  - first:
+      213: 7901822488486664397
+    second: people-body-11_170
+  - first:
+      213: 1897936217763080686
+    second: people-body-11_171
+  - first:
+      213: -8118736494847976699
+    second: people-body-11_172
+  - first:
+      213: -8235889836781929131
+    second: people-body-11_173
+  - first:
+      213: 2629768434230458436
+    second: people-body-11_174
+  - first:
+      213: 2224105708081942006
+    second: people-body-11_175
+  - first:
+      213: 5652952053073731014
+    second: people-body-11_176
+  - first:
+      213: -6794287263351580478
+    second: people-body-11_177
+  - first:
+      213: 2170937031413166328
+    second: people-body-11_178
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 72
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: people-body-11_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 504
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5aa3cbb58194124c0800000000000000
+      internalID: -4314086599077119323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_1
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 504
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bf2bb581ae5abfd0800000000000000
+      internalID: -2325442209757057098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_2
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 504
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c503674612b5ff4c0800000000000000
+      internalID: -4251579324236943268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_3
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 504
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c4d6ff4d49674640800000000000000
+      internalID: 5064132086776386759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_4
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 504
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e36675e8ee436eb30800000000000000
+      internalID: 4316195492076152382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_5
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 504
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d5231502d51737a0800000000000000
+      internalID: -6397620753884043818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_6
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 504
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fa705a9bf254a790800000000000000
+      internalID: -7519794237222651148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_7
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 504
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a93cfdc6448ca1d50800000000000000
+      internalID: 6708894791131710362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_8
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 504
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efb1c7d55b8513430800000000000000
+      internalID: 3760884699811814398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_9
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 504
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43943112526910430800000000000000
+      internalID: 3747441451161831732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_10
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 504
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 829af81af57ac4750800000000000000
+      internalID: 6290586808704018728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_11
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 504
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62b0f9cdcc1e35270800000000000000
+      internalID: 8238176413381757734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_12
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 504
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be90e04771b74e2e0800000000000000
+      internalID: -2097416185786267157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_13
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 504
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15fbd87cf55c8d670800000000000000
+      internalID: 8563811706605518673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_14
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 504
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df46dafcae2322530800000000000000
+      internalID: 3828678617306326269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_15
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 504
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f89eb34dc85f65360800000000000000
+      internalID: 7158178642956904847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 432
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdeab73fb1f100e50800000000000000
+      internalID: 6773448044474773211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_17
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 432
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f9d33332639ed3f0800000000000000
+      internalID: -874099227688183310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_18
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 432
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3955692a412a85250800000000000000
+      internalID: 5933670718571435411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_19
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 432
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee25dc0520daf2890800000000000000
+      internalID: -7480570230581931282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_20
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 432
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 930fb745b8cf59b20800000000000000
+      internalID: 3140693990508851257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_21
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 432
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f20725bece93c2a60800000000000000
+      internalID: 7650553556718743599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_22
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 432
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2ebddfdf66257940800000000000000
+      internalID: 5293179198982962731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_23
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 432
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15162e5ee13703ba0800000000000000
+      internalID: -6111258117798731439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_24
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 432
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31557b9210b5cc000800000000000000
+      internalID: 57520955801949459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_25
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 432
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5af16dbf99675bb70800000000000000
+      internalID: 8914161441176952741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_26
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 432
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97cc86428335236f0800000000000000
+      internalID: -706410690949624711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_27
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 432
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcbf529784740cb30800000000000000
+      internalID: 4305519620361944015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_28
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 432
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bed4b80a5f0ed480800000000000000
+      internalID: -8872637336505753936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_29
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 432
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e61a9cd18654ebc0800000000000000
+      internalID: -3754781073568295198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_30
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 432
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a72fc47da1c2b190800000000000000
+      internalID: -7948077441622268000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_31
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 432
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d56d072ba17d33c0800000000000000
+      internalID: -4378218282825718315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 360
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d08719bb3e7835970800000000000000
+      internalID: 8742480713830463501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_33
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 360
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d525cc688df88b750800000000000000
+      internalID: 6320960237151736413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_34
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 360
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 037118264dd321470800000000000000
+      internalID: 8363815440375420720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_35
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 360
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b81542e5a1ba49730800000000000000
+      internalID: 4005014098376151435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_36
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 360
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66da52b082d6d20b0800000000000000
+      internalID: -5751821130329117338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_37
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 360
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de4599ef5ff07fe90800000000000000
+      internalID: -6992102347256539923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_38
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 360
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28bd9f8063b907450800000000000000
+      internalID: 6084533752958671746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_39
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 360
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a997f20ca5e217550800000000000000
+      internalID: 6156753132898449818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_40
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 360
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd6392a678ecafa50800000000000000
+      internalID: 6555779288588170975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_41
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 360
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c44a42c176316d0f0800000000000000
+      internalID: -1092664526016043956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_42
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 360
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ad0b0d8bb8501270800000000000000
+      internalID: 8219166882499595686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_43
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 360
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cfd3e33e790593c0800000000000000
+      internalID: -4353563027142615098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_44
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 360
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5e98d45ba7d1caf0800000000000000
+      internalID: -377783762859549093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_45
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 360
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a91996c415a045c0800000000000000
+      internalID: -4233202141078414943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_46
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 360
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2033e332c29c6f90800000000000000
+      internalID: -6959025961402421203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_47
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 360
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93c2baefea96da5e0800000000000000
+      internalID: -1896743667735253959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 288
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f18d6a6980058f2d0800000000000000
+      internalID: -3244755533702965217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_49
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 288
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b4a55c048564c590800000000000000
+      internalID: -7654881848805972814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_50
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 288
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e26f9d06e1bbab400800000000000000
+      internalID: 340790460968203822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_51
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 288
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 508bf7fee69441400800000000000000
+      internalID: 293940616499279877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_52
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 288
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 039de31a6e31e5460800000000000000
+      internalID: 7232239932872251696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_53
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 288
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49d07a6ca776662a0800000000000000
+      internalID: -6744589614924231276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_54
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 288
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8838a71b41b3afa80800000000000000
+      internalID: -8432362392234851448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_55
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 288
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12e567deb627188a0800000000000000
+      internalID: -6304632195470959071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_56
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 288
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e7c14d41945a3cf0800000000000000
+      internalID: -271811844459345946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_57
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 288
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64555a7530fa2b980800000000000000
+      internalID: -8524558715768711866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_58
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 288
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa8c1082dd37dc330800000000000000
+      internalID: 3732767059856181423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_59
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 288
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b159d029ff05612b0800000000000000
+      internalID: -5614210826873498341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_60
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 288
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 370a442cce5cf18c0800000000000000
+      internalID: -4026281921183702925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_61
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 288
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0ace96259b0ea950800000000000000
+      internalID: 6462115250549213707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_62
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 288
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87926937991842dd0800000000000000
+      internalID: -2511740196096693896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_63
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 288
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc864d2d090441df0800000000000000
+      internalID: -210472291822966581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_64
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 216
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8065a41b8e6cdafd0800000000000000
+      internalID: -2328986729571527160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_65
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 216
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 480a4e80f7f43cb80800000000000000
+      internalID: -8375763474950348668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_66
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 216
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a70fb183a89c80240800000000000000
+      internalID: 4758274601800953978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_67
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 216
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c10d048e35f132220800000000000000
+      internalID: 2459844266713731100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_68
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 216
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 599290d603a48c6e0800000000000000
+      internalID: -1817120877795792491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_69
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 216
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8aca6119ced315b10800000000000000
+      internalID: 1968422598393375912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_70
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 216
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a012cb0e76bed7b0800000000000000
+      internalID: -5197516267459571543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_71
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 216
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd9845229b114f0d0800000000000000
+      internalID: -3390065132660553249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_72
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 216
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe89076f13529ed60800000000000000
+      internalID: 7919902316225927407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_73
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 216
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b9556d55d2f90360800000000000000
+      internalID: 7136502082754140601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_74
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 216
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ced60635aa7edf0e0800000000000000
+      internalID: -2234375121376612884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_75
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 216
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63c25208ecd32c060800000000000000
+      internalID: 6972203130245426230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_76
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 216
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70643a9551313ede0800000000000000
+      internalID: -1305178484588198393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_77
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 216
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0f0599cdc10adaa0800000000000000
+      internalID: -6135589558976966900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_78
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 216
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7239b8e5df77276c0800000000000000
+      internalID: -4147120376758168793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_79
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 216
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1712cbd5f03649b20800000000000000
+      internalID: 3140243757832348017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_80
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 144
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99a5fe52aac542350800000000000000
+      internalID: 5991015290160241305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_81
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 144
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b11504fd361386b10800000000000000
+      internalID: 1974882741619020059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_82
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 144
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4c4bd8bea2256320800000000000000
+      internalID: 2550482897796287562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_83
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 144
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef5a76f344b3024f0800000000000000
+      internalID: -855618764892822018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_84
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 144
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 768f9e10bf916aab0800000000000000
+      internalID: -4997278170661390233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_85
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 144
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6932a7604f0a7a6b0800000000000000
+      internalID: -5285078667754855530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_86
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 144
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7ad6094b0d9a7490800000000000000
+      internalID: -7747707537142130050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_87
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 144
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 055adc0f8a90f89a0800000000000000
+      internalID: -6228749138430941872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_88
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 144
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f37f0b0ea75a96870800000000000000
+      internalID: 8676648104280258367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_89
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 144
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 509eb7e628880f900800000000000000
+      internalID: 716222434532649221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_90
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 144
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cc449657f631bfd0800000000000000
+      internalID: -2328019096436454202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_91
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 144
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2788184c1cfe86cd0800000000000000
+      internalID: -2564536372282947470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_92
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 144
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d94bc235f00a5e7f0800000000000000
+      internalID: -583884588994218851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_93
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 144
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a6402d72fc12ac50800000000000000
+      internalID: 6674929425523426984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_94
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 144
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03b582da9de0d2140800000000000000
+      internalID: 4696426314493090608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_95
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 144
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7860e27cefe7ea7a0800000000000000
+      internalID: -6364009590699456889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_96
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 72
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccf842de109ba9560800000000000000
+      internalID: 7321367562168864716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_97
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 72
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32f06c501d8e3c700800000000000000
+      internalID: 559546763166748451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_98
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 72
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5dce27e2136f36930800000000000000
+      internalID: 4135419573949361365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_99
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 72
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3547648b4cbfd770800000000000000
+      internalID: 8637829642849830205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_100
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 72
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42e3f7e78d2f98860800000000000000
+      internalID: 7532818863402991140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_101
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 72
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 357c91684d9e4f790800000000000000
+      internalID: -7497110380672858285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_102
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 72
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 504220f475d1a4ad0800000000000000
+      internalID: -2717327164339772411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_103
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 72
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee010951284621d70800000000000000
+      internalID: 9012376314192072942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_104
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 72
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa0788601265caff0800000000000000
+      internalID: -23549198200180566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_105
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 72
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: befbe750d4ab90960800000000000000
+      internalID: 7568785488740270059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_106
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 72
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bd9f6a1891468970800000000000000
+      internalID: 8756758647002865078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_107
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 72
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0005455e94ee8ab0800000000000000
+      internalID: -5003810767275491318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_108
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 72
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10ffed6a6e6d8a250800000000000000
+      internalID: 5956246793327935233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_109
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 72
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f61915e2429e3b990800000000000000
+      internalID: -7371291823470177937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_110
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 72
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64da1734940259ad0800000000000000
+      internalID: -2696213302875148986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_111
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 72
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b80a0af06417ef90800000000000000
+      internalID: -6924543495314470727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: people-body-11_112
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0074fee030ccb4bf0800000000000000
+      internalID: -338953033428809984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: a793e1d0800ca744bb00888b5e3946ec
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":72.0,"y":72.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      people-body-11_0: -4314086599077119323
+      people-body-11_1: -2325442209757057098
+      people-body-11_10: 6290586808704018728
+      people-body-11_100: 7532818863402991140
+      people-body-11_101: -7497110380672858285
+      people-body-11_102: -2717327164339772411
+      people-body-11_103: 9012376314192072942
+      people-body-11_104: -23549198200180566
+      people-body-11_105: 7568785488740270059
+      people-body-11_106: 8756758647002865078
+      people-body-11_107: -5003810767275491318
+      people-body-11_108: 5956246793327935233
+      people-body-11_109: -7371291823470177937
+      people-body-11_11: 8238176413381757734
+      people-body-11_110: -2696213302875148986
+      people-body-11_111: -6924543495314470727
+      people-body-11_112: -338953033428809984
+      people-body-11_12: -2097416185786267157
+      people-body-11_13: 8563811706605518673
+      people-body-11_14: 3828678617306326269
+      people-body-11_15: 7158178642956904847
+      people-body-11_16: 6773448044474773211
+      people-body-11_17: -874099227688183310
+      people-body-11_18: 5933670718571435411
+      people-body-11_19: -7480570230581931282
+      people-body-11_2: -4251579324236943268
+      people-body-11_20: 3140693990508851257
+      people-body-11_21: 7650553556718743599
+      people-body-11_22: 5293179198982962731
+      people-body-11_23: -6111258117798731439
+      people-body-11_24: 57520955801949459
+      people-body-11_25: 8914161441176952741
+      people-body-11_26: -706410690949624711
+      people-body-11_27: 4305519620361944015
+      people-body-11_28: -8872637336505753936
+      people-body-11_29: -3754781073568295198
+      people-body-11_3: 5064132086776386759
+      people-body-11_30: -7948077441622268000
+      people-body-11_31: -4378218282825718315
+      people-body-11_32: 8742480713830463501
+      people-body-11_33: 6320960237151736413
+      people-body-11_34: 8363815440375420720
+      people-body-11_35: 4005014098376151435
+      people-body-11_36: -5751821130329117338
+      people-body-11_37: -6992102347256539923
+      people-body-11_38: 6084533752958671746
+      people-body-11_39: 6156753132898449818
+      people-body-11_4: 4316195492076152382
+      people-body-11_40: 6555779288588170975
+      people-body-11_41: -1092664526016043956
+      people-body-11_42: 8219166882499595686
+      people-body-11_43: -4353563027142615098
+      people-body-11_44: -377783762859549093
+      people-body-11_45: -4233202141078414943
+      people-body-11_46: -6959025961402421203
+      people-body-11_47: -1896743667735253959
+      people-body-11_48: -3244755533702965217
+      people-body-11_49: -7654881848805972814
+      people-body-11_5: -6397620753884043818
+      people-body-11_50: 340790460968203822
+      people-body-11_51: 293940616499279877
+      people-body-11_52: 7232239932872251696
+      people-body-11_53: -6744589614924231276
+      people-body-11_54: -8432362392234851448
+      people-body-11_55: -6304632195470959071
+      people-body-11_56: -271811844459345946
+      people-body-11_57: -8524558715768711866
+      people-body-11_58: 3732767059856181423
+      people-body-11_59: -5614210826873498341
+      people-body-11_6: -7519794237222651148
+      people-body-11_60: -4026281921183702925
+      people-body-11_61: 6462115250549213707
+      people-body-11_62: -2511740196096693896
+      people-body-11_63: -210472291822966581
+      people-body-11_64: -2328986729571527160
+      people-body-11_65: -8375763474950348668
+      people-body-11_66: 4758274601800953978
+      people-body-11_67: 2459844266713731100
+      people-body-11_68: -1817120877795792491
+      people-body-11_69: 1968422598393375912
+      people-body-11_7: 6708894791131710362
+      people-body-11_70: -5197516267459571543
+      people-body-11_71: -3390065132660553249
+      people-body-11_72: 7919902316225927407
+      people-body-11_73: 7136502082754140601
+      people-body-11_74: -2234375121376612884
+      people-body-11_75: 6972203130245426230
+      people-body-11_76: -1305178484588198393
+      people-body-11_77: -6135589558976966900
+      people-body-11_78: -4147120376758168793
+      people-body-11_79: 3140243757832348017
+      people-body-11_8: 3760884699811814398
+      people-body-11_80: 5991015290160241305
+      people-body-11_81: 1974882741619020059
+      people-body-11_82: 2550482897796287562
+      people-body-11_83: -855618764892822018
+      people-body-11_84: -4997278170661390233
+      people-body-11_85: -5285078667754855530
+      people-body-11_86: -7747707537142130050
+      people-body-11_87: -6228749138430941872
+      people-body-11_88: 8676648104280258367
+      people-body-11_89: 716222434532649221
+      people-body-11_9: 3747441451161831732
+      people-body-11_90: -2328019096436454202
+      people-body-11_91: -2564536372282947470
+      people-body-11_92: -583884588994218851
+      people-body-11_93: 6674929425523426984
+      people-body-11_94: 4696426314493090608
+      people-body-11_95: -6364009590699456889
+      people-body-11_96: 7321367562168864716
+      people-body-11_97: 559546763166748451
+      people-body-11_98: 4135419573949361365
+      people-body-11_99: 8637829642849830205
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

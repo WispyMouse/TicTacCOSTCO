@@ -1,0 +1,4116 @@
+fileFormatVersion: 2
+guid: 90da5a12d7f403d41b0f36e4e1a75b87
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1118766685962547419
+    second: travel-places-01_0
+  - first:
+      213: -1538527613116205934
+    second: travel-places-01_1
+  - first:
+      213: 3061740822047945422
+    second: travel-places-01_2
+  - first:
+      213: 8705932487454869047
+    second: travel-places-01_3
+  - first:
+      213: -1725251545700309674
+    second: travel-places-01_4
+  - first:
+      213: -7963436925097316703
+    second: travel-places-01_5
+  - first:
+      213: 8022771133912241304
+    second: travel-places-01_6
+  - first:
+      213: 5453982780169721317
+    second: travel-places-01_7
+  - first:
+      213: 4218685796488931341
+    second: travel-places-01_8
+  - first:
+      213: 7457130971760550545
+    second: travel-places-01_9
+  - first:
+      213: 6384385030291469165
+    second: travel-places-01_10
+  - first:
+      213: -7370148874683733061
+    second: travel-places-01_11
+  - first:
+      213: 6606005539093907895
+    second: travel-places-01_12
+  - first:
+      213: -1727545559860261282
+    second: travel-places-01_13
+  - first:
+      213: 4232856771624271645
+    second: travel-places-01_14
+  - first:
+      213: -506740691523830597
+    second: travel-places-01_15
+  - first:
+      213: -4916590106164254077
+    second: travel-places-01_16
+  - first:
+      213: -3944520663389715611
+    second: travel-places-01_17
+  - first:
+      213: 1476175804346319164
+    second: travel-places-01_18
+  - first:
+      213: -1362334202296554612
+    second: travel-places-01_19
+  - first:
+      213: -2640620131657543497
+    second: travel-places-01_20
+  - first:
+      213: 4617478616864720725
+    second: travel-places-01_21
+  - first:
+      213: 1839397917394528116
+    second: travel-places-01_22
+  - first:
+      213: -1067221886799289603
+    second: travel-places-01_23
+  - first:
+      213: -9212568417215564034
+    second: travel-places-01_24
+  - first:
+      213: -5135630007689173724
+    second: travel-places-01_25
+  - first:
+      213: 5457654625304023748
+    second: travel-places-01_26
+  - first:
+      213: 8670896631140330956
+    second: travel-places-01_27
+  - first:
+      213: -2812067251093873862
+    second: travel-places-01_28
+  - first:
+      213: 2683184865652548079
+    second: travel-places-01_29
+  - first:
+      213: -8813117806344553850
+    second: travel-places-01_30
+  - first:
+      213: -8392665278810175142
+    second: travel-places-01_31
+  - first:
+      213: -6187291836974106765
+    second: travel-places-01_32
+  - first:
+      213: 696977998389590331
+    second: travel-places-01_33
+  - first:
+      213: -2229174093472935402
+    second: travel-places-01_34
+  - first:
+      213: 6198344359446196077
+    second: travel-places-01_35
+  - first:
+      213: -237578044191594521
+    second: travel-places-01_36
+  - first:
+      213: -3970690626132788199
+    second: travel-places-01_37
+  - first:
+      213: -6058469065373326579
+    second: travel-places-01_38
+  - first:
+      213: -8198182736644393684
+    second: travel-places-01_39
+  - first:
+      213: 5566517247155819529
+    second: travel-places-01_40
+  - first:
+      213: 8173667340639931475
+    second: travel-places-01_41
+  - first:
+      213: -4691320381103672278
+    second: travel-places-01_42
+  - first:
+      213: 4171888182816486682
+    second: travel-places-01_43
+  - first:
+      213: 5199398427174472639
+    second: travel-places-01_44
+  - first:
+      213: 1553367627170463558
+    second: travel-places-01_45
+  - first:
+      213: -5090981361085037176
+    second: travel-places-01_46
+  - first:
+      213: 4561885482750647144
+    second: travel-places-01_47
+  - first:
+      213: -1624521609948878434
+    second: travel-places-01_48
+  - first:
+      213: -8094226245409455359
+    second: travel-places-01_49
+  - first:
+      213: -1968856264902503209
+    second: travel-places-01_50
+  - first:
+      213: -3926881629397667584
+    second: travel-places-01_51
+  - first:
+      213: -4061974114193154812
+    second: travel-places-01_52
+  - first:
+      213: -1793775634032412740
+    second: travel-places-01_53
+  - first:
+      213: 4066103329385578867
+    second: travel-places-01_54
+  - first:
+      213: 3387424153453994800
+    second: travel-places-01_55
+  - first:
+      213: -5386224323772697083
+    second: travel-places-01_56
+  - first:
+      213: 3853690918269019196
+    second: travel-places-01_57
+  - first:
+      213: -115809564436831063
+    second: travel-places-01_58
+  - first:
+      213: -3813666833098315064
+    second: travel-places-01_59
+  - first:
+      213: 394225737990327119
+    second: travel-places-01_60
+  - first:
+      213: -5258298400106993517
+    second: travel-places-01_61
+  - first:
+      213: -795482235784625760
+    second: travel-places-01_62
+  - first:
+      213: 7214888937955045904
+    second: travel-places-01_63
+  - first:
+      213: -5374681052810063145
+    second: travel-places-01_64
+  - first:
+      213: 7770266865860115757
+    second: travel-places-01_65
+  - first:
+      213: 6865514272029547671
+    second: travel-places-01_66
+  - first:
+      213: -8778845351402325842
+    second: travel-places-01_67
+  - first:
+      213: -7338458902636587748
+    second: travel-places-01_68
+  - first:
+      213: 8478470664869560819
+    second: travel-places-01_69
+  - first:
+      213: -7705417503803942939
+    second: travel-places-01_70
+  - first:
+      213: 1004132238316604233
+    second: travel-places-01_71
+  - first:
+      213: 7496260189986833752
+    second: travel-places-01_72
+  - first:
+      213: 4929748913631571332
+    second: travel-places-01_73
+  - first:
+      213: 2701980168999289423
+    second: travel-places-01_74
+  - first:
+      213: -8442407242498624159
+    second: travel-places-01_75
+  - first:
+      213: -7662059297957705981
+    second: travel-places-01_76
+  - first:
+      213: 1322070654600537866
+    second: travel-places-01_77
+  - first:
+      213: 2799399151346967331
+    second: travel-places-01_78
+  - first:
+      213: 7965331678348784583
+    second: travel-places-01_79
+  - first:
+      213: 6006489167094128320
+    second: travel-places-01_80
+  - first:
+      213: 1027992011388527931
+    second: travel-places-01_81
+  - first:
+      213: 7799549498695818896
+    second: travel-places-01_82
+  - first:
+      213: -3690849511342394616
+    second: travel-places-01_83
+  - first:
+      213: 8783182070979047796
+    second: travel-places-01_84
+  - first:
+      213: 1611115741799968270
+    second: travel-places-01_85
+  - first:
+      213: 3338098801394987603
+    second: travel-places-01_86
+  - first:
+      213: -7541672651658771518
+    second: travel-places-01_87
+  - first:
+      213: 5888402732607787326
+    second: travel-places-01_88
+  - first:
+      213: 330181390425334379
+    second: travel-places-01_89
+  - first:
+      213: -8217483359779040471
+    second: travel-places-01_90
+  - first:
+      213: -169766362550428925
+    second: travel-places-01_91
+  - first:
+      213: -1908121363836707297
+    second: travel-places-01_92
+  - first:
+      213: 6244717809352890558
+    second: travel-places-01_93
+  - first:
+      213: 5933330421615917867
+    second: travel-places-01_94
+  - first:
+      213: 4466426676715688078
+    second: travel-places-01_95
+  - first:
+      213: -9094065024147433904
+    second: travel-places-01_96
+  - first:
+      213: 5139549697363918912
+    second: travel-places-01_97
+  - first:
+      213: 3289611288504144104
+    second: travel-places-01_98
+  - first:
+      213: -4888572643119451912
+    second: travel-places-01_99
+  - first:
+      213: -7687338613939635135
+    second: travel-places-01_100
+  - first:
+      213: 7168513480938654094
+    second: travel-places-01_101
+  - first:
+      213: -4659931454024563513
+    second: travel-places-01_102
+  - first:
+      213: -3003605267061127313
+    second: travel-places-01_103
+  - first:
+      213: -2838964479707137040
+    second: travel-places-01_104
+  - first:
+      213: -1078556238305070524
+    second: travel-places-01_105
+  - first:
+      213: 2733914029632423075
+    second: travel-places-01_106
+  - first:
+      213: 712873385778373642
+    second: travel-places-01_107
+  - first:
+      213: 2464770436826497672
+    second: travel-places-01_108
+  - first:
+      213: -5992844215142016619
+    second: travel-places-01_109
+  - first:
+      213: -5338552628583786583
+    second: travel-places-01_110
+  - first:
+      213: 9133489632402613997
+    second: travel-places-01_111
+  - first:
+      213: 5889078635407278279
+    second: travel-places-01_112
+  - first:
+      213: -4590144186871439694
+    second: travel-places-01_113
+  - first:
+      213: 3072738578647677662
+    second: travel-places-01_114
+  - first:
+      213: 8920891165881167951
+    second: travel-places-01_115
+  - first:
+      213: -1476703236589209457
+    second: travel-places-01_116
+  - first:
+      213: -6911383845518695818
+    second: travel-places-01_117
+  - first:
+      213: 2657617067145322579
+    second: travel-places-01_118
+  - first:
+      213: 3838882370041576816
+    second: travel-places-01_119
+  - first:
+      213: 4165174241915337414
+    second: travel-places-01_120
+  - first:
+      213: 6291869886208387191
+    second: travel-places-01_121
+  - first:
+      213: -7611551551832313017
+    second: travel-places-01_122
+  - first:
+      213: -8252085157721588753
+    second: travel-places-01_123
+  - first:
+      213: -448361097175803960
+    second: travel-places-01_124
+  - first:
+      213: 5462221609741156877
+    second: travel-places-01_125
+  - first:
+      213: -7745889888969301081
+    second: travel-places-01_126
+  - first:
+      213: -2893233883808100393
+    second: travel-places-01_127
+  - first:
+      213: 6413691448455675845
+    second: travel-places-01_128
+  - first:
+      213: 2581734193572431144
+    second: travel-places-01_129
+  - first:
+      213: 3562050551255215672
+    second: travel-places-01_130
+  - first:
+      213: -8459969494488037588
+    second: travel-places-01_131
+  - first:
+      213: -1308257157147686303
+    second: travel-places-01_132
+  - first:
+      213: 2616240917273576495
+    second: travel-places-01_133
+  - first:
+      213: -6326267523205256968
+    second: travel-places-01_134
+  - first:
+      213: -3166046740072890153
+    second: travel-places-01_135
+  - first:
+      213: 6862878359525292455
+    second: travel-places-01_136
+  - first:
+      213: -341104491445175220
+    second: travel-places-01_137
+  - first:
+      213: 304049426408884820
+    second: travel-places-01_138
+  - first:
+      213: -1113778256674445169
+    second: travel-places-01_139
+  - first:
+      213: 1107447549681580404
+    second: travel-places-01_140
+  - first:
+      213: 6538111203314169712
+    second: travel-places-01_141
+  - first:
+      213: 1558133973624327624
+    second: travel-places-01_142
+  - first:
+      213: 6761568924392489808
+    second: travel-places-01_143
+  - first:
+      213: 5833287985684977061
+    second: travel-places-01_144
+  - first:
+      213: 4595379084019818807
+    second: travel-places-01_145
+  - first:
+      213: -8461121941544730254
+    second: travel-places-01_146
+  - first:
+      213: 7700542498154626244
+    second: travel-places-01_147
+  - first:
+      213: 261518887751598664
+    second: travel-places-01_148
+  - first:
+      213: 6203053034743958070
+    second: travel-places-01_149
+  - first:
+      213: -2575816018364515506
+    second: travel-places-01_150
+  - first:
+      213: -1544244892410478657
+    second: travel-places-01_151
+  - first:
+      213: -8083566554253096898
+    second: travel-places-01_152
+  - first:
+      213: -8519132927495112385
+    second: travel-places-01_153
+  - first:
+      213: 6027187664272346379
+    second: travel-places-01_154
+  - first:
+      213: -6575088464592500261
+    second: travel-places-01_155
+  - first:
+      213: 9176940794139865735
+    second: travel-places-01_156
+  - first:
+      213: 2185904537989651739
+    second: travel-places-01_157
+  - first:
+      213: 917750561701479317
+    second: travel-places-01_158
+  - first:
+      213: -1541654634014749728
+    second: travel-places-01_159
+  - first:
+      213: -1224701741941473212
+    second: travel-places-01_160
+  - first:
+      213: 8009548242543348294
+    second: travel-places-01_161
+  - first:
+      213: 5598126178528566873
+    second: travel-places-01_162
+  - first:
+      213: 478310176981638195
+    second: travel-places-01_163
+  - first:
+      213: -1780837117568436431
+    second: travel-places-01_164
+  - first:
+      213: -7809050722925992014
+    second: travel-places-01_165
+  - first:
+      213: 4129118822952983354
+    second: travel-places-01_166
+  - first:
+      213: 3254428637699009340
+    second: travel-places-01_167
+  - first:
+      213: 2366980650185970532
+    second: travel-places-01_168
+  - first:
+      213: -6843410702223107164
+    second: travel-places-01_169
+  - first:
+      213: 1580485913315026266
+    second: travel-places-01_170
+  - first:
+      213: 5381086001083413502
+    second: travel-places-01_171
+  - first:
+      213: 5421694873858850937
+    second: travel-places-01_172
+  - first:
+      213: -1881560069563521410
+    second: travel-places-01_173
+  - first:
+      213: 4210852346912097589
+    second: travel-places-01_174
+  - first:
+      213: -8965155002219488669
+    second: travel-places-01_175
+  - first:
+      213: -8676626053137138075
+    second: travel-places-01_176
+  - first:
+      213: -7727096533662452754
+    second: travel-places-01_177
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 72
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: travel-places-01_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 648
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd0b6579f58a68f00800000000000000
+      internalID: 1118766685962547419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_1
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 648
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 294341f894d06aae0800000000000000
+      internalID: -1538527613116205934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_2
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 648
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec2fa7c4e0d7d7a20800000000000000
+      internalID: 3061740822047945422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_3
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 648
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 736c749a87fa1d870800000000000000
+      internalID: 8705932487454869047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_4
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 648
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 655e6562cdcae08e0800000000000000
+      internalID: -1725251545700309674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_5
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 648
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ae68580f403c7190800000000000000
+      internalID: -7963436925097316703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_6
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 648
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 894d81ff6db965f60800000000000000
+      internalID: 8022771133912241304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_7
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 648
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e51d1f217070bb40800000000000000
+      internalID: 5453982780169721317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_8
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 648
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0865be5168cb8a30800000000000000
+      internalID: 4218685796488931341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_9
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 648
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 192e957fb1d0d7760800000000000000
+      internalID: 7457130971760550545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_10
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 648
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6338dfeb54e99850800000000000000
+      internalID: 6384385030291469165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_11
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 648
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbb2bbea5a8f7b990800000000000000
+      internalID: -7370148874683733061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_12
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 648
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b984f5a90f3dab50800000000000000
+      internalID: 6606005539093907895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_13
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 648
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5ec93b57768608e0800000000000000
+      internalID: -1727545559860261282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_14
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 648
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1f75c1aec02eba30800000000000000
+      internalID: 4232856771624271645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_15
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 648
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbc7c70a602b7f8f0800000000000000
+      internalID: -506740691523830597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 576
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38a21eff853c4cbb0800000000000000
+      internalID: -4916590106164254077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_17
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 576
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 563c7790b5f3249c0800000000000000
+      internalID: -3944520663389715611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_18
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 576
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c31c61ca21e6c7410800000000000000
+      internalID: 1476175804346319164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_19
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 576
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8bafbec244081de0800000000000000
+      internalID: -1362334202296554612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_20
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 576
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b09ec91bf1aa5bd0800000000000000
+      internalID: -2640620131657543497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_21
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 576
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5570f2c6654941040800000000000000
+      internalID: 4617478616864720725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_22
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 576
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 477e4ea09aad68910800000000000000
+      internalID: 1839397917394528116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_23
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 576
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df26ecc29577031f0800000000000000
+      internalID: -1067221886799289603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_24
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 576
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef632e6b5d1662080800000000000000
+      internalID: -9212568417215564034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_25
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 576
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 425a9ddb7b39ab8b0800000000000000
+      internalID: -5135630007689173724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_26
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 576
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c2930047fb7dbb40800000000000000
+      internalID: 5457654625304023748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_27
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 576
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccd204fab86355870800000000000000
+      internalID: 8670896631140330956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_28
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 576
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3b5a0eebb789f8d0800000000000000
+      internalID: -2812067251093873862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_29
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 576
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe1acef4b669c3520800000000000000
+      internalID: 2683184865652548079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_30
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 576
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68ab92d8c0481b580800000000000000
+      internalID: -8813117806344553850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_31
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 576
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a59c3c92563478b80800000000000000
+      internalID: -8392665278810175142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 504
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 377fb7f1bd2522aa0800000000000000
+      internalID: -6187291836974106765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_33
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 504
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b39364afbc92ca900800000000000000
+      internalID: 696977998389590331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_34
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 504
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 612da0009f16011e0800000000000000
+      internalID: -2229174093472935402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_35
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 504
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6f265cca51f40650800000000000000
+      internalID: 6198344359446196077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_36
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 504
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e7278d0704f3bcf0800000000000000
+      internalID: -237578044191594521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_37
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 504
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91cb164c9e545e8c0800000000000000
+      internalID: -3970690626132788199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_38
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 504
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d03eab3fb7efbeba0800000000000000
+      internalID: -6058469065373326579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_39
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 504
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c253292ac343a3e80800000000000000
+      internalID: -8198182736644393684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_40
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 504
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 904dec091fd304d40800000000000000
+      internalID: 5566517247155819529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_41
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 504
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35c0e0fe323be6170800000000000000
+      internalID: 8173667340639931475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_42
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 504
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a24f3c418f415eeb0800000000000000
+      internalID: -4691320381103672278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_43
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 504
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a153d6bd23685e930800000000000000
+      internalID: 4171888182816486682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_44
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 504
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbb85796259f72840800000000000000
+      internalID: 5199398427174472639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_45
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 504
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64f361770abae8510800000000000000
+      internalID: 1553367627170463558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_46
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 504
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 885446edc633959b0800000000000000
+      internalID: -5090981361085037176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_47
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 504
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86b1d593da21f4f30800000000000000
+      internalID: 4561885482750647144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 432
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e992d0de33a8479e0800000000000000
+      internalID: -1624521609948878434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_49
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 432
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 103c9b66d188baf80800000000000000
+      internalID: -8094226245409455359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_50
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 432
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d41fa498a73da4e0800000000000000
+      internalID: -1968856264902503209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_51
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 432
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 001bebca6f9e089c0800000000000000
+      internalID: -3926881629397667584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_52
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 432
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40d5fac7018f0a7c0800000000000000
+      internalID: -4061974114193154812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_53
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 432
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb73fbe809a3b17e0800000000000000
+      internalID: -1793775634032412740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_54
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 432
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3718f085f63bd6830800000000000000
+      internalID: 4066103329385578867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_55
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 432
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 033243af15c820f20800000000000000
+      internalID: 3387424153453994800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_56
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 432
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 506b5f4d3894045b0800000000000000
+      internalID: -5386224323772697083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_57
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 432
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c34e291f87f0b7530800000000000000
+      internalID: 3853690918269019196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_58
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 432
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a4662290df846ef0800000000000000
+      internalID: -115809564436831063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_59
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 432
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ca6c719832231bc0800000000000000
+      internalID: -3813666833098315064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_60
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 432
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4bca325832987500800000000000000
+      internalID: 394225737990327119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_61
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 432
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3982e9af675c607b0800000000000000
+      internalID: -5258298400106993517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_62
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 432
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a18ce60f11e5f4f0800000000000000
+      internalID: -795482235784625760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_63
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 432
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 012b4b0534f602460800000000000000
+      internalID: 7214888937955045904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_64
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 360
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d2db3a0f0c4965b0800000000000000
+      internalID: -5374681052810063145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_65
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 360
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2d749dbb8885db60800000000000000
+      internalID: 7770266865860115757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_66
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 360
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79c12b8fad4374f50800000000000000
+      internalID: 6865514272029547671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_67
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 360
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea8339b4aa64b2680800000000000000
+      internalID: -8778845351402325842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_68
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 360
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c151b85428e882a90800000000000000
+      internalID: -7338458902636587748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_69
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 360
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f1ce1a162499a570800000000000000
+      internalID: 8478470664869560819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_70
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 360
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e750b7fa9bd01590800000000000000
+      internalID: -7705417503803942939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_71
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 360
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94b016c53f46fed00800000000000000
+      internalID: 1004132238316604233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_72
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 360
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85541180de0180860800000000000000
+      internalID: 7496260189986833752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_73
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 360
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48da0ec948cf96440800000000000000
+      internalID: 4929748913631571332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_74
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 360
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f424a53e5ac5f7520800000000000000
+      internalID: 2701980168999289423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_75
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 360
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1653fadb75b86da80800000000000000
+      internalID: -8442407242498624159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_76
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 360
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3078041f9a5eaa590800000000000000
+      internalID: -7662059297957705981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_77
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 360
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a07ee677140f85210800000000000000
+      internalID: 1322070654600537866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_78
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 360
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 323e09042b679d620800000000000000
+      internalID: 2799399151346967331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_79
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 360
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c3352695fa8a8e60800000000000000
+      internalID: 7965331678348784583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_80
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 288
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ce90efd2165b5350800000000000000
+      internalID: 6006489167094128320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_81
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 288
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b35a0cea949244e00800000000000000
+      internalID: 1027992011388527931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_82
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 288
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09e17ddf1f09d3c60800000000000000
+      internalID: 7799549498695818896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_83
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 288
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8033305ace777ccc0800000000000000
+      internalID: -3690849511342394616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_84
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 288
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 471394aee8124e970800000000000000
+      internalID: 8783182070979047796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_85
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 288
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0ee60a2b35db5610800000000000000
+      internalID: 1611115741799968270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_86
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 288
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3523e428c2f435e20800000000000000
+      internalID: 3338098801394987603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_87
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 288
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c3c9994ea8965790800000000000000
+      internalID: -7541672651658771518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_88
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 288
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e31d683561fc7b150800000000000000
+      internalID: 5888402732607787326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_89
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 288
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b622fb7a93a059400800000000000000
+      internalID: 330181390425334379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_90
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 288
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 923dfa02c62a5fd80800000000000000
+      internalID: -8217483359779040471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_91
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 288
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30b1f59846ed4adf0800000000000000
+      internalID: -169766362550428925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_92
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 288
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1edd20babdf485e0800000000000000
+      internalID: -1908121363836707297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_93
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 288
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb8d80df2c1b9a650800000000000000
+      internalID: 6244717809352890558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_94
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 288
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2b7f63159c675250800000000000000
+      internalID: 5933330421615917867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_95
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 288
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8097f8f56febfd30800000000000000
+      internalID: 4466426676715688078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_96
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 216
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 056536ffa046bc180800000000000000
+      internalID: -9094065024147433904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_97
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 216
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 040c7d02839535740800000000000000
+      internalID: 5139549697363918912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_98
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 216
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e0976ca90c07ad20800000000000000
+      internalID: 3289611288504144104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_99
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 216
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f03c24f41d482cb0800000000000000
+      internalID: -4888572643119451912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_100
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 216
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14cfbf78246115590800000000000000
+      internalID: -7687338613939635135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_101
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 216
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8982fec70dab7360800000000000000
+      internalID: 7168513480938654094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_102
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 216
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c4423d2809945fb0800000000000000
+      internalID: -4659931454024563513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_103
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 216
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6744536cec0156d0800000000000000
+      internalID: -3003605267061127313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_104
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 216
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fbba11e8d8f998d0800000000000000
+      internalID: -2838964479707137040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_105
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 216
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4427b81d0d23801f0800000000000000
+      internalID: -1078556238305070524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_106
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 216
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a482b63350d0f520800000000000000
+      internalID: 2733914029632423075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_107
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 216
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0466214192a4e900800000000000000
+      internalID: 712873385778373642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_108
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 216
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8828de347af943220800000000000000
+      internalID: 2464770436826497672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_109
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 216
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 599943210f325dca0800000000000000
+      internalID: -5992844215142016619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_110
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 216
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a7198e4ba6a9e5b0800000000000000
+      internalID: -5338552628583786583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_111
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 216
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de6221bed6ca0ce70800000000000000
+      internalID: 9133489632402613997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_112
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 144
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c00bc531d53ab150800000000000000
+      internalID: 5889078635407278279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_113
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 144
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2be14b18e288c40c0800000000000000
+      internalID: -4590144186871439694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_114
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 144
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edafeeb057f84aa20800000000000000
+      internalID: 3072738578647677662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_115
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 144
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f40744e104f5dcb70800000000000000
+      internalID: 8920891165881167951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_116
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 144
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f883e60fa32b18be0800000000000000
+      internalID: -1476703236589209457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_117
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 144
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6722c75b205d510a0800000000000000
+      internalID: -6911383845518695818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_118
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 144
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 350663454a0c1e420800000000000000
+      internalID: 2657617067145322579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_119
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 144
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07d76d02d23764530800000000000000
+      internalID: 3838882370041576816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_120
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 144
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ca78fca7ebadc930800000000000000
+      internalID: 4165174241915337414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_121
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 144
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 778ad646356315750800000000000000
+      internalID: 6291869886208387191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_122
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 144
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 743367bf0365e5690800000000000000
+      internalID: -7611551551832313017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_123
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 144
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: feb3bbd3544ba7d80800000000000000
+      internalID: -8252085157721588753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_124
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 144
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c75bb725f917c9f0800000000000000
+      internalID: -448361097175803960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_125
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 144
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d02851d2d95bdcb40800000000000000
+      internalID: 5462221609741156877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_126
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 144
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a3e1ba7f22118490800000000000000
+      internalID: -7745889888969301081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_127
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 144
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7df8e779c1b29d7d0800000000000000
+      internalID: -2893233883808100393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_128
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 72
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cf39242462020950800000000000000
+      internalID: 6413691448455675845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_129
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 72
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8254d58029924d320800000000000000
+      internalID: 2581734193572431144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_130
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 72
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83e2d839a12fe6130800000000000000
+      internalID: 3562050551255215672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_131
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 72
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c27466e4196289a80800000000000000
+      internalID: -8459969494488037588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_132
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 72
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16a89590c0328dde0800000000000000
+      internalID: -1308257157147686303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_133
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 72
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f240fe8b041ce4420800000000000000
+      internalID: 2616240917273576495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_134
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 72
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f8a245a4359438a0800000000000000
+      internalID: -6326267523205256968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_135
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 72
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d00caba341ff04d0800000000000000
+      internalID: -3166046740072890153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_136
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 72
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a97834c187dd3f50800000000000000
+      internalID: 6862878359525292455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_137
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 72
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4cbe14b547244bf0800000000000000
+      internalID: -341104491445175220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_138
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 72
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45a4347a753383400800000000000000
+      internalID: 304049426408884820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_139
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 72
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f88ad5c93901b80f0800000000000000
+      internalID: -1113778256674445169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_140
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 72
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 479b52ecda17e5f00800000000000000
+      internalID: 1107447549681580404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_141
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 72
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 077fa8fbf790cba50800000000000000
+      internalID: 6538111203314169712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_142
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 72
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cd885af79a9f9510800000000000000
+      internalID: 1558133973624327624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_143
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 72
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0530cb6cc1be5dd50800000000000000
+      internalID: 6761568924392489808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_144
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a59e43548004f050800000000000000
+      internalID: 5833287985684977061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_145
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 0
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 731e247fde016cf30800000000000000
+      internalID: 4595379084019818807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_146
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27186f05c6e049a80800000000000000
+      internalID: -8461121941544730254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_147
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 0
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cc3e445a92ddda60800000000000000
+      internalID: 7700542498154626244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_148
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8424d76fa0a11a300800000000000000
+      internalID: 261518887751598664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: travel-places-01_149
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 0
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63a82d2bedba51650800000000000000
+      internalID: 6203053034743958070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: fb8dcd65108831e42bcf3fedc72c69b2
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":72.0,"y":72.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      travel-places-01_0: 1118766685962547419
+      travel-places-01_1: -1538527613116205934
+      travel-places-01_10: 6384385030291469165
+      travel-places-01_100: -7687338613939635135
+      travel-places-01_101: 7168513480938654094
+      travel-places-01_102: -4659931454024563513
+      travel-places-01_103: -3003605267061127313
+      travel-places-01_104: -2838964479707137040
+      travel-places-01_105: -1078556238305070524
+      travel-places-01_106: 2733914029632423075
+      travel-places-01_107: 712873385778373642
+      travel-places-01_108: 2464770436826497672
+      travel-places-01_109: -5992844215142016619
+      travel-places-01_11: -7370148874683733061
+      travel-places-01_110: -5338552628583786583
+      travel-places-01_111: 9133489632402613997
+      travel-places-01_112: 5889078635407278279
+      travel-places-01_113: -4590144186871439694
+      travel-places-01_114: 3072738578647677662
+      travel-places-01_115: 8920891165881167951
+      travel-places-01_116: -1476703236589209457
+      travel-places-01_117: -6911383845518695818
+      travel-places-01_118: 2657617067145322579
+      travel-places-01_119: 3838882370041576816
+      travel-places-01_12: 6606005539093907895
+      travel-places-01_120: 4165174241915337414
+      travel-places-01_121: 6291869886208387191
+      travel-places-01_122: -7611551551832313017
+      travel-places-01_123: -8252085157721588753
+      travel-places-01_124: -448361097175803960
+      travel-places-01_125: 5462221609741156877
+      travel-places-01_126: -7745889888969301081
+      travel-places-01_127: -2893233883808100393
+      travel-places-01_128: 6413691448455675845
+      travel-places-01_129: 2581734193572431144
+      travel-places-01_13: -1727545559860261282
+      travel-places-01_130: 3562050551255215672
+      travel-places-01_131: -8459969494488037588
+      travel-places-01_132: -1308257157147686303
+      travel-places-01_133: 2616240917273576495
+      travel-places-01_134: -6326267523205256968
+      travel-places-01_135: -3166046740072890153
+      travel-places-01_136: 6862878359525292455
+      travel-places-01_137: -341104491445175220
+      travel-places-01_138: 304049426408884820
+      travel-places-01_139: -1113778256674445169
+      travel-places-01_14: 4232856771624271645
+      travel-places-01_140: 1107447549681580404
+      travel-places-01_141: 6538111203314169712
+      travel-places-01_142: 1558133973624327624
+      travel-places-01_143: 6761568924392489808
+      travel-places-01_144: 5833287985684977061
+      travel-places-01_145: 4595379084019818807
+      travel-places-01_146: -8461121941544730254
+      travel-places-01_147: 7700542498154626244
+      travel-places-01_148: 261518887751598664
+      travel-places-01_149: 6203053034743958070
+      travel-places-01_15: -506740691523830597
+      travel-places-01_16: -4916590106164254077
+      travel-places-01_17: -3944520663389715611
+      travel-places-01_18: 1476175804346319164
+      travel-places-01_19: -1362334202296554612
+      travel-places-01_2: 3061740822047945422
+      travel-places-01_20: -2640620131657543497
+      travel-places-01_21: 4617478616864720725
+      travel-places-01_22: 1839397917394528116
+      travel-places-01_23: -1067221886799289603
+      travel-places-01_24: -9212568417215564034
+      travel-places-01_25: -5135630007689173724
+      travel-places-01_26: 5457654625304023748
+      travel-places-01_27: 8670896631140330956
+      travel-places-01_28: -2812067251093873862
+      travel-places-01_29: 2683184865652548079
+      travel-places-01_3: 8705932487454869047
+      travel-places-01_30: -8813117806344553850
+      travel-places-01_31: -8392665278810175142
+      travel-places-01_32: -6187291836974106765
+      travel-places-01_33: 696977998389590331
+      travel-places-01_34: -2229174093472935402
+      travel-places-01_35: 6198344359446196077
+      travel-places-01_36: -237578044191594521
+      travel-places-01_37: -3970690626132788199
+      travel-places-01_38: -6058469065373326579
+      travel-places-01_39: -8198182736644393684
+      travel-places-01_4: -1725251545700309674
+      travel-places-01_40: 5566517247155819529
+      travel-places-01_41: 8173667340639931475
+      travel-places-01_42: -4691320381103672278
+      travel-places-01_43: 4171888182816486682
+      travel-places-01_44: 5199398427174472639
+      travel-places-01_45: 1553367627170463558
+      travel-places-01_46: -5090981361085037176
+      travel-places-01_47: 4561885482750647144
+      travel-places-01_48: -1624521609948878434
+      travel-places-01_49: -8094226245409455359
+      travel-places-01_5: -7963436925097316703
+      travel-places-01_50: -1968856264902503209
+      travel-places-01_51: -3926881629397667584
+      travel-places-01_52: -4061974114193154812
+      travel-places-01_53: -1793775634032412740
+      travel-places-01_54: 4066103329385578867
+      travel-places-01_55: 3387424153453994800
+      travel-places-01_56: -5386224323772697083
+      travel-places-01_57: 3853690918269019196
+      travel-places-01_58: -115809564436831063
+      travel-places-01_59: -3813666833098315064
+      travel-places-01_6: 8022771133912241304
+      travel-places-01_60: 394225737990327119
+      travel-places-01_61: -5258298400106993517
+      travel-places-01_62: -795482235784625760
+      travel-places-01_63: 7214888937955045904
+      travel-places-01_64: -5374681052810063145
+      travel-places-01_65: 7770266865860115757
+      travel-places-01_66: 6865514272029547671
+      travel-places-01_67: -8778845351402325842
+      travel-places-01_68: -7338458902636587748
+      travel-places-01_69: 8478470664869560819
+      travel-places-01_7: 5453982780169721317
+      travel-places-01_70: -7705417503803942939
+      travel-places-01_71: 1004132238316604233
+      travel-places-01_72: 7496260189986833752
+      travel-places-01_73: 4929748913631571332
+      travel-places-01_74: 2701980168999289423
+      travel-places-01_75: -8442407242498624159
+      travel-places-01_76: -7662059297957705981
+      travel-places-01_77: 1322070654600537866
+      travel-places-01_78: 2799399151346967331
+      travel-places-01_79: 7965331678348784583
+      travel-places-01_8: 4218685796488931341
+      travel-places-01_80: 6006489167094128320
+      travel-places-01_81: 1027992011388527931
+      travel-places-01_82: 7799549498695818896
+      travel-places-01_83: -3690849511342394616
+      travel-places-01_84: 8783182070979047796
+      travel-places-01_85: 1611115741799968270
+      travel-places-01_86: 3338098801394987603
+      travel-places-01_87: -7541672651658771518
+      travel-places-01_88: 5888402732607787326
+      travel-places-01_89: 330181390425334379
+      travel-places-01_9: 7457130971760550545
+      travel-places-01_90: -8217483359779040471
+      travel-places-01_91: -169766362550428925
+      travel-places-01_92: -1908121363836707297
+      travel-places-01_93: 6244717809352890558
+      travel-places-01_94: 5933330421615917867
+      travel-places-01_95: 4466426676715688078
+      travel-places-01_96: -9094065024147433904
+      travel-places-01_97: 5139549697363918912
+      travel-places-01_98: 3289611288504144104
+      travel-places-01_99: -4888572643119451912
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

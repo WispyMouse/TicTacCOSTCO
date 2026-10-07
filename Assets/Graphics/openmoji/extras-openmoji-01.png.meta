@@ -1,0 +1,2650 @@
+fileFormatVersion: 2
+guid: 9c78fe009489dd04ab7254c3bc31a5b1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -438939464762693968
+    second: extras-openmoji-01_0
+  - first:
+      213: 2091223240646908573
+    second: extras-openmoji-01_1
+  - first:
+      213: 7697541363105888651
+    second: extras-openmoji-01_2
+  - first:
+      213: -8884775220586882851
+    second: extras-openmoji-01_3
+  - first:
+      213: -2346101068907002482
+    second: extras-openmoji-01_4
+  - first:
+      213: -3542715344207679574
+    second: extras-openmoji-01_5
+  - first:
+      213: -7377554805808082397
+    second: extras-openmoji-01_6
+  - first:
+      213: -6166222864264931284
+    second: extras-openmoji-01_7
+  - first:
+      213: 1320759605007293237
+    second: extras-openmoji-01_8
+  - first:
+      213: -6642229380242947629
+    second: extras-openmoji-01_9
+  - first:
+      213: 8382340568326606057
+    second: extras-openmoji-01_10
+  - first:
+      213: 7998258687099214484
+    second: extras-openmoji-01_11
+  - first:
+      213: -6146134838449909559
+    second: extras-openmoji-01_12
+  - first:
+      213: 2827101255090707921
+    second: extras-openmoji-01_13
+  - first:
+      213: -4431516997732195560
+    second: extras-openmoji-01_14
+  - first:
+      213: -1014124931380121533
+    second: extras-openmoji-01_15
+  - first:
+      213: 8691371508205235968
+    second: extras-openmoji-01_16
+  - first:
+      213: -5472164147206342250
+    second: extras-openmoji-01_17
+  - first:
+      213: 9129594577250229747
+    second: extras-openmoji-01_18
+  - first:
+      213: 3768382946366104576
+    second: extras-openmoji-01_19
+  - first:
+      213: -2707719239572881837
+    second: extras-openmoji-01_20
+  - first:
+      213: -979393077739383505
+    second: extras-openmoji-01_21
+  - first:
+      213: 8839413040533587960
+    second: extras-openmoji-01_22
+  - first:
+      213: -767253965804114611
+    second: extras-openmoji-01_23
+  - first:
+      213: 7183061943563409887
+    second: extras-openmoji-01_24
+  - first:
+      213: -6083891164436708195
+    second: extras-openmoji-01_25
+  - first:
+      213: 773686098438878636
+    second: extras-openmoji-01_26
+  - first:
+      213: 1012472837485425444
+    second: extras-openmoji-01_27
+  - first:
+      213: 270923309804034089
+    second: extras-openmoji-01_28
+  - first:
+      213: 7243048528312236299
+    second: extras-openmoji-01_29
+  - first:
+      213: -4420289975014880264
+    second: extras-openmoji-01_30
+  - first:
+      213: -1831725676874649248
+    second: extras-openmoji-01_31
+  - first:
+      213: -3736090712659533041
+    second: extras-openmoji-01_32
+  - first:
+      213: -1148409461287105757
+    second: extras-openmoji-01_33
+  - first:
+      213: -6865857794106285789
+    second: extras-openmoji-01_34
+  - first:
+      213: -576042918477743857
+    second: extras-openmoji-01_35
+  - first:
+      213: -499821719316032158
+    second: extras-openmoji-01_36
+  - first:
+      213: -1192139137124096253
+    second: extras-openmoji-01_37
+  - first:
+      213: -8932409237207621519
+    second: extras-openmoji-01_38
+  - first:
+      213: -996986938462713655
+    second: extras-openmoji-01_39
+  - first:
+      213: -5508299503832963341
+    second: extras-openmoji-01_40
+  - first:
+      213: -1212005119821970193
+    second: extras-openmoji-01_41
+  - first:
+      213: 7491536650139454318
+    second: extras-openmoji-01_42
+  - first:
+      213: -1861760755885454070
+    second: extras-openmoji-01_43
+  - first:
+      213: -3985195618537909360
+    second: extras-openmoji-01_44
+  - first:
+      213: -167458383132515466
+    second: extras-openmoji-01_45
+  - first:
+      213: 1039734499793123834
+    second: extras-openmoji-01_46
+  - first:
+      213: -755878766633503882
+    second: extras-openmoji-01_47
+  - first:
+      213: -2414092426207877915
+    second: extras-openmoji-01_48
+  - first:
+      213: 1775678969126571753
+    second: extras-openmoji-01_49
+  - first:
+      213: -5574800766447154865
+    second: extras-openmoji-01_50
+  - first:
+      213: -4580805150347861806
+    second: extras-openmoji-01_51
+  - first:
+      213: -3837279087444642399
+    second: extras-openmoji-01_52
+  - first:
+      213: 6587604490108352303
+    second: extras-openmoji-01_53
+  - first:
+      213: 7537722509372218913
+    second: extras-openmoji-01_54
+  - first:
+      213: 4462887593175761154
+    second: extras-openmoji-01_55
+  - first:
+      213: -1781353601763576712
+    second: extras-openmoji-01_56
+  - first:
+      213: 1486019544101611966
+    second: extras-openmoji-01_57
+  - first:
+      213: 6971770149749179386
+    second: extras-openmoji-01_58
+  - first:
+      213: -3683292957752221016
+    second: extras-openmoji-01_59
+  - first:
+      213: 1499220628447293274
+    second: extras-openmoji-01_60
+  - first:
+      213: 5442607695942120640
+    second: extras-openmoji-01_61
+  - first:
+      213: 8346655965639835727
+    second: extras-openmoji-01_62
+  - first:
+      213: -4368860979600558048
+    second: extras-openmoji-01_63
+  - first:
+      213: -1677869147728921761
+    second: extras-openmoji-01_64
+  - first:
+      213: 6117151096634415123
+    second: extras-openmoji-01_65
+  - first:
+      213: -1368664898016475767
+    second: extras-openmoji-01_66
+  - first:
+      213: -5267177051311512059
+    second: extras-openmoji-01_67
+  - first:
+      213: -7741153374533834190
+    second: extras-openmoji-01_68
+  - first:
+      213: 3749766030991823487
+    second: extras-openmoji-01_69
+  - first:
+      213: 3701882932538553660
+    second: extras-openmoji-01_70
+  - first:
+      213: -8323756608546026766
+    second: extras-openmoji-01_71
+  - first:
+      213: 3391599025997854872
+    second: extras-openmoji-01_72
+  - first:
+      213: -6690729761149336888
+    second: extras-openmoji-01_73
+  - first:
+      213: -434321878652401700
+    second: extras-openmoji-01_74
+  - first:
+      213: 8592928368932547383
+    second: extras-openmoji-01_75
+  - first:
+      213: -4773862390044054272
+    second: extras-openmoji-01_76
+  - first:
+      213: 1450057077998351644
+    second: extras-openmoji-01_77
+  - first:
+      213: -3735177497519422326
+    second: extras-openmoji-01_78
+  - first:
+      213: 8417083040883876996
+    second: extras-openmoji-01_79
+  - first:
+      213: -4972169387963437742
+    second: extras-openmoji-01_80
+  - first:
+      213: -1661972033183995403
+    second: extras-openmoji-01_81
+  - first:
+      213: -3532099259919900227
+    second: extras-openmoji-01_82
+  - first:
+      213: -4237727685001209707
+    second: extras-openmoji-01_83
+  - first:
+      213: 1887816597415493002
+    second: extras-openmoji-01_84
+  - first:
+      213: -6656372663788006985
+    second: extras-openmoji-01_85
+  - first:
+      213: -7046892816114954500
+    second: extras-openmoji-01_86
+  - first:
+      213: -525310962244427290
+    second: extras-openmoji-01_87
+  - first:
+      213: 1687239126172581831
+    second: extras-openmoji-01_88
+  - first:
+      213: -510679401548646878
+    second: extras-openmoji-01_89
+  - first:
+      213: 1858973957538005101
+    second: extras-openmoji-01_90
+  - first:
+      213: 6427332685651531032
+    second: extras-openmoji-01_91
+  - first:
+      213: 5184312462575696354
+    second: extras-openmoji-01_92
+  - first:
+      213: -3371608612283007342
+    second: extras-openmoji-01_93
+  - first:
+      213: -282194580615829208
+    second: extras-openmoji-01_94
+  - first:
+      213: 5867357456557098482
+    second: extras-openmoji-01_95
+  - first:
+      213: 2079024492633083808
+    second: extras-openmoji-01_96
+  - first:
+      213: -4442146598156836961
+    second: extras-openmoji-01_97
+  - first:
+      213: -1010734439843659531
+    second: extras-openmoji-01_98
+  - first:
+      213: 3742453038330191726
+    second: extras-openmoji-01_99
+  - first:
+      213: -2443770400194869233
+    second: extras-openmoji-01_100
+  - first:
+      213: -8170022419722747426
+    second: extras-openmoji-01_101
+  - first:
+      213: -698613976757379919
+    second: extras-openmoji-01_102
+  - first:
+      213: 5009965062379101063
+    second: extras-openmoji-01_103
+  - first:
+      213: -5317755714806810228
+    second: extras-openmoji-01_104
+  - first:
+      213: -6468684174887348095
+    second: extras-openmoji-01_105
+  - first:
+      213: -8155617908650760030
+    second: extras-openmoji-01_106
+  - first:
+      213: -8153935834489913084
+    second: extras-openmoji-01_107
+  - first:
+      213: -351233932090661628
+    second: extras-openmoji-01_108
+  - first:
+      213: -5151099364279025879
+    second: extras-openmoji-01_109
+  - first:
+      213: 1526401320832040944
+    second: extras-openmoji-01_110
+  - first:
+      213: -7847190294136437647
+    second: extras-openmoji-01_111
+  - first:
+      213: 2818384413197862484
+    second: extras-openmoji-01_112
+  - first:
+      213: -6187598675564039362
+    second: extras-openmoji-01_113
+  - first:
+      213: -7267390659986122074
+    second: extras-openmoji-01_114
+  - first:
+      213: -3244185918530741107
+    second: extras-openmoji-01_115
+  - first:
+      213: 2169193768930658265
+    second: extras-openmoji-01_116
+  - first:
+      213: -8747240482582450412
+    second: extras-openmoji-01_117
+  - first:
+      213: 5631084263082511321
+    second: extras-openmoji-01_118
+  - first:
+      213: -850755113846865754
+    second: extras-openmoji-01_119
+  - first:
+      213: 4994217648531123581
+    second: extras-openmoji-01_120
+  - first:
+      213: 1073599161783847732
+    second: extras-openmoji-01_121
+  - first:
+      213: -4085369966098072838
+    second: extras-openmoji-01_122
+  - first:
+      213: -5948938035576764914
+    second: extras-openmoji-01_123
+  - first:
+      213: -2727444018479470023
+    second: extras-openmoji-01_124
+  - first:
+      213: 2582206357303675804
+    second: extras-openmoji-01_125
+  - first:
+      213: -3570846169742885999
+    second: extras-openmoji-01_126
+  - first:
+      213: -9143509794499080171
+    second: extras-openmoji-01_127
+  - first:
+      213: -9006608091054328224
+    second: extras-openmoji-01_128
+  - first:
+      213: -6622795747239066357
+    second: extras-openmoji-01_129
+  - first:
+      213: 1039982366134852882
+    second: extras-openmoji-01_130
+  - first:
+      213: -4447007582143542485
+    second: extras-openmoji-01_131
+  - first:
+      213: 5036527235843896337
+    second: extras-openmoji-01_132
+  - first:
+      213: 2415283287832925876
+    second: extras-openmoji-01_133
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 72
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: extras-openmoji-01_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 360
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b66be4e1e298e9f0800000000000000
+      internalID: -438939464762693968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_1
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 360
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9adcc42574850d10800000000000000
+      internalID: 2091223240646908573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_2
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 360
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b897dcf161923da60800000000000000
+      internalID: 7697541363105888651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_3
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 360
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd8d9bba200f2b480800000000000000
+      internalID: -8884775220586882851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_4
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 360
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8542ac0289f07fd0800000000000000
+      internalID: -2346101068907002482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_5
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 360
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aafec202a2fb5dec0800000000000000
+      internalID: -3542715344207679574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_6
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 360
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32255d8fdf8ad9990800000000000000
+      internalID: -7377554805808082397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_7
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 360
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c28d89999fc2d6aa0800000000000000
+      internalID: -6166222864264931284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_8
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 360
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53b1522fcd7445210800000000000000
+      internalID: 1320759605007293237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_9
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 360
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d1c4f9129f02d3a0800000000000000
+      internalID: -6642229380242947629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_10
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 360
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ec0479d55e045470800000000000000
+      internalID: 8382340568326606057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_11
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 360
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49a1b3a36e58ffe60800000000000000
+      internalID: 7998258687099214484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_12
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 360
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c05a849dea84baa0800000000000000
+      internalID: -6146134838449909559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_13
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 360
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dd1eb5ec91eb3720800000000000000
+      internalID: 2827101255090707921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_14
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 360
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 813211e05c61082c0800000000000000
+      internalID: -4431516997732195560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_15
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 360
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 340783b7fba1de1f0800000000000000
+      internalID: -1014124931380121533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 288
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00f268d7654fd9870800000000000000
+      internalID: 8691371508205235968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_17
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 288
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 699332d63b7fe04b0800000000000000
+      internalID: -5472164147206342250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_18
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 288
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fd1558b5e5d2be70800000000000000
+      internalID: 9129594577250229747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_19
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 288
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 004aacfe25cfb4430800000000000000
+      internalID: 3768382946366104576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_20
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 288
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35e74cd92bf3c6ad0800000000000000
+      internalID: -2707719239572881837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_21
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 288
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f251ed15f2f7862f0800000000000000
+      internalID: -979393077739383505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_22
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 288
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f7c5ffb357ebaa70800000000000000
+      internalID: 8839413040533587960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_23
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 288
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4d6cbb459a2a55f0800000000000000
+      internalID: -767253965804114611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_24
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 288
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd959b9b7cc5fa360800000000000000
+      internalID: 7183061943563409887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_25
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 288
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d94cc93483da19ba0800000000000000
+      internalID: -6083891164436708195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_26
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 288
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca57b19486facba00800000000000000
+      internalID: 773686098438878636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_27
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 288
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 423fc0f6ea60d0e00800000000000000
+      internalID: 1012472837485425444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_28
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 288
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9281e3a905382c300800000000000000
+      internalID: 270923309804034089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_29
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 288
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0977fcd24a748460800000000000000
+      internalID: 7243048528312236299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_30
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 288
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fb840bffa9f7a2c0800000000000000
+      internalID: -4420289975014880264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_31
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 288
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 061bce7a3376496e0800000000000000
+      internalID: -1831725676874649248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 216
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f03ea4f9a4db62cc0800000000000000
+      internalID: -3736090712659533041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_33
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 216
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32bc843fda70010f0800000000000000
+      internalID: -1148409461287105757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_34
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 216
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 321a2ff86b297b0a0800000000000000
+      internalID: -6865857794106285789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_35
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 216
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0931c4840c7108f0800000000000000
+      internalID: -576042918477743857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_36
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 216
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26594216bc64019f0800000000000000
+      internalID: -499821719316032158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_37
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 216
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 307a0e065cba47fe0800000000000000
+      internalID: -1192139137124096253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_38
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 216
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17062dbef15b90480800000000000000
+      internalID: -8932409237207621519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_39
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 216
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c8c93769adf922f0800000000000000
+      internalID: -996986938462713655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_40
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 216
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f6639519c69e83b0800000000000000
+      internalID: -5508299503832963341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_41
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 216
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe48e07d3c71e2fe0800000000000000
+      internalID: -1212005119821970193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_42
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 216
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6bc16534e847f760800000000000000
+      internalID: 7491536650139454318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_43
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 216
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0d4fa0e472b926e0800000000000000
+      internalID: -1861760755885454070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_44
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 216
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 093da9c03bdb1b8c0800000000000000
+      internalID: -3985195618537909360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_45
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 216
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 673a9bedc711dadf0800000000000000
+      internalID: -167458383132515466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_46
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 216
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af933e0d401ed6e00800000000000000
+      internalID: 1039734499793123834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_47
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 216
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 673bc8d34449285f0800000000000000
+      internalID: -755878766633503882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 144
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e42be09abb6f7ed0800000000000000
+      internalID: -2414092426207877915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_49
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 144
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9eecbed4d9a74a810800000000000000
+      internalID: 1775678969126571753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_50
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 144
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f49875e4d3452a2b0800000000000000
+      internalID: -5574800766447154865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_51
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 144
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d06c346cf5bd60c0800000000000000
+      internalID: -4580805150347861806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_52
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 144
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a5b3d0300f3fbac0800000000000000
+      internalID: -3837279087444642399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_53
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 144
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f273da1916fdb6b50800000000000000
+      internalID: 6587604490108352303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_54
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 144
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12ed89a8fae5b9860800000000000000
+      internalID: 7537722509372218913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_55
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 144
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2014dbfde9c5fed30800000000000000
+      internalID: 4462887593175761154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_56
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 144
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 874f483565c5747e0800000000000000
+      internalID: -1781353601763576712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_57
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 144
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb9e67fe6e66f9410800000000000000
+      internalID: 1486019544101611966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_58
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 144
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af3c87f5304b0c060800000000000000
+      internalID: 6971770149749179386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_59
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 144
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a22b71e19052ecc0800000000000000
+      internalID: -3683292957752221016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_60
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 144
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5fe986e73d4ec410800000000000000
+      internalID: 1499220628447293274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_61
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 144
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c4ff600dd6088b40800000000000000
+      internalID: 5442607695942120640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_62
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 144
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f408b56d06745d370800000000000000
+      internalID: 8346655965639835727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_63
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 144
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 028f7d51610be53c0800000000000000
+      internalID: -4368860979600558048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_64
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 72
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5bb70e56e207b8e0800000000000000
+      internalID: -1677869147728921761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_65
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 72
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3181948238c74e450800000000000000
+      internalID: 6117151096634415123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_66
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 72
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9858e29d686810de0800000000000000
+      internalID: -1368664898016475767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_67
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 72
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 506ec77e06a37e6b0800000000000000
+      internalID: -5267177051311512059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_68
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 72
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23a281f2506e19490800000000000000
+      internalID: -7741153374533834190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_69
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 72
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f72181c8658d90430800000000000000
+      internalID: 3749766030991823487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_70
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 72
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c35ba0ae9eabf5330800000000000000
+      internalID: 3701882932538553660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_71
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 72
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2facdc637731c7c80800000000000000
+      internalID: -8323756608546026766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_72
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 72
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 898b92d3851611f20800000000000000
+      internalID: 3391599025997854872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_73
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 72
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c24f823bb0c523a0800000000000000
+      internalID: -6690729761149336888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_74
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 72
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd74eb07d8af8f9f0800000000000000
+      internalID: -434321878652401700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_75
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 72
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73be99203d6304770800000000000000
+      internalID: 8592928368932547383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_76
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 72
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00da3d20375dfbdb0800000000000000
+      internalID: -4773862390044054272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_77
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 72
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c15f12eca33af1410800000000000000
+      internalID: 1450057077998351644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_78
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 72
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8482571bdbf92cc0800000000000000
+      internalID: -3735177497519422326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_79
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 72
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48429d81e6c7fc470800000000000000
+      internalID: 8417083040883876996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_80
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25d2e5b094e4ffab0800000000000000
+      internalID: -4972169387963437742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_81
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 0
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f92f67cd3d7fe8e0800000000000000
+      internalID: -1661972033183995403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_82
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db1ed0ddf667bfec0800000000000000
+      internalID: -3532099259919900227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_83
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 0
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5981aa87f119035c0800000000000000
+      internalID: -4237727685001209707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_84
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8d790a713fd23a10800000000000000
+      internalID: 1887816597415493002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_85
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 0
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b19b4a4450df93a0800000000000000
+      internalID: -6656372663788006985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_86
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 0
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfe473dd158643e90800000000000000
+      internalID: -7046892816114954500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_87
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 0
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e16dca8678b5b8f0800000000000000
+      internalID: -525310962244427290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_88
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7cf38aebb074a6710800000000000000
+      internalID: 1687239126172581831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_89
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 0
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 226759c3ac3b9e8f0800000000000000
+      internalID: -510679401548646878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_90
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 0
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6041c117f66cc910800000000000000
+      internalID: 1858973957538005101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: extras-openmoji-01_91
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 0
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 815548d2609723950800000000000000
+      internalID: 6427332685651531032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 4ad03019695062d40a5ecb96aa2a76b0
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":72.0,"y":72.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      extras-openmoji-01_0: -438939464762693968
+      extras-openmoji-01_1: 2091223240646908573
+      extras-openmoji-01_10: 8382340568326606057
+      extras-openmoji-01_11: 7998258687099214484
+      extras-openmoji-01_12: -6146134838449909559
+      extras-openmoji-01_13: 2827101255090707921
+      extras-openmoji-01_14: -4431516997732195560
+      extras-openmoji-01_15: -1014124931380121533
+      extras-openmoji-01_16: 8691371508205235968
+      extras-openmoji-01_17: -5472164147206342250
+      extras-openmoji-01_18: 9129594577250229747
+      extras-openmoji-01_19: 3768382946366104576
+      extras-openmoji-01_2: 7697541363105888651
+      extras-openmoji-01_20: -2707719239572881837
+      extras-openmoji-01_21: -979393077739383505
+      extras-openmoji-01_22: 8839413040533587960
+      extras-openmoji-01_23: -767253965804114611
+      extras-openmoji-01_24: 7183061943563409887
+      extras-openmoji-01_25: -6083891164436708195
+      extras-openmoji-01_26: 773686098438878636
+      extras-openmoji-01_27: 1012472837485425444
+      extras-openmoji-01_28: 270923309804034089
+      extras-openmoji-01_29: 7243048528312236299
+      extras-openmoji-01_3: -8884775220586882851
+      extras-openmoji-01_30: -4420289975014880264
+      extras-openmoji-01_31: -1831725676874649248
+      extras-openmoji-01_32: -3736090712659533041
+      extras-openmoji-01_33: -1148409461287105757
+      extras-openmoji-01_34: -6865857794106285789
+      extras-openmoji-01_35: -576042918477743857
+      extras-openmoji-01_36: -499821719316032158
+      extras-openmoji-01_37: -1192139137124096253
+      extras-openmoji-01_38: -8932409237207621519
+      extras-openmoji-01_39: -996986938462713655
+      extras-openmoji-01_4: -2346101068907002482
+      extras-openmoji-01_40: -5508299503832963341
+      extras-openmoji-01_41: -1212005119821970193
+      extras-openmoji-01_42: 7491536650139454318
+      extras-openmoji-01_43: -1861760755885454070
+      extras-openmoji-01_44: -3985195618537909360
+      extras-openmoji-01_45: -167458383132515466
+      extras-openmoji-01_46: 1039734499793123834
+      extras-openmoji-01_47: -755878766633503882
+      extras-openmoji-01_48: -2414092426207877915
+      extras-openmoji-01_49: 1775678969126571753
+      extras-openmoji-01_5: -3542715344207679574
+      extras-openmoji-01_50: -5574800766447154865
+      extras-openmoji-01_51: -4580805150347861806
+      extras-openmoji-01_52: -3837279087444642399
+      extras-openmoji-01_53: 6587604490108352303
+      extras-openmoji-01_54: 7537722509372218913
+      extras-openmoji-01_55: 4462887593175761154
+      extras-openmoji-01_56: -1781353601763576712
+      extras-openmoji-01_57: 1486019544101611966
+      extras-openmoji-01_58: 6971770149749179386
+      extras-openmoji-01_59: -3683292957752221016
+      extras-openmoji-01_6: -7377554805808082397
+      extras-openmoji-01_60: 1499220628447293274
+      extras-openmoji-01_61: 5442607695942120640
+      extras-openmoji-01_62: 8346655965639835727
+      extras-openmoji-01_63: -4368860979600558048
+      extras-openmoji-01_64: -1677869147728921761
+      extras-openmoji-01_65: 6117151096634415123
+      extras-openmoji-01_66: -1368664898016475767
+      extras-openmoji-01_67: -5267177051311512059
+      extras-openmoji-01_68: -7741153374533834190
+      extras-openmoji-01_69: 3749766030991823487
+      extras-openmoji-01_7: -6166222864264931284
+      extras-openmoji-01_70: 3701882932538553660
+      extras-openmoji-01_71: -8323756608546026766
+      extras-openmoji-01_72: 3391599025997854872
+      extras-openmoji-01_73: -6690729761149336888
+      extras-openmoji-01_74: -434321878652401700
+      extras-openmoji-01_75: 8592928368932547383
+      extras-openmoji-01_76: -4773862390044054272
+      extras-openmoji-01_77: 1450057077998351644
+      extras-openmoji-01_78: -3735177497519422326
+      extras-openmoji-01_79: 8417083040883876996
+      extras-openmoji-01_8: 1320759605007293237
+      extras-openmoji-01_80: -4972169387963437742
+      extras-openmoji-01_81: -1661972033183995403
+      extras-openmoji-01_82: -3532099259919900227
+      extras-openmoji-01_83: -4237727685001209707
+      extras-openmoji-01_84: 1887816597415493002
+      extras-openmoji-01_85: -6656372663788006985
+      extras-openmoji-01_86: -7046892816114954500
+      extras-openmoji-01_87: -525310962244427290
+      extras-openmoji-01_88: 1687239126172581831
+      extras-openmoji-01_89: -510679401548646878
+      extras-openmoji-01_9: -6642229380242947629
+      extras-openmoji-01_90: 1858973957538005101
+      extras-openmoji-01_91: 6427332685651531032
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

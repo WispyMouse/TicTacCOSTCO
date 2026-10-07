@@ -31,7 +31,7 @@ namespace TicTacCOSTCO.Unity.UI
                 else
                 {
                     // Show the + button on the "next" player that should be available
-                    this.PlayerButtons[ii].Deactivate(ii == playerCount);
+                    this.PlayerButtons[ii].Deactivate(showPlus: ii == playerCount);
                 }
             }
         }

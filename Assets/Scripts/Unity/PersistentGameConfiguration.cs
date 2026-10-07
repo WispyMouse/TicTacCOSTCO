@@ -154,7 +154,7 @@ namespace TicTacCOSTCO.Unity
             }
 
             newProfile.Index = this._Players.Count;
-            newProfile.RepresenterSpriteIndex = iconIndex;
+            newProfile.RepresenterSpriteIndex = Random.Range(0, this.PlayerIconOptions.Count);
             newProfile.KnockoutColor = knockoutColorsForTurns[newProfile.Index];
             newProfile.IsAI = false;
             newProfile.PlayerName = HUMAN;
