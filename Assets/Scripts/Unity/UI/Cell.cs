@@ -1,4 +1,5 @@
 using TicTacCOSTCO.DataStructures;
+using TicTacCOSTCO.Unity;
 using TMPro;
 using UnityEngine;
 
@@ -24,10 +25,10 @@ public class Cell : MonoBehaviour
         this.HintHolder.gameObject.SetActive(false);
     }
 
-    public void SetSide(Sprite sprite, int sideIndex)
+    public void SetSide(PlayerProfile player)
     {
-        this.SideIndex = sideIndex;
-        this.IconSpriteRenderer.sprite = sprite;
+        this.SideIndex = player.Index;
+        this.IconSpriteRenderer.sprite = player.SpriteRepresentation;
         this.AlreadyPlaced = true;
     }
 

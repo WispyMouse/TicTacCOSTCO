@@ -16,6 +16,9 @@ namespace TicTacCOSTCO.DataStructures
         public delegate void OnMoveUndoneDelegate(MoveCommand undone);
         public OnMoveUndoneDelegate OnMoveUndone;
 
+        public delegate void OnGameConclusionDelegate(int? winner);
+        public OnGameConclusionDelegate OnGameConclusion;
+
         public IReadOnlyList<MoveCommand> MoveCommandsApplied => this._MoveCommandsApplied;
         private List<MoveCommand> _MoveCommandsApplied { get; set; } = new List<MoveCommand>();
 
@@ -48,6 +51,11 @@ namespace TicTacCOSTCO.DataStructures
             if (advancePlayer)
             {
                 AdvancePlayer();
+            }
+
+            if (this.CurrentBoardState.CurrentGameState == BoardState.GameStateEnum.End)
+            {
+                this.OnGameConclusion?.Invoke(this.CurrentBoardState.Winner);
             }
         }
 

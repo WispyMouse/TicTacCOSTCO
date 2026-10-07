@@ -39,13 +39,13 @@ namespace TicTacCOSTCO.Unity.UI
             }
 
             // If the current player is human, do nothing
-            if (this.TurnOrderHolder.PlayerIsHuman(this.GameConductor.CurrentGameState.CurrentBoardState.CurrentPlayerIndex))
+            if (this.TurnOrderHolder.PlayerIsHuman(turn))
             {
                 return;
             }
 
             // If this side has been eliminated, skip them
-            if (!this.GameConductor.CurrentGameState.CurrentBoardState.SideIndexesStillInGame.Contains(this.GameConductor.CurrentGameState.CurrentBoardState.CurrentPlayerIndex))
+            if (!this.GameConductor.CurrentGameState.CurrentBoardState.SideIndexesStillInGame.Contains(turn))
             {
                 return;
             }

@@ -274,7 +274,7 @@ namespace TicTacCOSTCO.DataStructures
                 {
                     // If there were no new solutions, or not enough solutions for previous cascade, and we're in cascade state,
                     // the current player should be knocked out
-                    this.SideIndexesStillInGame.Remove(this.CurrentPlayerIndex);
+                    this.SideIndexesStillInGame.Remove(playerRemoved);
                 }
 
                 if (this.SideIndexesStillInGame.Count == 1)
@@ -294,6 +294,29 @@ namespace TicTacCOSTCO.DataStructures
             {
                 this.CurrentGameState = BoardState.GameStateEnum.End;
                 this.Winner = null;
+
+                // If there are no more empty spots, the winner is the player who most recently made a valid connection
+                // We know they made a valid connection if the cascade level is above zero and they're still in the game
+                // after their most recent move
+                // If there haven't been any, the game is truly a draw
+                if (this.CurrentCascadeLevel > 0)
+                {
+                    this.Winner = null;
+
+                    for (int ii = 0; ii < this.PlayerCount; ii++)
+                    {
+                        // Count backwards through players to get most recent plays
+                        int playerIndex = (this.CurrentPlayerIndex - ii + this.PlayerCount) % this.PlayerCount;
+
+                        if (!this.SideIndexesStillInGame.Contains(playerIndex))
+                        {
+                            continue;
+                        }
+
+                        this.Winner = playerIndex;
+                    }
+                }
+
                 return;
             }
         }
@@ -365,9 +388,18 @@ namespace TicTacCOSTCO.DataStructures
 
                         if (anyDiscarded)
                         {
+                            break;
+                        }
+                    }
+
+                    if (anyDiscarded)
+                    {
+                        if (anyDiscarded)
+                        {
                             remainingSolutions.RemoveAt(ii);
                             break;
                         }
+                        break;
                     }
                 }
             } while (anyDiscarded);

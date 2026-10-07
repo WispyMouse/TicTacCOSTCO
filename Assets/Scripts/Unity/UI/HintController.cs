@@ -13,21 +13,13 @@ namespace TicTacCOSTCO.Unity.UI
 
         public void Start()
         {
-            this.TurnOrderHolder.OnTurnStarted += UpdateHints;
-        }
-
-        void UpdateHints(int _)
-        {
-            if (!isOn)
-            {
-                return;
-            }
-
-            ShowHints();
+            // As it becomes a new player's turn, if hints are on, update them
+            // It doesn't become the new player's hints, but we may need to update the hints for the displaying player
+            this.TurnOrderHolder.OnTurnStarted += RefreshHints;
         }
 
 
-        public void ShowHints()
+        public void ShowHints(int side)
         {
             foreach (Cell cell in GameConductor.PositionsToCells.Values)
             {
@@ -38,8 +30,7 @@ namespace TicTacCOSTCO.Unity.UI
                     continue;
                 }
 
-                ;
-                cell.SetHint(this.GameConductor.CurrentGameState.CurrentBoardState.GenerateCommandFromMove(this.GameConductor.CurrentGameState.CurrentBoardState.CurrentPlayerIndex, cell.Position).ConnectionsMade.Count);
+                cell.SetHint(this.GameConductor.CurrentGameState.CurrentBoardState.GenerateCommandFromMove(side, cell.Position).ConnectionsMade.Count);
             }
             isOn = true;
         }
@@ -51,6 +42,16 @@ namespace TicTacCOSTCO.Unity.UI
                 cell.SetHint(0);
             }
             isOn = false;
+        }
+
+        public void RefreshHints(int side)
+        {
+            if (!isOn)
+            {
+                return;
+            }
+
+            ShowHints(side);
         }
     }
 }
