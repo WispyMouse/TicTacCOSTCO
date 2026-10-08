@@ -64,11 +64,11 @@ namespace TicTacCOSTCO.Tests
         [TestCaseSource(nameof(CoordinatesToPlay_DataSource))]
         public void ResultChecks(CoordinatesToPlay_DataSource_Object plan)
         {
-            BoardState newBoard = new BoardState(plan.XSize, plan.YSize, plan.PlayerCount);
+            BoardState newBoard = new BoardState(plan.XSize, plan.YSize, plan.PlayerCount, 0, 0);
 
             for (int ii = 0; ii < plan.Coordinates.Count; ii++)
             {
-                newBoard.ApplyMoveCommand(newBoard.GenerateCommandFromMove(ii % plan.PlayerCount, plan.Coordinates[ii]));
+                newBoard.TryApplyMoveCommand(newBoard.GenerateCommandFromMove(ii % plan.PlayerCount, plan.Coordinates[ii]));
             }
 
             Assert.AreEqual(BoardState.GameStateEnum.End, newBoard.CurrentGameState, $"Expecting board state to result in the end of a game.");

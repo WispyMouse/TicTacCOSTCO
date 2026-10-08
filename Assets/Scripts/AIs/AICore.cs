@@ -18,7 +18,11 @@ public class AICore : ScriptableObject
 
     public virtual Coordinate DetermineMove(int forSide, BoardState currentGameState)
     {
-        IReadOnlyList<Coordinate> possibleMoves = currentGameState.GetEmptySpots();
+        if (!currentGameState.AnyLegalMovesRemainForPlayer(forSide, out IReadOnlyList<Coordinate> possibleMoves))
+        {
+            // TODO: This shouldn't be called in this state, but how do we signal that?
+            return Coordinate.zero;
+        }
 
         // Determine the heuristic value for every possible move
         Dictionary<Coordinate, float> moveToHeuristicTotal = new Dictionary<Coordinate, float>(possibleMoves.Count);

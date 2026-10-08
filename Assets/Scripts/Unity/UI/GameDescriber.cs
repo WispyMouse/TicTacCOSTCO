@@ -26,6 +26,11 @@ namespace TicTacCOSTCO.Unity.UI
             description.AppendLine($"{PersistentGameConfiguration.Singleton.Players.Count} players");
             description.AppendLine($"{PersistentGameConfiguration.Singleton.Width}x{PersistentGameConfiguration.Singleton.Height}");
 
+            if (PersistentGameConfiguration.Singleton.StallTurn > 0)
+            {
+                description.AppendLine($"No connections until turn {PersistentGameConfiguration.Singleton.StallTurn}");
+            }
+
             bool appendVs = false;
             foreach (PlayerProfile curPlayer in PersistentGameConfiguration.Singleton.Players)
             {

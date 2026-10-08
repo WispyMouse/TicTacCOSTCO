@@ -11,6 +11,8 @@ namespace TicTacCOSTCO.DataStructures
         public BoardState DeepClone();
         public bool TryGetConnectionsForCoordinate(Coordinate toGet, out IReadOnlyCollection<CellsConnection> connections);
         public IReadOnlyList<CellsConnection> GetAllNewSolutions(int sideIndex, Coordinate hypotheticalPosition);
+        public bool AnyLegalMovesRemainForPlayer(int player, out IReadOnlyList<Coordinate> possiblePlays);
+        public bool StallTurnEmbargoLifted();
 
         public int Height { get; }
         public int Width { get; }

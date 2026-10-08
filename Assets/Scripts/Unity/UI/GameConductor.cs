@@ -24,6 +24,7 @@ namespace TicTacCOSTCO.Unity.UI
         public Image WinnerIcon;
         public GameObject NoMoreMovesPanel;
         public CascadeBanner CascadeBanner;
+        public StallBanner StallBanner;
 
         public Dictionary<Coordinate, Cell> PositionsToCells { get; set; } = new Dictionary<Coordinate, Cell>();
 
@@ -56,13 +57,17 @@ namespace TicTacCOSTCO.Unity.UI
             this.CurrentGameState = new BoardStateHolder(
                 PersistentGameConfiguration.Singleton.Width, 
                 PersistentGameConfiguration.Singleton.Height, 
-                PersistentGameConfiguration.Singleton.Players.Count);
+                PersistentGameConfiguration.Singleton.Players.Count,
+                PersistentGameConfiguration.Singleton.StallTurn);
             this.CurrentGameState.OnGameConclusion += DeclarePlayerVictorious;
+            this.CurrentGameState.OnGameConclusion += StallBanner.Clear;
 
             this.PositionsToCells = this.GridPainter.Paint();
             this.CurrentTurnPanel.ResetGame();
             this.CascadeBanner.ResetGame();
             this.TurnOrderHolder.ResetGame();
+
+            this.TurnOrderHolder.OnTurnStarted?.Invoke(this.CurrentGameState.CurrentBoardState.FirstPlayerToMove);
         }
 
         public void Update()
@@ -96,8 +101,16 @@ namespace TicTacCOSTCO.Unity.UI
             PlayerProfile player = PersistentGameConfiguration.Singleton.Players[takingTurn];
             int previousCascade = this.CurrentGameState.CurrentBoardState.CurrentCascadeLevel;
 
-            toChoose.SetSide(player);
             MoveCommand command = this.CurrentGameState.CurrentBoardState.GenerateCommandFromMove(this.CurrentGameState.CurrentBoardState.CurrentPlayerIndex, toChoose.Position);
+
+            if (!this.CurrentGameState.CurrentBoardState.MoveCommandLegalToPlay(command))
+            {
+                Debug.Log("Can't play that command! We should tell the user why somehow.");
+                this.StallBanner.CallAttention();
+                return;
+            }
+
+            toChoose.SetSide(player);
 
             foreach (CellsConnection solution in command.ConnectionsMade)
             {
@@ -116,7 +129,7 @@ namespace TicTacCOSTCO.Unity.UI
                 this.CurrentTurnPanel.KnockOutPlayer(sideRemoved);
             }
 
-            this.CurrentGameState.ApplyMoveCommand(command);
+            this.CurrentGameState.TryApplyMoveCommand(command);
             this.RewindButtonHolder.SetActive(true);
 
             toChoose.SetHighlightStatus(true);

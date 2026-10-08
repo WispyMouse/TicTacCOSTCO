@@ -33,6 +33,9 @@ namespace TicTacCOSTCO.DataStructures
         public readonly int Width;
         public readonly int PlayerCount;
         public readonly int InARowToSolve;
+        public readonly int StallTurn;
+
+        public readonly int FirstPlayerToMove;
 
         public IReadOnlyDictionary<Coordinate, int?> SpotToSideOwnership => this._SpotToSideOwnership;
 
@@ -48,9 +51,10 @@ namespace TicTacCOSTCO.DataStructures
 
         private readonly Dictionary<Coordinate, int?> _SpotToSideOwnership;
 
-        public int CurrentCascadeLevel;
-        public int CurrentPlayerIndex;
-        public HashSet<int> SideIndexesStillInGame;
+        public int CurrentCascadeLevel { get; set; }
+        public int CurrentPlayerIndex { get; set; }
+        public HashSet<int> SideIndexesStillInGame { get; set; }
+        public int CurrentRound { get; set; } = 1;
 
         private Dictionary<Coordinate, List<CellsConnection>> AcceptedSolutions;
 
@@ -83,11 +87,12 @@ namespace TicTacCOSTCO.DataStructures
         public GameStateEnum CurrentGameState;
         public int? Winner;
 
-        public BoardState(int width, int height, int playerCount)
+        public BoardState(int width, int height, int playerCount, int stallTurn, int firstPlayerToMove)
         {
             this.Width = width;
             this.Height = height;
             this.PlayerCount = playerCount;
+            this.StallTurn = stallTurn;
 
             // HACK: Starting at 3 for development
             this.InARowToSolve = 3;
@@ -115,22 +120,25 @@ namespace TicTacCOSTCO.DataStructures
             this.CurrentGameState = GameStateEnum.NotStarted;
             this.CurrentCascadeLevel = 0;
             this.CurrentGameState = 0;
-            this.CurrentPlayerIndex = 0;
+            this.FirstPlayerToMove = firstPlayerToMove;
+            this.CurrentPlayerIndex = firstPlayerToMove;
         }
 
-        public BoardState(int width, int height, int playerCount,
+        public BoardState(int width, int height, int playerCount, int stallTurn, int firstPlayerToMove,
             Dictionary<Coordinate, int?> ownershipToClone, int currentCascadeLevel, int currentPlayerIndex, Dictionary<Coordinate, List<CellsConnection>> connectionsToClone,
             GameStateEnum currentStatus, int? winner, HashSet<int> sideIndexesStillInGame, PossibilityContainer possibilityContainer)
         {
             this.Width = width;
             this.Height = height;
             this.PlayerCount = playerCount;
+            this.StallTurn = stallTurn;
 
             // HACK: Starting at 3 for development
             this.InARowToSolve = 3;
 
             this.CurrentCascadeLevel = currentCascadeLevel;
             this.CurrentPlayerIndex = currentPlayerIndex;
+            this.FirstPlayerToMove = firstPlayerToMove;
             this.CurrentGameState = currentStatus;
             this.PossibilityContainer = possibilityContainer;
             this.Winner = winner;
@@ -147,7 +155,7 @@ namespace TicTacCOSTCO.DataStructures
 
         public BoardState DeepClone()
         {
-            return new BoardState(this.Width, this.Height, this.PlayerCount,
+            return new BoardState(this.Width, this.Height, this.PlayerCount, this.StallTurn, this.FirstPlayerToMove,
                 this._SpotToSideOwnership, this.CurrentCascadeLevel, this.CurrentPlayerIndex,
                 this.AcceptedSolutions, this.CurrentGameState, this.Winner, this.SideIndexesStillInGame,
                 this.PossibilityContainer);
@@ -241,8 +249,19 @@ namespace TicTacCOSTCO.DataStructures
             return true;
         }
 
-        public void ApplyMoveCommand(MoveCommand toApply)
+        /// <summary>
+        /// Attempts to apply a move command.
+        /// Checks the legality of the move and forbids invalid moves.
+        /// TODO: Describe failures
+        /// </summary>
+        /// <returns>True if the command successfully applied. False otherwise.</returns>
+        public bool TryApplyMoveCommand(MoveCommand toApply)
         {
+            if (!this.MoveCommandLegalToPlay(toApply))
+            {
+                return false;
+            }
+
             if (this.CurrentGameState == BoardState.GameStateEnum.NotStarted)
             {
                 this.CurrentGameState = BoardState.GameStateEnum.Playing;
@@ -282,7 +301,7 @@ namespace TicTacCOSTCO.DataStructures
                     this.CurrentPlayerIndex = this.SideIndexesStillInGame.First();
                     this.Winner = this.CurrentPlayerIndex;
                     this.CurrentGameState = BoardState.GameStateEnum.End;
-                    return;
+                    return true;
                 }
             }
             else if (solutionsCount > 0)
@@ -290,7 +309,7 @@ namespace TicTacCOSTCO.DataStructures
                 this.CurrentGameState = BoardState.GameStateEnum.Cascade;
             }
 
-            if (!this.AnyEmptySpots())
+            if (!this.AnyLegalMovesRemainForPlayer(toApply.SideIndex, out _))
             {
                 this.CurrentGameState = BoardState.GameStateEnum.End;
                 this.Winner = null;
@@ -316,9 +335,9 @@ namespace TicTacCOSTCO.DataStructures
                         this.Winner = playerIndex;
                     }
                 }
-
-                return;
             }
+
+            return true;
         }
 
         private List<CellsConnection> PruneSolutionsForNotAlreadySolved(List<CellsConnection> solutions)
@@ -473,6 +492,81 @@ namespace TicTacCOSTCO.DataStructures
             }
 
             return allMatch;
+        }
+
+        public bool StallTurnEmbargoLifted()
+        {
+            if (this.StallTurn <= 0)
+            {
+                return true;
+            }
+
+            return this.CurrentRound >= this.StallTurn;
+        }
+
+        public bool MoveCommandLegalToPlay(MoveCommand toApply)
+        {
+            if (!SpotIsInBounds(toApply.Position))
+            {
+                return false;
+            }
+
+            if (this.SpotToSideOwnership[toApply.Position].HasValue)
+            {
+                return false;
+            }
+
+            if (!this.StallTurnEmbargoLifted() && toApply.ConnectionsMade.Count > 0)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        public bool AnyLegalMovesRemainForPlayer(int player, out IReadOnlyList<Coordinate> possiblePlays)
+        {
+            // No where left to play?
+            if (!this.AnyEmptySpots())
+            {
+                possiblePlays = null;
+                return false;
+            }
+
+            IReadOnlyList<Coordinate> emptyPlaces = this.GetEmptySpots();
+
+            // Is there a "stall turn" setting? If not, then we're definitely okay to play
+            if (this.StallTurnEmbargoLifted())
+            {
+                possiblePlays = emptyPlaces;
+                return true;
+            }
+
+            // Check possible moves
+            List<Coordinate> validPlaces = new List<Coordinate>(emptyPlaces.Count);
+
+            foreach (Coordinate place in emptyPlaces)
+            {
+                MoveCommand command = this.GenerateCommandFromMove(player, place);
+
+                // If it makes any connections, it can't be played there
+                if (command.ConnectionsMade.Count > 0)
+                {
+                    continue;
+                }
+
+                validPlaces.Add(place);
+            }
+
+            // Nowhere to play
+            if (validPlaces.Count == 0)
+            {
+                possiblePlays = null;
+                return false;
+            }
+
+            possiblePlays = validPlaces;
+            return true;
         }
     }
 }

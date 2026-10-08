@@ -80,12 +80,12 @@ namespace TicTacCOSTCO.Tests
         [TestCaseSource(nameof(UndoTests_UndosAtEnd_DataSource))]
         public void KnockoutStatusAsExpected(UndoTests_UndosAtEnd_DataSource_Object plan)
         {
-            BoardStateHolder testState = new BoardStateHolder(plan.Width, plan.Height, plan.Players, forceZeroIndexStart: true);
+            BoardStateHolder testState = new BoardStateHolder(plan.Width, plan.Height, plan.Players, 0, forceZeroIndexStart: true);
             List<int> expectedOwnership = new List<int>();
 
             for (int ii = 0, count = plan.Placements.Count; ii < count; ii++)
             {
-                testState.ApplyMoveCommand(testState.CurrentBoardState.GenerateCommandFromMove(testState.CurrentBoardState.CurrentPlayerIndex, plan.Placements[ii]), true);
+                Assert.IsTrue(testState.TryApplyMoveCommand(testState.CurrentBoardState.GenerateCommandFromMove(testState.CurrentBoardState.CurrentPlayerIndex, plan.Placements[ii]), true));
                 expectedOwnership.Add(testState.CurrentBoardState.SpotToSideOwnership[plan.Placements[ii]].Value);
             }
 

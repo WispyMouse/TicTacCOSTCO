@@ -10,6 +10,11 @@ namespace TicTacCOSTCO.AIs
 
         public override void BakeInformation(int forSide, IReadOnlyBoardState currentGameState)
         {
+            if (!currentGameState.StallTurnEmbargoLifted())
+            {
+                return;
+            }
+
             // Determine the most number of possible connections any opponent has, anywhere
             _mostOpponentConnections = 0;
 
@@ -31,6 +36,11 @@ namespace TicTacCOSTCO.AIs
 
         public override float ScorePosition(int forSide, IReadOnlyBoardState currentGameState, Coordinate position)
         {
+            if (!currentGameState.StallTurnEmbargoLifted())
+            {
+                return 0;
+            }
+
             // If this spot would create more connections than any opponent can currently make, consider this
             int creatableConnections = currentGameState.GenerateCommandFromMove(forSide, position).ConnectionsMade.Count;
             if (creatableConnections > _mostOpponentConnections)

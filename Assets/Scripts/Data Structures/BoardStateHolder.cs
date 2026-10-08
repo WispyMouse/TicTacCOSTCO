@@ -27,25 +27,33 @@ namespace TicTacCOSTCO.DataStructures
         public int PlayerCount => this.CurrentBoardState.PlayerCount;
         public int InARowToSolve => this.CurrentBoardState.InARowToSolve;
 
-        public BoardStateHolder(int width, int height, int playerCount, bool forceZeroIndexStart = false)
+        public BoardStateHolder(int width, int height, int playerCount, int stallTurn, bool forceZeroIndexStart = false)
         {
-            this.CurrentBoardState = new BoardState(width, height, playerCount);
+            int firstToMove = 0;
 
             if (forceZeroIndexStart)
             {
                 // Force the first player to be zero, perhaps because we're in test mode
-                this.CurrentBoardState.CurrentPlayerIndex = 0;
+                firstToMove = 0;
             }
             else
             {
                 // Choose a random player to go first
-                this.CurrentBoardState.CurrentPlayerIndex = new Random().Next(this.CurrentBoardState.PlayerCount);
+                firstToMove = new Random().Next(playerCount);
             }
+
+            this.CurrentBoardState = new BoardState(width, height, playerCount, stallTurn, firstToMove);
         }
 
-        public void ApplyMoveCommand(MoveCommand toApply, bool advancePlayer = true)
+        public bool TryApplyMoveCommand(MoveCommand toApply, bool advancePlayer = true)
         {
-            this.CurrentBoardState.ApplyMoveCommand(toApply);
+            bool applied = this.CurrentBoardState.TryApplyMoveCommand(toApply);
+
+            if (!applied)
+            {
+                return false;
+            }
+
             this._MoveCommandsApplied.Add(toApply);
 
             if (advancePlayer)
@@ -57,6 +65,7 @@ namespace TicTacCOSTCO.DataStructures
             {
                 this.OnGameConclusion?.Invoke(this.CurrentBoardState.Winner);
             }
+            return true;
         }
 
         /// <summary>
@@ -129,7 +138,21 @@ namespace TicTacCOSTCO.DataStructures
 
             for (int ii = 1; ii < this.CurrentBoardState.PlayerCount; ii++)
             {
+                int previousPlayer = (this.CurrentBoardState.CurrentPlayerIndex + (advancer * (ii - 1)) + this.CurrentBoardState.PlayerCount) % this.CurrentBoardState.PlayerCount;
                 int nextProspectivePlayer = (this.CurrentBoardState.CurrentPlayerIndex + (advancer * ii) + this.CurrentBoardState.PlayerCount) % this.CurrentBoardState.PlayerCount;
+
+                // If the previous player is the starting player, and we're reversing, go back a round
+                if (reversePlayer && previousPlayer == this.CurrentBoardState.FirstPlayerToMove)
+                {
+                    this.CurrentBoardState.CurrentRound--;
+                }
+
+                // If we're going forward, and it would become the starting player's turn, go forward a round
+                if (!reversePlayer && nextProspectivePlayer == this.CurrentBoardState.FirstPlayerToMove)
+                {
+                    this.CurrentBoardState.CurrentRound++;
+                }
+
                 if (!this.CurrentBoardState.SideIndexesStillInGame.Contains(nextProspectivePlayer))
                 {
                     continue;

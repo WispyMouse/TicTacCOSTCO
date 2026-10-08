@@ -79,11 +79,11 @@ namespace TicTacCOSTCO.Tests
         [TestCaseSource(nameof(Knockout_ExpectedPlayer_DataSource))]
         public void KnockoutStatusAsExpected(Knockout_ExpectedPlayer_DataSource_Object plan)
         {
-            BoardStateHolder testState = new BoardStateHolder(plan.Width, plan.Height, plan.Players, forceZeroIndexStart: true);
+            BoardStateHolder testState = new BoardStateHolder(plan.Width, plan.Height, plan.Players, 0, forceZeroIndexStart: true);
 
             for (int ii = 0, count = plan.Placements.Count; ii < count; ii++)
             {
-                testState.ApplyMoveCommand(testState.CurrentBoardState.GenerateCommandFromMove(testState.CurrentBoardState.CurrentPlayerIndex, plan.Placements[ii]), true);
+                Assert.IsTrue(testState.TryApplyMoveCommand(testState.CurrentBoardState.GenerateCommandFromMove(testState.CurrentBoardState.CurrentPlayerIndex, plan.Placements[ii]), true));
             }
 
             Assert.AreEqual(plan.ExpectedGameStateEnum, testState.CurrentBoardState.CurrentGameState, $"Expecting game state to be in specific status");

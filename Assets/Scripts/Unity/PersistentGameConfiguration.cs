@@ -16,6 +16,12 @@ namespace TicTacCOSTCO.Unity
         public int Width { get; private set; }
         public int Height { get; private set; }
 
+        /// <summary>
+        /// Connections cannot be made until this many turns have passed.
+        /// At zero or below, this setting is disabled.
+        /// </summary>
+        public int StallTurn { get; private set; }
+
         [Range(3, 12)]
         [SerializeField]
         private int _StartWidth = 5;
@@ -27,6 +33,10 @@ namespace TicTacCOSTCO.Unity
         [Range(BoardStateHolder.MINIMUMPLAYERS, 6)]
         [SerializeField]
         private int _StartPlayerCount = 2;
+
+        [Range(0, 8)]
+        [SerializeField]
+        public int _StartStallTurn = 0;
 
         public IReadOnlyList<PlayerProfile> Players => _Players;
         private readonly List<PlayerProfile> _Players = new List<PlayerProfile>();
@@ -57,6 +67,7 @@ namespace TicTacCOSTCO.Unity
 
             this.Width = _StartWidth;
             this.Height = _StartHeight;
+            this.StallTurn = _StartStallTurn;
 
             for (int ii = 0; ii < this._StartPlayerCount; ii++)
             {
@@ -85,6 +96,12 @@ namespace TicTacCOSTCO.Unity
         public void UpdateHeight(int newValue)
         {
             this.Height = newValue;
+            this.OnGameplaySettingsUpdated?.Invoke();
+        }
+
+        public void UpdateStall(int newValue)
+        {
+            this.StallTurn = newValue;
             this.OnGameplaySettingsUpdated?.Invoke();
         }
 
