@@ -1,12 +1,12 @@
-using UnityEngine;
-
 namespace TicTacCOSTCO.Unity.UI
 {
+    using UnityEngine;
+
     public class BlipPlayer : MonoBehaviour
     {
         public void PlayBlip()
         {
-            AudioPlayer.Singleton.PlayBlip();
+            RandomAudioPlayer.Singleton.PlayRandomSound();
         }
     }
 }

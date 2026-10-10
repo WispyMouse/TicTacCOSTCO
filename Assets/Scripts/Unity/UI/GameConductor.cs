@@ -91,7 +91,7 @@ namespace TicTacCOSTCO.Unity.UI
                 curCell.SetHighlightStatus(false);
             }
 
-            AudioPlayer.Singleton.PlayBlip();
+            RandomAudioPlayer.Singleton.PlayRandomSound();
 
             int takingTurn = this.CurrentBoardState.CurrentPlayerIndex;
             PlayerProfile player = PersistentGameConfiguration.Singleton.Players[takingTurn];
