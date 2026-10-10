@@ -54,11 +54,7 @@ namespace TicTacCOSTCO.Unity.UI
             this.RewindButtonHolder.SetActive(false);
             this.NoMoreMovesPanel.SetActive(false);
 
-            this.CurrentGameState = new BoardStateHolder(
-                PersistentGameConfiguration.Singleton.Width, 
-                PersistentGameConfiguration.Singleton.Height, 
-                PersistentGameConfiguration.Singleton.Players.Count,
-                PersistentGameConfiguration.Singleton.StallTurn);
+            this.CurrentGameState = new BoardStateHolder(PersistentGameConfiguration.Singleton.GameConfiguration);
             this.CurrentGameState.OnGameConclusion += DeclarePlayerVictorious;
             this.CurrentGameState.OnGameConclusion += StallBanner.Clear;
 

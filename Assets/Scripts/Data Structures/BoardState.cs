@@ -29,11 +29,13 @@ namespace TicTacCOSTCO.DataStructures
             new DirectionalityVector(1, 1),
         };
 
-        public readonly int Height;
-        public readonly int Width;
-        public readonly int PlayerCount;
-        public readonly int InARowToSolve;
-        public readonly int StallTurn;
+        public readonly GameConfiguration GameConfiguration;
+
+        public int Height => this.GameConfiguration.Height;
+        public int Width => this.GameConfiguration.Width;
+        public int PlayerCount => this.GameConfiguration.PlayerCount;
+        public int InARowToSolve => this.GameConfiguration.InARowToSolve;
+        public int StallTurn => this.GameConfiguration.StallTurn;
 
         public readonly int FirstPlayerToMove;
 
@@ -87,22 +89,16 @@ namespace TicTacCOSTCO.DataStructures
         public GameStateEnum CurrentGameState;
         public int? Winner;
 
-        public BoardState(int width, int height, int playerCount, int stallTurn, int firstPlayerToMove)
+        public BoardState(GameConfiguration gameConfiguration, int firstPlayerToMove)
         {
-            this.Width = width;
-            this.Height = height;
-            this.PlayerCount = playerCount;
-            this.StallTurn = stallTurn;
-
-            // HACK: Starting at 3 for development
-            this.InARowToSolve = 3;
+            this.GameConfiguration = gameConfiguration;
 
             this.PossibilityContainer = new PossibilityContainer(this);
 
-            this._SpotToSideOwnership = new Dictionary<Coordinate, int?>(width * height);
-            for (int xx = 0; xx < width; xx++)
+            this._SpotToSideOwnership = new Dictionary<Coordinate, int?>(Width * Height);
+            for (int xx = 0; xx < Width; xx++)
             {
-                for (int yy = 0; yy < height; yy++)
+                for (int yy = 0; yy < Height; yy++)
                 {
                     this._SpotToSideOwnership.Add(new Coordinate(xx, yy), null);
                 }
@@ -115,7 +111,7 @@ namespace TicTacCOSTCO.DataStructures
             }
 
             this.Winner = null;
-            this.AcceptedSolutions = new Dictionary<Coordinate, List<CellsConnection>>(width * height);
+            this.AcceptedSolutions = new Dictionary<Coordinate, List<CellsConnection>>(Width * Height);
 
             this.CurrentGameState = GameStateEnum.NotStarted;
             this.CurrentCascadeLevel = 0;
@@ -124,41 +120,25 @@ namespace TicTacCOSTCO.DataStructures
             this.CurrentPlayerIndex = firstPlayerToMove;
         }
 
-        public BoardState(int width, int height, int playerCount, int stallTurn, int firstPlayerToMove,
-            Dictionary<Coordinate, int?> ownershipToClone, int currentCascadeLevel, int currentPlayerIndex, Dictionary<Coordinate, List<CellsConnection>> connectionsToClone,
-            GameStateEnum currentStatus, int? winner, HashSet<int> sideIndexesStillInGame, PossibilityContainer possibilityContainer)
+        public BoardState(BoardState toDeepClone)
         {
-            this.Width = width;
-            this.Height = height;
-            this.PlayerCount = playerCount;
-            this.StallTurn = stallTurn;
+            this.GameConfiguration = toDeepClone.GameConfiguration;
 
-            // HACK: Starting at 3 for development
-            this.InARowToSolve = 3;
+            this.CurrentCascadeLevel = toDeepClone.CurrentCascadeLevel;
+            this.CurrentPlayerIndex = toDeepClone.CurrentPlayerIndex;
+            this.FirstPlayerToMove = toDeepClone.FirstPlayerToMove;
+            this.CurrentGameState = toDeepClone.CurrentGameState;
+            this.PossibilityContainer = toDeepClone.PossibilityContainer;
+            this.Winner = toDeepClone.Winner;
 
-            this.CurrentCascadeLevel = currentCascadeLevel;
-            this.CurrentPlayerIndex = currentPlayerIndex;
-            this.FirstPlayerToMove = firstPlayerToMove;
-            this.CurrentGameState = currentStatus;
-            this.PossibilityContainer = possibilityContainer;
-            this.Winner = winner;
+            this._SpotToSideOwnership = new Dictionary<Coordinate, int?>(toDeepClone.SpotToSideOwnership);
+            this.SideIndexesStillInGame = new HashSet<int>(toDeepClone.SideIndexesStillInGame);
 
-            this._SpotToSideOwnership = new Dictionary<Coordinate, int?>(ownershipToClone);
-            this.SideIndexesStillInGame = new HashSet<int>(sideIndexesStillInGame);
-
-            this.AcceptedSolutions = new Dictionary<Coordinate, List<CellsConnection>>(connectionsToClone.Count);
-            foreach (Coordinate coordinate in connectionsToClone.Keys)
+            this.AcceptedSolutions = new Dictionary<Coordinate, List<CellsConnection>>(this.AcceptedSolutions.Count);
+            foreach (Coordinate coordinate in toDeepClone.AcceptedSolutions.Keys)
             {
-                this.AcceptedSolutions.Add(coordinate, new List<CellsConnection>(connectionsToClone[coordinate]));
+                this.AcceptedSolutions.Add(coordinate, new List<CellsConnection>(toDeepClone.AcceptedSolutions[coordinate]));
             }
-        }
-
-        public BoardState DeepClone()
-        {
-            return new BoardState(this.Width, this.Height, this.PlayerCount, this.StallTurn, this.FirstPlayerToMove,
-                this._SpotToSideOwnership, this.CurrentCascadeLevel, this.CurrentPlayerIndex,
-                this.AcceptedSolutions, this.CurrentGameState, this.Winner, this.SideIndexesStillInGame,
-                this.PossibilityContainer);
         }
 
         public IReadOnlyList<Coordinate> GetEmptySpots()
@@ -322,7 +302,7 @@ namespace TicTacCOSTCO.DataStructures
                 {
                     this.Winner = null;
 
-                    for (int ii = 0; ii < this.PlayerCount; ii++)
+                    for (int ii = 1; ii <= this.PlayerCount; ii++)
                     {
                         // Count backwards through players to get most recent plays
                         int playerIndex = (this.CurrentPlayerIndex - ii + this.PlayerCount) % this.PlayerCount;
@@ -567,6 +547,11 @@ namespace TicTacCOSTCO.DataStructures
 
             possiblePlays = validPlaces;
             return true;
+        }
+
+        public IReadOnlyBoardState DeepClone()
+        {
+            return new BoardState(this);
         }
     }
 }

@@ -27,7 +27,7 @@ namespace TicTacCOSTCO.DataStructures
         public int PlayerCount => this.CurrentBoardState.PlayerCount;
         public int InARowToSolve => this.CurrentBoardState.InARowToSolve;
 
-        public BoardStateHolder(int width, int height, int playerCount, int stallTurn, bool forceZeroIndexStart = false)
+        public BoardStateHolder(GameConfiguration gameConfiguration, bool forceZeroIndexStart = false)
         {
             int firstToMove = 0;
 
@@ -39,10 +39,10 @@ namespace TicTacCOSTCO.DataStructures
             else
             {
                 // Choose a random player to go first
-                firstToMove = new Random().Next(playerCount);
+                firstToMove = new Random().Next(gameConfiguration.PlayerCount);
             }
 
-            this.CurrentBoardState = new BoardState(width, height, playerCount, stallTurn, firstToMove);
+            this.CurrentBoardState = new BoardState(gameConfiguration, firstToMove);
         }
 
         public bool TryApplyMoveCommand(MoveCommand toApply, bool advancePlayer = true)

@@ -9,10 +9,8 @@ namespace TicTacCOSTCO.Tests
     {
         public class UndoTests_UndosAtEnd_DataSource_Object
         {
+            public GameConfiguration GameConfiguration;
             public List<Coordinate> Placements;
-            public int Width;
-            public int Height;
-            public int Players;
 
             public int UndosAtEnd;
 
@@ -21,13 +19,11 @@ namespace TicTacCOSTCO.Tests
             public int ExpectedCascade;
             public int ExpectedRemainingPlayers;
 
-            public UndoTests_UndosAtEnd_DataSource_Object(List<Coordinate> placements, int width, int height, int players, int undosAtEnd,
+            public UndoTests_UndosAtEnd_DataSource_Object(List<Coordinate> placements, GameConfiguration configuration, int undosAtEnd,
                 int expectedPlayerIndex, BoardState.GameStateEnum expectedGameStateEnum, int expectedCascade, int expectedRemainingPlayers)
             {
                 this.Placements = placements;
-                this.Width = width;
-                this.Height = height;
-                this.Players = players;
+                this.GameConfiguration = configuration;
                 this.UndosAtEnd = undosAtEnd;
                 this.ExpectedPlayerIndex = expectedPlayerIndex;
                 this.ExpectedGameStateEnum = expectedGameStateEnum;
@@ -37,7 +33,7 @@ namespace TicTacCOSTCO.Tests
 
             public override string ToString()
             {
-                return $"({string.Join(", ", Placements.Select(x => x.ToString()))}) ({this.Width}x{this.Height} {this.Players} players) ({this.ExpectedPlayerIndex} player expected in {this.ExpectedGameStateEnum} with cascade {this.ExpectedCascade})";
+                return $"({string.Join(", ", Placements.Select(x => x.ToString()))}) ({this.GameConfiguration.Width}x{this.GameConfiguration.Height} {this.GameConfiguration.PlayerCount} players) ({this.ExpectedPlayerIndex} player expected in {this.ExpectedGameStateEnum} with cascade {this.ExpectedCascade})";
             }
         }
 
@@ -45,42 +41,42 @@ namespace TicTacCOSTCO.Tests
         {
             // One action taken, undone
             new UndoTests_UndosAtEnd_DataSource_Object(new List<Coordinate>() { Coordinate.zero },
-                5, 5, 2, 1, 0, BoardState.GameStateEnum.NotStarted, 0, 2),
+                new GameConfiguration(5, 5, 2, 3, 0), 1, 0, BoardState.GameStateEnum.NotStarted, 0, 2),
 
             // Two actions taken, both undone
             new UndoTests_UndosAtEnd_DataSource_Object(new List<Coordinate>() { Coordinate.zero, Coordinate.right },
-                5, 5, 2, 2, 0, BoardState.GameStateEnum.NotStarted, 0, 2),
+                new GameConfiguration(5, 5, 2, 3, 0), 2, 0, BoardState.GameStateEnum.NotStarted, 0, 2),
 
             // Two actions taken, one undone
             new UndoTests_UndosAtEnd_DataSource_Object(new List<Coordinate>() { Coordinate.zero, Coordinate.right },
-                5, 5, 2, 1, 1, BoardState.GameStateEnum.Playing, 0, 2),
+                new GameConfiguration(5, 5, 2, 3, 0), 1, 1, BoardState.GameStateEnum.Playing, 0, 2),
 
             // Three-in-a-row for one player, undone
             new UndoTests_UndosAtEnd_DataSource_Object(new List<Coordinate>() { Coordinate.zero, Coordinate.right, Coordinate.right * 2 },
-                5, 5, 1, 1, 0, BoardState.GameStateEnum.Playing, 0, 1),
+                new GameConfiguration(5, 5, 1, 3, 0), 1, 0, BoardState.GameStateEnum.Playing, 0, 1),
 
             // Three-in-a-row for one player in two player game, undone
             new UndoTests_UndosAtEnd_DataSource_Object(new List<Coordinate>() { Coordinate.zero, Coordinate.up, Coordinate.right, Coordinate.up * 2, Coordinate.right * 2 },
-                5, 5, 2, 1, 0, BoardState.GameStateEnum.Playing, 0, 2),
+                new GameConfiguration(5, 5, 2, 3, 0), 1, 0, BoardState.GameStateEnum.Playing, 0, 2),
 
             // Three-in-a-row for one player, responded to with losing move, undone
             new UndoTests_UndosAtEnd_DataSource_Object(new List<Coordinate>() { Coordinate.zero, Coordinate.up, Coordinate.right, Coordinate.up * 2, Coordinate.right * 2, Coordinate.up + Coordinate.right },
-                5, 5, 2, 1, 1, BoardState.GameStateEnum.Cascade, 1, 2),
+                new GameConfiguration(5, 5, 2, 3, 0), 1, 1, BoardState.GameStateEnum.Cascade, 1, 2),
 
             // In three-player-game, undo targets expected player
             new UndoTests_UndosAtEnd_DataSource_Object(new List<Coordinate>() { Coordinate.zero, Coordinate.right, Coordinate.right * 2 },
-                5, 5, 3, 1, 2, BoardState.GameStateEnum.Playing, 0, 3),
+                new GameConfiguration(5, 5, 3, 3, 0), 1, 2, BoardState.GameStateEnum.Playing, 0, 3),
             new UndoTests_UndosAtEnd_DataSource_Object(new List<Coordinate>() { Coordinate.zero, Coordinate.right, Coordinate.right * 2 },
-                5, 5, 3, 2, 1, BoardState.GameStateEnum.Playing, 0, 3),
+                new GameConfiguration(5, 5, 3, 3, 0), 2, 1, BoardState.GameStateEnum.Playing, 0, 3),
             new UndoTests_UndosAtEnd_DataSource_Object(new List<Coordinate>() { Coordinate.zero, Coordinate.right, Coordinate.right * 2, Coordinate.up, Coordinate.up + Coordinate.right, Coordinate.up + Coordinate.right * 2 },
-                5, 5, 3, 6, 0, BoardState.GameStateEnum.NotStarted, 0, 3),
+                new GameConfiguration(5, 5, 3, 3, 0), 6, 0, BoardState.GameStateEnum.NotStarted, 0, 3),
         };
 
         [Test]
         [TestCaseSource(nameof(UndoTests_UndosAtEnd_DataSource))]
         public void KnockoutStatusAsExpected(UndoTests_UndosAtEnd_DataSource_Object plan)
         {
-            BoardStateHolder testState = new BoardStateHolder(plan.Width, plan.Height, plan.Players, 0, forceZeroIndexStart: true);
+            BoardStateHolder testState = new BoardStateHolder(plan.GameConfiguration, forceZeroIndexStart: true);
             List<int> expectedOwnership = new List<int>();
 
             for (int ii = 0, count = plan.Placements.Count; ii < count; ii++)

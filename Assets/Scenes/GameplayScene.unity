@@ -1526,7 +1526,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 37.7
+  m_fontSize: 36.2
   m_fontSizeBase: 48
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -6674,6 +6674,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1894085268}
   - component: {fileID: 1894085269}
+  - component: {fileID: 1894085270}
   m_Layer: 0
   m_Name: Grid Painter
   m_TagString: Untagged
@@ -6709,11 +6710,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GridPainter
   CellPF: {fileID: 2686147493415156260, guid: dd69e85feb4420a479d8e933ba4c0f8a, type: 3}
-  GridCamera: {fileID: 519420031}
-  OrthographicSizeBase: 1.55
-  OrthographicSizeScalar: 0.49
-  WidthOrthographicViewMultiplier: 1
   GameConductor: {fileID: 1339510086}
+--- !u!114 &1894085270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894085267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf578f0ebbc5dd046bbd5b580c5ab2ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: TicTacCOSTCO.Unity.UI::TicTacCOSTCO.Unity.UI.GridCameraFitter
+  GridCamera: {fileID: 519420031}
+  OrthographicSizeBase: 0
+  OrthographicSizeScalar: 0
+  WidthOrthographicViewMultiplier: 1.5
+  GameConductor: {fileID: 0}
+  GridPainter: {fileID: 0}
 --- !u!1 &1988924112
 GameObject:
   m_ObjectHideFlags: 0
@@ -7178,7 +7193,7 @@ PrefabInstance:
       objectReference: {fileID: 1075755429}
     - target: {fileID: 8501188839260201773, guid: 988e68654bf759f4c85bb8993de5f31b, type: 3}
       propertyPath: m_fontSize
-      value: 44.9
+      value: 39.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

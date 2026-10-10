@@ -58,5 +58,10 @@ namespace TicTacCOSTCO.DataStructures
         public static Coordinate operator *(DirectionalityVector a, int b) => new Coordinate(a.X * b, a.Y * b);
 
         public static DirectionalityVector operator -(DirectionalityVector a) => new DirectionalityVector(a.X * -1, a.Y * -1);
+
+        public override string ToString()
+        {
+            return $"{this.X} by {this.Y}";
+        }
     }
 }

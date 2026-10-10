@@ -13,14 +13,16 @@ namespace TicTacCOSTCO.Unity
         public const string HUMAN = "Human";
         public static PersistentGameConfiguration Singleton { get; private set; } = null;
 
-        public int Width { get; private set; }
-        public int Height { get; private set; }
+        public GameConfiguration GameConfiguration => this._GameConfiguration;
+        private GameConfiguration _GameConfiguration;
+        public int Width => this.GameConfiguration.Width;
+        public int Height => this.GameConfiguration.Height;
 
         /// <summary>
         /// Connections cannot be made until this many turns have passed.
         /// At zero or below, this setting is disabled.
         /// </summary>
-        public int StallTurn { get; private set; }
+        public int StallTurn => this.GameConfiguration.StallTurn;
 
         [Range(3, 12)]
         [SerializeField]
@@ -65,9 +67,7 @@ namespace TicTacCOSTCO.Unity
             this.transform.SetParent(null);
             DontDestroyOnLoad(this.gameObject);
 
-            this.Width = _StartWidth;
-            this.Height = _StartHeight;
-            this.StallTurn = _StartStallTurn;
+            this._GameConfiguration = new GameConfiguration(this._StartWidth, this._StartHeight, this._StartPlayerCount, 3, this._StartStallTurn);
 
             for (int ii = 0; ii < this._StartPlayerCount; ii++)
             {
@@ -89,19 +89,19 @@ namespace TicTacCOSTCO.Unity
 
         public void UpdateWidth(int newValue)
         {
-            this.Width = newValue;
+            this._GameConfiguration.Width = newValue;
             this.OnGameplaySettingsUpdated?.Invoke();
         }
 
         public void UpdateHeight(int newValue)
         {
-            this.Height = newValue;
+            this._GameConfiguration.Height = newValue;
             this.OnGameplaySettingsUpdated?.Invoke();
         }
 
         public void UpdateStall(int newValue)
         {
-            this.StallTurn = newValue;
+            this._GameConfiguration.StallTurn = newValue;
             this.OnGameplaySettingsUpdated?.Invoke();
         }
 

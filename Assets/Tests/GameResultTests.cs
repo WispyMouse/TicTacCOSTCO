@@ -10,31 +10,27 @@ namespace TicTacCOSTCO.Tests
     {
         public class CoordinatesToPlay_DataSource_Object
         {
-            public int XSize = 5;
-            public int YSize = 5;
-            public int PlayerCount = 2;
+            public GameConfiguration GameConfiguration;
             public List<Coordinate> Coordinates;
             public int? Winner;
 
-            public CoordinatesToPlay_DataSource_Object(int xSize, int ySize, int playerCount, List<Coordinate> coordinates, int? winner)
+            public CoordinatesToPlay_DataSource_Object(GameConfiguration configuration, List<Coordinate> coordinates, int? winner)
             {
-                this.XSize = xSize;
-                this.YSize = ySize;
-                this.PlayerCount = playerCount;
+                this.GameConfiguration = configuration;
                 this.Coordinates = coordinates;
                 this.Winner = winner;
             }
 
             public override string ToString()
             {
-                return $"{this.PlayerCount} players over {this.Coordinates.Count} moves: winner: {this.Winner.ToString()}";
+                return $"{this.GameConfiguration.PlayerCount} players over {this.Coordinates.Count} moves: winner: {this.Winner.ToString()}";
             }
         }
 
         public static CoordinatesToPlay_DataSource_Object[] CoordinatesToPlay_DataSource =
         {
             // O moves three in a row and thus should win
-            new CoordinatesToPlay_DataSource_Object(3, 3, 2, 
+            new CoordinatesToPlay_DataSource_Object(new GameConfiguration(3, 3, 2, 3, 0), 
                 new List<Coordinate>()
             {
                     new Coordinate(0, 0), new Coordinate(0, 1),
@@ -43,7 +39,7 @@ namespace TicTacCOSTCO.Tests
             }, 0),
 
             // O moves three in a row, X responds, X should win because there are no more moves
-            new CoordinatesToPlay_DataSource_Object(3, 2, 2,
+            new CoordinatesToPlay_DataSource_Object(new GameConfiguration(3, 2, 2, 3, 0),
                 new List<Coordinate>()
             {
                     new Coordinate(0, 0), new Coordinate(0, 1),
@@ -52,7 +48,7 @@ namespace TicTacCOSTCO.Tests
             }, 1),
 
             // No one can make a connection on this tiny board, so no one wins
-            new CoordinatesToPlay_DataSource_Object(2, 2, 2,
+            new CoordinatesToPlay_DataSource_Object(new GameConfiguration(2, 2, 2, 3, 0),
                 new List<Coordinate>()
             {
                     new Coordinate(0, 0), new Coordinate(0, 1),
@@ -64,15 +60,15 @@ namespace TicTacCOSTCO.Tests
         [TestCaseSource(nameof(CoordinatesToPlay_DataSource))]
         public void ResultChecks(CoordinatesToPlay_DataSource_Object plan)
         {
-            BoardState newBoard = new BoardState(plan.XSize, plan.YSize, plan.PlayerCount, 0, 0);
+            BoardStateHolder holder = new BoardStateHolder(plan.GameConfiguration, true);
 
             for (int ii = 0; ii < plan.Coordinates.Count; ii++)
             {
-                newBoard.TryApplyMoveCommand(newBoard.GenerateCommandFromMove(ii % plan.PlayerCount, plan.Coordinates[ii]));
+                Assert.IsTrue(holder.TryApplyMoveCommand(holder.CurrentBoardState.GenerateCommandFromMove(ii % plan.GameConfiguration.PlayerCount, plan.Coordinates[ii])));
             }
 
-            Assert.AreEqual(BoardState.GameStateEnum.End, newBoard.CurrentGameState, $"Expecting board state to result in the end of a game.");
-            Assert.AreEqual(newBoard.Winner, plan.Winner, $"Expecting a predicted winner / null lack of winner.");
+            Assert.AreEqual(BoardState.GameStateEnum.End, holder.CurrentBoardState.CurrentGameState, $"Expecting board state to result in the end of a game.");
+            Assert.AreEqual(plan.Winner, holder.CurrentBoardState.Winner, $"Expecting a predicted winner / null lack of winner.");
         }
     }
 }
