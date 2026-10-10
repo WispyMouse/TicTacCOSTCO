@@ -30,7 +30,7 @@ namespace TicTacCOSTCO.Unity.UI
                     continue;
                 }
 
-                cell.SetHint(this.GameConductor.CurrentGameState.CurrentBoardState.GenerateCommandFromMove(side, cell.Position).ConnectionsMade.Count);
+                cell.SetHint(this.GameConductor.CurrentBoardState.GenerateCommandFromMove(side, cell.Position).ConnectionsMade.Count);
             }
             isOn = true;
         }

@@ -22,7 +22,7 @@ namespace TicTacCOSTCO.Unity.UI
             int playerCount = PersistentGameConfiguration.Singleton.Players.Count;
             for (int ii = 0, count = this.PlayerButtons.Count; ii < count; ii++)
             {
-                this.PlayerButtons[ii].MinusButtonBase.gameObject.SetActive(ii > BoardStateHolder.MINIMUMPLAYERS);
+                this.PlayerButtons[ii].MinusButtonBase.gameObject.SetActive(ii > BoardState.MINIMUMPLAYERS);
 
                 if (playerCount > ii)
                 {

@@ -8,6 +8,8 @@ namespace TicTacCOSTCO.DataStructures
 {
     public class BoardState : IReadOnlyBoardState
     {
+        public const int MINIMUMPLAYERS = 2;
+
         public static IReadOnlyList<DirectionalityVector> Directionalities = new DirectionalityVector[]
         {
             new DirectionalityVector(1, 0),
@@ -30,6 +32,19 @@ namespace TicTacCOSTCO.DataStructures
         };
 
         public readonly GameConfiguration GameConfiguration;
+
+        public delegate void OnPlayerTurnDelegate(int turn);
+        public OnPlayerTurnDelegate OnPlayerStartTurn;
+        public OnPlayerTurnDelegate OnPlayerMadeMove;
+
+        public delegate void OnMoveUndoneDelegate(MoveCommand undone);
+        public OnMoveUndoneDelegate OnMoveUndone;
+
+        public delegate void OnGameConclusionDelegate(int? winner);
+        public OnGameConclusionDelegate OnGameConclusion;
+
+        public IReadOnlyList<MoveCommand> MoveCommandsApplied => this._MoveCommandsApplied;
+        private List<MoveCommand> _MoveCommandsApplied { get; set; } = new List<MoveCommand>();
 
         public int Height => this.GameConfiguration.Height;
         public int Width => this.GameConfiguration.Width;
@@ -89,7 +104,12 @@ namespace TicTacCOSTCO.DataStructures
         public GameStateEnum CurrentGameState;
         public int? Winner;
 
-        public BoardState(GameConfiguration gameConfiguration, int firstPlayerToMove)
+        /// <summary>
+        /// Constructor for a BoardState, the living definition of a game.
+        /// </summary>
+        /// <param name="gameConfiguration">The configuration to generate from. This cannot be changed during a game.</param>
+        /// <param name="firstPlayerToMove">The index of the player to move first. If this is null, a random player will be assigned.</param>
+        public BoardState(GameConfiguration gameConfiguration, int? firstPlayerToMove = null)
         {
             this.GameConfiguration = gameConfiguration;
 
@@ -116,8 +136,17 @@ namespace TicTacCOSTCO.DataStructures
             this.CurrentGameState = GameStateEnum.NotStarted;
             this.CurrentCascadeLevel = 0;
             this.CurrentGameState = 0;
-            this.FirstPlayerToMove = firstPlayerToMove;
-            this.CurrentPlayerIndex = firstPlayerToMove;
+
+            if (firstPlayerToMove.HasValue)
+            {
+                this.FirstPlayerToMove = firstPlayerToMove.Value;
+                this.CurrentPlayerIndex = firstPlayerToMove.Value;
+            }
+            else
+            {
+                // Randomly select the player to move first
+                firstPlayerToMove = new Random().Next(this.PlayerCount);
+            }
         }
 
         public BoardState(BoardState toDeepClone)
@@ -302,7 +331,7 @@ namespace TicTacCOSTCO.DataStructures
                 {
                     this.Winner = null;
 
-                    for (int ii = 1; ii <= this.PlayerCount; ii++)
+                    for (int ii = 0; ii < this.PlayerCount; ii++)
                     {
                         // Count backwards through players to get most recent plays
                         int playerIndex = (this.CurrentPlayerIndex - ii + this.PlayerCount) % this.PlayerCount;
@@ -552,6 +581,131 @@ namespace TicTacCOSTCO.DataStructures
         public IReadOnlyBoardState DeepClone()
         {
             return new BoardState(this);
+        }
+
+
+
+        /// <summary>
+        /// Reverse the previous move command, entirely undoing everything it did.
+        /// The players in the game should be in the state they were before the move, as though it was never run.
+        /// </summary>
+        /// <returns>
+        /// Returns the <see cref="MoveCommand"/> that was undone from <see cref="MoveCommandsApplied"/>.
+        /// Returns null if there was nothing that could be removed.
+        /// </returns>
+        public MoveCommand ReversePreviousMoveCommand()
+        {
+            int moveCommandsApplied = this._MoveCommandsApplied.Count;
+            if (moveCommandsApplied == 0)
+            {
+                return null;
+            }
+
+            MoveCommand toRemove = this.MoveCommandsApplied[moveCommandsApplied - 1];
+            this._MoveCommandsApplied.RemoveAt(moveCommandsApplied - 1);
+
+            // HACK: At this point in the game's development, the only thing that *could* be placed during a reverse is a null
+            // Will need to track what it used to be, if we can make it any other value while reversing
+            this.ForceMarkOwnership(toRemove.Position, null);
+            this.CurrentCascadeLevel = toRemove.PreviousCascadeLevel;
+
+            foreach (int playerRemoved in toRemove.PlayersRemoved)
+            {
+                this.SideIndexesStillInGame.Add(playerRemoved);
+            }
+
+            // Remove any added connection
+            foreach (CellsConnection connectionsAdded in toRemove.ConnectionsMade)
+            {
+                foreach (Coordinate coordinate in connectionsAdded.Cells)
+                {
+                    this.RemoveConnection(coordinate, connectionsAdded);
+                }
+            }
+
+            if (this.MoveCommandsApplied.Count == 0)
+            {
+                this.CurrentGameState = BoardState.GameStateEnum.NotStarted;
+            }
+            else if (this.CurrentCascadeLevel > 0)
+            {
+                this.CurrentGameState = BoardState.GameStateEnum.Cascade;
+            }
+            else
+            {
+                this.CurrentGameState = BoardState.GameStateEnum.Playing;
+            }
+
+            this.AdvancePlayer(reversePlayer: true);
+            // We certainly no longer have a winner
+            this.Winner = null;
+
+            this.OnMoveUndone?.Invoke(toRemove);
+
+            return toRemove;
+        }
+
+        public void AdvancePlayer(bool reversePlayer = false)
+        {
+            this.OnPlayerMadeMove?.Invoke(this.CurrentPlayerIndex);
+
+            // If we're advancing, add one. Reversing, minus one
+            // This will modulo around the player count and let us find the next valid player
+            int advancer = reversePlayer ? -1 : 1;
+
+            for (int ii = 1; ii < this.PlayerCount; ii++)
+            {
+                int previousPlayer = (this.CurrentPlayerIndex + (advancer * (ii - 1)) + this.PlayerCount) % this.PlayerCount;
+                int nextProspectivePlayer = (this.CurrentPlayerIndex + (advancer * ii) + this.PlayerCount) % this.PlayerCount;
+
+                // If the previous player is the starting player, and we're reversing, go back a round
+                if (reversePlayer && previousPlayer == this.FirstPlayerToMove)
+                {
+                    this.CurrentRound--;
+                }
+
+                // If we're going forward, and it would become the starting player's turn, go forward a round
+                if (!reversePlayer && nextProspectivePlayer == this.FirstPlayerToMove)
+                {
+                    this.CurrentRound++;
+                }
+
+                if (!this.SideIndexesStillInGame.Contains(nextProspectivePlayer))
+                {
+                    continue;
+                }
+
+                this.CurrentPlayerIndex = nextProspectivePlayer;
+                this.OnPlayerStartTurn?.Invoke(this.CurrentPlayerIndex);
+                break;
+            }
+        }
+
+        public bool TryApplyMoveCommand(MoveCommand toApply, bool advancePlayer = true)
+        {
+            bool applied = this.TryApplyMoveCommand(toApply);
+
+            if (!applied)
+            {
+                return false;
+            }
+
+            this._MoveCommandsApplied.Add(toApply);
+
+            if (this.CurrentGameState == BoardState.GameStateEnum.End)
+            {
+                this.OnGameConclusion?.Invoke(this.Winner);
+            }
+            else
+            {
+                // Only advance the player if the game isn't ending
+                if (advancePlayer)
+                {
+                    AdvancePlayer();
+                }
+            }
+
+            return true;
         }
     }
 }

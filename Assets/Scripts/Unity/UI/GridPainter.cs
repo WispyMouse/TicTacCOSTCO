@@ -37,12 +37,12 @@ namespace TicTacCOSTCO.Unity.UI
             }
             this.instantiatedCells.Clear();
 
-            float xOffset = this.GameConductor.CurrentGameState.Width / 2f;
-            float yOffset = this.GameConductor.CurrentGameState.Height / 2f;
+            float xOffset = this.GameConductor.CurrentBoardState.Width / 2f;
+            float yOffset = this.GameConductor.CurrentBoardState.Height / 2f;
 
-            for (int xx = 0; xx < this.GameConductor.CurrentGameState.Width; xx++)
+            for (int xx = 0; xx < this.GameConductor.CurrentBoardState.Width; xx++)
             {
-                for (int yy = 0; yy < this.GameConductor.CurrentGameState.Height; yy++)
+                for (int yy = 0; yy < this.GameConductor.CurrentBoardState.Height; yy++)
                 {
                     Coordinate position = new Coordinate(xx, yy);
                     Cell newCell = Instantiate(CellPF, this.transform);
@@ -54,7 +54,7 @@ namespace TicTacCOSTCO.Unity.UI
             }
 
             GridCamera.orthographicSize = OrthographicSizeBase
-                + Mathf.Max(this.GameConductor.CurrentGameState.Width * WidthOrthographicViewMultiplier, this.GameConductor.CurrentGameState.Height)
+                + Mathf.Max(this.GameConductor.CurrentBoardState.Width * WidthOrthographicViewMultiplier, this.GameConductor.CurrentBoardState.Height)
                 * OrthographicSizeScalar;
 
             return cells;

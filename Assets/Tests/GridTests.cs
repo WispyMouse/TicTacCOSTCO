@@ -94,14 +94,14 @@ namespace TicTacCOSTCO.Tests
         public void PlacingThirdWouldResultInRow(PlacementCausesSolve_DataSource_Object plan)
         {
             int lastIndex = plan.Placements.Count - 1;
-            BoardStateHolder testState = new BoardStateHolder(plan.GameConfiguration, true);
+            BoardState testState = new BoardState(plan.GameConfiguration, firstPlayerToMove: 0);
 
             for (int ii = 0; ii < lastIndex; ii++)
             {
-                Assert.IsTrue(testState.TryApplyMoveCommand(testState.CurrentBoardState.GenerateCommandFromMove(0, plan.Placements[ii]), false));
+                Assert.IsTrue(testState.TryApplyMoveCommand(testState.GenerateCommandFromMove(0, plan.Placements[ii]), false));
             }
 
-            MoveCommand lastCommand = testState.CurrentBoardState.GenerateCommandFromMove(0, plan.Placements[lastIndex]);
+            MoveCommand lastCommand = testState.GenerateCommandFromMove(0, plan.Placements[lastIndex]);
             Assert.AreEqual(plan.ExpectedSolutions, lastCommand.ConnectionsMade.Count, $"Especting a specific amount of solutions total");
 
             Assert.IsTrue(testState.TryApplyMoveCommand(lastCommand, false));
@@ -110,7 +110,7 @@ namespace TicTacCOSTCO.Tests
             {
                 foreach (Coordinate position in plan.Placements)
                 {
-                    if (!testState.CurrentBoardState.TryGetConnectionsForCoordinate(position, out IReadOnlyCollection<CellsConnection> positionSolutions))
+                    if (!testState.TryGetConnectionsForCoordinate(position, out IReadOnlyCollection<CellsConnection> positionSolutions))
                     {
                         Assert.Fail($"There should be an accepted solution for {position}.");
                     }

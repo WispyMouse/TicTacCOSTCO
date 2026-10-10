@@ -76,17 +76,17 @@ namespace TicTacCOSTCO.Tests
         [TestCaseSource(nameof(Knockout_ExpectedPlayer_DataSource))]
         public void KnockoutStatusAsExpected(Knockout_ExpectedPlayer_DataSource_Object plan)
         {
-            BoardStateHolder testState = new BoardStateHolder(plan.GameConfiguration, true);
+            BoardState testState = new BoardState(plan.GameConfiguration, firstPlayerToMove: 0);
 
             for (int ii = 0, count = plan.Placements.Count; ii < count; ii++)
             {
-                Assert.IsTrue(testState.TryApplyMoveCommand(testState.CurrentBoardState.GenerateCommandFromMove(testState.CurrentBoardState.CurrentPlayerIndex, plan.Placements[ii]), true));
+                Assert.IsTrue(testState.TryApplyMoveCommand(testState.GenerateCommandFromMove(testState.CurrentPlayerIndex, plan.Placements[ii]), true));
             }
 
-            Assert.AreEqual(plan.ExpectedGameStateEnum, testState.CurrentBoardState.CurrentGameState, $"Expecting game state to be in specific status");
-            Assert.AreEqual(plan.ExpectedPlayerIndex, testState.CurrentBoardState.CurrentPlayerIndex, $"Expecting current player index to be specific");
-            Assert.AreEqual(plan.ExpectedCascade, testState.CurrentBoardState.CurrentCascadeLevel, $"Expecting cascade to be specific");
-            Assert.AreEqual(plan.ExpectedRemainingPlayers, testState.CurrentBoardState.SideIndexesStillInGame.Count, $"Expecting remaining player count to be specific");
+            Assert.AreEqual(plan.ExpectedGameStateEnum, testState.CurrentGameState, $"Expecting game state to be in specific status");
+            Assert.AreEqual(plan.ExpectedPlayerIndex, testState.CurrentPlayerIndex, $"Expecting current player index to be specific");
+            Assert.AreEqual(plan.ExpectedCascade, testState.CurrentCascadeLevel, $"Expecting cascade to be specific");
+            Assert.AreEqual(plan.ExpectedRemainingPlayers, testState.SideIndexesStillInGame.Count, $"Expecting remaining player count to be specific");
         }
     }
 

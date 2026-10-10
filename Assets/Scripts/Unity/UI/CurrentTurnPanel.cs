@@ -38,12 +38,12 @@ namespace TicTacCOSTCO.Unity.UI
                 newTurn.OnHideHints += HideHints;
             }
 
-            this.UpdateToNewTurn(this.TurnOrderHolder.GameConductor.CurrentGameState.CurrentBoardState.CurrentPlayerIndex);
+            this.UpdateToNewTurn(this.TurnOrderHolder.GameConductor.CurrentBoardState.CurrentPlayerIndex);
         }
 
         public void UpdateToNewTurn(int newTurn)
         {
-            for (int ii = 0; ii < this.TurnOrderHolder.GameConductor.CurrentGameState.PlayerCount; ii++)
+            for (int ii = 0; ii < this.TurnOrderHolder.GameConductor.CurrentBoardState.PlayerCount; ii++)
             {
                 this.entries[ii].SetCurrentTurn(ii == newTurn);
             }
@@ -68,7 +68,7 @@ namespace TicTacCOSTCO.Unity.UI
 
         public void SetHints(int visibleHint)
         {
-            for (int ii = 0; ii < this.TurnOrderHolder.GameConductor.CurrentGameState.PlayerCount; ii++)
+            for (int ii = 0; ii < this.TurnOrderHolder.GameConductor.CurrentBoardState.PlayerCount; ii++)
             {
                 SetHint(ii, ii == visibleHint);
             }

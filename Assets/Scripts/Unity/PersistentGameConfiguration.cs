@@ -32,7 +32,7 @@ namespace TicTacCOSTCO.Unity
         [SerializeField]
         private int _StartHeight = 5;
 
-        [Range(BoardStateHolder.MINIMUMPLAYERS, 6)]
+        [Range(BoardState.MINIMUMPLAYERS, 6)]
         [SerializeField]
         private int _StartPlayerCount = 2;
 

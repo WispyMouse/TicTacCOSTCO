@@ -28,12 +28,12 @@ namespace TicTacCOSTCO.Unity.UI
                 ThinkingCoroutine = null;
             }
 
-            if (!this.GameConductor.CurrentGameState.CurrentBoardState.AnyEmptySpots())
+            if (!this.GameConductor.CurrentBoardState.AnyEmptySpots())
             {
                 return;
             }
 
-            if (this.GameConductor.CurrentGameState == null || this.GameConductor.CurrentGameState.CurrentBoardState.CurrentGameState == BoardState.GameStateEnum.End)
+            if (this.GameConductor.CurrentBoardState == null || this.GameConductor.CurrentBoardState.CurrentGameState == BoardState.GameStateEnum.End)
             {
                 return;
             }
@@ -45,13 +45,13 @@ namespace TicTacCOSTCO.Unity.UI
             }
 
             // If this side has been eliminated, skip them
-            if (!this.GameConductor.CurrentGameState.CurrentBoardState.SideIndexesStillInGame.Contains(turn))
+            if (!this.GameConductor.CurrentBoardState.SideIndexesStillInGame.Contains(turn))
             {
                 return;
             }
 
             // If there are no possible moves, do nothing
-            if (!this.GameConductor.CurrentGameState.CurrentBoardState.AnyEmptySpots())
+            if (!this.GameConductor.CurrentBoardState.AnyEmptySpots())
             {
                 return;
             }
@@ -67,10 +67,10 @@ namespace TicTacCOSTCO.Unity.UI
 
         IEnumerator AIThinksAndTakesTurn()
         {
-            int side = this.GameConductor.CurrentGameState.CurrentBoardState.CurrentPlayerIndex;
+            int side = this.GameConductor.CurrentBoardState.CurrentPlayerIndex;
             float randomWait = TimeForAIToThinkAdditionalSeconds.Evaluate(Random.Range(0, 1f));
 
-            if (this.GameConductor.CurrentGameState.CurrentBoardState.CurrentGameState == BoardState.GameStateEnum.Cascade)
+            if (this.GameConductor.CurrentBoardState.CurrentGameState == BoardState.GameStateEnum.Cascade)
             {
                 randomWait += AdditionalTimeDuringCascade.Evaluate(Random.Range(0, 1f));
             }
@@ -79,7 +79,7 @@ namespace TicTacCOSTCO.Unity.UI
 
             yield return new WaitForSeconds(this.TimeForAIToThinkBase + randomWait);
 
-            if (this.GameConductor.CurrentGameState.CurrentBoardState.CurrentGameState == BoardState.GameStateEnum.End)
+            if (this.GameConductor.CurrentBoardState.CurrentGameState == BoardState.GameStateEnum.End)
             {
                 yield break;
             }
@@ -88,10 +88,10 @@ namespace TicTacCOSTCO.Unity.UI
 
             Coordinate move =
                 PersistentGameConfiguration.Singleton.Players[side].AICore
-                .DetermineMove(side, this.GameConductor.CurrentGameState.CurrentBoardState);
+                .DetermineMove(side, this.GameConductor.CurrentBoardState);
 
 #if UNITY_EDITOR
-            MoveCommand command = this.GameConductor.CurrentGameState.CurrentBoardState.GenerateCommandFromMove(side, move);
+            MoveCommand command = this.GameConductor.CurrentBoardState.GenerateCommandFromMove(side, move);
             Debug.Log($"({PersistentGameConfiguration.Singleton.Players[side].AICore.name}) Making move at {move}, expecting {command.ConnectionsMade.Count} connections");
 #endif
 

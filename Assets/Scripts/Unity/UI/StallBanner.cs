@@ -31,7 +31,7 @@ namespace TicTacCOSTCO.Unity.UI
         {
             Colorable.color = NeutralColor;
 
-            if (this.GameConductor.CurrentGameState.CurrentBoardState.StallTurnEmbargoLifted())
+            if (this.GameConductor.CurrentBoardState.StallTurnEmbargoLifted())
             {
                 this.StallBannerGO.gameObject.SetActive(false);
                 return;
@@ -39,7 +39,7 @@ namespace TicTacCOSTCO.Unity.UI
 
             this.StallBannerGO.gameObject.SetActive(true);
 
-            int remainingTurns = this.GameConductor.CurrentGameState.CurrentBoardState.StallTurn - this.GameConductor.CurrentGameState.CurrentBoardState.CurrentRound;
+            int remainingTurns = this.GameConductor.CurrentBoardState.StallTurn - this.GameConductor.CurrentBoardState.CurrentRound;
 
             if (remainingTurns == 1)
             {

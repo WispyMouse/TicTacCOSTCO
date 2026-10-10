@@ -60,15 +60,15 @@ namespace TicTacCOSTCO.Tests
         [TestCaseSource(nameof(CoordinatesToPlay_DataSource))]
         public void ResultChecks(CoordinatesToPlay_DataSource_Object plan)
         {
-            BoardStateHolder holder = new BoardStateHolder(plan.GameConfiguration, true);
+            BoardState holder = new BoardState(plan.GameConfiguration, firstPlayerToMove: 0);
 
             for (int ii = 0; ii < plan.Coordinates.Count; ii++)
             {
-                Assert.IsTrue(holder.TryApplyMoveCommand(holder.CurrentBoardState.GenerateCommandFromMove(ii % plan.GameConfiguration.PlayerCount, plan.Coordinates[ii])));
+                Assert.IsTrue(holder.TryApplyMoveCommand(holder.GenerateCommandFromMove(ii % plan.GameConfiguration.PlayerCount, plan.Coordinates[ii])));
             }
 
-            Assert.AreEqual(BoardState.GameStateEnum.End, holder.CurrentBoardState.CurrentGameState, $"Expecting board state to result in the end of a game.");
-            Assert.AreEqual(plan.Winner, holder.CurrentBoardState.Winner, $"Expecting a predicted winner / null lack of winner.");
+            Assert.AreEqual(BoardState.GameStateEnum.End, holder.CurrentGameState, $"Expecting board state to result in the end of a game.");
+            Assert.AreEqual(plan.Winner, holder.Winner, $"Expecting a predicted winner / null lack of winner.");
         }
     }
 }

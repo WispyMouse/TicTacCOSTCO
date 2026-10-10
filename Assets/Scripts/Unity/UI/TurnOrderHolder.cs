@@ -14,13 +14,13 @@ namespace TicTacCOSTCO.Unity.UI
         public HashSet<int> SidesThatAreAI = new HashSet<int>();
 
         public GameConductor GameConductor;
-        public int PlayerCount => this.GameConductor.CurrentGameState == null ? 0 : this.GameConductor.CurrentGameState.CurrentBoardState.PlayerCount;
+        public int PlayerCount => this.GameConductor.CurrentBoardState == null ? 0 : this.GameConductor.CurrentBoardState.PlayerCount;
 
         public void ResetGame()
         {
-            int playerCount = this.GameConductor.CurrentGameState.CurrentBoardState.SideIndexesStillInGame.Count;
+            int playerCount = this.GameConductor.CurrentBoardState.SideIndexesStillInGame.Count;
 
-            this.GameConductor.CurrentGameState.OnPlayerStartTurn += UpdateTurn;
+            this.GameConductor.CurrentBoardState.OnPlayerStartTurn += UpdateTurn;
         }
 
         public void UpdateTurn(int toProfileIndex)
